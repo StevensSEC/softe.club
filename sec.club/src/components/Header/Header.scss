@@ -1,0 +1,18 @@
+@import "../../variables.scss";
+#header {
+  display: flex;
+  padding: 5px;
+  color: $quaternary-color;
+}
+#header-brand {
+  width: 100%;
+}
+#header-items {
+  width: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+}
+.HeaderItem {
+  margin: 10px;
+  align-self: center;
+}
