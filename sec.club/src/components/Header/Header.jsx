@@ -9,6 +9,7 @@ import {
   Typography
 } from "@material-ui/core"
 import "./Header.scss"
+import { Link, BrowserRouter as Router } from "react-router-dom"
 
 const useStyles = makeStyles({
   list: {
@@ -48,13 +49,15 @@ export default function TemporaryDrawer() {
       onKeyDown={toggleDrawer(side, false)}
     >
       <List>
-        {["Semester Long Project", "What is SEC?", "The Team", "Contact"].map(
-          (text, index) => (
-            <ListItem button key={text}>
-              <ListItemText primary={text} />
-            </ListItem>
-          )
-        )}
+        <Router>
+          {["Semester Long Project", "What is SEC?", "The Team", "Contact"].map(
+            (text, index) => (
+              <Button key={text}>
+                <Link to="/team">{text}</Link>
+              </Button>
+            )
+          )}
+        </Router>
       </List>
     </div>
   )
