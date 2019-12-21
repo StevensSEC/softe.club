@@ -1,5 +1,4 @@
 import React from "react"
-import logo from "./logo.svg"
 import "./App.scss"
 import Header from "./components/Header/Header"
 import { createMuiTheme, ThemeProvider } from "@material-ui/core"
@@ -21,26 +20,20 @@ function App() {
         <div className="App">
           <Header></Header>
           <Switch>
-            <Route path="/semester-long-project">
-              {
-                //add <SLP/> component here
-              }
+            <Route path="/slp">
+              <h1>Add SLP info page here</h1>
             </Route>
-            <Route path="/what-is-sec">
-              {
-                //add <WhatsSEC/> component here
-              }
+            <Route path="/about">
+              <h1>Add What is SEC? page here</h1>
             </Route>
             <Route path="/team">
-              <Team />
+              <h1>Add team information page here</h1>
             </Route>
             <Route path="/contact">
-              {
-                //add <Contact/> component here
-              }
+              <h1>Add contact page here</h1>
             </Route>
-            <Route path="/">
-              <h1>this should be home route woo</h1>
+            <Route exact path="/">
+              <h1>hi this is home :)</h1>
             </Route>
           </Switch>
         </div>
@@ -48,58 +41,4 @@ function App() {
     </Router>
   )
 }
-function Team() {
-  return <h1>im dead</h1>
-}
 export default App
-
-// import React from "react"
-// import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom"
-
-// export default function App() {
-//   return (
-//     <Router>
-//       <div>
-//         <nav>
-//           <ul>
-//             <li>
-//               <Link to="/">Home</Link>
-//             </li>
-//             <li>
-//               <Link to="/about">About</Link>
-//             </li>
-//             <li>
-//               <Link to="/users">Users</Link>
-//             </li>
-//           </ul>
-//         </nav>
-
-//         {/* A <Switch> looks through its children <Route>s and
-//             renders the first one that matches the current URL. */}
-//         <Switch>
-//           <Route path="/about">
-//             <About />
-//           </Route>
-//           <Route path="/users">
-//             <Users />
-//           </Route>
-//           <Route path="/">
-//             <Home />
-//           </Route>
-//         </Switch>
-//       </div>
-//     </Router>
-//   )
-// }
-
-// function Home() {
-//   return <h2>Home</h2>
-// }
-
-// function About() {
-//   return <h2>About</h2>
-// }
-
-// function Users() {
-//   return <h2>Users</h2>
-// }
