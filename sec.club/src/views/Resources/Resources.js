@@ -24,6 +24,18 @@ export default function ResourcesView() {
 				it’s pretty trivial to apply that knowledge to another language.
 			</p>
 
+			<h2>How do I start a project?</h2>
+			<p>
+				The best projects are the ones that solve a problem that you have
+				and another solution doesn't exist yet, but those are generally hard
+				to stumble upon.
+			</p>
+			<p>
+				If you are having trouble coming up with a project to work on, copy
+				something that already exists. You don't have to finish it, as long
+				as you learn something from trying to copy it.
+			</p>
+
 			<h1>Recommended Resources for Beginners</h1>
 			<p>
 				Usually, the best resources are the official documentation, but
@@ -67,24 +79,24 @@ export default function ResourcesView() {
 			</p>
 
 			<h1>Games</h1>
-			<a href="https://unixgame.io">https://unixgame.io</a>
-			<a href="https://screeps.com">https://screeps.com</a>
-			<a href="https://codingame.com">https://codingame.com</a>
+			<a href="https://unixgame.io">https://unixgame.io</a><br/>
+			<a href="https://screeps.com">https://screeps.com</a><br/>
+			<a href="https://codingame.com">https://codingame.com</a><br/>
 
 			<h1>SLP Resources</h1>
 
 			<h2>OpenTogetherTube</h2>
 
 			<h3>Vue</h3>
-			<a href="https://vuejs.org/v2/guide/">https://vuejs.org/v2/guide/</a>
-			<a href="https://vuejs.org/v2/examples/">https://vuejs.org/v2/examples/</a>
+			<a href="https://vuejs.org/v2/guide/">https://vuejs.org/v2/guide/</a><br/>
+			<a href="https://vuejs.org/v2/examples/">https://vuejs.org/v2/examples/</a><br/>
 			<h3>Express</h3>
-			<a href="https://expressjs.com/en/starter/hello-world.html">https://expressjs.com/en/starter/hello-world.html</a>
-			<a href="https://expressjs.com/en/4x/api.html">https://expressjs.com/en/4x/api.html</a>
+			<a href="https://expressjs.com/en/starter/hello-world.html">https://expressjs.com/en/starter/hello-world.html</a><br/>
+			<a href="https://expressjs.com/en/4x/api.html">https://expressjs.com/en/4x/api.html</a><br/>
 			<h3>Vuetify</h3>
-			<a href="https://vuetifyjs.com/en/getting-started/quick-start">https://vuetifyjs.com/en/getting-started/quick-start</a>
+			<a href="https://vuetifyjs.com/en/getting-started/quick-start">https://vuetifyjs.com/en/getting-started/quick-start</a><br/>
 			<h3>Project Architecture Slides</h3>
-			<a href="https://docs.google.com/presentation/d/1XFcEqnJUIQ6YoCvdR2O5dnVv0yPnzxx2xV0irek8xRs/edit?usp=sharing">9/12 Project Architecture Slides</a>
+			<a href="https://docs.google.com/presentation/d/1XFcEqnJUIQ6YoCvdR2O5dnVv0yPnzxx2xV0irek8xRs/edit?usp=sharing">9/12 Project Architecture Slides</a><br/>
 
 		</article>
 	);
