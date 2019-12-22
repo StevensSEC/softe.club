@@ -53,6 +53,10 @@ const Header = () => {
     {
       title: "Contact",
       route: "contact"
+    },
+    {
+      title: "Resources",
+      route: "resources"
     }
   ]
   const sideList = side => (

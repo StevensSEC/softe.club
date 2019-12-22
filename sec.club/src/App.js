@@ -3,6 +3,7 @@ import "./App.scss"
 import Header from "./components/Header/Header"
 import { createMuiTheme, ThemeProvider } from "@material-ui/core"
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
+import ResourcesView from "./views/Resources/Resources.js";
 
 function App() {
   const theme = createMuiTheme({
@@ -31,6 +32,9 @@ function App() {
             </Route>
             <Route path="/contact">
               <h1>Add contact page here</h1>
+            </Route>
+            <Route path="/resources">
+              <ResourcesView />
             </Route>
             <Route exact path="/">
               <h1>hi this is home :)</h1>
