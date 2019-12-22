@@ -1,8 +1,8 @@
 import React from "react"
-import logo from "./logo.svg"
 import "./App.scss"
 import Header from "./components/Header/Header"
 import { createMuiTheme, ThemeProvider } from "@material-ui/core"
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 
 function App() {
   const theme = createMuiTheme({
@@ -15,12 +15,30 @@ function App() {
     }
   })
   return (
-    <ThemeProvider theme={theme}>
-      <div className="App">
-        <Header></Header>
-      </div>
-    </ThemeProvider>
+    <Router>
+      <ThemeProvider theme={theme}>
+        <div className="App">
+          <Header></Header>
+          <Switch>
+            <Route path="/slp">
+              <h1>Add SLP info page here</h1>
+            </Route>
+            <Route path="/about">
+              <h1>Add What is SEC? page here</h1>
+            </Route>
+            <Route path="/team">
+              <h1>Add team information page here</h1>
+            </Route>
+            <Route path="/contact">
+              <h1>Add contact page here</h1>
+            </Route>
+            <Route exact path="/">
+              <h1>hi this is home :)</h1>
+            </Route>
+          </Switch>
+        </div>
+      </ThemeProvider>
+    </Router>
   )
 }
-
 export default App

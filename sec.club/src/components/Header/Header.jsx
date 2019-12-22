@@ -1,14 +1,8 @@
 import React from "react"
 import { makeStyles } from "@material-ui/core/styles"
-import {
-  Drawer,
-  Button,
-  List,
-  ListItem,
-  ListItemText,
-  Typography
-} from "@material-ui/core"
+import { Drawer, Button, List, Typography } from "@material-ui/core"
 import "./Header.scss"
+import { Link } from "react-router-dom"
 
 const useStyles = makeStyles({
   list: {
@@ -19,7 +13,7 @@ const useStyles = makeStyles({
   }
 })
 
-export default function TemporaryDrawer() {
+const Header = () => {
   const classes = useStyles()
   const [state, setState] = React.useState({
     top: false,
@@ -39,7 +33,28 @@ export default function TemporaryDrawer() {
 
     setState({ ...state, [side]: open })
   }
-
+  const buttonRoutes = [
+    {
+      title: "Home",
+      route: ""
+    },
+    {
+      title: "Semester Long Project",
+      route: "slp"
+    },
+    {
+      title: "What is SEC?",
+      route: "about"
+    },
+    {
+      title: "Meet the Team",
+      route: "team"
+    },
+    {
+      title: "Contact",
+      route: "contact"
+    }
+  ]
   const sideList = side => (
     <div
       className={classes.list}
@@ -48,13 +63,15 @@ export default function TemporaryDrawer() {
       onKeyDown={toggleDrawer(side, false)}
     >
       <List>
-        {["Semester Long Project", "What is SEC?", "The Team", "Contact"].map(
-          (text, index) => (
-            <ListItem button key={text}>
-              <ListItemText primary={text} />
-            </ListItem>
-          )
-        )}
+        {buttonRoutes.map((button, index) => (
+          <Button
+            component={Link}
+            to={`/${button.route}`}
+            key={`menuItem-${index}`}
+          >
+            {button.title}
+          </Button>
+        ))}
       </List>
     </div>
   )
@@ -75,3 +92,4 @@ export default function TemporaryDrawer() {
     </nav>
   )
 }
+export default Header
