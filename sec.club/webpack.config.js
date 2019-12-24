@@ -21,6 +21,17 @@ module.exports = {
       {
         test: /\.(woff(|2)|eot|ttf|otf)$/,
         use: ["file-loader"]
+      },
+      {
+        test: /\.(md)$/,
+        use: [
+          {
+            loader: "raw-loader",
+            options: {
+              esModule: false
+            }
+          }
+        ]
       }
     ]
   },

@@ -7,6 +7,7 @@
     "node-sass": "^4.13.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
+    "react-markdown": "^4.2.2",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.2.0"
   },
@@ -41,6 +42,7 @@
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^3.3.2",
     "file-loader": "^5.0.2",
+    "raw-loader": "^4.0.0",
     "react-hot-loader": "^4.12.18",
     "sass-loader": "^8.0.0",
     "style-loader": "^1.0.1",

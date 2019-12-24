@@ -4,6 +4,7 @@ import Header from "./components/Header/Header"
 import { createMuiTheme, ThemeProvider } from "@material-ui/core"
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 import ResourcesView from "./views/Resources/Resources.js";
+import ArticleView from "./views/Article/Article.js";
 
 function App() {
   const theme = createMuiTheme({
@@ -25,7 +26,7 @@ function App() {
               <h1>Add SLP info page here</h1>
             </Route>
             <Route path="/about">
-              <h1>Add What is SEC? page here</h1>
+              <ArticleView source="about.md" />
             </Route>
             <Route path="/team">
               <h1>Add team information page here</h1>
