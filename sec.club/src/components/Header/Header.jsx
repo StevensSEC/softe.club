@@ -1,6 +1,6 @@
 import React from "react"
 import { makeStyles } from "@material-ui/core/styles"
-import { Drawer, Button, List, Typography } from "@material-ui/core"
+import { Container, Drawer, Button, List, Typography } from "@material-ui/core"
 import "./Header.scss"
 import { Link } from "react-router-dom"
 
@@ -82,17 +82,19 @@ const Header = () => {
 
   return (
     <nav id="header">
-      <div id="header-brand">
-        <Typography variant="h4">Software Engineering Club</Typography>
-      </div>
-      <div id="header-items">
-        <Button onClick={toggleDrawer("left", true)} style={{ color: "white" }}>
-          Menu
-        </Button>
-      </div>
-      <Drawer open={state.left} onClose={toggleDrawer("left", false)}>
-        {sideList("left")}
-      </Drawer>
+      <Container>
+        <div id="header-brand">
+          <Typography variant="h4">Software Engineering Club</Typography>
+        </div>
+        <div id="header-items">
+          <Button onClick={toggleDrawer("left", true)} style={{ color: "white" }}>
+            Menu
+          </Button>
+        </div>
+        <Drawer open={state.left} onClose={toggleDrawer("left", false)}>
+          {sideList("left")}
+        </Drawer>
+      </Container>
     </nav>
   )
 }

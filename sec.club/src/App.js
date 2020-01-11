@@ -3,6 +3,7 @@ import "./App.scss"
 import Header from "./components/Header/Header"
 import { createMuiTheme, ThemeProvider } from "@material-ui/core"
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
+import HomeView from "./views/Home/Home.js";
 import ArticleView from "./views/Article/Article.js";
 
 function App() {
@@ -21,6 +22,9 @@ function App() {
         <div className="App">
           <Header></Header>
           <Switch>
+            <Route exact path="/">
+              <HomeView />
+            </Route>
             <Route path="/slp">
               <ArticleView source="slp.md" />
             </Route>
@@ -35,9 +39,6 @@ function App() {
             </Route>
             <Route path="/resources">
               <ArticleView source="resources.md" />
-            </Route>
-            <Route exact path="/">
-              <h1>hi this is home :)</h1>
             </Route>
           </Switch>
         </div>
