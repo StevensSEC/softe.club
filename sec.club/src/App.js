@@ -5,11 +5,14 @@ import { createMuiTheme, ThemeProvider } from "@material-ui/core"
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 import HomeView from "./views/Home/Home.js";
 import ArticleView from "./views/Article/Article.js";
+import { red, cyan } from "@material-ui/core/colors";
 
 function App() {
   const theme = createMuiTheme({
     palette: {
       type: 'dark',
+      primary: red,
+      secondary: cyan,
     },
     text: {
       //change these to values in variables.scss when webpack is set up
