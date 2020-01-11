@@ -8,6 +8,9 @@ import ArticleView from "./views/Article/Article.js";
 
 function App() {
   const theme = createMuiTheme({
+    palette: {
+      type: 'dark',
+    },
     text: {
       //change these to values in variables.scss when webpack is set up
       primary: "black",
