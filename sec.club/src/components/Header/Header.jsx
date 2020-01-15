@@ -1,6 +1,6 @@
 import React from "react"
 import { makeStyles } from "@material-ui/core/styles"
-import { Drawer, Button, List, Typography } from "@material-ui/core"
+import { Container, Drawer, Button, List, Typography, AppBar, Toolbar } from "@material-ui/core"
 import "./Header.scss"
 import { Link } from "react-router-dom"
 
@@ -81,19 +81,28 @@ const Header = () => {
   )
 
   return (
-    <nav id="header">
-      <div id="header-brand">
-        <Typography variant="h4">Software Engineering Club</Typography>
-      </div>
-      <div id="header-items">
-        <Button onClick={toggleDrawer("left", true)} style={{ color: "white" }}>
-          Menu
-        </Button>
-      </div>
-      <Drawer open={state.left} onClose={toggleDrawer("left", false)}>
-        {sideList("left")}
-      </Drawer>
-    </nav>
+    <AppBar position="relative" id="header">
+      <Toolbar>
+        <Typography variant="h6">Software Engineering Club</Typography>
+        <div id="header-items">
+          {buttonRoutes.map((button, index) => (
+            <Button
+              component={Link}
+              to={`/${button.route}`}
+              key={`menuItem-${index}`}
+            >
+              {button.title}
+            </Button>
+          ))}
+          <Button onClick={toggleDrawer("left", true)} style={{ color: "white" }}>
+            More
+          </Button>
+        </div>
+        <Drawer open={state.left} onClose={toggleDrawer("left", false)}>
+          {sideList("left")}
+        </Drawer>
+      </Toolbar>
+    </AppBar>
   )
 }
 export default Header

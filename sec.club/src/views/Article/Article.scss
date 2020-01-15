@@ -1,0 +1,14 @@
+@import "../../variables.scss";
+
+article {
+	padding-bottom: 8px;
+
+	a:any-link {
+		text-decoration: none;
+		color: $primary-color;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
