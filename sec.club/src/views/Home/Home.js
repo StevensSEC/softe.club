@@ -1,13 +1,14 @@
 import React from "react";
 import { Box, Container, Grid } from "@material-ui/core";
 import "./Home.scss";
+import logo from "../../assets/logo.svg";
 
 export default function HomeView() {
 	return (
 		<Box>
 			<Grid container direction="column" justify="center" alignItems="center" className="hero">
 				<Grid item>
-					<h1>SEC</h1>
+					<img src={logo} alt="SEC logo" width="400" />
 				</Grid>
 				<Grid item>
 					<span>Software Engineering Club</span>
