@@ -3,7 +3,6 @@ import { makeStyles } from "@material-ui/core/styles"
 import { Container, Drawer, Button, List, Typography, AppBar, Toolbar } from "@material-ui/core"
 import "./Header.scss"
 import { Link } from "react-router-dom"
-import logo from "../../logo.svg"
 
 const useStyles = makeStyles({
   list: {
@@ -84,7 +83,6 @@ const Header = () => {
   return (
     <AppBar position="relative" id="header">
       <Toolbar>
-        <img src={logo} width="100" alt="logo" />
         <Typography variant="h6">Software Engineering Club</Typography>
         <div id="header-items">
           {buttonRoutes.map((button, index) => (
