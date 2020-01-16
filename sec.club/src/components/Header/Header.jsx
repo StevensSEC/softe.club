@@ -39,24 +39,24 @@ const Header = () => {
       route: ""
     },
     {
-      title: "Semester Long Project",
-      route: "slp"
-    },
-    {
       title: "What is SEC?",
       route: "about"
+    },
+    {
+      title: "Semester Long Project",
+      route: "slp"
     },
     {
       title: "Meet the Team",
       route: "team"
     },
     {
-      title: "Contact",
-      route: "contact"
-    },
-    {
       title: "Resources",
       route: "resources"
+    },
+    {
+      title: "Contact",
+      route: "contact"
     }
   ]
   const sideList = side => (
