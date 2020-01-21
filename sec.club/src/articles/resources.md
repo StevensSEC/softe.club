@@ -73,6 +73,6 @@ Even if you don’t develop on Linux, you will encounter it eventually. It’s d
 
 - https://vuetifyjs.com/en/getting-started/quick-start
 
-### Projectt Architecture Slides
+### Project Architecture Slides
 
 [9/12 Project Architecture Slides](https://docs.google.com/presentation/d/1XFcEqnJUIQ6YoCvdR2O5dnVv0yPnzxx2xV0irek8xRs/edit?usp=sharing)
