@@ -2,6 +2,7 @@ import React from "react";
 import { Box, Container, Grid } from "@material-ui/core";
 import { ReactSVG } from 'react-svg';
 import "./Home.scss";
+import "../../assets/logo.scss";
 import logo from "../../assets/logo.svg";
 
 export default function HomeView() {
