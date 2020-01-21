@@ -1,0 +1,33 @@
+.circuit-end {
+	fill: rgb(108, 228, 244);
+	animation: circuit-ends 1s ease;
+}
+
+.circuit {
+	stroke: rgb(108, 228, 244);
+	stroke-width: 32px;
+	fill: none;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+
+	stroke-dasharray: 1500;
+	animation: circuit-lines 1s ease;
+}
+
+@keyframes circuit-lines {
+	from {
+		stroke-dashoffset: 1500;
+	}
+	to {
+		stroke-dashoffset: 0;
+	}
+}
+
+@keyframes circuit-ends {
+	0%, 15% {
+		r: 0;
+	}
+	50%, 100% {
+		r: 32px;
+	}
+}
