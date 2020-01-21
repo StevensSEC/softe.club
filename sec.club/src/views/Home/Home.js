@@ -1,5 +1,6 @@
 import React from "react";
 import { Box, Container, Grid } from "@material-ui/core";
+import { ReactSVG } from 'react-svg';
 import "./Home.scss";
 import logo from "../../assets/logo.svg";
 
@@ -8,7 +9,9 @@ export default function HomeView() {
 		<Box>
 			<Grid container direction="column" justify="center" alignItems="center" className="hero">
 				<Grid item>
-					<img src={logo} alt="SEC logo" width="400" />
+					<ReactSVG
+						className="logo"
+						src={logo} />
 				</Grid>
 				<Grid item>
 					<span>Software Engineering Club</span>
