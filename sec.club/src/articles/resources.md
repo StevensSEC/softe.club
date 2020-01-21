@@ -10,6 +10,8 @@ The best way to first learn how to code is with online tutorials or by taking E1
 
 It doesn’t matter. Once you’ve learned one programming language, it’s pretty trivial to apply that knowledge to another language.
 
+Programming languages are tools. Different languages and good at different things, so it's important to pick the right tool for the job. You don't want to use a hammer on screw.
+
 ## How do I start a project?
 
 The best projects are the ones that solve a problem that you have and another solution doesn't exist yet, but those are generally hard to stumble upon.
@@ -34,7 +36,7 @@ Usually, the best resources are the official documentation, but sometimes beginn
 
 ## Git
 
-Git is version control software. Knowing how to use git is required for participating in the semester long project.
+Git is version control software. Using git is required for participating in the semester long project. If you don't know how to use git, we'll teach you.
 
 - [git it](https://github.com/jlord/git-it-electron) - Interactive git tutorial
 
@@ -43,6 +45,10 @@ Git is version control software. Knowing how to use git is required for particip
 Even if you don’t develop on Linux, you will encounter it eventually. It’s definitely worth taking the time to learn how Linux works and how to navigate a Linux environment. We recommend installing a virtual machine or installing the Windows Subsystem for Linux, to play around with it.
 
 - [Linux Journey](https://linuxjourney.com)
+
+# Useful Tools
+
+- https://regexr.com - Make and test regular expressions, includes cheat sheet, real time updates as you type, and explainer.
 
 # Fun stuff to read about
 
@@ -76,3 +82,7 @@ Even if you don’t develop on Linux, you will encounter it eventually. It’s d
 ### Project Architecture Slides
 
 [9/12 Project Architecture Slides](https://docs.google.com/presentation/d/1XFcEqnJUIQ6YoCvdR2O5dnVv0yPnzxx2xV0irek8xRs/edit?usp=sharing)
+
+# Can't find what you want?
+
+Check out the [awesome](https://github.com/sindresorhus/awesome) lists.
