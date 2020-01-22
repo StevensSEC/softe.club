@@ -53,7 +53,13 @@ module.exports = {
   output: {
     path: __dirname + "/dist",
     publicPath: "/",
-    filename: "bundle.js"
+    filename: "[name].js",
+    chunkFilename: "[name].js"
+  },
+  optimization: {
+    splitChunks: {
+      chunks: "all"
+    }
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),

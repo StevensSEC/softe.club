@@ -22,7 +22,7 @@
     "build": "webpack --mode production",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "deploy": "npm run build && firebase deploy"
+    "deploy": "NODE_ENV=production npm run build && firebase deploy"
   },
   "eslintConfig": {
     "extends": "react-app"
