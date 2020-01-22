@@ -1,5 +1,6 @@
 const webpack = require("webpack")
 const { CleanWebpackPlugin } = require("clean-webpack-plugin")
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: "./src/index.js",
@@ -43,7 +44,22 @@ module.exports = {
     publicPath: "/",
     filename: "bundle.js"
   },
-  plugins: [new webpack.HotModuleReplacementPlugin(), new CleanWebpackPlugin()],
+  plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+    new CleanWebpackPlugin(),
+    new CopyWebpackPlugin(
+      [
+        {
+          from: 'public',
+          to: '',
+          toType: 'dir',
+          ignore: [
+            '.DS_Store'
+          ]
+        }
+      ]
+    ),
+  ],
   devServer: {
     contentBase: "./public",
     hot: true,
