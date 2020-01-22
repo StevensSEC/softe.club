@@ -22,6 +22,7 @@ export default function ArticleView({ source }) {
 					escapeHtml={false}
 					astPlugins={[parseHtml]}
 					renderers={{ code: CodeBlock }}
+					transformImageUri={uri => require(`../../assets/${uri}`).default}
 				/>
 			</article>
 		</Container>
