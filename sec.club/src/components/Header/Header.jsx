@@ -1,8 +1,9 @@
 import React from "react"
 import { makeStyles } from "@material-ui/core/styles"
-import { Container, Drawer, Button, List, Typography, AppBar, Toolbar } from "@material-ui/core"
+import { Container, Drawer, Button, List, Typography, AppBar, Toolbar, SvgIcon } from "@material-ui/core"
 import "./Header.scss"
 import { Link } from "react-router-dom"
+import HomeIcon from "./HomeIcon.jsx"
 
 const useStyles = makeStyles({
   list: {
@@ -34,10 +35,6 @@ const Header = () => {
     setState({ ...state, [side]: open })
   }
   const buttonRoutes = [
-    {
-      title: "Home",
-      route: ""
-    },
     {
       title: "What is SEC?",
       route: "about"
@@ -83,7 +80,7 @@ const Header = () => {
   return (
     <AppBar position="relative" id="header">
       <Toolbar>
-        <Typography variant="h6">Software Engineering Club</Typography>
+        <HomeIcon></HomeIcon>
         <div id="header-items">
           {buttonRoutes.map((button, index) => (
             <Button
