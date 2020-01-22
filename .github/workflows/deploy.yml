@@ -8,6 +8,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      CI: true
+      working-directory: ./sec.club
     strategy:
       matrix:
         node-version: [12.x]
@@ -17,15 +20,29 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - run: cd sec.club
-    - name: npm install, test, build
-      run: |
-        npm ci
-        npm test
-        npm run build
-      env:
-        CI: true
+    - name: npm install
+      working-directory: ${{ env.working-directory }}
+      run: npm ci
+    - name: Build
+      working-directory: ${{ env.working-directory }}
+      run: npm run build
+    - name: Archive Production Artifact
+      uses: actions/upload-artifact@master
+      with:
+        name: dist
+        path: ${{ env.working-directory }}/dist
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Repo
+      uses: actions/checkout@master
+    - name: Download Artifact
+      uses: actions/download-artifact@master
+      with:
+        name: dist
     - name: GitHub Action for Firebase
       uses: w9jds/firebase-action@v1.1.0
       env:
+        PROJECT_PATH: ${{ env.working-directory }}
         FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
