@@ -1,6 +1,7 @@
 import React from "react"
 import { makeStyles } from "@material-ui/core/styles"
-import { Container, Drawer, Button, List, Typography, AppBar, Toolbar, SvgIcon } from "@material-ui/core"
+import { Container, Drawer, Button, IconButton, List, Typography, AppBar, Toolbar, SvgIcon, Hidden } from "@material-ui/core"
+import MenuIcon from '@material-ui/icons/Menu';
 import "./Header.scss"
 import { Link } from "react-router-dom"
 
@@ -78,23 +79,30 @@ const Header = () => {
   )
 
   return (
-    <AppBar position="relative" id="header">
+    <AppBar position="relative" className="header">
       <Toolbar>
-      <a href="/" className="barLogo">SEC</a>
-        <div id="header-items">
-          {buttonRoutes.map((button, index) => (
-            <Button
-              component={Link}
-              to={`/${button.route}`}
-              key={`menuItem-${index}`}
-            >
-              {button.title}
+        <Hidden mdUp>
+          <IconButton className="mobile" onClick={toggleDrawer("left", true)} style={{ color: "white" }}>
+            <MenuIcon />
+          </IconButton>
+        </Hidden>
+        <a href="/" className="barLogo">SEC</a>
+        <Hidden smDown>
+          <div className="header-items">
+            {buttonRoutes.map((button, index) => (
+              <Button
+                component={Link}
+                to={`/${button.route}`}
+                key={`menuItem-${index}`}
+              >
+                {button.title}
+              </Button>
+            ))}
+            <Button onClick={toggleDrawer("left", true)} style={{ color: "white" }}>
+              More
             </Button>
-          ))}
-          <Button onClick={toggleDrawer("left", true)} style={{ color: "white" }}>
-            More
-          </Button>
-        </div>
+          </div>
+        </Hidden>
         <Drawer open={state.left} onClose={toggleDrawer("left", false)}>
           {sideList("left")}
         </Drawer>

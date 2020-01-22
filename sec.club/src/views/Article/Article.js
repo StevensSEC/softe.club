@@ -20,6 +20,7 @@ export default function ArticleView({ source }) {
 					source={markdown}
 					escapeHtml={false}
 					astPlugins={[parseHtml]}
+					transformImageUri={uri => require(`../../assets/${uri}`).default}
 				/>
 			</article>
 		</Container>
