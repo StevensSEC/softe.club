@@ -1,15 +1,8 @@
 .circuit-end {
-	fill: rgb(108, 228, 244);
 	animation: circuit-ends 1s ease;
 }
 
 .circuit {
-	stroke: rgb(108, 228, 244);
-	stroke-width: 32px;
-	fill: none;
-	stroke-linecap: round;
-	stroke-linejoin: round;
-
 	stroke-dasharray: 1500;
 	animation: circuit-lines 1s ease;
 }
