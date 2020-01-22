@@ -3,7 +3,7 @@ import { makeStyles } from "@material-ui/core/styles"
 import { Container, Drawer, Button, List, Typography, AppBar, Toolbar, SvgIcon } from "@material-ui/core"
 import "./Header.scss"
 import { Link } from "react-router-dom"
-import HomeIcon from "./HomeIcon.jsx"
+
 
 const useStyles = makeStyles({
   list: {
@@ -80,7 +80,7 @@ const Header = () => {
   return (
     <AppBar position="relative" id="header">
       <Toolbar>
-        <HomeIcon></HomeIcon>
+      <a href="/" className="barLogo">SEC</a>
         <div id="header-items">
           {buttonRoutes.map((button, index) => (
             <Button
