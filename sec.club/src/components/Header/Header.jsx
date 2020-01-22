@@ -1,9 +1,10 @@
 import React from "react"
 import { makeStyles } from "@material-ui/core/styles"
-import { Container, Drawer, Button, IconButton, List, Typography, AppBar, Toolbar, Hidden } from "@material-ui/core"
+import { Container, Drawer, Button, IconButton, List, Typography, AppBar, Toolbar, SvgIcon, Hidden } from "@material-ui/core"
 import MenuIcon from '@material-ui/icons/Menu';
 import "./Header.scss"
 import { Link } from "react-router-dom"
+
 
 const useStyles = makeStyles({
   list: {
@@ -35,10 +36,6 @@ const Header = () => {
     setState({ ...state, [side]: open })
   }
   const buttonRoutes = [
-    {
-      title: "Home",
-      route: ""
-    },
     {
       title: "What is SEC?",
       route: "about"
@@ -89,7 +86,7 @@ const Header = () => {
             <MenuIcon />
           </IconButton>
         </Hidden>
-        <Typography variant="h6">Software Engineering Club</Typography>
+        <a href="/" className="barLogo">SEC</a>
         <Hidden smDown>
           <div className="header-items">
             {buttonRoutes.map((button, index) => (
