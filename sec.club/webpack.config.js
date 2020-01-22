@@ -1,5 +1,7 @@
 const webpack = require("webpack")
 const { CleanWebpackPlugin } = require("clean-webpack-plugin")
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: "./src/index.js",
@@ -16,11 +18,21 @@ module.exports = {
       },
       {
         test: /\.(png|svg|jp(|e)g|gif)$/,
-        use: ["file-loader"]
+        use: [{
+          loader: "file-loader",
+          options: {
+            name: "img/[name].[hash:6].[ext]"
+          }
+        }]
       },
       {
         test: /\.(woff(|2)|eot|ttf|otf)$/,
-        use: ["file-loader"]
+        use: [{
+          loader: "file-loader",
+          options: {
+            name: "fonts/[name].[hash:6].[ext]"
+          }
+        }]
       },
       {
         test: /\.(md)$/,
@@ -41,9 +53,37 @@ module.exports = {
   output: {
     path: __dirname + "/dist",
     publicPath: "/",
-    filename: "bundle.js"
+    filename: "[name].js",
+    chunkFilename: "[name].js"
   },
-  plugins: [new webpack.HotModuleReplacementPlugin(), new CleanWebpackPlugin()],
+  optimization: {
+    splitChunks: {
+      chunks: "all"
+    }
+  },
+  plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+    new CleanWebpackPlugin(),
+    new CopyWebpackPlugin(
+      [
+        {
+          from: 'public',
+          to: '',
+          toType: 'dir',
+          ignore: [
+            '.DS_Store'
+          ]
+        }
+      ]
+    ),
+    new webpack.DefinePlugin({
+      "process.env.NODE_ENV": JSON.stringify(process.env.NODE_ENV),
+    }),
+    new webpack.ProgressPlugin(),
+    new HtmlWebpackPlugin({
+      template: "public/index.html",
+    })
+  ],
   devServer: {
     contentBase: "./public",
     hot: true,
