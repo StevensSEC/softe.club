@@ -18,11 +18,21 @@ module.exports = {
       },
       {
         test: /\.(png|svg|jp(|e)g|gif)$/,
-        use: ["file-loader"]
+        use: [{
+          loader: "file-loader",
+          options: {
+            name: "img/[name].[hash:6].[ext]"
+          }
+        }]
       },
       {
         test: /\.(woff(|2)|eot|ttf|otf)$/,
-        use: ["file-loader"]
+        use: [{
+          loader: "file-loader",
+          options: {
+            name: "fonts/[name].[hash:6].[ext]"
+          }
+        }]
       },
       {
         test: /\.(md)$/,
