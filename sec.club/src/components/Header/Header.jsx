@@ -1,7 +1,8 @@
 import React from "react"
 import { makeStyles } from "@material-ui/core/styles"
 import { Container, Drawer, Button, IconButton, List, Typography, AppBar, Toolbar, SvgIcon, Hidden } from "@material-ui/core"
-import MenuIcon from '@material-ui/icons/Menu';
+import {Link as MaterialLink} from "@material-ui/core"
+import MenuIcon from '@material-ui/icons/Menu'
 import "./Header.scss"
 import { Link } from "react-router-dom"
 
@@ -86,7 +87,15 @@ const Header = () => {
             <MenuIcon />
           </IconButton>
         </Hidden>
-        <a href="/" className="barLogo">SEC</a>
+        <MaterialLink
+          className="barLogo"
+          component={Link}
+          to={'/'}
+          key={'menuItem-home'}
+          underline="none"
+        >
+          SEC
+        </MaterialLink>
         <Hidden smDown>
           <div className="header-items">
             {buttonRoutes.map((button, index) => (
