@@ -1,9 +1,9 @@
 import React from "react";
-import Markdown from "react-markdown";
-import HtmlParser from "react-markdown/plugins/html-parser";
 import { Container } from "@material-ui/core";
 import "./Article.scss";
-import CodeBlock from "../../components/CodeBlock/CodeBlock.js";
+import Markdown from "react-markdown";
+import HtmlParser from "react-markdown/plugins/html-parser";
+const CodeBlock = import(/* webpackChunkName: "article" */"../../components/CodeBlock/CodeBlock.js");
 
 // See https://github.com/aknuds1/html-to-react#with-custom-processing-instructions
 // for more info on the processing instructions
