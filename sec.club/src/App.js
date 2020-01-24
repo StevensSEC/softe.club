@@ -4,6 +4,7 @@ import Header from "./components/Header/Header"
 import { createMuiTheme, ThemeProvider } from "@material-ui/core"
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 import { red, cyan } from "@material-ui/core/colors";
+import Loader from "./components/Loader/Loader.js";
 
 const HomeView = lazy(() => import("./views/Home/Home.js"));
 const ArticleView = lazy(() => import("./views/Article/Article.js"));
@@ -28,7 +29,7 @@ function App() {
       <ThemeProvider theme={theme}>
         <div className="App">
           <Header></Header>
-          <Suspense fallback={<div>Loading...</div>}>
+          <Suspense fallback={<Loader/>}>
             <Switch>
               <Route exact path="/">
                 <HomeView />
