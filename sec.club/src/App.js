@@ -1,13 +1,13 @@
 import React, { Suspense, lazy } from "react"
 import "./App.scss"
-import Header from "./components/Header/Header"
 import { createMuiTheme, ThemeProvider } from "@material-ui/core"
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 import { red, cyan } from "@material-ui/core/colors";
 import Loader from "./components/Loader/Loader.js";
 
-const HomeView = lazy(() => import("./views/Home/Home.js"));
-const ArticleView = lazy(() => import("./views/Article/Article.js"));
+const Header = lazy(() => import(/* webpackChunkName: "components" */"./components/Header/Header"));
+const HomeView = lazy(() => import(/* webpackChunkName: "home" */"./views/Home/Home.js"));
+const ArticleView = lazy(() => import(/* webpackChunkName: "article" */"./views/Article/Article.js"));
 
 function App() {
   const theme = createMuiTheme({
@@ -28,6 +28,7 @@ function App() {
     <Router>
       <ThemeProvider theme={theme}>
         <div className="App">
+        <Suspense fallback={<div>Loading...</div>}>
           <Header></Header>
           <Suspense fallback={<Loader/>}>
             <Switch>
@@ -51,6 +52,7 @@ function App() {
               </Route>
             </Switch>
           </Suspense>
+        </Suspense>
         </div>
       </ThemeProvider>
     </Router>
