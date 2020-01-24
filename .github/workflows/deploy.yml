@@ -34,6 +34,12 @@ jobs:
   deploy:
     needs: build
     runs-on: ubuntu-latest
+    env:
+      CI: true
+      working-directory: ./sec.club
+    strategy:
+      matrix:
+        node-version: [12.x]
     steps:
     - name: Checkout Repo
       uses: actions/checkout@master
@@ -41,8 +47,13 @@ jobs:
       uses: actions/download-artifact@master
       with:
         name: dist
-    - name: GitHub Action for Firebase
-      uses: w9jds/firebase-action@v1.1.0
-      env:
-        PROJECT_PATH: ${{ env.working-directory }}
-        FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+        path: ${{ env.working-directory }}/dist
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - name: Deploy
+      run: |
+        npm install -g firebase-tools
+        cd ${{ env.working-directory }}
+        firebase deploy --token ${{ secrets.FIREBASE_TOKEN }} --non-interactive
