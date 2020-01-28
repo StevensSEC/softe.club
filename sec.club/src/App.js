@@ -50,6 +50,9 @@ function App() {
               <Route path="/resources">
                 <ArticleView source="resources.md" />
               </Route>
+              <Route path="/git-cheatsheet">
+                <ArticleView source="git-cheatsheet.md" />
+              </Route>
             </Switch>
           </Suspense>
         </Suspense>
