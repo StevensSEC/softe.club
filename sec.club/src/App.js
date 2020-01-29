@@ -5,6 +5,8 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 import { red, cyan } from "@material-ui/core/colors";
 import Loader from "./components/Loader/Loader.js";
 
+import SecStyle from "./variables.scss";
+
 const Header = lazy(() => import(/* webpackChunkName: "components" */"./components/Header/Header"));
 const HomeView = lazy(() => import(/* webpackChunkName: "home" */"./views/Home/Home.js"));
 // This snippet makes the home view take longer to load intentionally. Increase the timeout to increase the load time.
@@ -24,6 +26,10 @@ function App() {
       type: 'dark',
       primary: red,
       secondary: cyan,
+      background: {
+        default: SecStyle.backgroundColor,
+        paper: SecStyle.backgroundColor,
+      },
     },
     text: {
       //change these to values in variables.scss when webpack is set up
@@ -31,7 +37,7 @@ function App() {
       secondary: "red",
       tertiary: "cyan",
       quaternary: "white"
-    }
+    },
   })
   return (
     <Router>
