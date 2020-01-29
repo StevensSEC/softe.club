@@ -1,4 +1,5 @@
 $background-color: #2b2121;
+$code-background-color: darken($background-color, 5%);
 $primary-color: #f22a2f;
 $secondary-color: #6ce4f4;
 $tertiary-color: #000;
@@ -7,7 +8,7 @@ $text-color: #fff;
 
 :export {
 	backgroundColor: $background-color;
-	codeBackgroundColor: darken($background-color, 5%);
+	codeBackgroundColor: $code-background-color;
 	primaryColor: $primary-color;
 	secondaryColor: $secondary-color;
 	textColor: $text-color;
