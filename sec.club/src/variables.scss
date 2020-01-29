@@ -4,3 +4,11 @@ $secondary-color: #6ce4f4;
 $tertiary-color: #000;
 $quaternary-color: #fff;
 $text-color: #fff;
+
+:export {
+	backgroundColor: $background-color;
+	codeBackgroundColor: darken($background-color, 5%);
+	primaryColor: $primary-color;
+	secondaryColor: $secondary-color;
+	textColor: $text-color;
+}
