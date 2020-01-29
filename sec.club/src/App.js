@@ -50,6 +50,9 @@ function App() {
               <Route path="/resources">
                 <ArticleView source="resources.md" />
               </Route>
+              <Route path="/dev-readme">
+                <ArticleView source="README.md" />
+              </Route>
             </Switch>
           </Suspense>
         </Suspense>

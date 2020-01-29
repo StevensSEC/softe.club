@@ -6,7 +6,7 @@
 ## Images
 
 Embed images with this syntax
-```
+```markdown
 ![image text](PATH TO IMAGE)
 ```
 
@@ -15,3 +15,26 @@ Note that the path to the image is relative to the `assets` directory.
 ### Example
 
 ![image text](sec-logo.png)
+
+## Code
+
+Blocks of code must specify the programming language in order to be highlighted correctly.
+
+### Examples
+
+```
+No language is specified on this block.
+```
+
+```javascript
+// This is some javascript code
+function example(arg) {
+	return "I am a javascript function" + 2;
+}
+```
+
+```python
+# This some python code
+def example(arg):
+	return "I am a python function", 2
+```
