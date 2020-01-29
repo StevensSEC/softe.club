@@ -3,29 +3,32 @@
 .le {
 	fill: $background-color !important;
 	stroke: $secondary-color;
-	stroke-width: 10px !important;
+	stroke-width: 12px !important;
 
-	animation: circuit-ends 1s ease;
+	animation: circuit-ends 1.25s ease;
 }
 
 .lc {
-	stroke-width: 10px !important;
+	stroke-width: 12px !important;
 
 	stroke-dasharray: 1500;
-	animation: circuit-lines 1s ease;
+	animation: circuit-lines 1.25s ease;
 }
 
 .lt {
 	fill: $background-color !important;
 	stroke: $primary-color !important;
-	stroke-width: 10px !important;
+	stroke-width: 12px !important;
+
+	stroke-dasharray: 3600;
+	animation: text-draw 1.25s ease;
 }
 
 @keyframes circuit-lines {
-	from {
+	0% {
 		stroke-dashoffset: 1500;
 	}
-	to {
+	100% {
 		stroke-dashoffset: 0;
 	}
 }
@@ -36,5 +39,14 @@
 	}
 	50%, 100% {
 		r: 32px;
+	}
+}
+
+@keyframes text-draw {
+	0% {
+		stroke-dashoffset: 3600;
+	}
+	100% {
+		stroke-dashoffset: 0;
 	}
 }
