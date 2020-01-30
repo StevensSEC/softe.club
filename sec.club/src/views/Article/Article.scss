@@ -41,4 +41,16 @@ article {
 	h5 {
 		font-size: 1.1em;
 	}
+
+	code {
+		background: $code-background-color;
+		padding: 0.1em 0.3em;
+		border-radius: 0.3em;
+	}
+
+	pre > code {
+		background: inherit;
+		padding: none;
+		border-radius: none;
+	}
 }
