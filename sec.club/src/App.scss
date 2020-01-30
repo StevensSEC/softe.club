@@ -1,5 +1,5 @@
 @import "./variables.scss";
-@import url('https://fonts.googleapis.com/css?family=Anonymous+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap');
 
 .App {
   background-color: $background-color;
@@ -8,5 +8,5 @@
   width: 100%;
   color: $text-color;
 
-  font-family: "Anonymous Pro", monospace;
+  font-family: 'Source Code Pro', monospace;
 }

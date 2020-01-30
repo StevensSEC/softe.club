@@ -1,12 +1,13 @@
 @import "../../variables.scss";
 
 article {
+	font-size: 1.15em;
 	line-height: 1.8;
 	padding-bottom: 8px;
 
 	a:any-link {
 		text-decoration: none;
-		color: $primary-color;
+		color: lighten($primary-color, 5%);
 
 		&:hover {
 			text-decoration: underline;
