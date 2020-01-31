@@ -55,6 +55,7 @@ Even if you don’t develop on Linux, you will encounter it eventually. It’s d
 
 - [/r/programming](https://www.reddit.com/r/programming/top/?t=month) (stay away from anything that’s under 100 points, there is a lot of blog garbage and bad advice)
 - https://dev.to or their twitter: [@ThePracticalDev](https://twitter.com/ThePracticalDev)
+- [Debugging Stories](https://github.com/danluu/debugging-stories) about weird bugs and weird solutions.
 
 # Games
 
