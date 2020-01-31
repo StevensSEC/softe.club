@@ -38,6 +38,7 @@ Usually, the best resources are the official documentation, but sometimes beginn
 
 Git is version control software. Using git is required for participating in the semester long project. If you don't know how to use git, we'll teach you.
 
+- [Official SEC Cheatsheet](/git-cheatsheet)
 - [git it](https://github.com/jlord/git-it-electron) - Interactive git tutorial
 
 ## Linux

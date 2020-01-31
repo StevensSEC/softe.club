@@ -65,8 +65,8 @@ function App() {
               <Route path="/resources">
                 <ArticleView source="resources.md" />
               </Route>
-              <Route path="/dev-readme">
-                <ArticleView source="README.md" />
+              <Route path="/git-cheatsheet">
+                <ArticleView source="git-cheatsheet.md" />
               </Route>
             </Switch>
           </Suspense>
