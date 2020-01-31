@@ -21,6 +21,7 @@ export default class CodeBlock extends PureComponent {
       background: SecStyle.codeBackgroundColor,
       padding: 1 + "em",
       borderRadius: 0.3 + "em",
+      overflowX: "auto",
     };
 
     if (language !== null) {
