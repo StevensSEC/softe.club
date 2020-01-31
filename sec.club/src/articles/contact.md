@@ -1,5 +1,5 @@
 # Questions, Comments, Concerns about SEC? 
-### Any Ideas you want to share? Are you representing a company that would like to collaborate?
+### Any ideas you want to share? Are you representing a company that would like to collaborate?
 
 Please email <sec@stevens.edu>
 

@@ -19,8 +19,6 @@ export default function HomeView() {
 				</Grid>
 			</Grid>
 			<Container>
-				<h1>hi this is home :)</h1>
-				<p>this is a paragraph</p>
 			</Container>
 		</Box>
 	)

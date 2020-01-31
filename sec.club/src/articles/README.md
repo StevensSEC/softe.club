@@ -34,7 +34,7 @@ function example(arg) {
 ```
 
 ```python
-# This some python code
+# This is some python code
 def example(arg):
 	return "I am a python function", 2
 ```
