@@ -10,7 +10,7 @@ The best way to first learn how to code is with online tutorials or by taking E1
 
 It doesn’t matter. Once you’ve learned one programming language, it’s pretty trivial to apply that knowledge to another language.
 
-Programming languages are tools. Different languages and good at different things, so it's important to pick the right tool for the job. You don't want to use a hammer on screw.
+Programming languages are tools. Different languages are good at different things, so it's important to pick the right tool for the job. You don't want to use a hammer on a screw.
 
 ## How do I start a project?
 

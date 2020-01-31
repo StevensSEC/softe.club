@@ -13,7 +13,7 @@ SEC meets every Thursday at 9pm in the Altorfer Software Engineering Lab. If the
 
 # Where is the Altorfer Software Engineering Lab?
 
-Altorfer is a building located next to the River Apartments and is across from the MPK Complex (Morton, Peirce, Kiddie buildings).
+Altorfer is a building located next to the River Apartments and is across from the MPK Complex (Morton, Peirce, Kidde buildings).
 
 See the video below!
 <iframe width="560" height="315" src="https://www.youtube.com/embed/fBw7a0jRWOE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
