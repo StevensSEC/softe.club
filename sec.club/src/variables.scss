@@ -6,6 +6,17 @@ $tertiary-color: #000;
 $quaternary-color: #fff;
 $text-color: #fff;
 
+// ONLY for use in scss styles
+// Use material ui useMediaQuery() when in javascript
+$xs-max: 600px;
+$sm-min: $xs-max;
+$sm-max: 960px;
+$md-min: $sm-max;
+$md-max: 1280px;
+$lg-min: $md-max;
+$lg-max: 1920px;
+$xl-min: $lg-max;
+
 :export {
 	backgroundColor: $background-color;
 	codeBackgroundColor: $code-background-color;
