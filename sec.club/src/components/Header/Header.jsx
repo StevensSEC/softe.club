@@ -1,6 +1,6 @@
 import React from "react"
 import { makeStyles } from "@material-ui/core/styles"
-import { Container, Drawer, Button, IconButton, List, Typography, AppBar, Toolbar, SvgIcon, Hidden } from "@material-ui/core"
+import { Drawer, Button, IconButton, List, AppBar, Toolbar, Hidden } from "@material-ui/core"
 import {Link as MaterialLink} from "@material-ui/core"
 import MenuIcon from '@material-ui/icons/Menu'
 import "./Header.scss"
@@ -68,6 +68,7 @@ const Header = () => {
       <List>
         {buttonRoutes.map((button, index) => (
           <Button
+            className="drawer-item"
             component={Link}
             to={`/${button.route}`}
             key={`menuItem-${index}`}
