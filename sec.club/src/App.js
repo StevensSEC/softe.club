@@ -51,22 +51,22 @@ function App() {
                 <HomeView />
               </Route>
               <Route path="/slp">
-                <ArticleView source="slp.md" />
+                <ArticleView source="slp.md" title="Semester Long Project" />
               </Route>
               <Route path="/about">
-                <ArticleView source="about.md" />
+                <ArticleView source="about.md" title="About" />
               </Route>
               <Route path="/team">
-                <ArticleView source="team.md" />
+                <ArticleView source="team.md" title="Team" />
               </Route>
               <Route path="/contact">
-                <ArticleView source="contact.md" />
+                <ArticleView source="contact.md" title="Contact" />
               </Route>
               <Route path="/resources">
-                <ArticleView source="resources.md" />
+                <ArticleView source="resources.md" title="Resources" />
               </Route>
               <Route path="/git-cheatsheet">
-                <ArticleView source="git-cheatsheet.md" />
+                <ArticleView source="git-cheatsheet.md" title="Git Cheatsheet"/>
               </Route>
             </Switch>
           </Suspense>

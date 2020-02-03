@@ -4,6 +4,7 @@ import "./Article.scss";
 import Markdown from "react-markdown";
 import HtmlParser from "react-markdown/plugins/html-parser";
 import CodeBlock from "../../components/CodeBlock/CodeBlock.js";
+import DocumentTitle from "../../components/DocumentTitle/DocumentTitle.js";
 
 // See https://github.com/aknuds1/html-to-react#with-custom-processing-instructions
 // for more info on the processing instructions
@@ -11,11 +12,12 @@ const parseHtml = HtmlParser({
 	isValidNode: node => node.type !== 'script',
 });
 
-export default function ArticleView({ source }) {
+export default function ArticleView({ source, title }) {
 	let markdown = require(`../../articles/${source}`);
 
 	return (
 		<Container>
+			<DocumentTitle title={title} />
 			<article>
 				<Markdown
 					source={markdown}
