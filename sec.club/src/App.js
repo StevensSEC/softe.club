@@ -9,6 +9,7 @@ import SecStyle from "./variables.scss";
 
 const Header = lazy(() => import(/* webpackChunkName: "components" */"./components/Header/Header"));
 const HomeView = lazy(() => import(/* webpackChunkName: "home" */"./views/Home/Home.js"));
+const NotFoundView = lazy(() => import(/* webpackChunkName: "not-found" */"./views/NotFound/NotFound.jsx"));
 // This snippet makes the home view take longer to load intentionally. Increase the timeout to increase the load time.
 // Useful for testing the loader.
 // const HomeView = lazy(() => {
@@ -67,6 +68,9 @@ function App() {
               </Route>
               <Route path="/git-cheatsheet">
                 <ArticleView source="git-cheatsheet.md" title="Git Cheatsheet"/>
+              </Route>
+              <Route>
+                <NotFoundView/>
               </Route>
             </Switch>
           </Suspense>

@@ -1,0 +1,25 @@
+@import "../../variables.scss";
+
+.le {
+	fill: $background-color !important;
+	stroke: $secondary-color;
+	stroke-width: 12px !important;
+
+	animation: circuit-ends 1.25s ease;
+}
+
+.lc {
+	stroke-width: 12px !important;
+
+	stroke-dasharray: 1500;
+	animation: circuit-lines 1.25s ease;
+}
+
+.lt {
+	fill: $background-color !important;
+	stroke: $primary-color !important;
+	stroke-width: 12px !important;
+
+	stroke-dasharray: 3600;
+	animation: text-draw 1.25s ease;
+}
