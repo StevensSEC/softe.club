@@ -5,7 +5,7 @@ import "./Home.scss";
 import "../../assets/logo-hero.scss";
 import logo from "../../assets/logo.svg";
 import DocumentTitle from "../../components/DocumentTitle/DocumentTitle.js";
-import Flyer from "../../components/Flyer/Flyer.jsx"
+import EventBanner from "../../components/EventBanner/EventBanner.jsx"
 
 export default function HomeView() {
 	return (
@@ -21,8 +21,15 @@ export default function HomeView() {
 					<span>Software Engineering Club</span>
 				</Grid>
 			</Grid>
-			<Container>
-				<Flyer source="GBM_12.3.19.png"></Flyer>
+			<Container className="banners">
+				<EventBanner 
+					source="LearnHack.png" 
+					title="learnHack"
+					desc="Equip yourself with the tools and knowledge to contribute this semester's Semester Long Project. Location: BC 122"/>
+				<EventBanner
+					source="Pair Programming.png"
+					title="Pair Programming"
+					desc="Come out and learn about the Pair Programming paradigm just in time for Valentine's Day! Pizza will be served. Location: P 120"/>
 			</Container>
 		</Box>
 	)

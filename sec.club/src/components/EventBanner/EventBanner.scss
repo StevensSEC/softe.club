@@ -1,0 +1,45 @@
+@import "../../variables.scss";
+
+
+
+.flyer{
+    padding-bottom: 3vh;
+
+    .container {
+        display: flex;
+        border: $primary-color 1px solid;
+
+        img {
+            max-width: 50%;
+            margin-left: 1em;
+            margin-right: auto;
+            margin-top: 1em;
+            margin-bottom: 1em;   
+            padding: 0;
+            display: block;
+        }
+
+        .text-container {   
+            display: flex;
+            flex-direction: column; 
+            text-align: center;
+            align-content: center;
+            justify-content: center;
+        
+            .title {
+                font-size: 3em;
+                height: fit-content;
+                margin: 0.5em 1.2em;
+                border-bottom: $secondary-color 1px solid;
+            }
+    
+            .description {
+                font-size: 1.5em;
+                height: fit-content;
+                margin: 0 1.2em;
+            }
+        }
+
+        
+    }
+}
