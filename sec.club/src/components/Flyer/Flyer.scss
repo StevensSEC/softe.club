@@ -1,0 +1,14 @@
+@import "../../variables.scss";
+
+
+
+.flyer{
+    div {
+        text-align: center;
+        margin-bottom: 30px;
+        img {
+            max-width: 50%;
+            height: auto;
+        }
+    }
+}

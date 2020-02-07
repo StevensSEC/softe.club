@@ -5,6 +5,7 @@ import "./Home.scss";
 import "../../assets/logo-hero.scss";
 import logo from "../../assets/logo.svg";
 import DocumentTitle from "../../components/DocumentTitle/DocumentTitle.js";
+import Flyer from "../../components/Flyer/Flyer.jsx"
 
 export default function HomeView() {
 	return (
@@ -21,6 +22,7 @@ export default function HomeView() {
 				</Grid>
 			</Grid>
 			<Container>
+				<Flyer source="GBM_12.3.19.png"></Flyer>
 			</Container>
 		</Box>
 	)
