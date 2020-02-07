@@ -51,6 +51,10 @@ Even if you don’t develop on Linux, you will encounter it eventually. It’s d
 
 - https://regexr.com - Make and test regular expressions, includes cheat sheet, real time updates as you type, and explainer.
 
+# Free Courses
+
+- [The Missing Semester of Your CS Education](https://missing.csail.mit.edu/) - Learn all about tools to make you code faster and better.
+
 # Fun stuff to read about
 
 - [/r/programming](https://www.reddit.com/r/programming/top/?t=month) (stay away from anything that’s under 100 points, there is a lot of blog garbage and bad advice)
