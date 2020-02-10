@@ -21,10 +21,15 @@ export default class ArticleView extends PureComponent {
 
 	constructor(props) {
 		super();
-		this.state = { markdown: "" };
+		this.state = { markdown: "", __previousSource: null };
 	}
 
 	fetchArticle() {
+		if (this.props.source === this.state.__previousSource) {
+			// don't fetch again if the source hasn't changed
+			return;
+		}
+
 		let url = require(`../../articles/${this.props.source}`);
 
 		fetch(url).then(resp => {
@@ -32,6 +37,7 @@ export default class ArticleView extends PureComponent {
 		}).then(text => {
 			this.setState({
 				markdown: text,
+				__previousSource: this.props.source,
 			});
 		});
 	}

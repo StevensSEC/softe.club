@@ -36,6 +36,22 @@ This is a test markdown file used in unit tests.
 		expect(container).toContainHTML('<h1>Basic</h1>');
 	});
 
+	it('should fetch only once', async () => {
+		const markdown = `
+# Basic
+
+This is a test markdown file used in unit tests.
+		`;
+
+		fetch.mockResponse(() => Promise.resolve(markdown));
+
+		await act(async () => {
+			render(<ArticleView source="test/placeholder.md" title="Basic" />, container);
+		});
+		expect(container).toContainHTML('<h1>Basic</h1>');
+		expect(fetch.mock.calls.length).toEqual(1);
+	});
+
 	it('should not render `script` tags in markdown files', async () => {
 		const markdown = `
 # No Scripts Allowed
