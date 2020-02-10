@@ -1,6 +1,8 @@
 import React from 'react';
 import { render, unmountComponentAtNode } from "react-dom";
 import { act } from "react-dom/test-utils";
+import "@testing-library/dom";
+import "@testing-library/jest-dom";
 
 import ArticleView from './Article.js';
 
@@ -35,7 +37,7 @@ This is a test markdown file used in unit tests.
 			render(<ArticleView source="test/placeholder.md" title="Basic" />, container);
 		});
 		expect(global.fetch).toHaveBeenCalled();
-		expect(container.innerHTML).toContain('<h1>Basic</h1>');
+		expect(container).toContainHTML('<h1>Basic</h1>');
 
 		global.fetch.mockRestore();
 	});
@@ -75,7 +77,7 @@ This is a test markdown file used in unit tests.
 Iframes are allowed in markdown files. They can be used to embed
 youtube videos or codepens.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/fBw7a0jRWOE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe data-test-id="test-iframe" width="560" height="315" src="https://www.youtube.com/embed/fBw7a0jRWOE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 		`;
 
 		jest.spyOn(global, "fetch").mockImplementation(() =>
@@ -85,10 +87,10 @@ youtube videos or codepens.
 		);
 
 		await act(async () => {
-			render(<ArticleView source="test/placeholder.md" title="Iframes allowed" />, container);
+			render(<ArticleView source="README.md" title="Iframes allowed" />, container);
 		});
-		expect(container.innerHTML).toContain('<h1>Iframes Allowed</h1>');
-		expect(container.innerHTML).toContain('<iframe');
+		expect(container).toContainHTML('<h1>Iframes Allowed</h1>');
+		expect(container).toContainElement(getByTestId('test-iframe'));
 
 		global.fetch.mockRestore();
 	});
