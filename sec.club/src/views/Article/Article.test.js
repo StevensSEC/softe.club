@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, unmountComponentAtNode } from "react-dom";
 import { act } from "react-dom/test-utils";
-import { getByTestId, queryByTestId } from "@testing-library/dom";
+import { getByTestId, queryByClassName, queryByTestId } from "@testing-library/dom";
 import "@testing-library/jest-dom";
 
 import ArticleView from './Article.js';
@@ -19,6 +19,14 @@ describe('ArticleView', () => {
 
 	it('renders without crashing', () => {
 		render(<ArticleView source="README.md" title="Basic" />, container);
+	});
+
+	it('should render loader when markdown is null', () => {
+		render(<ArticleView source="README.md" title="Basic" />, container);
+		expect(container.querySelector(".loader-container")).toBeDefined();
+		expect(container.querySelector(".loader-container")).not.toBeNull();
+		expect(container.querySelector(".loader")).toBeDefined();
+		expect(container.querySelector(".loader")).not.toBeNull();
 	});
 
 	it('should fetch and render markdown file', async () => {

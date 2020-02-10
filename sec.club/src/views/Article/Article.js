@@ -4,6 +4,7 @@ import { Container } from "@material-ui/core";
 import "./Article.scss";
 import Markdown from "react-markdown";
 import HtmlParser from "react-markdown/plugins/html-parser";
+import Loader from "../../components/Loader/Loader.js";
 import CodeBlock from "../../components/CodeBlock/CodeBlock.js";
 import DocumentTitle from "../../components/DocumentTitle/DocumentTitle.js";
 
@@ -21,7 +22,7 @@ export default class ArticleView extends PureComponent {
 
 	constructor(props) {
 		super();
-		this.state = { markdown: "", __previousSource: null };
+		this.state = { markdown: null, __previousSource: null };
 	}
 
 	fetchArticle() {
@@ -31,6 +32,10 @@ export default class ArticleView extends PureComponent {
 		}
 
 		let url = require(`../../articles/${this.props.source}`);
+
+		this.setState({
+			markdown: null,
+		});
 
 		fetch(url).then(resp => {
 			return resp.text();
@@ -53,6 +58,12 @@ export default class ArticleView extends PureComponent {
 	render() {
 		const { title } = this.props;
 		const { markdown } = this.state;
+
+		if (!markdown) {
+			return (
+				<Loader />
+			)
+		}
 
 		return (
 			<Container>
