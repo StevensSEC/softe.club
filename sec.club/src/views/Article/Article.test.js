@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, unmountComponentAtNode } from "react-dom";
 import { act } from "react-dom/test-utils";
-import { getByTestId, queryByClassName, queryByTestId } from "@testing-library/dom";
+import { getByTestId, queryByTestId } from "@testing-library/dom";
 import "@testing-library/jest-dom";
 
 import ArticleView from './Article.js';
