@@ -6,6 +6,15 @@ import "@testing-library/jest-dom";
 
 import ArticleView from './Article.js';
 
+function removeIndents(s) {
+	let result = "";
+	let lines = s.split('\n');
+	for (let line of lines) {
+		result += `${line.trimLeft()}\n`;
+	}
+	return result;
+}
+
 let container = null;
 describe('ArticleView', () => {
 	beforeEach(() => {
@@ -30,11 +39,11 @@ describe('ArticleView', () => {
 	});
 
 	it('should fetch and render markdown file', async () => {
-		const markdown = `
-# Basic
+		const markdown = removeIndents(`
+		# Basic
 
-This is a test markdown file used in unit tests.
-		`;
+		This is a test markdown file used in unit tests.
+		`);
 
 		fetch.mockResponse(() => Promise.resolve(markdown));
 
@@ -45,11 +54,11 @@ This is a test markdown file used in unit tests.
 	});
 
 	it('should fetch only once', async () => {
-		const markdown = `
-# Basic
+		const markdown = removeIndents(`
+		# Basic
 
-This is a test markdown file used in unit tests.
-		`;
+		This is a test markdown file used in unit tests.
+		`);
 
 		fetch.mockResponse(() => Promise.resolve(markdown));
 
@@ -61,19 +70,19 @@ This is a test markdown file used in unit tests.
 	});
 
 	it('should not render `script` tags in markdown files', async () => {
-		const markdown = `
-# No Scripts Allowed
+		const markdown = removeIndents(`
+		# No Scripts Allowed
 
-This is a test markdown file used in unit tests.
+		This is a test markdown file used in unit tests.
 
-Script tags are not allowed in markdown files. This is done on purpose to
-prevent *you* from doing stupid stuff. If you need custom functionality on
-a page, you need to make your own view in \`src/views/\`.
+		Script tags are not allowed in markdown files. This is done on purpose to
+		prevent *you* from doing stupid stuff. If you need custom functionality on
+		a page, you need to make your own view in \`src/views/\`.
 
-<script data-testid="test-script">
-console.error("YOU SHOULD NEVER SEE THIS TEXT");
-</script>
-		`;
+		<script data-testid="test-script">
+		console.error("YOU SHOULD NEVER SEE THIS TEXT");
+		</script>
+		`);
 
 		fetch.mockResponse(() => Promise.resolve(markdown));
 
@@ -85,16 +94,16 @@ console.error("YOU SHOULD NEVER SEE THIS TEXT");
 	});
 
 	it('should render `iframe` tags in markdown files', async () => {
-		const markdown = `
-# Iframes Allowed
+		const markdown = removeIndents(`
+		# Iframes Allowed
 
-This is a test markdown file used in unit tests.
+		This is a test markdown file used in unit tests.
 
-Iframes are allowed in markdown files. They can be used to embed
-youtube videos or codepens.
+		Iframes are allowed in markdown files. They can be used to embed
+		youtube videos or codepens.
 
-<iframe data-testid="test-iframe" width="560" height="315" src="https://www.youtube.com/embed/fBw7a0jRWOE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-		`;
+		<iframe data-testid="test-iframe" width="560" height="315" src="https://www.youtube.com/embed/fBw7a0jRWOE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		`);
 
 		fetch.mockResponse(() => Promise.resolve(markdown));
 
