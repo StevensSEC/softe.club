@@ -23,11 +23,11 @@ export default function HomeView() {
 			</Grid>
 			<Container className="banners">
 				<EventBanner 
-					source="LearnHack.png" 
+					flyerSource="LearnHack.png" 
 					title="learnHack"
 					desc="Equip yourself with the tools and knowledge to contribute this semester's Semester Long Project. Location: BC 122"/>
 				<EventBanner
-					source="Pair Programming.png"
+					flyerSource="Pair Programming.png"
 					title="Pair Programming"
 					desc="Come out and learn about the Pair Programming paradigm just in time for Valentine's Day! Pizza will be served. Location: P 120"/>
 			</Container>
