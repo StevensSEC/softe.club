@@ -22,10 +22,6 @@ export default function HomeView() {
 				</Grid>
 			</Grid>
 			<Container className="banners">
-				<EventBanner 
-					flyerSource="LearnHack.png" 
-					title="learnHack"
-					desc="Equip yourself with the tools and knowledge to contribute this semester's Semester Long Project. Location: BC 122"/>
 				<EventBanner
 					flyerSource="Pair Programming.png"
 					title="Pair Programming"
