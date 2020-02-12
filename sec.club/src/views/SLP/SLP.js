@@ -10,10 +10,8 @@ const styles = {
 
 const SLPView = () => {
   return (
-    <div>
-      <div style={styles.projectWall}>
-        <ProjectWall />
-      </div>
+    <div style={styles.projectWall}>
+      <ProjectWall />
     </div>
   )
 }
