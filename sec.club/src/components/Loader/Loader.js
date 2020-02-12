@@ -5,20 +5,21 @@ import Anime from 'react-anime';
 import "./Loader.scss";
 
 function generateRandomShape(vertecies, offsetX=100, offsetY=100) {
+	const degToRad = Math.PI / 180;
 	let points = [];
 	let pieSize = 360 / vertecies;
 	for (let i = 0; i < 360; i += pieSize) {
 		let r = anime.random(60, 100);
-		let angle = anime.random(i, i + pieSize);
-		let x = r * Math.cos(angle) + offsetX;
-		let y = r * Math.sin(angle) + offsetY;
+		let angle = anime.random(i, i + pieSize * (vertecies * 0.65));
+		let x = r * Math.cos(angle * degToRad) + offsetX;
+		let y = r * Math.sin(angle * degToRad) + offsetY;
 		points.push(`${x} ${y}`);
 	}
 	return points.join(" ");
 }
 
 export default function Loader() {
-	const vertecies = 10;
+	const vertecies = 12;
 	const initShape = generateRandomShape(vertecies);
 	const loaderAnimation = {
 		points: [
