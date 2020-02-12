@@ -1,4 +1,5 @@
-import React from "react";
+import React, { PureComponent } from "react";
+import PropTypes from "prop-types";
 import { Container } from "@material-ui/core";
 import "./Article.scss";
 import Markdown from "react-markdown";
@@ -12,21 +13,54 @@ const parseHtml = HtmlParser({
 	isValidNode: node => node.type !== 'script',
 });
 
-export default function ArticleView({ source, title }) {
-	let markdown = require(`../../articles/${source}`);
+export default class ArticleView extends PureComponent {
+	static propTypes = {
+		source: PropTypes.string.isRequired,
+		title: PropTypes.string.isRequired,
+	}
 
-	return (
-		<Container>
-			<DocumentTitle title={title} />
-			<article>
-				<Markdown
-					source={markdown}
-					escapeHtml={false}
-					astPlugins={[parseHtml]}
-					renderers={{ code: CodeBlock }}
-					transformImageUri={uri => require(`../../assets/${uri}`).default}
-				/>
-			</article>
-		</Container>
-	);
+	constructor(props) {
+		super();
+		this.state = { markdown: "" };
+	}
+
+	fetchArticle() {
+		let url = require(`../../articles/${this.props.source}`);
+
+		fetch(url).then(resp => {
+			return resp.text();
+		}).then(text => {
+			this.setState({
+				markdown: text,
+			});
+		});
+	}
+
+	componentDidMount() {
+		this.fetchArticle();
+	}
+
+	componentDidUpdate() {
+		this.fetchArticle();
+	}
+
+	render() {
+		const { title } = this.props;
+		const { markdown } = this.state;
+
+		return (
+			<Container>
+				<DocumentTitle title={title} />
+				<article>
+					<Markdown
+						source={markdown}
+						escapeHtml={false}
+						astPlugins={[parseHtml]}
+						renderers={{ code: CodeBlock }}
+						transformImageUri={uri => require(`../../assets/${uri}`).default}
+					/>
+				</article>
+			</Container>
+		);
+	}
 }
