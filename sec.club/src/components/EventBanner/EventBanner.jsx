@@ -15,5 +15,4 @@ export default function EventBanner({flyerSource, title, desc}) {
             </div>
         </div>
     )
-
 }
