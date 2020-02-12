@@ -2,21 +2,21 @@
 @import url('https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap');
 
 .header {
-    background-color: $background-color;
+    background-color: $background-color !important;
     border-bottom: $primary-color 1px solid;
-    box-shadow: none;
+    box-shadow: none !important;
 }
 
 .header-items {
     > * {
-        font-family: "Source Code Pro", monospace;
-        letter-spacing: 2px;
-        margin: 0 5px;
+        font-family: "Source Code Pro", monospace !important;
+        letter-spacing: 2px !important;
+        margin: 0 5px !important;
     }
 }
 
 .drawer-item {
-    font-family: "Source Code Pro", monospace;
+    font-family: "Source Code Pro", monospace !important;
     letter-spacing: 2px;
     width: 100%;
     justify-content: normal;
