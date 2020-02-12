@@ -32,8 +32,8 @@ jobs:
     - name: Archive Production Artifact
       uses: actions/upload-artifact@master
       with:
-        name: dist
-        path: ${{ env.working-directory }}/dist
+        name: build
+        path: ${{ env.working-directory }}/build
   deploy:
     needs: build
     runs-on: ubuntu-latest
@@ -49,8 +49,8 @@ jobs:
     - name: Download Artifact
       uses: actions/download-artifact@master
       with:
-        name: dist
-        path: ${{ env.working-directory }}/dist
+        name: build
+        path: ${{ env.working-directory }}/build
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
