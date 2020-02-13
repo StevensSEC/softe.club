@@ -44,13 +44,13 @@ class Button extends Component {
 				window.location = this.props.to;
 			}
 		}
-
 	}
 
 	render() {
-		const { children, kind, to, className } = this.props;
+		const { children, kind, to, className, ...other } = this.props;
+		delete other.staticContext;
 		return (
-			<a href={to ? to : "#"} className={`sec-btn sec-kind-${kind}${className ? " " + className : ""}`} onClick={this.handleClick}>
+			<a href={to ? to : "#"} className={`sec-btn sec-kind-${kind}${className ? " " + className : ""}`} onClick={this.handleClick} {...other}>
 				{children}
 			</a>
 		);
