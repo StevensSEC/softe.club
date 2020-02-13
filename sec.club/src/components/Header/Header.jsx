@@ -1,10 +1,9 @@
 import React from "react"
 import { makeStyles } from "@material-ui/core/styles"
-import { Drawer, Button, IconButton, List, AppBar, Toolbar, Hidden } from "@material-ui/core"
-import {Link as MaterialLink} from "@material-ui/core"
+import { Drawer, List, AppBar, Toolbar, Hidden } from "@material-ui/core"
 import MenuIcon from '@material-ui/icons/Menu'
 import "./Header.scss"
-import { Link } from "react-router-dom"
+import Button from "../Button/Button.js";
 
 
 const useStyles = makeStyles({
@@ -69,7 +68,7 @@ const Header = () => {
         {buttonRoutes.map((button, index) => (
           <Button
             className="drawer-item"
-            component={Link}
+            kind="menu"
             to={`/${button.route}`}
             key={`menuItem-${index}`}
           >
@@ -84,31 +83,30 @@ const Header = () => {
     <AppBar position="relative" className="header">
       <Toolbar>
         <Hidden mdUp>
-          <IconButton className="mobile" onClick={toggleDrawer("left", true)} style={{ color: "white" }}>
+          <Button kind="icon" className="mobile" onClick={toggleDrawer("left", true)}>
             <MenuIcon />
-          </IconButton>
+          </Button>
         </Hidden>
-        <MaterialLink
+        <Button
+          kind="menu"
           className="barLogo"
-          component={Link}
           to={'/'}
           key={'menuItem-home'}
-          underline="none"
         >
           SEC
-        </MaterialLink>
+        </Button>
         <Hidden smDown>
           <div className="header-items">
             {buttonRoutes.map((button, index) => (
               <Button
-                component={Link}
+                kind="menu"
                 to={`/${button.route}`}
                 key={`menuItem-${index}`}
               >
                 {button.title}
               </Button>
             ))}
-            <Button onClick={toggleDrawer("left", true)} style={{ color: "white" }}>
+            <Button kind="menu" onClick={toggleDrawer("left", true)}>
               More
             </Button>
           </div>
