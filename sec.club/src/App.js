@@ -20,6 +20,7 @@ const NotFoundView = lazy(() => import(/* webpackChunkName: "not-found" */"./vie
 //   .then(([moduleExports]) => moduleExports);
 // });
 const ArticleView = lazy(() => import(/* webpackChunkName: "article" */"./views/Article/Article.js"));
+const ComponentsDemoView = lazy(() => import(/* webpackChunkName: "demo" */"./views/ComponentsDemo/ComponentsDemo.js"));
 
 function App() {
   const theme = createMuiTheme({
@@ -69,8 +70,12 @@ function App() {
               <Route path="/git-cheatsheet">
                 <ArticleView source="git-cheatsheet.md" title="Git Cheatsheet"/>
               </Route>
-              <Route path="/dev-readme">
+
+              <Route path="/dev/readme">
                 <ArticleView source="README.md" title="README"/>
+              </Route>
+              <Route path="/dev/components">
+                <ComponentsDemoView />
               </Route>
               <Route>
                 <NotFoundView/>
