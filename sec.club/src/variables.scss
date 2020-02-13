@@ -9,12 +9,16 @@ $text-color: #fff;
 $warning-color: #fb3;
 $error-color: #ff0;
 
+$fonts: "Source Code Pro", monospace;
+
 // general border size and style
 $border-size: 1px;
 $border-style: solid;
 
+// component specific
 $button-generic-color: #fff;
 
+// media queries
 // ONLY for use in scss styles
 // Use material ui useMediaQuery() when in javascript
 $xs-max: 600px;

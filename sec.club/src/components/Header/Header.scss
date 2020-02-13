@@ -8,31 +8,15 @@
 }
 
 .header-items {
-    > * {
-        font-family: "Source Code Pro", monospace !important;
-        letter-spacing: 2px !important;
-        margin: 0 5px !important;
-    }
+    letter-spacing: 2px;
 }
 
 .drawer-item {
-    font-family: "Source Code Pro", monospace !important;
-    letter-spacing: 2px;
     width: 100%;
     justify-content: normal;
 }
 
-.barLogo, .barLogo:visited, .barLogo:active {
-    font-family: 'Source Code Pro', monospace;
+.barLogo {
     font-size: 40px;
     font-weight: bold;
-    color:white;
-    text-decoration: none currentColor solid;
-    margin: 0 3px;
-    padding: 0 5px;
-}
-
-.barLogo:hover{
-    background-color: lighten($background-color, 10%);
-    border-radius: 5px;
 }
