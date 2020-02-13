@@ -1,11 +1,12 @@
 @import "../../variables.scss";
 
 .sec-btn:any-link {
+	display: inline-block;
 	background-color: $background-color;
 	color: $text-color;
 	text-decoration: none;
 	padding: 10px 14px;
-	margin: 0 3px;
+	margin: 2px 3px;
 	border-width: $border-size;
 	border-style: $border-style;
 
@@ -48,6 +49,6 @@
 		border: none;
 
 		// this is to get the icon centered
-		padding: 15px 10px 5px;
+		padding: 10px 12px 8px;
 	}
 }
