@@ -1,6 +1,8 @@
-#project-wall-container {
-  display: "flex";
+.ProjectTile {
+  transition: opacity 0.25s;
+  opacity: 1;
 }
-#project-wall {
-  height: 10%;
+.ProjectTile :hover {
+  transition: opacity 0.25s;
+  opacity: 0.5;
 }

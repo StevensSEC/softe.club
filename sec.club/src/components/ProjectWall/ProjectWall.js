@@ -16,7 +16,6 @@ const styles = {
   projectWall: {
     position: "relative",
     flexWrap: "nowrap",
-    height: "10%",
     overflow: "hidden",
     scrollBehavior: "smooth"
   },
@@ -59,13 +58,14 @@ const ProjectWall = ({ setProject }) => {
   }
   return (
     <>
-      <GridList style={styles.projectWall} id="project-wall">
+      <GridList style={styles.projectWall} id="project-wall" cellHeight={100}>
         {PROJECTS.map((project, index) => {
           return (
             <GridListTile
               style={styles.project}
+              className="ProjectTile"
               id={`project-${index}`}
-              onClick={() => setProject(project.caption)}
+              onClick={() => setProject(project)}
             >
               <img src={project.img} />
               <GridListTileBar title={project.caption}></GridListTileBar>
