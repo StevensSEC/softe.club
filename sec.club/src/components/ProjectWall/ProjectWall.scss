@@ -1,8 +1,7 @@
 .ProjectTile {
-  transition: opacity 0.25s;
-  opacity: 1;
+  background-color: rgba(255, 255, 255, 0);
 }
-.ProjectTile :hover {
-  transition: opacity 0.25s;
-  opacity: 0.5;
+.ProjectTile:hover * {
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: background-color 0.25s;
 }
