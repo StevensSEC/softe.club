@@ -69,6 +69,9 @@ function App() {
               <Route path="/git-cheatsheet">
                 <ArticleView source="git-cheatsheet.md" title="Git Cheatsheet"/>
               </Route>
+              <Route path="/event/pair-programming-2020">
+                <ArticleView source="events/2020-pair-programming.md" title="Pair Programming 2020"/>
+              </Route>
               <Route path="/dev-readme">
                 <ArticleView source="README.md" title="README"/>
               </Route>
