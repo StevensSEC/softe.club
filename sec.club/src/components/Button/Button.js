@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import { withRouter } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./Button.scss";
 
-class Button extends Component {
+export default class Button extends Component {
 	static propTypes = {
 		kind: PropTypes.string.isRequired,
 		to: PropTypes.string,
@@ -24,7 +24,7 @@ class Button extends Component {
 	shouldUseRouter() {
 		const { to } = this.props;
 		try {
-			return to && new URL(to).host == null;
+			return to && !to.startsWith("#") && new URL(to).host == null;
 		}
 		catch (TypeError) {
 			return true;
@@ -49,12 +49,22 @@ class Button extends Component {
 	render() {
 		const { children, kind, to, className, ...other } = this.props;
 		delete other.staticContext;
-		return (
-			<a href={to ? to : "#"} className={`sec-btn sec-kind-${kind}${className ? " " + className : ""}`} onClick={this.handleClick} {...other}>
-				{children}
-			</a>
-		);
+		let classes = `sec-btn sec-kind-${kind}${className ? " " + className : ""}`;
+
+		if (this.shouldUseRouter()) {
+			return (
+				<Link to={to} className={classes} onClick={this.handleClick} {...other}>
+					{children}
+				</Link>
+			);
+		}
+		else {
+			return (
+				<a href={to ? to : "#"} className={classes} onClick={this.handleClick} {...other}>
+					{children}
+				</a>
+			);
+		}
+
 	}
 }
-
-export default withRouter(Button);

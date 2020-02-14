@@ -4,6 +4,7 @@ import { act } from "react-dom/test-utils";
 import { getByTestId, queryByTestId } from "@testing-library/dom";
 import { MemoryRouter } from "react-router-dom";
 import "@testing-library/jest-dom";
+import { shallow, mount } from 'enzyme';
 
 import Button from "./Button.js";
 
@@ -18,18 +19,11 @@ describe("Button appearance", () => {
 	});
 
 	it("should render without crashing", () => {
-		render(
-			<MemoryRouter>
-				<Button>Test</Button>
-			</MemoryRouter>
-		, container);
+		render(<Button>Test</Button>, container);
 	});
 
 	it("should render with valid default classes", () => {
-		render(
-			<MemoryRouter>
-				<Button data-testid="btn">Test</Button>
-			</MemoryRouter>
+		render(<Button data-testid="btn">Test</Button>
 		, container);
 		let btn = getByTestId(container, "btn");
 		expect(btn).toHaveClass("sec-btn");
@@ -38,21 +32,13 @@ describe("Button appearance", () => {
 	});
 
 	it("should render the correct kind of button", () => {
-		render(
-			<MemoryRouter>
-				<Button kind="primary" data-testid="btn">Test</Button>
-			</MemoryRouter>
-		, container);
+		render(<Button kind="primary" data-testid="btn">Test</Button>, container);
 		let btn = getByTestId(container, "btn");
 		expect(btn).toHaveClass("sec-kind-primary");
 	});
 
 	it("should add additional classes when given", () => {
-		render(
-			<MemoryRouter>
-				<Button className="test" data-testid="btn">Test</Button>
-			</MemoryRouter>
-		, container);
+		render(<Button className="test" data-testid="btn">Test</Button>, container);
 		let btn = getByTestId(container, "btn");
 		expect(btn).toHaveClass("sec-btn");
 		expect(btn).toHaveClass("sec-kind-generic");
@@ -60,11 +46,7 @@ describe("Button appearance", () => {
 	});
 
 	it("should render children as it's children", () => {
-		render(
-			<MemoryRouter>
-				<Button className="test" data-testid="btn">Test</Button>
-			</MemoryRouter>
-		, container);
+		render(<Button className="test" data-testid="btn">Test</Button>, container);
 		let btn = getByTestId(container, "btn");
 		expect(btn).toHaveTextContent("Test");
 	})
@@ -80,11 +62,7 @@ describe("Button functionality", () => {
 	});
 
 	it("should render with href='#' by default", () => {
-		render(
-			<MemoryRouter>
-				<Button data-testid="btn">Test</Button>
-			</MemoryRouter>
-		, container);
+		render(<Button data-testid="btn">Test</Button>, container);
 		let btn = getByTestId(container, "btn");
 		expect(btn).toHaveAttribute("href", "#");
 	});
@@ -100,12 +78,22 @@ describe("Button functionality", () => {
 	})
 
 	it("should use the router to navigate to absolute path", () => {
-		let rendered = render(
+		let wrapper = mount(
 			<MemoryRouter>
 				<Button to="/" data-testid="btn">Test</Button>
 			</MemoryRouter>
 		, container);
-		let btn = getByTestId(container, "btn");
+		let btn = wrapper.find("[data-testid='btn']").at(0).instance();
+		expect(btn.shouldUseRouter()).toBe(true);
+	});
+
+	it("should use the router to navigate to relative path", () => {
+		let wrapper = mount(
+			<MemoryRouter>
+				<Button to="something/relative" data-testid="btn">Test</Button>
+			</MemoryRouter>
+		, container);
+		let btn = wrapper.find("[data-testid='btn']").at(0).instance();
 		expect(btn.shouldUseRouter()).toBe(true);
 	});
 });
