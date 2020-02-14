@@ -1,38 +1,37 @@
 @import "../../variables.scss";
 @import url('https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap');
 
-.header {
-    background-color: $background-color !important;
+.sec-header {
+    display: flex;
+    width: 100%;
+    z-index: 2000;
+    background-color: $background-color;
     border-bottom: $primary-color 1px solid;
-    box-shadow: none !important;
-}
+    box-shadow: none;
+    box-sizing: border-box;
+    flex-direction: column;
 
-.header-items {
-    > * {
-        font-family: "Source Code Pro", monospace !important;
-        letter-spacing: 2px !important;
-        margin: 0 5px !important;
+    > .header-content {
+        display: flex;
+        align-items: center;
+        min-height: 64px;
+        padding: 0 24px;
     }
 }
 
-.drawer-item {
-    font-family: "Source Code Pro", monospace !important;
+.header-items {
     letter-spacing: 2px;
-    width: 100%;
-    justify-content: normal;
 }
 
-.barLogo, .barLogo:visited, .barLogo:active {
-    font-family: 'Source Code Pro', monospace;
+.drawer-item {
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0 !important;
+}
+
+.barLogo {
     font-size: 40px;
     font-weight: bold;
-    color:white;
-    text-decoration: none currentColor solid;
-    margin: 0 3px;
-    padding: 0 5px;
-}
-
-.barLogo:hover{
-    background-color: lighten($background-color, 10%);
-    border-radius: 5px;
+    margin: 0 !important;
+    padding: 0 5px !important;
 }

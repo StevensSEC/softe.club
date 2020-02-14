@@ -1,11 +1,9 @@
 import React from "react"
 import { makeStyles } from "@material-ui/core/styles"
-import { Drawer, Button, IconButton, List, AppBar, Toolbar, Hidden } from "@material-ui/core"
-import {Link as MaterialLink} from "@material-ui/core"
+import { Drawer, List, Hidden } from "@material-ui/core"
 import MenuIcon from '@material-ui/icons/Menu'
 import "./Header.scss"
-import { Link } from "react-router-dom"
-
+import Button from "../Button/Button.js";
 
 const useStyles = makeStyles({
   list: {
@@ -39,23 +37,23 @@ const Header = () => {
   const buttonRoutes = [
     {
       title: "What is SEC?",
-      route: "about"
+      route: "/about"
     },
     {
       title: "Semester Long Project",
-      route: "slp"
+      route: "/slp"
     },
     {
       title: "Meet the Team",
-      route: "team"
+      route: "/team"
     },
     {
       title: "Resources",
-      route: "resources"
+      route: "/resources"
     },
     {
       title: "Contact",
-      route: "contact"
+      route: "/contact"
     }
   ]
   const sideList = side => (
@@ -69,8 +67,8 @@ const Header = () => {
         {buttonRoutes.map((button, index) => (
           <Button
             className="drawer-item"
-            component={Link}
-            to={`/${button.route}`}
+            kind="menu"
+            to={button.route}
             key={`menuItem-${index}`}
           >
             {button.title}
@@ -81,34 +79,33 @@ const Header = () => {
   )
 
   return (
-    <AppBar position="relative" className="header">
-      <Toolbar>
+    <header className="sec-header">
+      <div className="header-content">
         <Hidden mdUp>
-          <IconButton className="mobile" onClick={toggleDrawer("left", true)} style={{ color: "white" }}>
+          <Button kind="icon" className="mobile" onClick={toggleDrawer("left", true)}>
             <MenuIcon />
-          </IconButton>
+          </Button>
         </Hidden>
-        <MaterialLink
+        <Button
+          kind="menu"
           className="barLogo"
-          component={Link}
           to={'/'}
           key={'menuItem-home'}
-          underline="none"
         >
           SEC
-        </MaterialLink>
+        </Button>
         <Hidden smDown>
           <div className="header-items">
             {buttonRoutes.map((button, index) => (
               <Button
-                component={Link}
-                to={`/${button.route}`}
+                kind="menu"
+                to={button.route}
                 key={`menuItem-${index}`}
               >
                 {button.title}
               </Button>
             ))}
-            <Button onClick={toggleDrawer("left", true)} style={{ color: "white" }}>
+            <Button kind="menu" onClick={toggleDrawer("left", true)}>
               More
             </Button>
           </div>
@@ -116,8 +113,8 @@ const Header = () => {
         <Drawer open={state.left} onClose={toggleDrawer("left", false)}>
           {sideList("left")}
         </Drawer>
-      </Toolbar>
-    </AppBar>
+      </div>
+    </header>
   )
 }
 export default Header

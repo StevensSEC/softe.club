@@ -1,0 +1,55 @@
+@import "../../variables.scss";
+
+.sec-btn:any-link {
+	display: inline-block;
+	background-color: $background-color;
+	color: $text-color;
+	font-family: $fonts;
+	text-decoration: none;
+	padding: 10px 14px;
+	margin: 2px 3px;
+	border-width: $border-size;
+	border-style: $border-style;
+
+	transition: background-color .15s;
+
+	&:hover {
+		background-color: lighten($background-color, 10%);
+	}
+
+	&.sec-kind-primary {
+		border-color: $primary-color;
+		color: $primary-color;
+	}
+
+	&.sec-kind-secondary {
+		border-color: $secondary-color;
+		color: $secondary-color;
+	}
+
+	&.sec-kind-generic {
+		border-color: $button-generic-color;
+	}
+
+	&.sec-kind-warning {
+		border-color: $warning-color;
+		color: $warning-color;
+	}
+
+	&.sec-kind-error {
+		border-color: $error-color;
+		color: $error-color;
+	}
+
+	&.sec-kind-menu {
+		border: none;
+	}
+
+	&.sec-kind-icon {
+		border-radius: 100%;
+		border: none;
+
+		// this is to get the icon centered
+		padding: 10px 12px 8px;
+	}
+}
