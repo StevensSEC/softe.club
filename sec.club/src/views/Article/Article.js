@@ -7,8 +7,9 @@ import HtmlParser from "react-markdown/plugins/html-parser";
 import Loader from "../../components/Loader/Loader.js";
 import CodeBlock from "../../components/CodeBlock/CodeBlock.js";
 import DocumentTitle from "../../components/DocumentTitle/DocumentTitle.js";
+import { Link } from "react-router-dom";
 
-// See https://github.com/aknuds1/html-to-react#with-custom-processing-instructions
+// See https://github.com/aknuds1/html-link-react#with-custom-processing-instructions
 // for more info on the processing instructions
 const parseHtml = HtmlParser({
 	isValidNode: node => node.type !== 'script',
@@ -55,6 +56,31 @@ export default class ArticleView extends PureComponent {
 		this.fetchArticle();
 	}
 
+	buildLink({href, children}) {
+		function shouldUseRouter(link) {
+			try {
+				return link && new URL(link).host == null;
+			}
+			catch (TypeError) {
+				return true;
+			}
+		}
+
+		if (shouldUseRouter(href)) {
+			return (
+				<Link to={href}>
+					{children}
+				</Link>
+			);
+		} else {
+			return (
+				<a href={href}>
+					{children}
+				</a>
+			)
+		}
+	}
+
 	render() {
 		const { title } = this.props;
 		const { markdown } = this.state;
@@ -73,7 +99,7 @@ export default class ArticleView extends PureComponent {
 						source={markdown}
 						escapeHtml={false}
 						astPlugins={[parseHtml]}
-						renderers={{ code: CodeBlock }}
+						renderers={{ code: CodeBlock, link: this.buildLink}}
 						transformImageUri={uri => require(`../../assets/${uri}`).default}
 					/>
 				</article>
