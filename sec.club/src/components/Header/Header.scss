@@ -13,7 +13,8 @@
 
 .drawer-item {
     width: 100%;
-    justify-content: normal;
+    box-sizing: border-box;
+    margin: 0 !important;
 }
 
 .barLogo {
