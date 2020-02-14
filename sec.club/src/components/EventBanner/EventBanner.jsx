@@ -4,7 +4,7 @@ import "./EventBanner.scss";
 export default function EventBanner({flyerSource, title, desc, endDate}) {
     let flyer = require(`../../assets/flyers/${flyerSource}`)
 
-    if (new Date().getTime() < endDate.getTime() || endDate === undefined) {
+    if (endDate === undefined || new Date().getTime() < endDate.getTime()) {
         return(
             <div className="flyer">
                 <div className="container">
@@ -17,6 +17,6 @@ export default function EventBanner({flyerSource, title, desc, endDate}) {
             </div>
         )
     } else {
-        return <div></div>
+        return null
     }
 }   
