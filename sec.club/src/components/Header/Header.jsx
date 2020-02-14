@@ -1,10 +1,9 @@
 import React from "react"
 import { makeStyles } from "@material-ui/core/styles"
-import { Drawer, List, AppBar, Toolbar, Hidden } from "@material-ui/core"
+import { Drawer, List, Hidden } from "@material-ui/core"
 import MenuIcon from '@material-ui/icons/Menu'
 import "./Header.scss"
 import Button from "../Button/Button.js";
-
 
 const useStyles = makeStyles({
   list: {
@@ -38,23 +37,23 @@ const Header = () => {
   const buttonRoutes = [
     {
       title: "What is SEC?",
-      route: "about"
+      route: "/about"
     },
     {
       title: "Semester Long Project",
-      route: "slp"
+      route: "/slp"
     },
     {
       title: "Meet the Team",
-      route: "team"
+      route: "/team"
     },
     {
       title: "Resources",
-      route: "resources"
+      route: "/resources"
     },
     {
       title: "Contact",
-      route: "contact"
+      route: "/contact"
     }
   ]
   const sideList = side => (
@@ -69,7 +68,7 @@ const Header = () => {
           <Button
             className="drawer-item"
             kind="menu"
-            to={`/${button.route}`}
+            to={button.route}
             key={`menuItem-${index}`}
           >
             {button.title}
@@ -80,8 +79,8 @@ const Header = () => {
   )
 
   return (
-    <AppBar position="relative" className="header">
-      <Toolbar>
+    <header className="sec-header">
+      <div className="header-content">
         <Hidden mdUp>
           <Button kind="icon" className="mobile" onClick={toggleDrawer("left", true)}>
             <MenuIcon />
@@ -100,7 +99,7 @@ const Header = () => {
             {buttonRoutes.map((button, index) => (
               <Button
                 kind="menu"
-                to={`/${button.route}`}
+                to={button.route}
                 key={`menuItem-${index}`}
               >
                 {button.title}
@@ -114,8 +113,8 @@ const Header = () => {
         <Drawer open={state.left} onClose={toggleDrawer("left", false)}>
           {sideList("left")}
         </Drawer>
-      </Toolbar>
-    </AppBar>
+      </div>
+    </header>
   )
 }
 export default Header

@@ -1,10 +1,22 @@
 @import "../../variables.scss";
 @import url('https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap');
 
-.header {
-    background-color: $background-color !important;
+.sec-header {
+    display: flex;
+    width: 100%;
+    z-index: 2000;
+    background-color: $background-color;
     border-bottom: $primary-color 1px solid;
-    box-shadow: none !important;
+    box-shadow: none;
+    box-sizing: border-box;
+    flex-direction: column;
+
+    > .header-content {
+        display: flex;
+        align-items: center;
+        min-height: 64px;
+        padding: 0 24px;
+    }
 }
 
 .header-items {
@@ -20,4 +32,6 @@
 .barLogo {
     font-size: 40px;
     font-weight: bold;
+    margin: 0 !important;
+    padding: 0 5px !important;
 }
