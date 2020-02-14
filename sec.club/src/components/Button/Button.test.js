@@ -96,4 +96,26 @@ describe("Button functionality", () => {
 		let btn = wrapper.find("[data-testid='btn']").at(0).instance();
 		expect(btn.shouldUseRouter()).toBe(true);
 	});
+
+	it("should not use the router to navigate to an external URL", () => {
+		let wrapper = mount(
+			<MemoryRouter>
+				<Button to="https://example.com" data-testid="btn">Test</Button>
+			</MemoryRouter>
+		, container);
+		let btn = wrapper.find("[data-testid='btn']").at(0).instance();
+		expect(btn.shouldUseRouter()).toBe(false);
+	});
+
+	it("should run custom onClick when clicked", () => {
+		let click = jest.fn();
+		let wrapper = mount(
+			<MemoryRouter>
+				<Button onClick={click} data-testid="btn">Test</Button>
+			</MemoryRouter>
+		, container);
+		let btn = wrapper.find("[data-testid='btn']").at(0);
+		btn.simulate("click");
+		expect(click).toHaveBeenCalledTimes(1);
+	});
 });
