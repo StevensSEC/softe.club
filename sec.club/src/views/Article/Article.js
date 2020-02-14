@@ -9,7 +9,7 @@ import CodeBlock from "../../components/CodeBlock/CodeBlock.js";
 import DocumentTitle from "../../components/DocumentTitle/DocumentTitle.js";
 import { Link } from "react-router-dom";
 
-// See https://github.com/aknuds1/html-link-react#with-custom-processing-instructions
+// See https://github.com/aknuds1/html-to-react#with-custom-processing-instructions
 // for more info on the processing instructions
 const parseHtml = HtmlParser({
 	isValidNode: node => node.type !== 'script',
