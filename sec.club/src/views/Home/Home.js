@@ -6,6 +6,7 @@ import "../../assets/logo-hero.scss";
 import logo from "../../assets/logo.svg";
 import DocumentTitle from "../../components/DocumentTitle/DocumentTitle.js";
 import EventBanner from "../../components/EventBanner/EventBanner.jsx"
+import EVENTS from "./Events.js"
 
 export default function HomeView() {
 	return (
@@ -22,10 +23,15 @@ export default function HomeView() {
 				</Grid>
 			</Grid>
 			<Container className="banners">
-				<EventBanner
-					flyerSource="Pair Programming.png"
-					title="Pair Programming"
-					desc="Come out and learn about the Pair Programming paradigm just in time for Valentine's Day! Pizza will be served. Location: P 120"/>
+				{EVENTS.map((event) => {
+					return (
+						<EventBanner 
+						flyerSource={event.flyerSource}
+						title={event.title}
+						desc={event.desc}
+						endDate={event.endDate}/> 
+					)
+				})}
 			</Container>
 		</Box>
 	)
