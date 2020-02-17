@@ -23,12 +23,18 @@ describe("EventBanner appearance", () => {
         let wrapper = mount(<EventBanner title="Title" desc="Desc" flyerSource="Test.jpg"/>, container)
         expect(wrapper.find(".title").text()).toEqual("Title");
         expect(wrapper.find(".description").text()).toEqual("Desc");
+        expect(wrapper.find("img").prop("alt")).toEqual("Test.jpg");
     })
 
     it("should contain the image content", () => {
         let wrapper = mount(<EventBanner flyerSource="Test.jpg"/>)
         let image = require(`../../assets/flyers/Test.jpg`).default
         expect(wrapper.find("img").prop('src')).toEqual(image)
+    })
+
+    it("should use the specified alt text if passed in", () => {
+        let wrapper = mount(<EventBanner flyerSource="Test.jpg" altText="Test"/>)
+        expect(wrapper.find("img").prop("alt")).toEqual("Test")
     })
 }) 
 
