@@ -8,7 +8,7 @@ export default function EventBanner({flyerSource, altText, title, desc, endDate}
     if (altText) {
         imageElement = <img src={flyer.default} alt={`${altText}`}/>
     } else {
-        imageElement = <img src={flyer.default} alt={`${flyerSource}`}/>
+        imageElement = <img src={flyer.default} alt={`Flyer for ${title} event`}/>
     }
 
 
