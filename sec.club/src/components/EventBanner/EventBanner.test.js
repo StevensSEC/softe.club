@@ -23,7 +23,7 @@ describe("EventBanner appearance", () => {
         let wrapper = mount(<EventBanner title="Title" desc="Desc" flyerSource="Test.jpg"/>, container)
         expect(wrapper.find(".title").text()).toEqual("Title");
         expect(wrapper.find(".description").text()).toEqual("Desc");
-        expect(wrapper.find("img").prop("alt")).toEqual("Test.jpg");
+        expect(wrapper.find("img").prop("alt")).toEqual("Flyer for Title event");
     })
 
     it("should contain the image content", () => {
