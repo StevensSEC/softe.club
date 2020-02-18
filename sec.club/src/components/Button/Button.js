@@ -60,7 +60,7 @@ export default class Button extends Component {
 		}
 		else {
 			return (
-				<a href={to ? to : "#"} className={classes} onClick={this.handleClick} {...other}>
+				<a href={to ? to : null} className={classes} onClick={this.handleClick} {...other}>
 					{children}
 				</a>
 			);

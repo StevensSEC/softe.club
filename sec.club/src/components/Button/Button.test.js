@@ -61,10 +61,10 @@ describe("Button functionality", () => {
 		unmountComponentAtNode(container);
 	});
 
-	it("should render with href='#' by default", () => {
+	it("should render without href by default", () => {
 		render(<Button data-testid="btn">Test</Button>, container);
 		let btn = getByTestId(container, "btn");
-		expect(btn).toHaveAttribute("href", "#");
+		expect(btn).not.toHaveAttribute("href");
 	});
 
 	it("should populate href attribute", () => {
