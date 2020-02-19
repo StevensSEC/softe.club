@@ -14,8 +14,9 @@
 
 	transition: background-color .15s;
 
-	&:hover {
+	&:hover, &:focus{
 		background-color: lighten($background-color, 10%);
+		outline: none;
 	}
 
 	&.sec-kind-primary {
