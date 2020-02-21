@@ -4,56 +4,56 @@ import secLogo from "../../assets/sec-logo.png"
 const PROJECTS = [
   {
     img: secLogo,
-    caption: "Quick Quack",
+    name: "Quick Quack",
     semester: "Spring",
     year: "2019",
     markdown: "slp/quick-quack.md"
   },
   {
     img: openTogetherTubeLogo,
-    caption: "Open Together Tube",
+    name: "Open Together Tube",
     semester: "Fall",
     year: "2019",
     markdown: "slp/open-together-tube.md"
   },
   {
     img: secLogo,
-    caption: "Stevens Web Extension",
+    name: "Stevens Web Extension",
     semester: "Spring",
     year: "2020",
     markdown: "slp/quick-quack.md"
   },
   {
     img: secLogo,
-    caption: "Coming soon!",
+    name: "Coming soon!",
     semester: "Fall",
     year: "2020",
     markdown: "slp/quick-quack.md"
   },
   {
     img: secLogo,
-    caption: "Coming soon!",
+    name: "Coming soon!",
     semester: "Spring",
     year: "2021",
     markdown: "slp/quick-quack.md"
   },
   {
     img: secLogo,
-    caption: "Coming soon!",
+    name: "Coming soon!",
     semester: "Fall",
     year: "2021",
     markdown: "slp/quick-quack.md"
   },
   {
     img: secLogo,
-    caption: "Coming soon!",
+    name: "Coming soon!",
     semester: "Spring",
     year: "2022",
     markdown: "slp/quick-quack.md"
   },
   {
     img: secLogo,
-    caption: "Coming soon!",
+    name: "Coming soon!",
     semester: "Fall",
     year: "2022",
     markdown: "slp/quick-quack.md"

@@ -7,18 +7,9 @@ import Loader from "./components/Loader/Loader.js"
 
 import SecStyle from "./variables.scss"
 
-const Header = lazy(() =>
-  import(/* webpackChunkName: "components" */ "./components/Header/Header")
-)
-const HomeView = lazy(() =>
-  import(/* webpackChunkName: "home" */ "./views/Home/Home.js")
-)
-const NotFoundView = lazy(() =>
-  import(/* webpackChunkName: "not-found" */ "./views/NotFound/NotFound.jsx")
-)
-const SLPView = lazy(() =>
-  import(/* webpackChunkName: "slp" */ "./views/SLP/SLP.js")
-)
+const Header = lazy(() => import(/* webpackChunkName: "components" */ "./components/Header/Header"))
+const HomeView = lazy(() => import(/* webpackChunkName: "home" */ "./views/Home/Home.js"))
+const NotFoundView = lazy(() => import(/* webpackChunkName: "not-found" */ "./views/NotFound/NotFound.jsx"))
 // This snippet makes the home view take longer to load intentionally. Increase the timeout to increase the load time.
 // Useful for testing the loader.
 // const HomeView = lazy(() => {
@@ -28,14 +19,9 @@ const SLPView = lazy(() =>
 //   ])
 //   .then(([moduleExports]) => moduleExports);
 // });
-const ArticleView = lazy(() =>
-  import(/* webpackChunkName: "article" */ "./views/Article/Article.js")
-)
-const ComponentsDemoView = lazy(() =>
-  import(
-    /* webpackChunkName: "demo" */ "./views/ComponentsDemo/ComponentsDemo.js"
-  )
-)
+const ArticleView = lazy(() => import(/* webpackChunkName: "article" */ "./views/Article/Article.js"))
+const ComponentsDemoView = lazy(() => import(/* webpackChunkName: "demo" */ "./views/ComponentsDemo/ComponentsDemo.js"))
+const SLPView = lazy(() => import(/* webpackChunkName: "slp" */ "./views/SLP/SLP.js"))
 
 function App() {
   const theme = createMuiTheme({

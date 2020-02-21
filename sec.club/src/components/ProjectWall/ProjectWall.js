@@ -1,48 +1,11 @@
 import React, { useState, useEffect } from "react"
 import "./ProjectWall.scss"
-import {
-  GridList,
-  GridListTile,
-  GridListTileBar,
-  Paper
-} from "@material-ui/core"
 import Project from "./Project/Project"
 import secLogo from "../../assets/logo.svg"
 import nextIcon from "../../assets/next.svg"
 import PROJECTS from "../../views/SLP/Projects"
 
 const styles = {
-  projectWall: {
-    position: "relative",
-    display: "flex",
-    overflow: "scroll",
-    // overflowX: "scroll",
-    width: "100%",
-    height: "100px",
-    scrollBehavior: "smooth"
-  },
-  project: {
-    display: "flex",
-    height: "100%"
-  },
-  imgContainer: {
-    display: "flex",
-    width: "25%",
-    justifyContent: "center",
-    alignItems: "center"
-  },
-  img: {
-    width: "50%",
-    borderRadius: "50%",
-    border: "4px solid black"
-  },
-  captionContainer: {
-    display: "flex",
-    width: "75%",
-    flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "flex-start"
-  },
   scrollContainer: {
     display: "flex",
     justifyContent: "center",
@@ -66,16 +29,16 @@ const ProjectWall = ({ setProject }) => {
   useEffect(() => {})
   return (
     <>
-      <div style={styles.projectWall}>
+      <div className="project-wall">
         {PROJECTS.map((project, index) => {
           return (
-            <div style={styles.project} className="ProjectTile">
-              <div style={styles.imgContainer}>
-                <img style={styles.img} src={project.img} />
+            <div className="project">
+              <div class="img-container">
+                <img src={project.img} alt={`Logo for ${project.name}`} />
               </div>
-              <div style={styles.captionContainer}>
-                <h1 style={{ fontSize: "20px" }}>{project.caption}</h1>
-                <h5>{`${project.semester} ${project.year}`}</h5>
+              <div className="name">
+                <span style={{ fontSize: "20px" }}>{project.name}</span>
+                <span>{`${project.semester} ${project.year}`}</span>
               </div>
             </div>
           )
