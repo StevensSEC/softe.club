@@ -1,5 +1,5 @@
 import openTogetherTubeLogo from "../../assets/project-wall/open-together-tube-logo.svg"
-import secLogo from "../../assets/sec-logo.png"
+import secLogo from "../../assets/logo.svg"
 
 const PROJECTS = [
   {
@@ -27,7 +27,6 @@ const PROJECTS = [
     markdown: "slp/quick-quack.md"
   },
   {
-    path: "coming-soon",
     img: secLogo,
     name: "Coming soon!",
     semester: "Fall",

@@ -1,6 +1,6 @@
 import React from "react"
 import "./ProjectWall.scss"
-import { Link } from "react-router-dom"
+import { NavLink } from "react-router-dom"
 // import Project from "./Project/Project"
 // import secLogo from "../../assets/logo.svg"
 // import nextIcon from "../../assets/next.svg"
@@ -22,26 +22,20 @@ import PROJECTS from "../../views/SLP/Projects"
 // }
 
 const ProjectWall = () => {
-  // const scroll = elementIndex => {
-  //   // Rudimentary functionality for now: scroll to end or scoll to beginning
-  //   // TODO: Scroll to first element not visible in current viewport
-  //   document.getElementById(`project-${elementIndex}`).scrollIntoView()
-  // }
-  // useEffect(() => {})
   return (
     <>
       <div className="project-wall">
         {PROJECTS.map((project, index) => {
           return (
-            <Link to={`/slp/${project.path}`} className="project" key={`project-${index}`}>
+            <NavLink to={`/slp/${project.path ? project.path : "coming-soon"}`} className="project" key={`project-${index}`} activeClassName="active">
               <div className="img-container">
                 <img src={project.img} alt={`Logo for ${project.name}`} />
               </div>
               <div className="name">
-                <span style={{ fontSize: "20px" }}>{project.name}</span>
+                <span>{project.name}</span>
                 <span>{`${project.semester} ${project.year}`}</span>
               </div>
-            </Link>
+            </NavLink>
           )
         })}
       </div>
