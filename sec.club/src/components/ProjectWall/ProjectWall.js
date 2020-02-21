@@ -14,14 +14,12 @@ import PROJECTS from "../../views/SLP/Projects"
 const styles = {
   projectWall: {
     position: "relative",
-    flexWrap: "wrap",
-    // overflow: "hidden",
-    overflowX: "scroll",
+    display: "flex",
+    overflow: "scroll",
+    // overflowX: "scroll",
+    width: "100%",
     height: "100px",
     scrollBehavior: "smooth"
-  },
-  projectContainer: {
-    width: "25%"
   },
   project: {
     display: "flex",
@@ -65,29 +63,24 @@ const ProjectWall = ({ setProject }) => {
     // TODO: Scroll to first element not visible in current viewport
     document.getElementById(`project-${elementIndex}`).scrollIntoView()
   }
+  useEffect(() => {})
   return (
     <>
-      <GridList style={styles.projectWall} id="project-wall" cellHeight={100}>
+      <div style={styles.projectWall}>
         {PROJECTS.map((project, index) => {
           return (
-            <GridListTile
-              style={styles.projectContainer}
-              id={`project-${index}`}
-              onClick={() => setProject(project)}
-            >
-              <div style={styles.project} className="ProjectTile">
-                <div style={styles.imgContainer}>
-                  <img style={styles.img} src={project.img} />
-                </div>
-                <div style={styles.captionContainer}>
-                  <h1 style={{ fontSize: "20px" }}>{project.caption}</h1>
-                  <h5>{`${project.semester} ${project.year}`}</h5>
-                </div>
+            <div style={styles.project} className="ProjectTile">
+              <div style={styles.imgContainer}>
+                <img style={styles.img} src={project.img} />
               </div>
-            </GridListTile>
+              <div style={styles.captionContainer}>
+                <h1 style={{ fontSize: "20px" }}>{project.caption}</h1>
+                <h5>{`${project.semester} ${project.year}`}</h5>
+              </div>
+            </div>
           )
         })}
-      </GridList>
+      </div>
       {/* // This section can be uncommented in far future when we have more SLPs */}
       {/* <div style={styles.scrollContainer}>
         <div
