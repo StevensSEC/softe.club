@@ -22,7 +22,7 @@ const SLPView = () => {
       <div style={styles.content}>
         <h1>{project.caption}</h1>
         <h3>{project.semester + " " + project.year}</h3>
-        <ArticleView source={project.markdown}></ArticleView>
+        <ArticleView source={project.markdown} title="SLP"></ArticleView>
       </div>
     </div>
   )

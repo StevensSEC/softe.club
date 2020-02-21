@@ -7,7 +7,6 @@ import {
   Paper
 } from "@material-ui/core"
 import Project from "./Project/Project"
-import "../../assets/logo.scss"
 import secLogo from "../../assets/logo.svg"
 import nextIcon from "../../assets/next.svg"
 import PROJECTS from "../../views/SLP/Projects"
@@ -16,7 +15,9 @@ const styles = {
   projectWall: {
     position: "relative",
     flexWrap: "wrap",
-    overflow: "hidden",
+    // overflow: "hidden",
+    overflowX: "scroll",
+    height: "100px",
     scrollBehavior: "smooth"
   },
   projectContainer: {
@@ -42,8 +43,7 @@ const styles = {
     width: "75%",
     flexDirection: "column",
     justifyContent: "center",
-    alignItems: "flex-start",
-    lineHeight: "5%"
+    alignItems: "flex-start"
   },
   scrollContainer: {
     display: "flex",

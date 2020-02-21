@@ -1,6 +1,5 @@
 import React from "react"
 import "./Project.scss"
-import "../../../assets/logo.scss"
 import logo from "../../../assets/logo.svg"
 import { ReactSVG } from "react-svg"
 import { GridListTile, GridListTileBar } from "@material-ui/core"
