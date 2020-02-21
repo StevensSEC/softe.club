@@ -1,46 +1,47 @@
-import React, { useState, useEffect } from "react"
+import React from "react"
 import "./ProjectWall.scss"
-import Project from "./Project/Project"
-import secLogo from "../../assets/logo.svg"
-import nextIcon from "../../assets/next.svg"
+import { Link } from "react-router-dom"
+// import Project from "./Project/Project"
+// import secLogo from "../../assets/logo.svg"
+// import nextIcon from "../../assets/next.svg"
 import PROJECTS from "../../views/SLP/Projects"
 
-const styles = {
-  scrollContainer: {
-    display: "flex",
-    justifyContent: "center",
-    width: "100%"
-  },
-  scrollButton: {
-    backgroundColor: "white",
-    width: "50%",
-    display: "flex",
-    justifyContent: "center",
-    opacity: 0.5
-  }
-}
+// const styles = {
+//   scrollContainer: {
+//     display: "flex",
+//     justifyContent: "center",
+//     width: "100%"
+//   },
+//   scrollButton: {
+//     backgroundColor: "white",
+//     width: "50%",
+//     display: "flex",
+//     justifyContent: "center",
+//     opacity: 0.5
+//   }
+// }
 
-const ProjectWall = ({ setProject }) => {
-  const scroll = elementIndex => {
-    // Rudimentary functionality for now: scroll to end or scoll to beginning
-    // TODO: Scroll to first element not visible in current viewport
-    document.getElementById(`project-${elementIndex}`).scrollIntoView()
-  }
-  useEffect(() => {})
+const ProjectWall = () => {
+  // const scroll = elementIndex => {
+  //   // Rudimentary functionality for now: scroll to end or scoll to beginning
+  //   // TODO: Scroll to first element not visible in current viewport
+  //   document.getElementById(`project-${elementIndex}`).scrollIntoView()
+  // }
+  // useEffect(() => {})
   return (
     <>
       <div className="project-wall">
         {PROJECTS.map((project, index) => {
           return (
-            <div className="project">
-              <div class="img-container">
+            <Link to={`/slp/${project.path}`} className="project" key={`project-${index}`}>
+              <div className="img-container">
                 <img src={project.img} alt={`Logo for ${project.name}`} />
               </div>
               <div className="name">
                 <span style={{ fontSize: "20px" }}>{project.name}</span>
                 <span>{`${project.semester} ${project.year}`}</span>
               </div>
-            </div>
+            </Link>
           )
         })}
       </div>

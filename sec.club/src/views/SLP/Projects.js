@@ -3,6 +3,7 @@ import secLogo from "../../assets/sec-logo.png"
 
 const PROJECTS = [
   {
+    path: "quick-quack",
     img: secLogo,
     name: "Quick Quack",
     semester: "Spring",
@@ -10,6 +11,7 @@ const PROJECTS = [
     markdown: "slp/quick-quack.md"
   },
   {
+    path: "open-together-tube",
     img: openTogetherTubeLogo,
     name: "Open Together Tube",
     semester: "Fall",
@@ -17,6 +19,7 @@ const PROJECTS = [
     markdown: "slp/open-together-tube.md"
   },
   {
+    path: "stevens-web-extension",
     img: secLogo,
     name: "Stevens Web Extension",
     semester: "Spring",
@@ -24,6 +27,7 @@ const PROJECTS = [
     markdown: "slp/quick-quack.md"
   },
   {
+    path: "coming-soon",
     img: secLogo,
     name: "Coming soon!",
     semester: "Fall",

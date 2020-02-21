@@ -1,19 +1,28 @@
-import React, { useState } from "react"
-import { Container } from "@material-ui/core"
+import React, { lazy } from "react"
+import { Switch, Route, Redirect, useParams } from "react-router-dom"
 import ProjectWall from "../../components/ProjectWall/ProjectWall"
 import PROJECTS from "./Projects"
-import ArticleView from "../Article/Article"
+
+const ArticleView = lazy(() => import(/* webpackChunkName: "article" */ "../Article/Article.js"))
+
+const ProjectContent = () => {
+  let { projectPath } = useParams();
+  let project = PROJECTS.filter(p => p.path === projectPath)[0];
+  return (
+    <ArticleView source={project.markdown} title={project.name} />
+  )
+}
 
 const SLPView = () => {
-  const [project, setProject] = useState(PROJECTS[0])
   return (
-    <div className="slp-container">
-      <ProjectWall setProject={setProject} />
-      <Container>
-        <h1>{project.name}</h1>
-        <h3>{project.semester + " " + project.year}</h3>
-      </Container>
-      <ArticleView source={project.markdown} title={project.name} />
+    <div>
+      <ProjectWall />
+      <Switch>
+        <Redirect exact from="/slp" to={`/slp/${PROJECTS[0].path}`} />
+        <Route path="/slp/:projectPath">
+          <ProjectContent />
+        </Route>
+      </Switch>
     </div>
   )
 }
