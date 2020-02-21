@@ -7,6 +7,7 @@ import logo from "../../assets/logo.svg";
 import DocumentTitle from "../../components/DocumentTitle/DocumentTitle.js";
 import EventBanner from "../../components/EventBanner/EventBanner.jsx"
 import EVENTS from "./Events.js"
+import Footer from "../../components/Footer/Footer.jsx"
 
 export default function HomeView() {
 	return (
@@ -33,6 +34,7 @@ export default function HomeView() {
 					)
 				})}
 			</Container>
+			<Footer/>
 		</Box>
 	)
 }
