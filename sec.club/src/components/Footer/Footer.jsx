@@ -1,23 +1,31 @@
 import React from "react"
+import email from "../../assets/email.svg"
+import instagram  from "../../assets/instagram.svg"
 import groupme from "../../assets/groupme.svg"
+import slack from "../../assets/slack.svg"
+import Button from "../Button/Button"
 import "./Footer.scss"
 
 export default function Footer(){
     return (
+        <>
         <div class="footer">
-            <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css"/>
-            <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/v4-shims.css"/>
-            <a href="https://www.instagram.com/secstevens/?utm_source=ig_profile_share&igshid=11oehey6qskqx">
-                <i class="fab fa-instagram fa-3x"></i>
-            </a>
-            <a href="https://secstevens.slack.com">
-                <i class="fab fa-slack fa-3x"></i></a>
-            <a href="https://web.groupme.com/join_group/47489910/Iw5HVV">
-                <img src={groupme} alt="Icon for GroupMe"></img>
-            </a>
-            <a href="https://lists.stevens.edu/mailman/listinfo/sec">
-                <i class="fas fa-envelope fa-3x"></i>
-            </a>
+            <Button to="https://www.instagram.com/secstevens/" kind="icon" className="icon-button">
+                <img src={instagram} alt="Icon for Instagram"/>
+            </Button>
+            <Button to="https://secstevens.slack.com" kind="icon" className="icon-button">
+                <img src={slack} alt="Icon for Slack"/>
+            </Button>
+            <Button to="https://web.groupme.com/join_group/47489910/Iw5HVV" kind="icon" className="icon-button"> 
+                <img src={groupme} alt="Icon for GroupMe"/>
+            </Button>
+            <Button to="https://lists.stevens.edu/mailman/listinfo/sec" kind="icon" className="icon-button">
+                <img src={email} alt="Icon for Email"/>
+            </Button>
         </div>
+        <div class="github">This website is open source! Check it out on the SEC <a href="https://github.com/StevensSEC/">Github</a></div>
+        <div class="attr">Slack icon made by Pixel perfect from www.flaticon.com</div>
+        <div class="attr">Email icon made by Those Icons from www.flaticon.com</div>
+        </>
     )
 }

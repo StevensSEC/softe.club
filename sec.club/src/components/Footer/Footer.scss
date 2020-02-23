@@ -12,37 +12,31 @@
     text-align: center;
     align-items: center;
 
-    a{
-        margin: 0;
-        padding: 0;
-        background-color: $background-color;
-        align-items: center;
-    }
-
-    i, img {
-        color: white;
-        text-decoration: none;
-        margin: 0.3em;
-        padding: 0.3em;
+    .icon-button {
+        margin: 0.8em;
     }
 
     img {
         max-width: 3em;
         max-height: 3em;
-        padding: 0.8em;
     }
+}
 
-    i:hover, img:hover{
-        background-color: lighten($background-color, 10%);
-        transition: 0.15s;
+.github {
+    text-align: center;
+    margin: 0.7em 0;
+    font-size: 11px;
+    a {
+        text-decoration: none;
+        color: $primary-color;
     }
-
-    a:focus{
-        outline: none;
-        i, img {
-            background-color: lighten($background-color, 10%);
-            transition: 0.15s;
-        }
+    a:hover {
+        text-decoration: underline;
     }
+}
 
+.attr {
+    font-size: 8px;
+    color: #504c4c;
+    text-align: center;
 }
