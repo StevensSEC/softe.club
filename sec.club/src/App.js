@@ -4,6 +4,7 @@ import { createMuiTheme, ThemeProvider } from "@material-ui/core"
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 import { red, cyan } from "@material-ui/core/colors";
 import Loader from "./components/Loader/Loader.js";
+import Footer from "./components/Footer/Footer.jsx"
 
 import SecStyle from "./variables.scss";
 
@@ -85,6 +86,7 @@ function App() {
             </Switch>
           </Suspense>
         </Suspense>
+        <Footer/>
         </div>
       </ThemeProvider>
     </Router>
