@@ -85,8 +85,8 @@ function App() {
               </Route>
             </Switch>
           </Suspense>
+          <Footer/>
         </Suspense>
-        <Footer/>
         </div>
       </ThemeProvider>
     </Router>
