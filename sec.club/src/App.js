@@ -5,7 +5,6 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 import { red, cyan } from "@material-ui/core/colors";
 import Loader from "./components/Loader/Loader.js";
 
-
 import SecStyle from "./variables.scss";
 
 const Header = lazy(() => import(/* webpackChunkName: "components" */"./components/Header/Header"));
