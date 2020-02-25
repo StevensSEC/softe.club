@@ -8,6 +8,7 @@ import Loader from "./components/Loader/Loader.js";
 import SecStyle from "./variables.scss";
 
 const Header = lazy(() => import(/* webpackChunkName: "components" */"./components/Header/Header"));
+const Footer = lazy(() => import(/* webpackChunkName: "components" */"./components/Footer/Footer.jsx"));
 const HomeView = lazy(() => import(/* webpackChunkName: "home" */"./views/Home/Home.js"));
 const NotFoundView = lazy(() => import(/* webpackChunkName: "not-found" */"./views/NotFound/NotFound.jsx"));
 // This snippet makes the home view take longer to load intentionally. Increase the timeout to increase the load time.
@@ -84,6 +85,7 @@ function App() {
               </Route>
             </Switch>
           </Suspense>
+          <Footer/>
         </Suspense>
         </div>
       </ThemeProvider>
