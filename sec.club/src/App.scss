@@ -7,6 +7,8 @@
   min-height: 100vh;
   width: 100%;
   color: $text-color;
+  padding-bottom: 3rem; //footer height
+  position: relative;
 
   font-family: 'Source Code Pro', monospace;
 }
