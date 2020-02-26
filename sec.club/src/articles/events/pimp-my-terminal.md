@@ -6,6 +6,24 @@
 
 </span>
 
+## IDEs
+
+Your IDE is the easiest place to start making your environment something that works for you.
+
+The easiest customization is picking a preset theme!
+
+### VS Code
+
+1. Open Settings `Ctrl + ,`
+2. Search for "theme"
+3. Pick a theme from the dropdown here:
+
+![Workbench: Color Theme](pimp-my-terminal/howto-vscode-theme.png)
+
+You can also install more themes as extensions, and you can install different icon themes.
+
+![Workbench: Icon Theme](pimp-my-terminal/howto-vscode-icon-theme.png)
+
 ## Terminals
 
 You need to have a terminal in order to pimp it out! You probably already have one, but if it's the default one (especially on windows) it probably sucks.
@@ -14,12 +32,26 @@ You need to have a terminal in order to pimp it out! You probably already have o
 
 Windows users should take a look at the [new Windows terminal from Microsoft](https://github.com/microsoft/terminal). You can install it from the Windows Store.
 
-### Mac
+There are other options:
 
+- [Windows Terminal](https://github.com/microsoft/terminal)
+- [Alacritty](https://github.com/alacritty/alacritty)
 
 ### Linux
 
-Linux users have a lot of options.
+Linux users have a lot of options. Most desktop environments come with a terminal thats good enough.
+
+- [Alacritty](https://github.com/alacritty/alacritty)
+- [Hyper](https://hyper.is)
+- [kitty](https://sw.kovidgoyal.net/kitty/)
+- [Cool Retro Term](https://github.com/Swordfish90/cool-retro-term) - Very fancy, not battery friendly, not very customizable
+- [st](https://st.suckless.org)
+
+### Mac
+
+Most Linux terminals should work on Mac, but your milage may vary.
+
+- [iTerm2](https://www.iterm2.com)
 
 ## Colors
 
@@ -29,7 +61,7 @@ Picking good colors is an essential part of making your environment yours.
 
 <span style="background:red">TODO: Try using ColorTool</span>
 
-Windows terminal users can use the [ColorTool](https://github.com/Microsoft/Terminal/tree/master/src/tools/ColorTool) to make it easy to configure new color schemes.
+Windows Terminal users can use the [ColorTool](https://github.com/Microsoft/Terminal/tree/master/src/tools/ColorTool) to make it easy to configure new color schemes.
 
 ## Fonts
 
@@ -52,9 +84,19 @@ On Unix-based operating systems, most configuration files are text files. Usuall
 
 When you open a terminal, the terminal starts a program called the "shell". This is the program that you type commands into. It parses what you type in and does what you tell it to.
 
+### Unix based systems (Mac and Linux)
+
 - bash (default on most Unix systems)
 - zsh <span style="background:red">TODO: show features of zsh</span>
 - fish <span style="background:red">TODO: show features of fish</span>
+
+### Windows
+
+Through the Windows Subsystem for Linux, you can use all the Unix shells above. If you don't want to do that, you're stuck with these.
+
+- cmd (installed by default, sucks)
+- powershell (installed by default, sucks a lot less)
+- git bash (installed with git for windows, kinda sucks)
 
 ## Shell configs
 
@@ -62,7 +104,7 @@ Whenever you open a new terminal, it automatically executes a shell script to lo
 
 <span style="background:red">UNCLEAR: which one should you edit?</span>
 
-all shells: `~/.profile`
+all Unix shells: `~/.profile`
 
 bash: `~/.bashrc`
 
