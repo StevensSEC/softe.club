@@ -49,43 +49,45 @@ function App() {
         <Suspense fallback={<div>Loading...</div>}>
           <Header></Header>
           <Suspense fallback={<Loader/>}>
-            <Switch>
-              <Route exact path="/">
-                <HomeView />
-              </Route>
-              <Route path="/slp">
-                <ArticleView source="slp.md" title="Semester Long Project" />
-              </Route>
-              <Route path="/about">
-                <ArticleView source="about.md" title="About" />
-              </Route>
-              <Route path="/team">
-                <ArticleView source="team.md" title="Team" />
-              </Route>
-              <Route path="/contact">
-                <ArticleView source="contact.md" title="Contact" />
-              </Route>
-              <Route path="/resources">
-                <ArticleView source="resources.md" title="Resources" />
-              </Route>
-              <Route path="/git-cheatsheet">
-                <ArticleView source="git-cheatsheet.md" title="Git Cheatsheet"/>
-              </Route>
-              <Route path="/event/pair-programming-2020">
-                <ArticleView source="events/2020-pair-programming.md" title="Pair Programming 2020"/>
-              </Route>
-              <Route path="/dev-readme">
-                <ArticleView source="README.md" title="README"/>
-              </Route>
-              <Route path="/dev/components">
-                <ComponentsDemoView />
-              </Route>
-              <Route>
-                <NotFoundView/>
-              </Route>
-            </Switch>
+            <div className="content-wrap">
+              <Switch>
+                <Route exact path="/">
+                  <HomeView />
+                </Route>
+                <Route path="/slp">
+                  <ArticleView source="slp.md" title="Semester Long Project" />
+                </Route>
+                <Route path="/about">
+                  <ArticleView source="about.md" title="About" />
+                </Route>
+                <Route path="/team">
+                  <ArticleView source="team.md" title="Team" />
+                </Route>
+                <Route path="/contact">
+                  <ArticleView source="contact.md" title="Contact" />
+                </Route>
+                <Route path="/resources">
+                  <ArticleView source="resources.md" title="Resources" />
+                </Route>
+                <Route path="/git-cheatsheet">
+                  <ArticleView source="git-cheatsheet.md" title="Git Cheatsheet"/>
+                </Route>
+                <Route path="/event/pair-programming-2020">
+                  <ArticleView source="events/2020-pair-programming.md" title="Pair Programming 2020"/>
+                </Route>
+                <Route path="/dev-readme">
+                  <ArticleView source="README.md" title="README"/>
+                </Route>
+                <Route path="/dev/components">
+                  <ComponentsDemoView />
+                </Route>
+                <Route>
+                  <NotFoundView/>
+                </Route>
+              </Switch>
+            </div>
+            <Footer/>
           </Suspense>
-          <Footer/>
         </Suspense>
         </div>
       </ThemeProvider>
