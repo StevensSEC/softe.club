@@ -20,7 +20,8 @@ const EVENTS = [
     {
         flyerSource: 'Pimp my terminal.png',
         title: 'Pimp My Terminal',
-        desc: 'Come learn how to make your developing process look pretty by decking out your VSCode and your terminal. Altorfer Software Engineering Lab, March 5th, 9 PM'
+        desc: 'Come learn how to make your developing process look pretty by decking out your VSCode and your terminal. Altorfer Software Engineering Lab, March 5th, 9 PM',
+        endDate: new Date('March 5, 2020'),
     }
 ]
 
