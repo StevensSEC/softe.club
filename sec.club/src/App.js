@@ -76,10 +76,10 @@ function App() {
                   <ArticleView source="events/2020-pair-programming.md" title="Pair Programming 2020"/>
                 </Route>
                 <Route path="/event/pimp-my-terminal">
-                  <ArticleView source="events/pimp-my-terminal.md" title="Pimp My Terminal"/>
+                  <ArticleView source="events/pimp-my-terminal/pimp-my-terminal.md" title="Pimp My Terminal"/>
                 </Route>
                 <Route path="/tutorial/install-wsl">
-                  <ArticleView source="howto-install-wsl.md" title="How to Install the Windows Subsystem for Linux"/>
+                  <ArticleView source="events/pimp-my-terminal/howto-install-wsl.md" title="How to Install the Windows Subsystem for Linux"/>
                 </Route>
                 <Route path="/dev-readme">
                   <ArticleView source="README.md" title="README"/>
