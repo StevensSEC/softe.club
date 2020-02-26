@@ -1,9 +1,9 @@
 import React, { Suspense, lazy } from "react"
 import "./App.scss"
 import { createMuiTheme, ThemeProvider } from "@material-ui/core"
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
-import { red, cyan } from "@material-ui/core/colors"
-import Loader from "./components/Loader/Loader.js"
+import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom"
+import { red, cyan } from "@material-ui/core/colors";
+import Loader from "./components/Loader/Loader.js";
 
 import SecStyle from "./variables.scss"
 
@@ -76,12 +76,16 @@ function App() {
                 <Route path="/event/pair-programming-2020">
                   <ArticleView source="events/2020-pair-programming.md" title="Pair Programming 2020"/>
                 </Route>
+                <Route path="/event/pimp-my-terminal">
+                  <ArticleView source="events/pimp-my-terminal.md" title="Pimp My Terminal"/>
+                </Route>
                 <Route path="/dev-readme">
                   <ArticleView source="README.md" title="README"/>
                 </Route>
                 <Route path="/dev/components">
                   <ComponentsDemoView />
                 </Route>
+                <Redirect from="/pmt" to="/event/pimp-my-terminal" />
                 <Route>
                   <NotFoundView/>
                 </Route>
