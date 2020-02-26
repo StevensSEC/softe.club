@@ -103,6 +103,8 @@ When you open a terminal, the terminal starts a program called the "shell". This
 
 Through the Windows Subsystem for Linux, you can use all the Unix shells above. If you don't want to do that, you're stuck with these.
 
+[How to install the Windows Subsystem for Linux](/tutorial/install-wsl)
+
 - cmd (installed by default, sucks)
 - powershell (installed by default, sucks a lot less)
 - git bash (installed with git for windows, kinda sucks)
