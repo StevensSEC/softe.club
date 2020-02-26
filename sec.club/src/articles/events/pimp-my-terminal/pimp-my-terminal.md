@@ -105,8 +105,8 @@ Found a shell you like? Here's [how to set the default shell](/tutorial/set-defa
 ### Unix based systems (Mac and Linux)
 
 - bash (default on most Unix systems)
-- zsh <span style="background:red">TODO: show features of zsh</span>
-- fish <span style="background:red">TODO: show features of fish</span>
+- zsh - [See what zsh can do](https://code.joejag.com/2014/why-zsh.html)
+- fish - [See what fish can do](https://fishshell.com)
 
 ### Windows
 
@@ -123,6 +123,8 @@ Through the Windows Subsystem for Linux, you can use all the Unix shells above. 
 Whenever you open a new terminal, it automatically executes a shell script to load settings and set environment variables. This is where you can add aliases and other shell configuration.
 
 <span style="background:red">UNCLEAR: which one should you edit?</span>
+
+Mac users may need some special configuration to stay organized: [Follow the instructions here](/tutorial/ensure-bashrc-profile-setup)
 
 all Unix shells: `~/.profile` (Mac users, edit this one)
 
