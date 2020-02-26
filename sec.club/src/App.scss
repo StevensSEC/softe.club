@@ -2,7 +2,6 @@
 @import url('https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap');
 
 .App {
-  background-color: $background-color;
   height: 100%;
   width: 100%;
   color: $text-color;
@@ -12,9 +11,9 @@
     min-height: 100vh;
   }
 
-  body {
-    background-color: $background-color;
-  }
-
   font-family: 'Source Code Pro', monospace;
+}
+
+body {
+  background-color: $background-color;
 }
