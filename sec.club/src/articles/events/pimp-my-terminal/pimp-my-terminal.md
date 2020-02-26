@@ -174,7 +174,7 @@ Example:
 
 On Linux, there are many ways to customize your desktop environment. You can either use a full blown desktop environment like KDE or XFCE, or you can use something more minimal.
 
-Status Bars
+### Status Bars
 - [Polybar](https://github.com/polybar/polybar)
 
 ![polybar example](pimp-my-terminal/polybar-example1.png)
@@ -182,11 +182,16 @@ Status Bars
 
 - [lemonbar](https://github.com/LemonBoy/bar)
 
-Window Managers
+![lemmonbar example](pimp-my-terminal/lemonbar-example1.png)
+
+### Window Managers
 
 There are different kinds of window managers. Some control how windows are laid out, some are more traditional.
 
 - [i3](https://i3wm.org) (popular)
+
+![i3 example](pimp-my-terminal/i3-example1.png)
+
 - [awesomewm](https://awesomewm.org)
 - [2bwm](https://github.com/venam/2bwm)
 - [openbox](http://openbox.org/wiki/Main_Page)
