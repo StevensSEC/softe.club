@@ -24,6 +24,15 @@ You can also install more themes as extensions, and you can install different ic
 
 ![Workbench: Icon Theme](pimp-my-terminal/howto-vscode-icon-theme.png)
 
+### Extensions
+
+Pimping out your dev environment doesn't just mean "make it look cool". It also means to "make it work for you". These extensions are tools to improve productivity.
+
+- TabNine `tabnine.tabnine-vscode` - Uses machine learning to help you write code faster. - Not battery friendy, not memory friendly.
+- GitLens `eamodio.gitlens` - Extra git integration features.
+- Path Intellisense `christian-kohler.path-intellisense` - Autocompletes filenames.
+- Debug Visualizer `hediet.debug-visualizer` - Fancy graphics for visualizing data structures while stepping through code.
+
 ## Terminals
 
 You need to have a terminal in order to pimp it out! You probably already have one, but if it's the default one (especially on windows) it probably sucks.
