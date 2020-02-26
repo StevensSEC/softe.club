@@ -82,6 +82,15 @@ function App() {
                 <Route path="/tutorial/install-wsl">
                   <ArticleView source="events/pimp-my-terminal/howto-install-wsl.md" title="How to Install the Windows Subsystem for Linux"/>
                 </Route>
+                <Route path="/tutorial/enable-colors-mac">
+                  <ArticleView source="events/pimp-my-terminal/howto-enable-terminal-colors-mac.md" title="How to TODO"/>
+                </Route>
+                <Route path="/tutorial/iterm2-import-colors">
+                  <ArticleView source="events/pimp-my-terminal/howto-enable-terminal-colors-mac.md" title="How to TODO"/>
+                </Route>
+                <Route path="/tutorial/set-default-shell">
+                  <ArticleView source="events/pimp-my-terminal/howto-set-default-shell.md" title="How to TODO"/>
+                </Route>
                 <Route path="/dev-readme">
                   <ArticleView source="README.md" title="README"/>
                 </Route>
