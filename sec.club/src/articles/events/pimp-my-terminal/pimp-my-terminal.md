@@ -70,7 +70,14 @@ Picking good colors is an essential part of making your environment yours.
 
 <span style="background:red">TODO: Try using ColorTool</span>
 
+#### Windows
+
 Windows Terminal users can use the [ColorTool](https://github.com/Microsoft/Terminal/tree/master/src/tools/ColorTool) to make it easy to configure new color schemes.
+
+#### Mac
+
+- [How to enable colors in your terminal on mac](/tutorial/enable-colors-mac)
+- [How to import color schemes into iTerm2](/tutorial/iterm2-import-colors)
 
 ## Fonts
 
@@ -92,6 +99,8 @@ On Unix-based operating systems, most configuration files are text files. Usuall
 ## Shells
 
 When you open a terminal, the terminal starts a program called the "shell". This is the program that you type commands into. It parses what you type in and does what you tell it to.
+
+Found a shell you like? Here's [how to set the default shell](/tutorial/set-default-shell).
 
 ### Unix based systems (Mac and Linux)
 
@@ -115,7 +124,7 @@ Whenever you open a new terminal, it automatically executes a shell script to lo
 
 <span style="background:red">UNCLEAR: which one should you edit?</span>
 
-all Unix shells: `~/.profile`
+all Unix shells: `~/.profile` (Mac users, edit this one)
 
 bash: `~/.bashrc`
 
