@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import "./Button.scss";
 
 export default class Button extends Component {
@@ -52,11 +52,20 @@ export default class Button extends Component {
 		let classes = `sec-btn sec-kind-${kind}${className ? " " + className : ""}`;
 
 		if (this.shouldUseRouter()) {
-			return (
-				<Link to={to} className={classes} onClick={this.handleClick} {...other}>
-					{children}
-				</Link>
-			);
+			if (this.props.activeClassName) {
+				return (
+					<NavLink to={to} className={classes} onClick={this.handleClick} {...other}>
+						{children}
+					</NavLink>
+				);
+			}
+			else {
+				return (
+					<Link to={to} className={classes} onClick={this.handleClick} {...other}>
+						{children}
+					</Link>
+				);
+			}
 		}
 		else {
 			return (
