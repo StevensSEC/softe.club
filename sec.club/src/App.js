@@ -84,8 +84,8 @@ function App() {
                 <NotFoundView/>
               </Route>
             </Switch>
-            <Footer/>
           </Suspense>
+          <Footer/>
         </Suspense>
         </div>
       </ThemeProvider>
