@@ -122,11 +122,11 @@ Through the Windows Subsystem for Linux, you can use all the Unix shells above. 
 
 Whenever you open a new terminal, it automatically executes a shell script to load settings and set environment variables. This is where you can add aliases and other shell configuration.
 
-<span style="background:red">UNCLEAR: which one should you edit?</span>
-
 Mac users may need some special configuration to stay organized: [Follow the instructions here](/tutorial/ensure-bashrc-profile-setup)
 
-all Unix shells: `~/.profile` (Mac users, edit this one)
+**It's recommended to edit the file that corresponds with your shell**
+
+all Unix shells: `~/.profile`
 
 bash: `~/.bashrc`
 
@@ -135,6 +135,8 @@ zsh: `~/.zshrc`
 ## Shell Appearance
 
 ## oh-my-zsh
+
+Lets you customize your zsh prompt.
 
 *Requires zsh*
 
@@ -155,6 +157,18 @@ agnoster:
 miloshadzic:
 
 ![oh-my-zsh example miloshadzic](pimp-my-terminal/ohmyzsh-miloshadzic.png)
+
+## posh-git
+
+Lets you show git info in your Powershell prompt
+
+Website: https://github.com/dahlbyk/posh-git
+
+[How to customize your Powershell prompt](https://github.com/dahlbyk/posh-git/wiki/Customizing-Your-PowerShell-Prompt)
+
+Example:
+
+![posh-git example prompt](pimp-my-terminal/posh-git-prompt.png)
 
 ## Desktop Environment
 
