@@ -82,13 +82,13 @@ function App() {
                   <ArticleView source="events/pimp-my-terminal/howto-install-wsl.md" title="How to Install the Windows Subsystem for Linux"/>
                 </Route>
                 <Route path="/tutorial/enable-colors-mac">
-                  <ArticleView source="events/pimp-my-terminal/howto-enable-terminal-colors-mac.md" title="How to TODO"/>
+                  <ArticleView source="events/pimp-my-terminal/howto-enable-terminal-colors-mac.md" title="How to Enable Terminal Colors on Mac"/>
                 </Route>
                 <Route path="/tutorial/iterm2-import-colors">
-                  <ArticleView source="events/pimp-my-terminal/howto-enable-terminal-colors-mac.md" title="How to TODO"/>
+                  <ArticleView source="events/pimp-my-terminal/howto-install-iterm2-themes.md" title="How to Install iTerm2 Color Themes"/>
                 </Route>
                 <Route path="/tutorial/set-default-shell">
-                  <ArticleView source="events/pimp-my-terminal/howto-set-default-shell.md" title="How to TODO"/>
+                  <ArticleView source="events/pimp-my-terminal/howto-set-default-shell.md" title="How to set the default shell"/>
                 </Route>
                 <Route path="/dev-readme">
                   <ArticleView source="README.md" title="README"/>
