@@ -198,8 +198,6 @@ There are different kinds of window managers. Some control how windows are laid 
 
 Need help picking a window manager? [LinuxBBQ](https://linuxbbq.com/cream.html) is a linux distro that has **76 different window managers** installed by default so you can try them all out easily.
 
-<span style="background:red">TODO: download LinuxBBQ ISO to usb drive so people don't have to wait to download it</span>
-
 ### What should I look for in a window manager?
 
 It's up to your personal preferences, but if you don't know what you want or need, here's some things to keep in mind.
