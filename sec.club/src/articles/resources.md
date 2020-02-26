@@ -45,6 +45,7 @@ Git is version control software. Using git is required for participating in the 
 
 Even if you don’t develop on Linux, you will encounter it eventually. It’s definitely worth taking the time to learn how Linux works and how to navigate a Linux environment. We recommend installing a virtual machine or installing the Windows Subsystem for Linux, to play around with it.
 
+- [Official SEC Bash Cheatsheet](/bash-cheatsheet)
 - [Linux Journey](https://linuxjourney.com)
 
 # Useful Tools
