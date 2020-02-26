@@ -26,40 +26,5 @@ const PROJECTS = [
     year: "2020",
     markdown: "slp/quick-quack.md"
   },
-  {
-    img: secLogo,
-    name: "Coming soon!",
-    semester: "Fall",
-    year: "2020",
-    markdown: "slp/quick-quack.md"
-  },
-  {
-    img: secLogo,
-    name: "Coming soon!",
-    semester: "Spring",
-    year: "2021",
-    markdown: "slp/quick-quack.md"
-  },
-  {
-    img: secLogo,
-    name: "Coming soon!",
-    semester: "Fall",
-    year: "2021",
-    markdown: "slp/quick-quack.md"
-  },
-  {
-    img: secLogo,
-    name: "Coming soon!",
-    semester: "Spring",
-    year: "2022",
-    markdown: "slp/quick-quack.md"
-  },
-  {
-    img: secLogo,
-    name: "Coming soon!",
-    semester: "Fall",
-    year: "2022",
-    markdown: "slp/quick-quack.md"
-  }
 ]
 export default PROJECTS
