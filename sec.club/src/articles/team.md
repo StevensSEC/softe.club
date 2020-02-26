@@ -11,6 +11,6 @@ This is SEC's Current Leadership Team:
 # Club Members
 SEC's Active Members:
 
-- Project Leader - [Adam Papenhausen](https://github.com/adapap)
+- Semester Long Project Leader - [Adam Papenhausen](https://github.com/adapap)
 
 (Please note: students will be added as they become contributors to this semester's project!)
