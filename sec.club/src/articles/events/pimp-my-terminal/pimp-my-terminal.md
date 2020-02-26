@@ -176,6 +176,10 @@ On Linux, there are many ways to customize your desktop environment. You can eit
 
 Status Bars
 - [Polybar](https://github.com/polybar/polybar)
+
+![polybar example](pimp-my-terminal/polybar-example1.png)
+![polybar example](pimp-my-terminal/polybar-example2.png)
+
 - [lemonbar](https://github.com/LemonBoy/bar)
 
 Window Managers
