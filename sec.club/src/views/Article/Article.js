@@ -100,7 +100,10 @@ export default class ArticleView extends PureComponent {
 						escapeHtml={false}
 						astPlugins={[parseHtml]}
 						renderers={{ code: CodeBlock, link: this.buildLink}}
-						transformImageUri={uri => require(`../../assets/${uri}`).default}
+						transformImageUri={uri => {
+							let img = require(`../../assets/${uri}`);
+							return img.default ? img.default : img;
+						}}
 					/>
 				</article>
 			</Container>
