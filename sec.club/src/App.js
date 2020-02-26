@@ -79,6 +79,9 @@ function App() {
                 <Route path="/event/pimp-my-terminal">
                   <ArticleView source="events/pimp-my-terminal.md" title="Pimp My Terminal"/>
                 </Route>
+                <Route path="/tutorial/install-wsl">
+                  <ArticleView source="howto-install-wsl.md" title="How to Install the Windows Subsystem for Linux"/>
+                </Route>
                 <Route path="/dev-readme">
                   <ArticleView source="README.md" title="README"/>
                 </Route>
