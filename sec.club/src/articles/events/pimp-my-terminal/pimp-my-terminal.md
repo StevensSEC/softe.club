@@ -106,6 +106,10 @@ ColorTool.exe -b -x SCHEME
 - [How to enable colors in your terminal on mac](/tutorial/enable-colors-mac)
 - [How to import color schemes into iTerm2](/tutorial/iterm2-import-colors)
 
+#### Linux
+
+It varies, based on your terminal.
+
 ## Fonts
 
 <span style="background:red">TODO: list good monospace fonts</span>
