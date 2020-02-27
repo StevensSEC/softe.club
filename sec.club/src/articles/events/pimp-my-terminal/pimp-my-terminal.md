@@ -85,11 +85,21 @@ Picking good colors is an essential part of making your environment yours.
 - https://terminal.sexy
 - [pywal](https://github.com/dylanaraps/pywal) - extract color schemes from images, good for matching your background
 
-<span style="background:red">TODO: Try using ColorTool</span>
-
 #### Windows
 
 Windows Terminal users can use the [ColorTool](https://github.com/Microsoft/Terminal/tree/master/src/tools/ColorTool) to make it easy to configure new color schemes.
+
+List color schemes:
+
+```
+ColorTool.exe -s
+```
+
+Set color scheme:
+
+```
+ColorTool.exe -b -x SCHEME
+```
 
 #### Mac
 
