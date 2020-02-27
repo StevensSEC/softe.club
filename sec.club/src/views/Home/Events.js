@@ -17,7 +17,12 @@ The endDate property is optional if you don't want an event to go away for a lon
 */
 
 const EVENTS = [
-    
+    {
+        flyerSource: 'Pimp my terminal.png',
+        title: 'Pimp My Terminal',
+        desc: 'Come learn how to make your developing process look pretty by decking out your VSCode and your terminal. Altorfer Software Engineering Lab, March 5th, 9 PM',
+        endDate: new Date('March 5, 2020'),
+    }
 ]
 
 export default EVENTS;

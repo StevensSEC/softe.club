@@ -7,9 +7,10 @@ import Loader from "./components/Loader/Loader.js"
 
 import SecStyle from "./variables.scss"
 
-const Header = lazy(() => import(/* webpackChunkName: "components" */ "./components/Header/Header"))
-const HomeView = lazy(() => import(/* webpackChunkName: "home" */ "./views/Home/Home.js"))
-const NotFoundView = lazy(() => import(/* webpackChunkName: "not-found" */ "./views/NotFound/NotFound.jsx"))
+const Header = lazy(() => import(/* webpackChunkName: "components" */"./components/Header/Header"));
+const Footer = lazy(() => import(/* webpackChunkName: "components" */"./components/Footer/Footer.jsx"));
+const HomeView = lazy(() => import(/* webpackChunkName: "home" */"./views/Home/Home.js"));
+const NotFoundView = lazy(() => import(/* webpackChunkName: "not-found" */"./views/NotFound/NotFound.jsx"));
 // This snippet makes the home view take longer to load intentionally. Increase the timeout to increase the load time.
 // Useful for testing the loader.
 // const HomeView = lazy(() => {
@@ -46,9 +47,10 @@ function App() {
     <Router>
       <ThemeProvider theme={theme}>
         <div className="App">
-          <Suspense fallback={<div>Loading...</div>}>
-            <Header></Header>
-            <Suspense fallback={<Loader />}>
+        <Suspense fallback={<div>Loading...</div>}>
+          <Header></Header>
+          <Suspense fallback={<Loader/>}>
+            <div className="content-wrap">
               <Switch>
                 <Route exact path="/">
                   <HomeView />
@@ -69,28 +71,23 @@ function App() {
                   <ArticleView source="resources.md" title="Resources" />
                 </Route>
                 <Route path="/git-cheatsheet">
-                  <ArticleView
-                    source="git-cheatsheet.md"
-                    title="Git Cheatsheet"
-                  />
+                  <ArticleView source="git-cheatsheet.md" title="Git Cheatsheet"/>
                 </Route>
                 <Route path="/event/pair-programming-2020">
-                  <ArticleView
-                    source="events/2020-pair-programming.md"
-                    title="Pair Programming 2020"
-                  />
+                  <ArticleView source="events/2020-pair-programming.md" title="Pair Programming 2020"/>
                 </Route>
                 <Route path="/dev-readme">
-                  <ArticleView source="README.md" title="README" />
+                  <ArticleView source="README.md" title="README"/>
                 </Route>
                 <Route path="/dev/components">
                   <ComponentsDemoView />
                 </Route>
                 <Route>
-                  <NotFoundView />
+                  <NotFoundView/>
                 </Route>
               </Switch>
-            </Suspense>
+            </div>
+            <Footer/>
           </Suspense>
         </div>
       </ThemeProvider>

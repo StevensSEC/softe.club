@@ -8,6 +8,7 @@ import DocumentTitle from "../../components/DocumentTitle/DocumentTitle.js";
 import EventBanner from "../../components/EventBanner/EventBanner.jsx"
 import EVENTS from "./Events.js"
 
+
 export default function HomeView() {
 	return (
 		<Box>
