@@ -1,6 +1,6 @@
 # How to set the default shell
 
-## Mac
+*Unix based systems only*
 
 You can see a list of available shells with this command:
 ```
@@ -12,7 +12,3 @@ To set the default shell, run the command
 chsh -s PATH
 ```
 where `PATH` is the file path to the shell program, as listed in `/etc/shells`.
-
-## Linux
-
-<span style="background:red">TODO: instructions</span>
