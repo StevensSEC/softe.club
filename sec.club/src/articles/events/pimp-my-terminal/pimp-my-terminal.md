@@ -24,7 +24,7 @@ You can also install more themes as extensions, and you can install different ic
 
 ![Workbench: Icon Theme](pimp-my-terminal/howto-vscode-icon-theme.png)
 
-### Extensions
+#### Extensions
 
 Pimping out your dev environment doesn't just mean "make it look cool". It also means to "make it work for you". These extensions are tools to improve productivity.
 
@@ -32,6 +32,22 @@ Pimping out your dev environment doesn't just mean "make it look cool". It also 
 - GitLens `eamodio.gitlens` - Extra git integration features.
 - Path Intellisense `christian-kohler.path-intellisense` - Autocompletes filenames.
 - Debug Visualizer `hediet.debug-visualizer` - Fancy graphics for visualizing data structures while stepping through code.
+- Vim for VS Code `vscodevim.vim` - Vim keybinds for VS Code.
+
+### Vim
+
+Vim is a text editor that runs in your terminal. [Check out how to use Vim here](/tutorial/cli-text-editors)
+
+Vim configuration is found at `~/.vimrc`
+
+- https://github.com/amix/vimrc - Useful preset configuration for Vim
+- [Check out Vim color schemes here](https://github.com/rafi/awesome-vim-colorschemes)
+
+### Emacs
+
+Emacs is similar to Vim, but it doesn't run in your terminal.
+
+[Learn how to customize Emacs here](https://www.gnu.org/software/emacs/manual/html_node/emacs/Easy-Customization.html)
 
 ## Terminals
 
@@ -67,6 +83,7 @@ Most Linux terminals should work on Mac, but your milage may vary.
 Picking good colors is an essential part of making your environment yours.
 
 - https://terminal.sexy
+- [pywal](https://github.com/dylanaraps/pywal) - extract color schemes from images, good for matching your background
 
 <span style="background:red">TODO: Try using ColorTool</span>
 
