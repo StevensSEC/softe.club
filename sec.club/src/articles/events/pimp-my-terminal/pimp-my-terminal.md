@@ -112,12 +112,15 @@ It varies, based on your terminal.
 
 ## Fonts
 
-<span style="background:red">TODO: list good monospace fonts</span>
-
 <span style="background:red">TODO: display fonts</span>
 
 - [powerline/fonts](https://github.com/powerline/fonts) - Pre-patched fonts with extra symbols
 - [Tecate/bitmap-fonts](https://github.com/Tecate/bitmap-fonts)
+- [Hack](https://github.com/source-foundry/Hack)
+- [IBM Plex Mono](https://github.com/IBM/plex)
+- [Ubuntu Mono](https://design.ubuntu.com/font/)
+- [Source Code Pro](https://github.com/adobe-fonts/source-code-pro)
+- [Cascadia Code](https://github.com/Microsoft/Cascadia-Code)
 
 ## Useful Info
 
