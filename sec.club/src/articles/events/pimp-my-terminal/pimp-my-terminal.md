@@ -212,6 +212,7 @@ There are different kinds of window managers. Some control how windows are laid 
 - [awesomewm](https://awesomewm.org)
 - [2bwm](https://github.com/venam/2bwm)
 - [openbox](http://openbox.org/wiki/Main_Page)
+- [bspwm](https://github.com/baskerville/bspwm)
 
 Need help picking a window manager? [LinuxBBQ](https://linuxbbq.com/cream.html) is a linux distro that has **76 different window managers** installed by default so you can try them all out easily.
 
