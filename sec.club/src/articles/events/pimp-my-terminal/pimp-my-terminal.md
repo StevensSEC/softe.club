@@ -1,11 +1,5 @@
 # Pimp My Terminal
 
-<span style="color:red">
-
-# TODO: organize
-
-</span>
-
 ## IDEs
 
 Your IDE is the easiest place to start making your environment something that works for you.
