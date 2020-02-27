@@ -198,6 +198,15 @@ Example:
 
 ![posh-git example prompt](pimp-my-terminal/posh-git-prompt.png)
 
+## Other Tools
+
+- [fuck](https://github.com/nvbn/thefuck) - Corrects typos in commands
+
+![fuck demo](https://raw.githubusercontent.com/nvbn/thefuck/master/example.gif)
+
+- [Homebrew](https://brew.sh) - package manager for Mac
+- [Chocolatey](https://chocolatey.org) - package manager for Windows
+
 ## Desktop Environment
 
 On Linux, there are many ways to customize your desktop environment. You can either use a full blown desktop environment like KDE or XFCE, or you can use something more minimal.
