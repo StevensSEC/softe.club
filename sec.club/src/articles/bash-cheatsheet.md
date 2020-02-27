@@ -23,6 +23,8 @@
 - `mkdir DIR` - make a new directory called `DIR`
 - `grep PATTERN FILE` - search `FILE` for `PATTERN`, where `PATTERN` is a [regular expression](https://regexr.com)
 
+[How to edit text files from the terminal](/tutorial/cli-text-editors)
+
 ## Scripting
 
 https://devhints.io/bash
