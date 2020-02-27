@@ -1,11 +1,5 @@
 # Pimp My Terminal
 
-<span style="color:red">
-
-# TODO: organize
-
-</span>
-
 ## IDEs
 
 Your IDE is the easiest place to start making your environment something that works for you.
@@ -232,8 +226,6 @@ There are different kinds of window managers. Some control how windows are laid 
 - [bspwm](https://github.com/baskerville/bspwm)
 
 Need help picking a window manager? [LinuxBBQ](https://linuxbbq.com/cream.html) is a linux distro that has **76 different window managers** installed by default so you can try them all out easily.
-
-<span style="background:red">TODO: download LinuxBBQ ISO to usb drive so people don't have to wait to download it</span>
 
 ### What should I look for in a window manager?
 
