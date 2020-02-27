@@ -17,9 +17,9 @@ During it's time as the active Semester Long Project, 10 club members made contr
 - Simon Wagner (@SWSoftware1044)
 - Zack Schieberl (@zackatoo)
 - Tyler Seliber (@Tyler-Seliber)
-- (@nebulouspianist)
+- Keye LI (@nebulouspianist)
 - Kenny Skelton (@KennethSkelton)
-- Jordan (@Jordan883)
+- Jordan Fernandes (@Jordan883)
 
 ## Screenshots
 
