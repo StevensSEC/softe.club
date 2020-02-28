@@ -24,7 +24,7 @@ const PROJECTS = [
     name: "Stevens Web Extension",
     semester: "Spring",
     year: "2020",
-    markdown: "slp/quick-quack.md"
+    markdown: "slp/stevens-web-extension.md"
   },
 ]
 export default PROJECTS
