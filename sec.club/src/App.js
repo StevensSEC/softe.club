@@ -100,6 +100,9 @@ function App() {
                 <Route path="/tutorial/cli-text-editors">
                   <ArticleView source="events/pimp-my-terminal/howto-use-cli-text-editors.md" title="How to set use terminal text editors"/>
                 </Route>
+                <Route path="/tutorial/vscode-theme">
+                  <ArticleView source="events/pimp-my-terminal/howto-vscode-set-theme.md" title="How to set your theme in VS Code"/>
+                </Route>
                 <Route path="/dev-readme">
                   <ArticleView source="README.md" title="README"/>
                 </Route>

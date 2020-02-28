@@ -1,32 +1,47 @@
 ![Pimp My Terminal](pimp-my-terminal/pmt-logo.svg)
 
-## IDEs
+You should be able to write code, and look cool doing it.
+That's what **Pimp My Terminal** is all about. But pimping
+out your dev environment doesn't just mean "make it look
+cool". It also means to "make it work for you".
+
+# Quick Links
+
+[Bash Cheatsheet](/bash-cheatsheet)
+
+# IDEs
 
 Your IDE is the easiest place to start making your environment something that works for you.
 
-The easiest customization is picking a preset theme!
-
 ### VS Code
 
-1. Open Settings `Ctrl + ,`
-2. Search for "theme"
-3. Pick a theme from the dropdown here:
+[Download](https://code.visualstudio.com) VS Code here.
 
-![Workbench: Color Theme](pimp-my-terminal/howto-vscode-theme.png)
-
-You can also install more themes as extensions, and you can install different icon themes.
-
-![Workbench: Icon Theme](pimp-my-terminal/howto-vscode-icon-theme.png)
+[How to set your theme in VS Code](/tutorial/vscode-theme)
 
 #### Extensions
-
-Pimping out your dev environment doesn't just mean "make it look cool". It also means to "make it work for you". These extensions are tools to improve productivity.
 
 - TabNine `tabnine.tabnine-vscode` - Uses machine learning to help you write code faster. - Not battery friendy, not memory friendly.
 - GitLens `eamodio.gitlens` - Extra git integration features.
 - Path Intellisense `christian-kohler.path-intellisense` - Autocompletes filenames.
 - Debug Visualizer `hediet.debug-visualizer` - Fancy graphics for visualizing data structures while stepping through code.
 - Vim for VS Code `vscodevim.vim` - Vim keybinds for VS Code.
+
+### Atom
+
+Similar to VS Code. Very customizable.
+
+[Download](https://atom.io) Atom here.
+
+#### Extensions
+
+- [Hydrogen](https://atom.io/packages/hydrogen) - Turn your python files into jupyter notebooks.
+
+### Sublime Text
+
+In the same vein as VS Code and Atom.
+
+[Download](https://www.sublimetext.com) Subtime Text here.
 
 ### Vim
 
@@ -43,7 +58,7 @@ Emacs is similar to Vim, but it doesn't run in your terminal.
 
 [Learn how to customize Emacs here](https://www.gnu.org/software/emacs/manual/html_node/emacs/Easy-Customization.html)
 
-## Terminals
+# Terminals
 
 You need to have a terminal in order to pimp it out! You probably already have one, but if it's the default one (especially on windows) it probably sucks.
 
@@ -63,7 +78,7 @@ Linux users have a lot of options. Most desktop environments come with a termina
 - [Alacritty](https://github.com/alacritty/alacritty)
 - [Hyper](https://hyper.is)
 - [kitty](https://sw.kovidgoyal.net/kitty/)
-- [Cool Retro Term](https://github.com/Swordfish90/cool-retro-term) - Very fancy, not battery friendly, not very customizable
+- [Cool Retro Term](https://github.com/Swordfish90/cool-retro-term) - Very fancy, not battery friendly
 - [st](https://st.suckless.org)
 
 ### Mac
@@ -72,12 +87,16 @@ Most Linux terminals should work on Mac, but your milage may vary.
 
 - [iTerm2](https://www.iterm2.com)
 
-## Colors
+# Colors
 
 Picking good colors is an essential part of making your environment yours.
 
 - https://terminal.sexy
 - [pywal](https://github.com/dylanaraps/pywal) - extract color schemes from images, good for matching your background
+
+You can also bring these colors to your IDE.
+
+- [How to set your theme in VS Code, or make a custom one](/tutorial/vscode-theme)
 
 #### Windows
 
@@ -104,7 +123,7 @@ ColorTool.exe -b -x SCHEME
 
 It varies, based on your terminal.
 
-## Fonts
+# Fonts
 
 <span style="background:red">TODO: display fonts</span>
 
@@ -116,7 +135,7 @@ It varies, based on your terminal.
 - [Source Code Pro](https://github.com/adobe-fonts/source-code-pro)
 - [Cascadia Code](https://github.com/Microsoft/Cascadia-Code)
 
-## Useful Info
+# Useful Info
 
 ### Where are the configs?
 
@@ -124,7 +143,7 @@ On Windows, it varies.
 
 On Unix-based operating systems, most configuration files are text files. Usually stored under `~/.config`, but shell configs are usually in the `~/` directory.
 
-## Shells
+# Shells
 
 When you open a terminal, the terminal starts a program called the "shell". This is the program that you type commands into. It parses what you type in and does what you tell it to.
 
@@ -146,7 +165,7 @@ Through the Windows Subsystem for Linux, you can use all the Unix shells above. 
 - powershell (installed by default, sucks a lot less)
 - git bash (installed with git for windows, kinda sucks)
 
-## Shell configs
+## Shell Configs
 
 Whenever you open a new terminal, it automatically executes a shell script to load settings and set environment variables. This is where you can add aliases and other shell configuration.
 
@@ -154,7 +173,7 @@ Mac users may need some special configuration to stay organized: [Follow the ins
 
 **It's recommended to edit the file that corresponds with your shell**
 
-all Unix shells: `~/.profile`
+all Unix shells: `~/.profile` (only put aliases in here, nothing fancy)
 
 bash: `~/.bashrc`
 
@@ -198,7 +217,7 @@ Example:
 
 ![posh-git example prompt](pimp-my-terminal/posh-git-prompt.png)
 
-## Other Tools
+# Other Tools
 
 - [fuck](https://github.com/nvbn/thefuck) - Corrects typos in commands
 
@@ -207,7 +226,7 @@ Example:
 - [Homebrew](https://brew.sh) - package manager for Mac
 - [Chocolatey](https://chocolatey.org) - package manager for Windows
 
-## Desktop Environment
+# Desktop Environment
 
 On Linux, there are many ways to customize your desktop environment. You can either use a full blown desktop environment like KDE or XFCE, or you can use something more minimal.
 
