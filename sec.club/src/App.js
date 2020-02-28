@@ -2,10 +2,10 @@ import React, { Suspense, lazy } from "react"
 import "./App.scss"
 import { createMuiTheme, ThemeProvider } from "@material-ui/core"
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
-import { red, cyan } from "@material-ui/core/colors";
-import Loader from "./components/Loader/Loader.js";
+import { red, cyan } from "@material-ui/core/colors"
+import Loader from "./components/Loader/Loader.js"
 
-import SecStyle from "./variables.scss";
+import SecStyle from "./variables.scss"
 
 const Header = lazy(() => import(/* webpackChunkName: "components" */"./components/Header/Header"));
 const Footer = lazy(() => import(/* webpackChunkName: "components" */"./components/Footer/Footer.jsx"));
@@ -20,19 +20,20 @@ const NotFoundView = lazy(() => import(/* webpackChunkName: "not-found" */"./vie
 //   ])
 //   .then(([moduleExports]) => moduleExports);
 // });
-const ArticleView = lazy(() => import(/* webpackChunkName: "article" */"./views/Article/Article.js"));
-const ComponentsDemoView = lazy(() => import(/* webpackChunkName: "demo" */"./views/ComponentsDemo/ComponentsDemo.js"));
+const ArticleView = lazy(() => import(/* webpackChunkName: "article" */ "./views/Article/Article.js"))
+const ComponentsDemoView = lazy(() => import(/* webpackChunkName: "demo" */ "./views/ComponentsDemo/ComponentsDemo.js"))
+const SLPView = lazy(() => import(/* webpackChunkName: "slp" */ "./views/SLP/SLP.js"))
 
 function App() {
   const theme = createMuiTheme({
     palette: {
-      type: 'dark',
+      type: "dark",
       primary: red,
       secondary: cyan,
       background: {
         default: SecStyle.backgroundColor,
-        paper: SecStyle.backgroundColor,
-      },
+        paper: SecStyle.backgroundColor
+      }
     },
     text: {
       //change these to values in variables.scss when webpack is set up
@@ -40,7 +41,7 @@ function App() {
       secondary: "red",
       tertiary: "cyan",
       quaternary: "white"
-    },
+    }
   })
   return (
     <Router>
@@ -55,7 +56,7 @@ function App() {
                   <HomeView />
                 </Route>
                 <Route path="/slp">
-                  <ArticleView source="slp.md" title="Semester Long Project" />
+                  <SLPView />
                 </Route>
                 <Route path="/about">
                   <ArticleView source="about.md" title="About" />
