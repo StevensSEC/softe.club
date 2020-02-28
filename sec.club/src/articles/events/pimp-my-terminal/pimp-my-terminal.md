@@ -1,4 +1,4 @@
-# Pimp My Terminal
+![Pimp My Terminal](pimp-my-terminal/pmt-logo.svg)
 
 ## IDEs
 
