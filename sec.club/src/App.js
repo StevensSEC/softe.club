@@ -94,7 +94,10 @@ function App() {
                   <ArticleView source="events/pimp-my-terminal/howto-set-default-shell.md" title="How to set the default shell"/>
                 </Route>
                 <Route path="/tutorial/ensure-bashrc-profile-setup">
-                  <ArticleView source="events/pimp-my-terminal/howto-ensure-bashrc-profile-setup.md" title="How to make sure your "/>
+                  <ArticleView source="events/pimp-my-terminal/howto-ensure-bashrc-profile-setup.md" title="How to make sure your bashrc/profile is set up"/>
+                </Route>
+                <Route path="/tutorial/cli-text-editors">
+                  <ArticleView source="events/pimp-my-terminal/howto-use-cli-text-editors.md" title="How to set use terminal text editors"/>
                 </Route>
                 <Route path="/dev-readme">
                   <ArticleView source="README.md" title="README"/>

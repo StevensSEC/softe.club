@@ -1,11 +1,5 @@
 # Pimp My Terminal
 
-<span style="color:red">
-
-# TODO: organize
-
-</span>
-
 ## IDEs
 
 Your IDE is the easiest place to start making your environment something that works for you.
@@ -24,7 +18,7 @@ You can also install more themes as extensions, and you can install different ic
 
 ![Workbench: Icon Theme](pimp-my-terminal/howto-vscode-icon-theme.png)
 
-### Extensions
+#### Extensions
 
 Pimping out your dev environment doesn't just mean "make it look cool". It also means to "make it work for you". These extensions are tools to improve productivity.
 
@@ -32,6 +26,22 @@ Pimping out your dev environment doesn't just mean "make it look cool". It also 
 - GitLens `eamodio.gitlens` - Extra git integration features.
 - Path Intellisense `christian-kohler.path-intellisense` - Autocompletes filenames.
 - Debug Visualizer `hediet.debug-visualizer` - Fancy graphics for visualizing data structures while stepping through code.
+- Vim for VS Code `vscodevim.vim` - Vim keybinds for VS Code.
+
+### Vim
+
+Vim is a text editor that runs in your terminal. [Check out how to use Vim here](/tutorial/cli-text-editors)
+
+Vim configuration is found at `~/.vimrc`
+
+- https://github.com/amix/vimrc - Useful preset configuration for Vim
+- [Check out Vim color schemes here](https://github.com/rafi/awesome-vim-colorschemes)
+
+### Emacs
+
+Emacs is similar to Vim, but it doesn't run in your terminal.
+
+[Learn how to customize Emacs here](https://www.gnu.org/software/emacs/manual/html_node/emacs/Easy-Customization.html)
 
 ## Terminals
 
@@ -67,26 +77,44 @@ Most Linux terminals should work on Mac, but your milage may vary.
 Picking good colors is an essential part of making your environment yours.
 
 - https://terminal.sexy
-
-<span style="background:red">TODO: Try using ColorTool</span>
+- [pywal](https://github.com/dylanaraps/pywal) - extract color schemes from images, good for matching your background
 
 #### Windows
 
 Windows Terminal users can use the [ColorTool](https://github.com/Microsoft/Terminal/tree/master/src/tools/ColorTool) to make it easy to configure new color schemes.
+
+List color schemes:
+
+```
+ColorTool.exe -s
+```
+
+Set color scheme:
+
+```
+ColorTool.exe -b -x SCHEME
+```
 
 #### Mac
 
 - [How to enable colors in your terminal on mac](/tutorial/enable-colors-mac)
 - [How to import color schemes into iTerm2](/tutorial/iterm2-import-colors)
 
-## Fonts
+#### Linux
 
-<span style="background:red">TODO: list good monospace fonts</span>
+It varies, based on your terminal.
+
+## Fonts
 
 <span style="background:red">TODO: display fonts</span>
 
 - [powerline/fonts](https://github.com/powerline/fonts) - Pre-patched fonts with extra symbols
 - [Tecate/bitmap-fonts](https://github.com/Tecate/bitmap-fonts)
+- [Hack](https://github.com/source-foundry/Hack)
+- [IBM Plex Mono](https://github.com/IBM/plex)
+- [Ubuntu Mono](https://design.ubuntu.com/font/)
+- [Source Code Pro](https://github.com/adobe-fonts/source-code-pro)
+- [Cascadia Code](https://github.com/Microsoft/Cascadia-Code)
 
 ## Useful Info
 
@@ -170,6 +198,15 @@ Example:
 
 ![posh-git example prompt](pimp-my-terminal/posh-git-prompt.png)
 
+## Other Tools
+
+- [fuck](https://github.com/nvbn/thefuck) - Corrects typos in commands
+
+![fuck demo](https://raw.githubusercontent.com/nvbn/thefuck/master/example.gif)
+
+- [Homebrew](https://brew.sh) - package manager for Mac
+- [Chocolatey](https://chocolatey.org) - package manager for Windows
+
 ## Desktop Environment
 
 On Linux, there are many ways to customize your desktop environment. You can either use a full blown desktop environment like KDE or XFCE, or you can use something more minimal.
@@ -195,6 +232,7 @@ There are different kinds of window managers. Some control how windows are laid 
 - [awesomewm](https://awesomewm.org)
 - [2bwm](https://github.com/venam/2bwm)
 - [openbox](http://openbox.org/wiki/Main_Page)
+- [bspwm](https://github.com/baskerville/bspwm)
 
 Need help picking a window manager? [LinuxBBQ](https://linuxbbq.com/cream.html) is a linux distro that has **76 different window managers** installed by default so you can try them all out easily.
 
