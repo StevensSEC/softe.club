@@ -77,6 +77,9 @@ function App() {
                 <Route path="/bash-cheatsheet">
                   <ArticleView source="bash-cheatsheet.md" title="Bash Cheatsheet"/>
                 </Route>
+                <Route path="/powershell-cheatsheet">
+                  <ArticleView source="powershell-cheatsheet.md" title="Powershell Cheatsheet"/>
+                </Route>
                 <Route path="/event/pair-programming-2020">
                   <ArticleView source="events/2020-pair-programming.md" title="Pair Programming 2020"/>
                 </Route>

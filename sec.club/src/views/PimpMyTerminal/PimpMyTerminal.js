@@ -21,7 +21,7 @@ export default function PimpMyTerminal() {
 				<aside class="quick-links">
 					<h3>Quick Links</h3>
 					<Button to="/bash-cheatsheet">Bash Cheatsheet</Button>
-					<span style={{ background: "red" }}>TODO: Powershell cheatsheet</span>
+					<Button to="/powershell-cheatsheet">Powershell Cheatsheet</Button>
 				</aside>
 			</Hidden>
 		</div>

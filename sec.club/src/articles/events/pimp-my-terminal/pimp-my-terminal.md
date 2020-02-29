@@ -184,7 +184,7 @@ Through the Windows Subsystem for Linux, you can use all the Unix shells above. 
 [How to install the Windows Subsystem for Linux](/tutorial/install-wsl)
 
 - cmd (installed by default, sucks)
-- powershell (installed by default, sucks a lot less)
+- powershell (installed by default, sucks a lot less) - [Powershell Cheatsheet](/powershell-cheatsheet)
 - git bash (installed with git for windows, kinda sucks)
 
 ## Shell Configs
