@@ -1,12 +1,41 @@
 import React, { lazy } from "react"
 import { Grid, Hidden } from "@material-ui/core";
-import { motion } from "framer-motion";
+import { motion, useViewportScroll, useSpring } from "framer-motion";
 import "./PimpMyTerminal.scss";
 import Button from "../../components/Button/Button";
 
 const ArticleView = lazy(() => import(/* webpackChunkName: "article" */ "../Article/Article.js"))
 
 export default function PimpMyTerminal() {
+	const articleInAnimation = {
+		animate: {
+			opacity: [0, 1],
+			y: [200, 0],
+		},
+		transition: {
+			duration: 1,
+			delay: 0.75,
+			ease: "easeOut",
+			times: [0, 1],
+		},
+	};
+	const asideInAnimation = {
+		animate: {
+			x: [-300, 0, 0],
+			width: [300, 400, 300],
+			scaleY: [1, 0.9, 1],
+		},
+		transition: {
+			duration: 0.6,
+			delay: 1.5,
+			ease: "easeInOut",
+			times: [0, 0.5, 1],
+		},
+	};
+
+	const { scrollY } = useViewportScroll();
+	const asideY = useSpring(scrollY, { stiffness: 400, damping: 20 });
+
 	return (
 		<div>
 			<Grid container direction="column" justify="center" alignItems="center">
@@ -14,13 +43,15 @@ export default function PimpMyTerminal() {
 					<Hero className="logo" />
 				</Grid>
 			</Grid>
-			<ArticleView source="events/pimp-my-terminal/pimp-my-terminal.md" title="Pimp My Terminal"/>
+			<motion.div {...articleInAnimation}>
+				<ArticleView source="events/pimp-my-terminal/pimp-my-terminal.md" title="Pimp My Terminal"/>
+			</motion.div>
 			<Hidden mdDown>
-				<aside class="quick-links">
+				<motion.aside class="quick-links" {...asideInAnimation} y={asideY}>
 					<h3>Quick Links</h3>
 					<Button to="/bash-cheatsheet">Bash Cheatsheet</Button>
 					<Button to="/powershell-cheatsheet">Powershell Cheatsheet</Button>
-				</aside>
+				</motion.aside>
 			</Hidden>
 		</div>
 	);
@@ -34,7 +65,7 @@ function Hero(props) {
 			y: [70, 0],
 		},
 		transition: {
-			duration: 2.5,
+			duration: 2,
 			ease: "easeOut",
 			times: [0, 1],
 		},

@@ -12,10 +12,11 @@
 
 .quick-links {
 	background: $background-color;
+	box-sizing: border-box;
 	display: flex;
-	position: fixed;
+	position: absolute;
 	left: 0;
-	top: 200px;
+	top: 30%;
 	width: 300px;
 	flex-direction: column;
 	text-align: center;
