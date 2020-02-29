@@ -9,9 +9,28 @@ cool". It also means to "make it work for you".
 
 [Bash Cheatsheet](/bash-cheatsheet)
 
+<span style="background:red">TODO: Powershell cheatsheet</span>
+
+# FAQ
+
+### What should I do?
+
+Pimp My Terminal is about helping you customize your dev
+environment to *work for you*. If you see something that you
+think would be useful, set it up.
+
+### What is the difference between a terminal and a shell?
+
+A terminal is a program hosts a shell. A shell is a program that
+takes a user's input, parses it, and runs it.
+
+On Windows, the lines are a little bit blurred because the shell
+can also just provide a terminal by default, if needed.
+
 # IDEs
 
-Your IDE is the easiest place to start making your environment something that works for you.
+Your IDE is the easiest place to start making your environment
+something that works for you.
 
 ### VS Code
 
@@ -20,6 +39,8 @@ Your IDE is the easiest place to start making your environment something that wo
 [How to set your theme in VS Code](/tutorial/vscode-theme)
 
 #### Extensions
+
+*Tip: You can install these quickly by pressing `Ctrl + P` and typing the command `ext install PACKAGE`*
 
 - TabNine `tabnine.tabnine-vscode` - Uses machine learning to help you write code faster. - Not battery friendy, not memory friendly.
 - GitLens `eamodio.gitlens` - Extra git integration features.
@@ -60,11 +81,14 @@ Emacs is similar to Vim, but it doesn't run in your terminal.
 
 # Terminals
 
-You need to have a terminal in order to pimp it out! You probably already have one, but if it's the default one (especially on windows) it probably sucks.
+You need to have a terminal in order to pimp it out! You
+probably already have one, but if it's the default one
+(especially on windows) it probably sucks.
 
 ### Windows
 
-Windows users should take a look at the [new Windows terminal from Microsoft](https://github.com/microsoft/terminal). You can install it from the Windows Store.
+Windows users should take a look at the [new Windows terminal from Microsoft](https://github.com/microsoft/terminal).
+You can install it from the Windows Store.
 
 There are other options:
 
@@ -73,10 +97,12 @@ There are other options:
 
 ### Linux
 
-Linux users have a lot of options. Most desktop environments come with a terminal thats good enough.
+Linux users have a lot of options. Most desktop environments
+come with a terminal thats good enough, but you might want
+something a little more custom.
 
-- [Alacritty](https://github.com/alacritty/alacritty)
-- [Hyper](https://hyper.is)
+- [Alacritty](https://github.com/alacritty/alacritty) - Fairly new, written in Rust, has good benchmarks
+- [Hyper](https://hyper.is) - Electron based, written in javascript
 - [kitty](https://sw.kovidgoyal.net/kitty/)
 - [Cool Retro Term](https://github.com/Swordfish90/cool-retro-term) - Very fancy, not battery friendly
 - [st](https://st.suckless.org)
@@ -141,11 +167,15 @@ It varies, based on your terminal.
 
 On Windows, it varies.
 
-On Unix-based operating systems, most configuration files are text files. Usually stored under `~/.config`, but shell configs are usually in the `~/` directory.
+On Unix-based operating systems, most configuration files are
+text files. Usually stored under `~/.config`, but shell configs
+are usually in the `~/` directory.
 
 # Shells
 
-When you open a terminal, the terminal starts a program called the "shell". This is the program that you type commands into. It parses what you type in and does what you tell it to.
+When you open a terminal, the terminal starts a program called
+the "shell". This is the program that you type commands into.
+It parses what you type in and does what you tell it to.
 
 Found a shell you like? Here's [how to set the default shell](/tutorial/set-default-shell).
 
@@ -228,9 +258,16 @@ Example:
 
 # Desktop Environment
 
-On Linux, there are many ways to customize your desktop environment. You can either use a full blown desktop environment like KDE or XFCE, or you can use something more minimal.
+On Linux, there are many ways to customize your desktop environment.
+You can either use a full blown desktop environment like KDE or XFCE,
+or you can use something more minimal.
 
 ### Status Bars
+
+Status bars are little programs to show your system status,
+like CPU usage, memory usage, etc. Useful for knowing if
+something is struggling at a glance.
+
 - [Polybar](https://github.com/polybar/polybar)
 
 ![polybar example](pimp-my-terminal/polybar-example1.png)
@@ -238,7 +275,11 @@ On Linux, there are many ways to customize your desktop environment. You can eit
 
 - [lemonbar](https://github.com/LemonBoy/bar)
 
+<span style="background:red">TODO: crop lemonbar example image</span>
+
 ![lemmonbar example](pimp-my-terminal/lemonbar-example1.png)
+
+<span style="background:red">TODO: add conky</span>
 
 ### Window Managers
 
