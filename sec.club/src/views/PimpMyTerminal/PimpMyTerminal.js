@@ -1,8 +1,6 @@
 import React, { lazy } from "react"
 import { Grid, Hidden } from "@material-ui/core";
-// import { ReactSVG } from 'react-svg';
-// import logo from "../../assets/pimp-my-terminal/pmt-logo.svg";
-import { motion, useViewportScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import "./PimpMyTerminal.scss";
 import Button from "../../components/Button/Button";
 
@@ -29,11 +27,6 @@ export default function PimpMyTerminal() {
 }
 
 function Hero(props) {
-	const { scrollY } = useViewportScroll();
-	const scrollRange = [0, 400];
-	const scale = useTransform(scrollY, scrollRange, [1, 0.4]);
-	const x = useTransform(scrollY, scrollRange, [0, 125]);
-
 	const drawTextAnimation = {
 		animate: {
 			pathLength: [0, 0.3],
@@ -45,8 +38,6 @@ function Hero(props) {
 			ease: "easeOut",
 			times: [0, 1],
 		},
-		scale,
-		x,
 	};
 
 	// TODO: move paths to another file because they are long
