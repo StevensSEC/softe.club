@@ -85,6 +85,7 @@ export default class ArticleView extends PureComponent {
 		// This is a fairly recent browser feature. It'll be ignored on older browsers.
 		// https://caniuse.com/#feat=loading-lazy-attr
 		// TODO: make a lazy loading image component/mixin?
+		// eslint-disable-next-line jsx-a11y/alt-text
 		return <img loading="lazy" {...props} />
 	}
 
