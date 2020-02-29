@@ -267,8 +267,6 @@ something is struggling at a glance.
 
 - [lemonbar](https://github.com/LemonBoy/bar)
 
-<span style="background:red">TODO: crop lemonbar example image</span>
-
 ![lemmonbar example](pimp-my-terminal/lemonbar-example1.png)
 
 <span style="background:red">TODO: add conky</span>
