@@ -2,7 +2,7 @@ import React, { lazy } from "react"
 import { Grid } from "@material-ui/core";
 // import { ReactSVG } from 'react-svg';
 // import logo from "../../assets/pimp-my-terminal/pmt-logo.svg";
-import { motion, useMotionValue, useViewportScroll, transform, useTransform } from "framer-motion";
+import { motion, useViewportScroll, useTransform } from "framer-motion";
 import "./PimpMyTerminal.scss";
 
 const ArticleView = lazy(() => import(/* webpackChunkName: "article" */ "../Article/Article.js"))
@@ -12,9 +12,6 @@ export default function PimpMyTerminal() {
 		<div>
 			<Grid container direction="column" justify="center" alignItems="center">
 				<Grid item>
-					{/* <ReactSVG
-						className="logo"
-						src={logo} /> */}
 					<Hero className="logo" />
 				</Grid>
 			</Grid>
