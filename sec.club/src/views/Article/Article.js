@@ -81,6 +81,13 @@ export default class ArticleView extends PureComponent {
 		}
 	}
 
+	lazyImage(props) {
+		// This is a fairly recent browser feature. It'll be ignored on older browsers.
+		// https://caniuse.com/#feat=loading-lazy-attr
+		// TODO: make a lazy loading image component/mixin?
+		return <img loading="lazy" {...props} />
+	}
+
 	render() {
 		const { title } = this.props;
 		const { markdown } = this.state;
@@ -99,7 +106,7 @@ export default class ArticleView extends PureComponent {
 						source={markdown}
 						escapeHtml={false}
 						astPlugins={[parseHtml]}
-						renderers={{ code: CodeBlock, link: this.buildLink}}
+						renderers={{ code: CodeBlock, link: this.buildLink, image: this.lazyImage }}
 						transformImageUri={uri => {
 							if (uri.startsWith("http")) {
 								return uri;
