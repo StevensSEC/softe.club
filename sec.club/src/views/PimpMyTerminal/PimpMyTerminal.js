@@ -20,6 +20,10 @@ export default function PimpMyTerminal() {
 		},
 	};
 	const asideInAnimation = {
+		initial: {
+			x: -300,
+			width: 0,
+		},
 		animate: {
 			x: [-300, 0, 0],
 			width: [300, 400, 300],
