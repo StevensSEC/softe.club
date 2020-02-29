@@ -1,9 +1,10 @@
 import React, { lazy } from "react"
-import { Grid } from "@material-ui/core";
+import { Grid, Hidden } from "@material-ui/core";
 // import { ReactSVG } from 'react-svg';
 // import logo from "../../assets/pimp-my-terminal/pmt-logo.svg";
 import { motion, useViewportScroll, useTransform } from "framer-motion";
 import "./PimpMyTerminal.scss";
+import Button from "../../components/Button/Button";
 
 const ArticleView = lazy(() => import(/* webpackChunkName: "article" */ "../Article/Article.js"))
 
@@ -16,6 +17,13 @@ export default function PimpMyTerminal() {
 				</Grid>
 			</Grid>
 			<ArticleView source="events/pimp-my-terminal/pimp-my-terminal.md" title="Pimp My Terminal"/>
+			<Hidden mdDown>
+				<aside class="quick-links">
+					<h3>Quick Links</h3>
+					<Button to="/bash-cheatsheet">Bash Cheatsheet</Button>
+					<span style={{ background: "red" }}>TODO: Powershell cheatsheet</span>
+				</aside>
+			</Hidden>
 		</div>
 	);
 }

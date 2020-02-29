@@ -9,3 +9,21 @@
 	stroke: #3f3;
 	stroke-width: 0.5px;
 }
+
+.quick-links {
+	background: $background-color;
+	display: flex;
+	position: fixed;
+	left: 0;
+	top: 200px;
+	width: 300px;
+	flex-direction: column;
+	text-align: center;
+	padding: 10px;
+	border: #ff3 $border-style $border-size;
+	border-left: none;
+
+	.sec-btn {
+		margin: 5px 0;
+	}
+}

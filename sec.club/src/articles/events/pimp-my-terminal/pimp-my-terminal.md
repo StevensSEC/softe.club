@@ -3,12 +3,6 @@ That's what **Pimp My Terminal** is all about. But pimping
 out your dev environment doesn't just mean "make it look
 cool". It also means to "make it work for you".
 
-# Quick Links
-
-[Bash Cheatsheet](/bash-cheatsheet)
-
-<span style="background:red">TODO: Powershell cheatsheet</span>
-
 # FAQ
 
 ### What should I do?
