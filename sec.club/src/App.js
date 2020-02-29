@@ -23,6 +23,7 @@ const NotFoundView = lazy(() => import(/* webpackChunkName: "not-found" */"./vie
 const ArticleView = lazy(() => import(/* webpackChunkName: "article" */ "./views/Article/Article.js"))
 const ComponentsDemoView = lazy(() => import(/* webpackChunkName: "demo" */ "./views/ComponentsDemo/ComponentsDemo.js"))
 const SLPView = lazy(() => import(/* webpackChunkName: "slp" */ "./views/SLP/SLP.js"))
+const PimpMyTerminalView = lazy(() => import(/* webpackChunkName: "pimp-my-terminal" */ "./views/PimpMyTerminal/PimpMyTerminal.js"))
 
 function App() {
   const theme = createMuiTheme({
@@ -80,7 +81,7 @@ function App() {
                   <ArticleView source="events/2020-pair-programming.md" title="Pair Programming 2020"/>
                 </Route>
                 <Route path="/event/pimp-my-terminal">
-                  <ArticleView source="events/pimp-my-terminal/pimp-my-terminal.md" title="Pimp My Terminal"/>
+                  <PimpMyTerminalView />
                 </Route>
                 <Route path="/tutorial/install-wsl">
                   <ArticleView source="events/pimp-my-terminal/howto-install-wsl.md" title="How to Install the Windows Subsystem for Linux"/>

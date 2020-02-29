@@ -1,5 +1,3 @@
-![Pimp My Terminal](pimp-my-terminal/pmt-logo.svg)
-
 You should be able to write code, and look cool doing it.
 That's what **Pimp My Terminal** is all about. But pimping
 out your dev environment doesn't just mean "make it look
