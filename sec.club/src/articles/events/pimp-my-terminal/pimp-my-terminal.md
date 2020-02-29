@@ -269,7 +269,12 @@ something is struggling at a glance.
 
 ![lemmonbar example](pimp-my-terminal/lemonbar-example1.png)
 
-<span style="background:red">TODO: add conky</span>
+- [conky](https://github.com/brndnmtthws/conky)
+
+![conky example 2](pimp-my-terminal/conky-example2.png)
+![conky example 1](pimp-my-terminal/conky-example1.png)
+
+![conky example 3](pimp-my-terminal/conky-example3.png)
 
 ### Window Managers
 
