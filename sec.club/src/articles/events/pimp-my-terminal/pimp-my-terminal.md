@@ -247,6 +247,8 @@ Example:
 
 - [Homebrew](https://brew.sh) - package manager for Mac
 - [Chocolatey](https://chocolatey.org) - package manager for Windows
+- [Rectangle](https://github.com/rxhanson/Rectangle) - Window management utility for Mac
+- [Amethyst](https://ianyh.com/amethyst/) - Tiling window manager for Mac
 
 # Desktop Environment
 
