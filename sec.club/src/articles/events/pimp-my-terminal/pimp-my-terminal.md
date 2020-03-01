@@ -143,14 +143,24 @@ It varies, based on your terminal.
 
 # Fonts
 
-<span style="background:red">TODO: display fonts</span>
-
 - [powerline/fonts](https://github.com/powerline/fonts) - Pre-patched fonts with extra symbols
 - [Tecate/bitmap-fonts](https://github.com/Tecate/bitmap-fonts)
 - [Hack](https://github.com/source-foundry/Hack)
+
+![Hack preview](pimp-my-terminal/font-preview-hack.png)
+
 - [IBM Plex Mono](https://github.com/IBM/plex)
+
+![IBM plex mono preview](pimp-my-terminal/font-preview-ibm-plex-mono.png)
+
 - [Ubuntu Mono](https://design.ubuntu.com/font/)
+
+![Ubuntu mono preview](pimp-my-terminal/font-preview-ubuntu-mono.png)
+
 - [Source Code Pro](https://github.com/adobe-fonts/source-code-pro)
+
+![Source code pro preview](pimp-my-terminal/font-preview-source-code-pro.png)
+
 - [Cascadia Code](https://github.com/Microsoft/Cascadia-Code)
 
 # Useful Info
