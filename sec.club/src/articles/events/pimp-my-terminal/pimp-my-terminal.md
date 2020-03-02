@@ -307,6 +307,9 @@ Example:
 - [Chocolatey](https://chocolatey.org) - package manager for Windows
 - [Rectangle](https://github.com/rxhanson/Rectangle) - Window management utility for Mac
 - [Amethyst](https://ianyh.com/amethyst/) - Tiling window manager for Mac
+- htop - Like task manager, but runs in your terminal - `apt install htop`
+- screenfetch - Shows system info - `apt install screenfetch`
+- neofetch - Shows system info - `apt install neofetch`
 
 # Desktop Environment
 
