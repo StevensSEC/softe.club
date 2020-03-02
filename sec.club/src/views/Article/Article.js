@@ -8,12 +8,18 @@ import Loader from "../../components/Loader/Loader.js";
 import CodeBlock from "../../components/CodeBlock/CodeBlock.js";
 import DocumentTitle from "../../components/DocumentTitle/DocumentTitle.js";
 import { Link } from "react-router-dom";
+import ROUTES from "../../Routes";
 
 // See https://github.com/aknuds1/html-to-react#with-custom-processing-instructions
 // for more info on the processing instructions
 const parseHtml = HtmlParser({
 	isValidNode: node => node.type !== 'script',
 });
+
+const isValidRoute = (href) => {
+	let paths = ROUTES.map(route => route.path) + ['/', '/slp','/dev/components'];
+	return paths.includes(href);
+}
 
 export default class ArticleView extends PureComponent {
 	static propTypes = {
@@ -67,6 +73,9 @@ export default class ArticleView extends PureComponent {
 		}
 
 		if (shouldUseRouter(href)) {
+			if(!isValidRoute(href)) {
+				throw new Error();
+			}
 			return (
 				<Link to={href}>
 					{children}

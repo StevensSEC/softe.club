@@ -4,6 +4,7 @@ import { createMuiTheme, ThemeProvider } from "@material-ui/core"
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 import { red, cyan } from "@material-ui/core/colors"
 import Loader from "./components/Loader/Loader.js"
+import ROUTES from "./Routes.js"
 
 import SecStyle from "./variables.scss"
 
@@ -58,27 +59,15 @@ function App() {
                 <Route path="/slp">
                   <SLPView />
                 </Route>
-                <Route path="/about">
-                  <ArticleView source="about.md" title="About" />
-                </Route>
-                <Route path="/team">
-                  <ArticleView source="team.md" title="Team" />
-                </Route>
-                <Route path="/contact">
-                  <ArticleView source="contact.md" title="Contact" />
-                </Route>
-                <Route path="/resources">
-                  <ArticleView source="resources.md" title="Resources" />
-                </Route>
-                <Route path="/git-cheatsheet">
-                  <ArticleView source="git-cheatsheet.md" title="Git Cheatsheet"/>
-                </Route>
-                <Route path="/event/pair-programming-2020">
-                  <ArticleView source="events/2020-pair-programming.md" title="Pair Programming 2020"/>
-                </Route>
-                <Route path="/dev-readme">
-                  <ArticleView source="README.md" title="README"/>
-                </Route>
+                {
+                  ROUTES.map((route) => {
+                    return (
+                      <Route path={route.path}>
+                        <ArticleView source={route.source} title={route.title}/>
+                      </Route>
+                    )
+                  })
+                }
                 <Route path="/dev/components">
                   <ComponentsDemoView />
                 </Route>
