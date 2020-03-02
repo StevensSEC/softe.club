@@ -3,6 +3,7 @@ import { render, unmountComponentAtNode } from "react-dom";
 import { act } from "react-dom/test-utils";
 import { getByTestId, queryByTestId } from "@testing-library/dom";
 import "@testing-library/jest-dom";
+import { mount } from 'enzyme'
 
 import ArticleView from './Article.js';
 
@@ -115,4 +116,28 @@ describe('ArticleView', () => {
 		expect(iframe).toBeDefined();
 		expect(container).toContainElement(iframe);
 	});
+
+	it('should run as expected when a valid route is referenced', async () => {
+		const markdown = removeIndents(`
+		# Valid Routes
+
+		This is a test markdown file used in unit tests.
+
+		When a valid route is referenced in markdown, the page should render
+		as expected.
+
+		[Valid Route](/dev/components)
+		`)
+
+		fetch.mockResponse(() => Promise.resolve(markdown))
+
+		await act(async () => {
+			render(<ArticleView source="README.md" title="Valid Routes" />, container);
+		});
+
+		expect(container).toContainHTML('<h1>Valid Routes</h1>');
+		expect(container.querySelector("a")).toHaveAttribute("href");
+		expect(container.querySelector("a").getAttribute("href")).toEqual("/dev/components");
+		expect(container.querySelector("a")).toContainHTML("Valid Route");
+	})
 })
