@@ -43,9 +43,7 @@ export default function PimpMyTerminal() {
 	return (
 		<div>
 			<Grid container direction="column" justify="center" alignItems="center">
-				<Grid item>
-					<Hero className="logo" />
-				</Grid>
+				<Hero className="logo" />
 			</Grid>
 			<motion.div {...articleInAnimation}>
 				<ArticleView source="events/pimp-my-terminal/pimp-my-terminal.md" title="Pimp My Terminal"/>
