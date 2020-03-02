@@ -19,6 +19,54 @@ takes a user's input, parses it, and runs it.
 On Windows, the lines are a little bit blurred because the shell
 can also just provide a terminal by default, if needed.
 
+### What are Unix based operating systems?
+
+Short answer: Mac and Linux.
+
+Long answer: Any operating system that follows the POSIX
+standard is a Unix based operating system.
+
+### What are packages?
+
+A package in this context refers to a software package. It's
+the thing that gets downloaded and installed when you use a
+package manager like `apt-get` or `brew`.
+
+### Are there any packages I should install to make things easier? <small style="opacity: 0.5">(Unix only)</small>
+
+It would be useful to have either `curl` or `wget` installed.
+On Mac, `curl` should be installed by default. These programs
+let you download files from the internet. Useful for downloading
+configs directly into the right spot.
+
+# Time Savers
+
+### Downloading config files
+
+You may want to copy somebody else's config from the internet.
+However, selecting all the text, copying it, finding the file
+it goes in, pasting it, etc, can be a bit of a pain after you
+do it multiple times.
+
+#### Windows
+
+```powershell
+Invoke-WebRequest -Uri URL -OutFile TARGET
+```
+
+#### Unix
+
+Using wget:
+
+```
+wget -O TARGET URL
+```
+
+Using curl:
+```
+curl -o TARGET URL
+```
+
 # IDEs
 
 Your IDE is the easiest place to start making your environment
