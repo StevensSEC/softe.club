@@ -58,12 +58,12 @@ Invoke-WebRequest -Uri URL -OutFile TARGET
 
 Using wget:
 
-```
+```bash
 wget -O TARGET URL
 ```
 
 Using curl:
-```
+```bash
 curl -o TARGET URL
 ```
 
@@ -170,13 +170,13 @@ Windows Terminal users can use the [ColorTool](https://github.com/Microsoft/Term
 
 List color schemes:
 
-```
+```powershell
 ColorTool.exe -s
 ```
 
 Set color scheme:
 
-```
+```powershell
 ColorTool.exe -b -x SCHEME
 ```
 
