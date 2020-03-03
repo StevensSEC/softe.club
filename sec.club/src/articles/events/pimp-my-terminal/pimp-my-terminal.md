@@ -215,6 +215,8 @@ It varies, based on your terminal.
 
 - [Cascadia Code](https://github.com/Microsoft/Cascadia-Code)
 
+![Cascadia Code preview](pimp-my-terminal/font-preview-cascadia-code.png)
+
 # Useful Info
 
 ### Where are the configs?
