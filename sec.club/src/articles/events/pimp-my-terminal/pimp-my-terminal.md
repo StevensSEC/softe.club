@@ -41,6 +41,10 @@ configs directly into the right spot.
 
 # Time Savers
 
+### Tab completion
+
+Much like your IDE, your terminal also has tab completion. Use it!
+
 ### Downloading config files
 
 You may want to copy somebody else's config from the internet.
