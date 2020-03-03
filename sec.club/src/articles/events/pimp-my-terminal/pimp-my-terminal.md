@@ -138,6 +138,7 @@ There are other options:
 
 - [Windows Terminal](https://github.com/microsoft/terminal)
 - [Alacritty](https://github.com/alacritty/alacritty)
+- [Hyper](https://hyper.is) - Electron based, written in javascript
 
 ### Linux
 
