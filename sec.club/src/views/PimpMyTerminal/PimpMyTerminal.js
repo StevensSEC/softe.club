@@ -1,5 +1,5 @@
 import React, { lazy } from "react"
-import { Grid, Hidden } from "@material-ui/core";
+import { Grid } from "@material-ui/core";
 import { motion, useViewportScroll, useSpring } from "framer-motion";
 import "./PimpMyTerminal.scss";
 import Button from "../../components/Button/Button";
@@ -48,13 +48,11 @@ export default function PimpMyTerminal() {
 			<motion.div {...articleInAnimation}>
 				<ArticleView source="events/pimp-my-terminal/pimp-my-terminal.md" title="Pimp My Terminal"/>
 			</motion.div>
-			<Hidden mdDown>
-				<motion.aside class="quick-links" {...asideInAnimation} y={asideY}>
-					<h3>Quick Links</h3>
-					<Button to="/bash-cheatsheet">Bash Cheatsheet</Button>
-					<Button to="/powershell-cheatsheet">Powershell Cheatsheet</Button>
-				</motion.aside>
-			</Hidden>
+			<motion.aside class="quick-links" {...asideInAnimation} y={asideY}>
+				<h3>Quick Links</h3>
+				<Button to="/bash-cheatsheet">Bash Cheatsheet</Button>
+				<Button to="/powershell-cheatsheet">Powershell Cheatsheet</Button>
+			</motion.aside>
 		</div>
 	);
 }
