@@ -171,7 +171,8 @@ You can also bring these colors to your IDE.
 
 #### Windows
 
-Windows Terminal users can use the [ColorTool](https://github.com/Microsoft/Terminal/tree/master/src/tools/ColorTool) to make it easy to configure new color schemes.
+Windows Terminal users can use the [ColorTool](https://github.com/Microsoft/Terminal/tree/master/src/tools/ColorTool)
+to make it easy to configure new color schemes. ColorTool can read iTerm2 color schemes.
 
 List color schemes:
 

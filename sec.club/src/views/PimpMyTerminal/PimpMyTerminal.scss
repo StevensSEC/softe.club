@@ -25,6 +25,10 @@
 	border: #ff3 $border-style $border-size;
 	border-left: none;
 
+	@media screen and (max-width: $lg-max - 50) {
+		display: none;
+	}
+
 	.sec-btn {
 		margin: 5px 0;
 	}
