@@ -10,7 +10,7 @@ import "./Footer.scss"
 export default function Footer(){
     return (
         <>
-        <footer class="footer">
+        <footer className="footer">
             <Button to="https://www.instagram.com/secstevens/" kind="icon">
                 <img src={instagram} alt="Icon for Instagram"/>
             </Button>
@@ -27,9 +27,9 @@ export default function Footer(){
                 <img src={github} alt="Icon for Github"/>
             </Button>
         </footer>
-        <div class="github">This website is open source! Check it out on the SEC <a href="https://github.com/StevensSEC/sec.club">Github</a></div>
-        <div class="attr">Slack icon made by Pixel perfect from www.flaticon.com</div>
-        <div class="attr">Email icon made by Those Icons from www.flaticon.com</div>
+        <div className="github">This website is open source! Check it out on the SEC <a href="https://github.com/StevensSEC/sec.club">Github</a></div>
+        <div className="attr">Slack icon made by Pixel perfect from www.flaticon.com</div>
+        <div className="attr">Email icon made by Those Icons from www.flaticon.com</div>
         </>
     )
 }

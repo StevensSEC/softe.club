@@ -24,9 +24,10 @@ export default function HomeView() {
 				</Grid>
 			</Grid>
 			<Container className="banners">
-				{EVENTS.map((event) => {
+				{EVENTS.map((event, index) => {
 					return (
-						<EventBanner 
+						<EventBanner
+						key={"eventBanner-" + index} 
 						flyerSource={event.flyerSource}
 						title={event.title}
 						desc={event.desc}
