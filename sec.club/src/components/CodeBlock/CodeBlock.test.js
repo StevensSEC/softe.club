@@ -32,6 +32,6 @@ describe("CodeBlock appearance", () => {
 
 	it("should render text when a language is specified", () => {
 		let wrapper = mount(<CodeBlock language="javascript" value="function example() { return 'Hello'; }" />, container);
-		expect(wrapper.text()).toEqual("function example() { return 'Hello'; }");
+		expect(wrapper.find("code").text()).toEqual("function example() { return 'Hello'; }");
 	});
 });
