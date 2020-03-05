@@ -98,6 +98,9 @@ function App() {
                 <Route path="/tutorial/set-default-shell">
                   <ArticleView source="events/pimp-my-terminal/howto-set-default-shell.md" title="How to set the default shell"/>
                 </Route>
+                <Route path="/tutorial/set-default-terminal">
+                  <ArticleView source="events/pimp-my-terminal/howto-set-default-terminal.md" title="How to set the default terminal"/>
+                </Route>
                 <Route path="/tutorial/ensure-bashrc-profile-setup">
                   <ArticleView source="events/pimp-my-terminal/howto-ensure-bashrc-profile-setup.md" title="How to make sure your bashrc/profile is set up"/>
                 </Route>
