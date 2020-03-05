@@ -1,0 +1,23 @@
+@import "../../variables.scss";
+
+.codeblock {
+	background: $code-background-color;
+	padding: 20px;
+	border: #f3f $border-size $border-style;
+	overflow-x: auto;
+
+	.meta {
+		display: inline;
+		position: relative;
+		top: -25px;
+		left: -20px;
+		border-bottom: #f3f $border-size $border-style;
+		border-right: #f3f $border-size $border-style;
+		box-sizing: border-box;
+
+		* {
+			padding: 3px 10px;
+			opacity: 0.6;
+		}
+	}
+}

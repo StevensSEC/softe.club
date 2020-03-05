@@ -38,3 +38,9 @@ function example(arg) {
 def example(arg):
 	return "I am a python function", 2
 ```
+
+```python,linux
+# This is some python code, intended for linux
+def example(arg):
+	return "I am a python function", 2
+```
