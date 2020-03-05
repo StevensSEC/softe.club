@@ -21,6 +21,8 @@ const isValidRoute = (href) => {
 	return paths.includes(href);
 }
 
+class InvalidRouteError extends Error {}
+
 export default class ArticleView extends PureComponent {
 	static propTypes = {
 		source: PropTypes.string.isRequired,
@@ -74,7 +76,7 @@ export default class ArticleView extends PureComponent {
 
 		if (shouldUseRouter(href)) {
 			if(!isValidRoute(href)) {
-				throw new Error();
+				throw new InvalidRouteError(`The route ${href} does not exist.`);
 			}
 			return (
 				<Router>

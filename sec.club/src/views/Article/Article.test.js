@@ -3,7 +3,6 @@ import { render, unmountComponentAtNode } from "react-dom";
 import { act } from "react-dom/test-utils";
 import { getByTestId, queryByTestId } from "@testing-library/dom";
 import "@testing-library/jest-dom";
-import { mount } from 'enzyme'
 
 import ArticleView from './Article.js';
 
@@ -130,7 +129,7 @@ describe('ArticleView', () => {
 		`)
 
 		fetch.mockResponse(() => Promise.resolve(markdown))
-
+		
 		await act(async () => {
 			render(<ArticleView source="README.md" title="Valid Routes" />, container);
 		});
