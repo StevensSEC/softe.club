@@ -41,7 +41,7 @@ const ROUTES = [
         Component: lazy(() => import(/* webpackChunkName: "article" */ "./views/Article/Article.js")),
     },
     {
-        path: "/dev/Components",
+        path: "/dev/components",
         Component: lazy(() => import(/* webpackChunkName: "demo" */ "./views/ComponentsDemo/ComponentsDemo.js")),
     },
     {
