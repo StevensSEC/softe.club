@@ -48,17 +48,23 @@ function App() {
           <Suspense fallback={<Loader/>}>
             <div className="content-wrap">
               <Switch>
-                {ROUTES.map((route, index) => {
-                  if (route.path === "/") { //Root view
+                {ROUTES.map(({ path, Component, articleProps }, index) => {
+                  if (path === "/") { //Root view
                     return (
-                      <Route exact path={route.path} key={"route-" + index}>
-                        {route.component}
+                      <Route exact path={path} key={"route-" + index}>
+                        <Component/>
                       </Route>
                     )
-                  } else { //All other views
+                  } else if (articleProps){ //Article views
+                    return(
+                      <Route path={path} key={"route-" + index}>
+                        <Component {...articleProps}/>
+                      </Route>
+                    );
+                  } else { //Other views
                     return (
-                      <Route path={route.path} key={"route-" + index}>
-                        {route.component}
+                      <Route path={path} key={"route-" + index}>
+                        <Component/>
                       </Route>
                     )
                   }

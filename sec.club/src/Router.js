@@ -1,55 +1,57 @@
-import React, {lazy} from "react"
-
-const HomeView = lazy(() => import(/* webpackChunkName: "home" */"./views/Home/Home.js"));
-const NotFoundView = lazy(() => import(/* webpackChunkName: "not-found" */"./views/NotFound/NotFound.jsx"));
-const ArticleView = lazy(() => import(/* webpackChunkName: "article" */ "./views/Article/Article.js"))
-const ComponentsDemoView = lazy(() => import(/* webpackChunkName: "demo" */ "./views/ComponentsDemo/ComponentsDemo.js"))
-const SLPView = lazy(() => import(/* webpackChunkName: "slp" */ "./views/SLP/SLP.js"))
+import {lazy} from "react"
 
 const ROUTES = [
     {
         path: "/",
-        component: <HomeView/>,
+        articleProps: null,
+        Component: lazy(() => import(/* webpackChunkName: "home" */"./views/Home/Home.js")),
     },
     {
         path: "/slp",
-        component: <SLPView/>,
+        Component: lazy(() => import(/* webpackChunkName: "slp" */ "./views/SLP/SLP.js")),
     },
     {
         path: "/about",
-        component: <ArticleView source="about.md" title="About"/>,
+        articleProps: {source: "about.md", title: "About",},
+        Component: lazy(() => import(/* webpackChunkName: "article" */ "./views/Article/Article.js")),
     },
     {
         path: "/team",
-        component: <ArticleView source="team.md" title="Team"/>,
+        articleProps: {source: "team.md", title: "Team",},
+        Component: lazy(() => import(/* webpackChunkName: "article" */ "./views/Article/Article.js")),
     },
     {
         path: "/contact",
-        component: <ArticleView source="contact.md" title="Contact"/>,
+        articleProps: { source: "contact.md", title: "Contact",},
+        Component: lazy(() => import(/* webpackChunkName: "article" */ "./views/Article/Article.js")),
     },
     {
         path: "/resources",
-        component: <ArticleView source="resources.md" title="Resources"/>,
+        articleProps: { source: "resources.md", title: "Resources",},
+        Component: lazy(() => import(/* webpackChunkName: "article" */ "./views/Article/Article.js")),
     },
     {
         path: "/git-cheatsheet",
-        component: <ArticleView source="git-cheatsheet.md" title="Git Cheatsheet"/>,
+        articleProps: { source: "git-cheatsheet.md", title: "Git Cheatsheet",},
+        Component: lazy(() => import(/* webpackChunkName: "article" */ "./views/Article/Article.js")),
     },
     {
         path: "/dev-readme",
-        component: <ArticleView source="README.md" title="README"/>,
+        articleProps: { source: "README.md", title: "README",},
+        Component: lazy(() => import(/* webpackChunkName: "article" */ "./views/Article/Article.js")),
     },
     {
-        path: "/dev/components",
-        component: <ComponentsDemoView/>,
+        path: "/dev/Components",
+        Component: lazy(() => import(/* webpackChunkName: "demo" */ "./views/ComponentsDemo/ComponentsDemo.js")),
     },
     {
         path: "/event/pair-programming-2020",
-        component: <ArticleView source="events/2020-pair-programming.md" title="Pair Programming 2020"/>
+        articleProps: { source: "event/2020-pair-programming.md", title: "Pair Programming 2020",},
+        Component: lazy(() => import(/* webpackChunkName: "article" */ "./views/Article/Article.js"))
     },
     {
         path: "*",
-        component: <NotFoundView/>,
+        Component: lazy(() => import(/* webpackChunkName: "not-found" */"./views/NotFound/NotFound.jsx")),
     }
 ]
 
