@@ -3,44 +3,60 @@ import PropTypes from "prop-types";
 import { PrismAsyncLight as SyntaxHighlighter } from "react-syntax-highlighter";
 // TODO: custom colors that match the rest of the site's design
 import okaidia from "react-syntax-highlighter/dist/cjs/styles/prism/okaidia";
-import SecStyle from "../../variables.scss";
+import "./CodeBlock.scss";
+
+function CodeBlockContainer({ children, meta }) {
+  return (
+    <pre className="codeblock">
+      {meta ? (
+        <div className="meta">
+          { meta.language ? <span>{meta.language}</span> : null }
+          { meta.platform ? <span>{meta.platform}</span> : null }
+          <br />
+        </div>
+      ) : null}
+      {children}
+    </pre>
+  );
+}
 
 export default class CodeBlock extends PureComponent {
   static propTypes = {
     value: PropTypes.string,
-    language: PropTypes.string
+    language: PropTypes.string,
+    platform: PropTypes.string,
   };
 
   static defaultProps = {
-    language: null
+    language: null,
+    platform: null,
   };
 
   render() {
-    const { language, value } = this.props;
-    const preStyle = {
-      background: SecStyle.codeBackgroundColor,
-      padding: 1 + "em",
-      borderRadius: 0.3 + "em",
-      overflowX: "auto",
-    };
+    let { language, platform, value } = this.props;
+
+    if (language && language.includes(",")) {
+      [language, platform] = language.split(",").map(x => x.trim())
+    }
 
     if (language !== null) {
       return (
         <SyntaxHighlighter
           language={language}
           style={okaidia}
-          customStyle={preStyle}>
+          PreTag={CodeBlockContainer}
+          meta={{ language: language, platform: platform }}>
           {value}
         </SyntaxHighlighter>
       );
     }
     else {
       return (
-        <pre style={preStyle}>
+        <CodeBlockContainer>
           <code>
             {value}
           </code>
-        </pre>
+        </CodeBlockContainer>
       );
     }
   }

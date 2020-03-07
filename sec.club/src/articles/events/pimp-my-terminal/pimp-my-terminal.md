@@ -129,6 +129,8 @@ You need to have a terminal in order to pimp it out! You
 probably already have one, but if it's the default one
 (especially on windows) it probably sucks.
 
+[How to set your default terminal (Linux)](/tutorial/set-default-terminal)
+
 ### Windows
 
 Windows users should take a look at the [new Windows terminal from Microsoft](https://github.com/microsoft/terminal).
