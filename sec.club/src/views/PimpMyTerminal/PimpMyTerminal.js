@@ -48,7 +48,7 @@ export default function PimpMyTerminal() {
 			<motion.div {...articleInAnimation}>
 				<ArticleView source="events/pimp-my-terminal/pimp-my-terminal.md" title="Pimp My Terminal"/>
 			</motion.div>
-			<motion.aside class="quick-links" {...asideInAnimation} y={asideY}>
+			<motion.aside className="quick-links" {...asideInAnimation} y={asideY}>
 				<h3>Quick Links</h3>
 				<Button to="/bash-cheatsheet">Bash Cheatsheet</Button>
 				<Button to="/powershell-cheatsheet">Powershell Cheatsheet</Button>
