@@ -1,7 +1,18 @@
 # How to write new articles for the website
 
 1. Add a new markdown file under `articles`
-2. Add a route using the `Article` view that references the markdown file in `App.js`
+2. Add a new object of the form below to the `ROUTES` array in `Router.js`:
+
+```javascript
+{
+	path: "/mypath",
+	articleProps: {source: "my-markdown.md", title: "My New Article"},
+	Component: lazy(() => import(/* webpackChunkName: "article" */ "./views/Article/Article.js")),
+}
+```
+
+Referencing a route in an article that has not yet been added to this array will cause
+React to throw an error.
 
 ## Images
 
