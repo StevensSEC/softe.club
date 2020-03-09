@@ -56,6 +56,12 @@ const Header = () => {
       route: "/contact"
     }
   ]
+  const moreRoutes = [
+    {
+      title: "Pimp My Terminal",
+      route: "/event/pimp-my-terminal"
+    }
+  ]
   const sideList = side => (
     <div
       className={classes.list}
@@ -70,6 +76,16 @@ const Header = () => {
             kind="menu"
             to={button.route}
             key={`menuItem-${index}`}
+          >
+            {button.title}
+          </Button>
+        ))}
+        {moreRoutes.map((button, index) => (
+          <Button
+            className="drawer-item"
+            kind="menu"
+            to={button.route}
+            key={`menuItem-${index + buttonRoutes.length}`}
           >
             {button.title}
           </Button>
