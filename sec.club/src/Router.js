@@ -99,6 +99,11 @@ const ROUTES = [
         Component: lazy(() => import(/* webpackChunkName: "article" */ "./views/Article/Article.js")),
     },
     {
+        path: "/tutorial/set-default-terminal",
+        articleProps: { source: "events/pimp-my-terminal/howto-set-default-terminal.md", title: "How to set your default terminal"},
+        Component: lazy(() => import(/* webpackChunkName: "article" */ "./views/Article/Article.js")),
+    },
+    {
         path: "*",
         Component: lazy(() => import(/* webpackChunkName: "not-found" */"./views/NotFound/NotFound.jsx")),
     },
