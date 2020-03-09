@@ -79,11 +79,9 @@ export default class ArticleView extends PureComponent {
 				throw new InvalidRouteError(`The route ${href} does not exist.`);
 			}
 			return (
-				<Router>
-					<Link to={href}>
-						{children}
-					</Link>
-				</Router>
+				<Link to={href}>
+					{children}
+				</Link>
 			);
 		} else {
 			return (
