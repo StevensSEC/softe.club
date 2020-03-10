@@ -1,6 +1,7 @@
 import React from "react"
 import "./ProjectWall.scss"
 import { NavLink } from "react-router-dom"
+import { motion, useViewportScroll } from 'framer-motion'
 import { Drawer } from "@material-ui/core"
 import MenuIcon from '@material-ui/icons/Menu';
 import CloseIcon from '@material-ui/icons/Close';
@@ -12,10 +13,10 @@ const Project = ({ project, className, onClick }) => (
     <div className="img-container">
       <img src={project.img} alt={`Logo for ${project.name}`} />
     </div>
-    <div className="name">
+    {/* <div className="name">
       <span>{project.name}</span>
       <span>{`${project.semester} ${project.year}`}</span>
-    </div>
+    </div> */}
   </NavLink>
 )
 
@@ -39,9 +40,14 @@ const ProjectWall = () => {
     setState({ ...state, [side]: open })
   }
 
+  const { scrollY } = useViewportScroll();
+
   return (
-    <div className="project-wall">
-      <Button kind="icon" className="mobile" onClick={toggleDrawer("top", true)}>
+    <motion.div className="project-wall" y={scrollY}>
+      {PROJECTS.map((project, index) => (
+        <Project project={project} key={`project-${index}`} />
+      ))}
+      {/* <Button kind="icon" className="mobile" onClick={toggleDrawer("top", true)}>
         <MenuIcon />
       </Button>
       {PROJECTS.map((project, index) => (
@@ -54,8 +60,8 @@ const ProjectWall = () => {
         {PROJECTS.map((project, index) => (
           <Project project={project} className="drawer-item" key={`project-${index}`} onClick={toggleDrawer("top", false)} />
         ))}
-      </Drawer>
-    </div>
+      </Drawer> */}
+    </motion.div>
   )
 }
 export default ProjectWall

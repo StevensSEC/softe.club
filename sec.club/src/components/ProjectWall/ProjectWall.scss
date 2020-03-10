@@ -5,16 +5,21 @@ $project-margin: 8px;
 $project-inner-margin: 12px;
 
 .project-wall {
-  position: relative;
+  position: absolute;
   display: flex;
-  // width: 100%;
+  width: 100px;
   flex-wrap: nowrap;
-  overflow-x: auto;
-  overflow-y: hidden;
-  height: 100px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  height: 70vh;
   align-items: center;
   scroll-behavior: smooth;
+  flex-direction: column;
+  justify-content: space-around;
+  border-top: #ff3 $border-style $border-size;
+  border-right: #ff3 $border-style $border-size;
   border-bottom: #ff3 $border-style $border-size;
+  background-color: $background-color;
 
   .drawer-item {
     width: 100%;
@@ -42,7 +47,7 @@ $project-inner-margin: 12px;
   background-color: $background-color;
   height: 100%;
   height: 70px;
-  min-width: 350px;
+  min-width: 60px;
   margin: 0 $project-margin;
   box-sizing: border-box;
   transition: background-color 0.25s;
