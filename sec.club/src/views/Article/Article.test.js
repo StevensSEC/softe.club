@@ -3,6 +3,7 @@ import { render, unmountComponentAtNode } from "react-dom";
 import { act } from "react-dom/test-utils";
 import { getByTestId, queryByTestId } from "@testing-library/dom";
 import "@testing-library/jest-dom";
+import {BrowserRouter as Router} from 'react-router-dom'
 
 import ArticleView from './Article.js';
 
@@ -131,7 +132,7 @@ describe('ArticleView', () => {
 		fetch.mockResponse(() => Promise.resolve(markdown))
 		
 		await act(async () => {
-			render(<ArticleView source="README.md" title="Valid Routes" />, container);
+			render(<Router><ArticleView source="README.md" title="Valid Routes" /></Router>, container);
 		});
 
 		expect(container).toContainHTML('<h1>Valid Routes</h1>');

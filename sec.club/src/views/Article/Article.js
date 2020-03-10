@@ -7,7 +7,7 @@ import HtmlParser from "react-markdown/plugins/html-parser";
 import Loader from "../../components/Loader/Loader.js";
 import CodeBlock from "../../components/CodeBlock/CodeBlock.js";
 import DocumentTitle from "../../components/DocumentTitle/DocumentTitle.js";
-import { BrowserRouter as Router, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import ROUTES from "../../Router";
 
 // See https://github.com/aknuds1/html-to-react#with-custom-processing-instructions
@@ -79,11 +79,9 @@ export default class ArticleView extends PureComponent {
 				throw new InvalidRouteError(`The route ${href} does not exist.`);
 			}
 			return (
-				<Router>
-					<Link to={href}>
-						{children}
-					</Link>
-				</Router>
+				<Link to={href}>
+					{children}
+				</Link>
 			);
 		} else {
 			return (
