@@ -3,6 +3,7 @@
 $project-wall-height: 100px;
 $project-margin: 8px;
 $project-inner-margin: 12px;
+$project-extended-width: 350px;
 
 .project-wall {
   position: absolute;
@@ -20,6 +21,14 @@ $project-inner-margin: 12px;
   border-right: #ff3 $border-style $border-size;
   border-bottom: #ff3 $border-style $border-size;
   background-color: $background-color;
+
+  &:hover {
+    min-width: $project-extended-width + 10;
+
+    .project {
+      min-width: $project-extended-width;
+    }
+  }
 
   .drawer-item {
     width: 100%;
