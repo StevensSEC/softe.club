@@ -3,12 +3,12 @@ import secLogo from "../../assets/logo.svg"
 
 const PROJECTS = [
   {
-    path: "quick-quack",
+    path: "stevens-web-extension",
     img: secLogo,
-    name: "Quick Quack",
+    name: "Stevens Web Extension",
     semester: "Spring",
-    year: "2019",
-    markdown: "slp/quick-quack.md"
+    year: "2020",
+    markdown: "slp/stevens-web-extension.md"
   },
   {
     path: "open-together-tube",
@@ -19,12 +19,12 @@ const PROJECTS = [
     markdown: "slp/open-together-tube.md"
   },
   {
-    path: "stevens-web-extension",
+    path: "quick-quack",
     img: secLogo,
-    name: "Stevens Web Extension",
+    name: "Quick Quack",
     semester: "Spring",
-    year: "2020",
-    markdown: "slp/stevens-web-extension.md"
+    year: "2019",
+    markdown: "slp/quick-quack.md"
   },
 ]
 export default PROJECTS

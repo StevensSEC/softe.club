@@ -2,7 +2,7 @@ import React from "react"
 import PropTypes from 'prop-types'
 import "./ProjectWall.scss"
 import { NavLink } from "react-router-dom"
-import { motion, useViewportScroll } from 'framer-motion'
+import { motion, useViewportScroll, useSpring } from 'framer-motion'
 import { Drawer } from "@material-ui/core"
 import MenuIcon from '@material-ui/icons/Menu';
 import CloseIcon from '@material-ui/icons/Close';
@@ -69,6 +69,14 @@ const ProjectWall = () => {
     }
   }
 
+  const handleOnMouseOver = () => {
+    if (state.showNames) { //only set the state if it needs to be reset
+      return;
+    } else {
+      setState({...state, showNames: true});
+    }
+  }
+
   const handleOnMouseLeave = () => {
     if (!state.showNames) {
       return;
@@ -78,12 +86,14 @@ const ProjectWall = () => {
   }
 
   const { scrollY } = useViewportScroll();
+  const divY = useSpring(scrollY, { stiffness: 200, damping: 30 });
 
   return (
     <motion.div 
       className="project-wall" 
-      y={scrollY}
+      y={divY}
       onMouseEnter={handleOnMouseEnter}
+      onMouseOver={handleOnMouseOver}
       onMouseLeave={handleOnMouseLeave}>
       {PROJECTS.map((project, index) => (
         <Project project={project} key={`project-${index}`} showName={state.showNames}/>
