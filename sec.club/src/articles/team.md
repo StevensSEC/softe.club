@@ -6,7 +6,7 @@ This is SEC's Current Leadership Team:
 - Treasurer - [David Carpenter](https://github.com/carpenterd777)
 - Secretary - Kerim Karabacak
 - Logistics Chair - [Carson McManus](https://github.com/dyc3)
-- Event Coordinator - [Sarah Wiessler](https://github.com/SWiessler)
+- Marketing Chair - [Sarah Wiessler](https://github.com/SWiessler)
 
 # Club Members
 SEC's Active Members:
