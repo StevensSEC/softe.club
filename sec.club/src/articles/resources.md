@@ -40,6 +40,7 @@ Usually, the best resources are the official documentation, but sometimes beginn
 ## Web (HTML/CSS/JS)
 
 - [marksheet.io](https://marksheet.io)
+- [bundlephobia](https://bundlephobia.com/)
 
 ## C#
 
@@ -64,6 +65,10 @@ Even if you don’t develop on Linux, you will encounter it eventually. It’s d
 - [Linux Journey](https://linuxjourney.com)
 - [How to use CLI text editors](/tutorial/cli-text-editors)
 - [openvim](https://www.openvim.com) - Interactive Vim tutorial
+
+## Books
+
+- [Pakt Pub](https://packtpub.com/)
 
 # Useful Tools
 
