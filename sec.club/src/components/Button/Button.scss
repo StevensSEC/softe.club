@@ -11,6 +11,7 @@
 	margin: 2px 3px;
 	border-width: $border-size;
 	border-style: $border-style;
+	user-select: none;
 
 	transition: background-color .15s;
 
