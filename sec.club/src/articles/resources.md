@@ -66,7 +66,7 @@ Even if you don’t develop on Linux, you will encounter it eventually. It’s d
 - [How to use CLI text editors](/tutorial/cli-text-editors)
 - [openvim](https://www.openvim.com) - Interactive Vim tutorial
 
-## Books
+# Books
 
 - [Pakt Pub](https://packtpub.com/)
 
