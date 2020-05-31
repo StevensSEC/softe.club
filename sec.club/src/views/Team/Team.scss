@@ -1,0 +1,64 @@
+@import "../../variables.scss";
+
+body {
+    line-height: 1.8;
+}
+
+h1 {
+    margin-top: 50px
+}
+
+h2 {
+    margin-bottom: 5px;
+}
+
+a{
+    text-decoration: none;
+    color: $text-color;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+$box-size: 385px;
+
+.profile {
+    width: $box-size;
+    padding: 10px;
+    margin: 10px;
+
+    img {
+        height: $box-size - 20;
+        width: $box-size - 20;
+        border: 1px solid $primary-color;
+        transition: filter 0.25s;
+    }
+}
+
+.profile:hover {
+    img {
+        filter: brightness(50%)
+    }
+    background-color: lighten($background-color, 5%);
+}
+
+.role {
+    border: 1px solid #f3f;
+    background-color: $code-background-color;
+    display: inline;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 3px;
+}
+
+.desc {
+    margin-top: 2px;
+}
+
+.contrib-header {
+    margin-bottom: 10px;
+}
+
+li a{
+    color: #f33b31; //I wasnt sure where to find the original color for links, so I color picked it
+}
