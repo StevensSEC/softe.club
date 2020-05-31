@@ -9,6 +9,7 @@ h1 {
 }
 
 h2 {
+    font-size: 12pt;
     margin-bottom: 5px;
 }
 
@@ -21,18 +22,27 @@ a:visited {
     text-decoration: none;
 }
 
-$box-size: 385px;
+$box-size: 175px;
 
 .profile {
     width: $box-size;
     padding: 10px;
     margin: 10px;
 
+    @media (max-width: $sm-max) {
+        margin: 40px;
+    }
+
     img {
         height: $box-size - 20;
         width: $box-size - 20;
         border: 1px solid $primary-color;
         transition: filter 0.25s;
+
+        @media (max-width: $sm-max) {
+            height: 250px;
+            width: 250px;
+        }
     }
 }
 
