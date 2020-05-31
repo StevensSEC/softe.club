@@ -1,4 +1,4 @@
-import React from "react";
+import React, {Component} from "react";
 import { Grid, Fade } from "@material-ui/core";
 import anime from 'animejs';
 import Anime from 'react-anime';
@@ -18,41 +18,49 @@ function generateRandomShape(vertecies, offsetX=100, offsetY=100) {
 	return points.join(" ");
 }
 
-export default function Loader() {
-	const vertecies = 12;
-	const initShape = generateRandomShape(vertecies);
-	const loaderAnimation = {
-		points: [
-			{ value: generateRandomShape(vertecies) },
-			{ value: generateRandomShape(vertecies) },
-			{ value: generateRandomShape(vertecies) },
-			{ value: initShape },
-		],
-		stroke: [
-			"#3f3",
-			"#b3f",
-			"#ff3",
-			"#f33",
-		],
-		easing: 'easeInOutQuad',
-		loop: true,
-		duration: 2000,
-		direction: "normal",
-	};
+export default class Loader extends Component{
 
-	return (
-		<div className="overlay">
-			<Fade in={true} timeout={300}>
-				<Grid container direction="column" justify="center" alignItems="center" className="loader-container">
-					<Grid item>
-						<svg viewBox="0 0 200 200" className="loader">
-							<Anime {...loaderAnimation}>
-								<polygon points={initShape} style={{ fill: "transparent", stroke: "#f33", strokeWidth: "1px" }}/>
-							</Anime>
-						</svg>
+	constructor(props){
+		super(props)
+		this.vertecies = 12;
+		this.initShape = generateRandomShape(this.vertecies);
+		this.loaderAnimation = {
+			points: [
+				{ value: generateRandomShape(this.vertecies) },
+				{ value: generateRandomShape(this.vertecies) },
+				{ value: generateRandomShape(this.vertecies) },
+				{ value: this.initShape },
+			],
+			stroke: [
+				"#3f3",
+				"#b3f",
+				"#ff3",
+				"#f33",
+			],
+			easing: 'easeInOutQuad',
+			loop: true,
+			duration: 2000,
+			direction: "normal",
+		};
+
+		this.state = {hasError: false}
+	}
+
+	render(){
+		return (
+			<div className="overlay">
+				<Fade in={true} timeout={300}>
+					<Grid container direction="column" justify="center" alignItems="center" className="loader-container">
+						<Grid item>
+							<svg viewBox="0 0 200 200" className="loader">
+								<Anime {...this.loaderAnimation}>
+									<polygon points={this.initShape} style={{ fill: "transparent", stroke: "#f33", strokeWidth: "1px" }}/>
+								</Anime>
+							</svg>
+						</Grid>
 					</Grid>
-				</Grid>
-			</Fade>
-		</div>
-	);
+				</Fade>
+			</div>
+		);
+	}
 }
