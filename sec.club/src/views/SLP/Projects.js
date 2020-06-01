@@ -1,10 +1,12 @@
 import openTogetherTubeLogo from "../../assets/project-wall/open-together-tube-logo.svg"
 import secLogo from "../../assets/logo.svg"
 
+const sweLogo = require("../../assets/project-wall/stevens-web-extension-logo.png")
+
 const PROJECTS = [
   {
     path: "stevens-web-extension",
-    img: secLogo,
+    img: sweLogo,
     name: "Stevens Web Extension",
     semester: "Spring",
     year: "2020",
