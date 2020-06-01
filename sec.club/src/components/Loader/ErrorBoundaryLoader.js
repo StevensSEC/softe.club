@@ -1,3 +1,4 @@
+import React from 'react'
 import Loader from './Loader.js';
 
 export default class ErrorBoundaryLoader extends Loader {
@@ -8,12 +9,12 @@ export default class ErrorBoundaryLoader extends Loader {
 
     componentDidCatch(error, info) {
         this.setState({hasError: true})
-        console.log(error)
+        console.error(error)
     }
 
     render(){
         if (this.state.hasError){
-            return super.render()
+            return (<Loader/>)
         }
         return this.props.children
     }
