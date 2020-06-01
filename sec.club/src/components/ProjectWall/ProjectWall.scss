@@ -11,7 +11,7 @@ $project-extended-width: 350px;
   width: 100px;
   flex-wrap: nowrap;
   overflow-x: hidden;
-  overflow-y: scroll;
+  overflow-y: auto;
   height: 80vh;
   align-items: center;
   scroll-behavior: smooth;
