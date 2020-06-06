@@ -42,8 +42,12 @@ export default class Loader extends Component{
 			duration: 2000,
 			direction: "normal",
 		};
-
-		this.state = {hasError: false}
+		this.loaderLogo = 
+		<svg viewBox="0 0 200 200" className="loader">
+			<Anime {...this.loaderAnimation}>
+				<polygon points={this.initShape} style={{ fill: "transparent", stroke: "#f33", strokeWidth: "1px" }}/>
+			</Anime>
+		</svg>
 	}
 
 	render(){
@@ -52,11 +56,7 @@ export default class Loader extends Component{
 				<Fade in={true} timeout={300}>
 					<Grid container direction="column" justify="center" alignItems="center" className="loader-container">
 						<Grid item>
-							<svg viewBox="0 0 200 200" className="loader">
-								<Anime {...this.loaderAnimation}>
-									<polygon points={this.initShape} style={{ fill: "transparent", stroke: "#f33", strokeWidth: "1px" }}/>
-								</Anime>
-							</svg>
+							{this.loaderLogo}
 						</Grid>
 					</Grid>
 				</Fade>
