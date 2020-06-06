@@ -45,7 +45,9 @@ function App() {
       <ThemeProvider theme={theme}>
         <div className="App">
         <Suspense fallback={<div>Loading...</div>}>
-          <Header></Header>
+          <ErrorBoundaryLoader>
+            <Header></Header>
+          </ErrorBoundaryLoader>
           <Suspense fallback={<Loader/>}>
           <ErrorBoundaryLoader>
             <div className="content-wrap">
