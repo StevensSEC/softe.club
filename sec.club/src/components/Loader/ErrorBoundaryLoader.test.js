@@ -1,7 +1,6 @@
 import React from 'react'
 import { mount } from 'enzyme'
 
-import Loader from "./Loader.js"
 import ErrorBoundaryLoader from "./ErrorBoundaryLoader.js"
 
 let wrapper = null;
@@ -37,12 +36,11 @@ describe('ErrorBoundaryLoader tests', () => {
                 <ChildComponent/>
             </ErrorBoundaryLoader>
         )
-        expect(console.error).toHaveBeenCalledTimes(3)
         const error = expect.any(Error)
         expect(console.error).toHaveBeenCalledWith(error)
     })
 
-    it('renders a loader when a child component throws an error', () => {
+    it('renders the error animation when a child component throws an error', () => {
         const ChildComponent = () => {throw new Error('I plan to misbehave')}
 
         wrapper = mount(
@@ -50,6 +48,18 @@ describe('ErrorBoundaryLoader tests', () => {
                 <ChildComponent/>
             </ErrorBoundaryLoader>
         )
-        expect(wrapper.contains(<Loader/>)).toEqual(true)
+
+        const svg = wrapper.find('svg')
+        expect(svg).toHaveLength(1)
+        expect(svg.props()).toHaveProperty('viewBox', '0 0 200 200')
+        expect(svg.hasClass('loader')).toBe(true)
+
+        const path = svg.find('path')
+        expect(path).toHaveLength(1)
+        expect(path.props()).toHaveProperty('d', 'M 0,100 a 100,100 0 1,0 200,0 a 100,100 0 1,0 -200,0 M 100 150 l 0 10')
+
+        const message = wrapper.find('div.message')
+        expect(message).toHaveLength(1)
+        expect(message.text()).toEqual("An error has occurred.")
     })
 })
