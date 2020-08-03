@@ -49,6 +49,12 @@ Usually, the best resources are the official documentation, but sometimes beginn
 
 - [Automate the Boring Stuff](https://automatetheboringstuff.com)
 
+## Rust
+
+- [Official Rust book](https://doc.rust-lang.org/book/)
+- [Rust cookbook](https://rust-lang-nursery.github.io/rust-cookbook/)
+- VSCode Extension: [rust-analyzer](https://marketplace.visualstudio.com/items?itemName=matklad.rust-analyzer)
+
 ## Git
 
 Git is version control software. Using git is required for participating in the semester long project. If you don't know how to use git, we'll teach you.
@@ -68,6 +74,12 @@ Even if you don’t develop on Linux, you will encounter it eventually. It’s d
 # Useful Tools
 
 - https://regexr.com - Make and test regular expressions, includes cheat sheet, real time updates as you type, and explainer.
+
+## VSCode Extensions
+
+Language agnostic VSCode extensions
+
+- [Error Lens (usernamehw.errorlens)](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens)
 
 # Free Courses
 
