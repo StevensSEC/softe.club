@@ -30,6 +30,14 @@ const ROUTES = [
         articleProps: { source: "resources.md", title: "Resources",},
         Component: lazy(() => import(/* webpackChunkName: "article" */ "./views/Article/Article.js")),
     },
+    // HACK: This is required to redirect to an external page. The `Redirect` component only redirects to paths on the same host.
+    {
+        path: "/slack",
+        Component: () => {
+            window.location.href = 'https://secstevens.slack.com';
+            return null;
+        },
+    },
     {
         path: "/git-cheatsheet",
         articleProps: { source: "git-cheatsheet.md", title: "Git Cheatsheet",},
