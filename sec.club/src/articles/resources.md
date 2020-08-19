@@ -4,7 +4,7 @@ Learning about programming is hard. Hopefully, these resources will make it a li
 
 ## How do I learn to code?
 
-The best way to first learn how to code is with online tutorials or by taking E115. There are plenty of existing resources to teach the absolute basics. After that, the best way to learn new things is to do a project that uses those things. Do whatever you think is the coolest. Don't do big projects at first, because you are more likely to fail and get discouraged. It's important to remember that you will fail **a lot**, and don't let that discourage you.
+The best way to first learn how to code is with online tutorials or by taking an introductory course, such as E115/CS115. There are plenty of existing resources to teach the absolute basics. After that, the best way to learn new things is to start a project that uses those things. Do whatever you think is the coolest. Don't do big projects at first, because you are more likely to fail and get discouraged. It's important to remember that you will fail **a lot**, but don't let that discourage you.
 
 We recommend you watch [How To Think Like A Programmer by Andy Harris](https://www.youtube.com/watch?v=azcrPFhaY9k).
 
@@ -41,10 +41,16 @@ Usually, the best resources are the official documentation, but sometimes beginn
 
 - [marksheet.io](https://marksheet.io)
 - [bundlephobia](https://bundlephobia.com/)
+- [w3schools](https://www.w3schools.com/js/)
+- http://npm.anvaka.com
 
 ## C#
 
 - https://channel9.msdn.com/Series/CSharp-Fundamentals-for-Absolute-Beginners
+
+## C/C++
+
+- [Compiler Explorer](https://godbolt.org/)
 
 ## Python
 
@@ -52,7 +58,7 @@ Usually, the best resources are the official documentation, but sometimes beginn
 
 ## Git
 
-Git is version control software. Using git is required for participating in the semester long project. If you don't know how to use git, we'll teach you.
+Git is the most commonly used version control system. Using git is required for participating in the semester long project. If you don't know how to use git, we'll teach you.
 
 - [Official SEC Cheatsheet](/git-cheatsheet)
 - [git it](https://github.com/jlord/git-it-electron) - Interactive git tutorial
