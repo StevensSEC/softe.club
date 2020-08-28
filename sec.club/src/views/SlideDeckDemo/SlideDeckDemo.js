@@ -10,8 +10,11 @@ class SlideDeckDemo extends React.Component {
                 <Slide>
                     <h1>Slide 1</h1>
                 </Slide>
-                    <h1>Slide 2</h1>
                 <Slide>
+                    <h1>Slide 2</h1>
+                </Slide>
+                <Slide>
+                    <h1>Slide 3</h1>
                 </Slide>
             </SlideDeck>
         </Container>
