@@ -12,65 +12,30 @@ class Slide extends React.Component {
     }
 }
 
+class InvalidChildComponentError extends TypeError {}
+
 class SlideDeck extends React.Component {
+
     constructor(props){
         super(props);
-        this.state = {currentSlide: -1};
+        this.state = {currentSlide: 0};
 
-        //find the first slide child element if elem 0 is not a Slide
-        if(!this.isTypeSlide(this.state.currentSlide)){
-            this.state = {currentSlide: this.findNextSlide()}
-        }
+        this.props.children.forEach(child => {
+            if(child.type.name !== "Slide"){
+                throw new InvalidChildComponentError(`All children of SlideDeck must be Slide components.);
+            }
+        })
 
         this.handleClick = this.handleClick.bind(this);
         this.handleOnContext = this.handleOnContext.bind(this);
     }
 
-    isInbounds = (index) => {
-        return index >= 0 && index <= this.props.children.length - 1;
-    }
-
-    isTypeSlide = (index) => {
-        return this.isInbounds(index) && this.props.children[index].type.name === "Slide";
-    }
-
-    isFirstChild = (index) => {
-        return index === 0;
-    }
-
-    isLastChild = (index) => {
-        return index === this.props.children.length - 1;
-    }
-
-    findNextSlide = () => {
-        let next = this.state.currentSlide + 1;
-
-        while(!this.isTypeSlide(next) && !this.isLastChild(next)){
-            next++;
-        }
-        return next;
-    }
-
     nextSlide() {
-        if (this.isLastChild(this.state.currentSlide)){
-            return;
-        }
-        let next = this.findNextSlide();
-        this.setState({currentSlide: next})
+        this.setState({currentSlide: this.state.currentSlide + 1})
     }
 
     prevSlide(){
-        if (this.isFirstChild(this.state.currentSlide)){
-            return;
-        }
-
-        let prev = this.state.currentSlide - 1;
-
-        while(!this.isTypeSlide(prev) && !this.isFirstChild(prev)){
-            prev--;
-        }
-
-        this.setState({currentSlide: prev})
+        this.setState({currentSlide: this.state.currentSlide - 1})
     }
 
 
