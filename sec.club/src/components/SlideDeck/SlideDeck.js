@@ -22,7 +22,7 @@ class SlideDeck extends React.Component {
 
         this.props.children.forEach(child => {
             if(child.type.name !== "Slide"){
-                throw new InvalidChildComponentError(`All children of SlideDeck must be Slide components.);
+                throw new InvalidChildComponentError("All children of SlideDeck must be Slide components.");
             }
         })
 
