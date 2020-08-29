@@ -11,11 +11,15 @@ h1 {
 h2 {
     font-size: 12pt;
     margin-bottom: 5px;
+    text-align: center;
+    white-space: nowrap;
 }
 
 a{
     text-decoration: none;
     color: $text-color;
+    text-align: center;
+    
 }
 
 a:visited {
@@ -30,7 +34,8 @@ $box-size: 175px;
     margin: 10px;
 
     @media (max-width: $sm-max) {
-        margin: 40px;
+        margin: 10px;
+        width: 160px;
     }
 
     img {
@@ -40,8 +45,8 @@ $box-size: 175px;
         transition: filter 0.25s;
 
         @media (max-width: $sm-max) {
-            height: 250px;
-            width: 250px;
+            height: 150px;
+            width: 150px;
         }
     }
 }
@@ -56,9 +61,13 @@ $box-size: 175px;
 .role {
     border: 1px solid #f3f;
     background-color: $code-background-color;
-    display: inline;
+    width: $box-size - 20;
     font-family: 'Courier New', Courier, monospace;
-    padding: 3px;
+    padding: 1px;
+
+    @media (max-width: $sm-max) {
+        width: 150px;
+    }
 }
 
 .desc {
