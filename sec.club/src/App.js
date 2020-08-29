@@ -4,6 +4,7 @@ import { createMuiTheme, ThemeProvider } from "@material-ui/core"
 import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom"
 import { red, cyan } from "@material-ui/core/colors"
 import Loader from "./components/Loader/Loader.js"
+import ErrorBoundaryLoader from "./components/Loader/ErrorBoundaryLoader.js"
 import ROUTES from "./Router.js"
 
 import SecStyle from "./variables.scss"
@@ -44,8 +45,11 @@ function App() {
       <ThemeProvider theme={theme}>
         <div className="App">
         <Suspense fallback={<div>Loading...</div>}>
-          <Header></Header>
+          <ErrorBoundaryLoader>
+            <Header></Header>
+          </ErrorBoundaryLoader>
           <Suspense fallback={<Loader/>}>
+          <ErrorBoundaryLoader>
             <div className="content-wrap">
               <Switch>
               <Redirect from="/pmt" to="/event/pimp-my-terminal" />
@@ -73,6 +77,7 @@ function App() {
               </Switch>
             </div>
             <Footer/>
+          </ErrorBoundaryLoader>
           </Suspense>
         </Suspense>
         </div>
