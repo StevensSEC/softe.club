@@ -46,7 +46,7 @@ const ROUTES = [
     },
     {
         path: "/dev/slide_deck",
-        Component: lazy(() => import(/* webpackChunkName: "slide_deck_demo" */ "./views/SlideDeckDemo/SlideDeckDemo.js")),
+        Component: lazy(() => import(/* webpackChunkName: "demo" */ "./views/SlideDeckDemo/SlideDeckDemo.js")),
     },
     {
         path: "/event/pair-programming-2020",
