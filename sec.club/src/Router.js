@@ -45,6 +45,10 @@ const ROUTES = [
         Component: lazy(() => import(/* webpackChunkName: "demo" */ "./views/ComponentsDemo/ComponentsDemo.js")),
     },
     {
+        path: "/dev/slide_deck",
+        Component: lazy(() => import(/* webpackChunkName: "demo" */ "./views/SlideDeckDemo/SlideDeckDemo.js")),
+    },
+    {
         path: "/event/pair-programming-2020",
         articleProps: { source: "event/2020-pair-programming.md", title: "Pair Programming 2020",},
         Component: lazy(() => import(/* webpackChunkName: "article" */ "./views/Article/Article.js"))

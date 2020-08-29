@@ -1,0 +1,8 @@
+@import "../../variables.scss"; 
+
+.slide {
+    display: flex;
+    margin: 10px;
+    height: 90vh;
+    border: 1px solid $primary-color;
+}
