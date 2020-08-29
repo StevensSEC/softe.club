@@ -31,10 +31,18 @@ class SlideDeck extends React.Component {
     }
 
     nextSlide() {
+        let next = this.state.currentSlide + 1;
+        if (next > this.props.children.length - 1){
+            return;
+        }
         this.setState({currentSlide: this.state.currentSlide + 1})
     }
 
     prevSlide(){
+        let prev = this.state.currentSlide - 1;
+        if (prev < 0){
+            return;
+        }
         this.setState({currentSlide: this.state.currentSlide - 1})
     }
 
