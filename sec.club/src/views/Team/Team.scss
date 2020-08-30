@@ -15,17 +15,6 @@ h2 {
     white-space: nowrap;
 }
 
-a{
-    text-decoration: none;
-    color: $text-color;
-    text-align: center;
-    
-}
-
-a:visited {
-    text-decoration: none;
-}
-
 $box-size: 175px;
 
 .profile {
@@ -47,6 +36,16 @@ $box-size: 175px;
         @media (max-width: $sm-max) {
             height: 150px;
             width: 150px;
+        }
+    }
+
+    a:any-link {
+        text-decoration: none;
+        color: $text-color;
+        text-align: center;
+
+        &:visited {
+            text-decoration: none;
         }
     }
 }

@@ -64,13 +64,13 @@ export default class TeamView extends Component{
                 <Grid container>
                     {this.eboardList.map((member, index) => {
                         return (
-                        <a href={`https://github.com/${member.github}`} target="_blank" rel="noopener noreferrer">
-                            <Grid item key={"profile-" + index} className="profile">
+                        <Grid item key={"profile-" + index} className="profile">
+                            <a href={`https://github.com/${member.github}`} target="_blank" rel="noopener noreferrer">
                                 <img src={member.img} alt={member.name}/>
                                 <h2>{member.name}</h2>
                                 <div className="role">{member.role}</div>
-                            </Grid>
-                        </a>
+                            </a>
+                        </Grid>
                         )
                     })}
                 </Grid>
