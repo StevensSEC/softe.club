@@ -6,6 +6,7 @@ import { red, cyan } from "@material-ui/core/colors"
 import Loader from "./components/Loader/Loader.js"
 import ErrorBoundaryLoader from "./components/Loader/ErrorBoundaryLoader.js"
 import ROUTES from "./Router.js"
+import { DefaultLayout, SlideDeckLayout } from "./layouts.js"
 
 import SecStyle from "./variables.scss"
 
@@ -21,8 +22,9 @@ const Footer = lazy(() => import(/* webpackChunkName: "components" */"./componen
 //   .then(([moduleExports]) => moduleExports);
 // });
 
-function App() {
-  const theme = createMuiTheme({
+function App(){
+
+const theme = createMuiTheme({
     palette: {
       type: "dark",
       primary: red,
@@ -40,38 +42,33 @@ function App() {
       quaternary: "white"
     }
   })
+
   return (
     <Router>
       <ThemeProvider theme={theme}>
         <div className="App">
         <Suspense fallback={<div>Loading...</div>}>
-          <ErrorBoundaryLoader>
-            <Header></Header>
-          </ErrorBoundaryLoader>
           <Suspense fallback={<Loader/>}>
           <ErrorBoundaryLoader>
             <div className="content-wrap">
               <Switch>
               <Redirect from="/pmt" to="/event/pimp-my-terminal" />
-                {ROUTES.map(({ path, Component, articleProps }, index) => {
+                {ROUTES.map(({ path, Component, articleProps, isPresentation }, index) => {
                   if (path === "/") { //Root view
                     return (
                       <Route exact path={path} key={"route-" + index}>
-                        <Component/>
+                        <Header/>
+                        <Suspense fallback={<Loader/>}>
+                            <Component/>
+                        </Suspense>
                       </Route>
                     )
                   } else if (articleProps){ //Article views
-                    return(
-                      <Route path={path} key={"route-" + index}>
-                        <Component {...articleProps}/>
-                      </Route>
-                    );
+                    return <DefaultLayout path={path} key={"route-" + index} component={<Component {...articleProps}/>}/>
+                  } else if (isPresentation){
+                    return <SlideDeckLayout path={path} key={"route-" + index} component={<Component/>}/>
                   } else { //Other views
-                    return (
-                      <Route path={path} key={"route-" + index}>
-                        <Component/>
-                      </Route>
-                    )
+                    return <DefaultLayout path={path} key={"route-" + index} component={<Component/>}/>
                   }
                 })}
               </Switch>

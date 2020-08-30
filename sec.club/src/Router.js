@@ -54,6 +54,7 @@ const ROUTES = [
     },
     {
         path: "/dev/slide_deck",
+        isPresentation: true,
         Component: lazy(() => import(/* webpackChunkName: "demo" */ "./views/SlideDeckDemo/SlideDeckDemo.js")),
     },
     {
