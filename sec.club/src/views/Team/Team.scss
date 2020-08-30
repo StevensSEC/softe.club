@@ -1,18 +1,13 @@
 @import "../../variables.scss";
 
-body {
-    line-height: 1.8;
-}
+.team-page {
+    body {
+        line-height: 1.8;
+    }
 
-h1 {
-    margin-top: 50px
-}
-
-h2 {
-    font-size: 12pt;
-    margin-bottom: 5px;
-    text-align: center;
-    white-space: nowrap;
+    h1 {
+        margin-top: 50px
+    }
 }
 
 $box-size: 175px;
@@ -48,6 +43,13 @@ $box-size: 175px;
             text-decoration: none;
         }
     }
+
+    h2 {
+        font-size: 12pt;
+        margin-bottom: 5px;
+        text-align: center;
+        white-space: nowrap;
+    }
 }
 
 
@@ -69,8 +71,4 @@ $box-size: 175px;
 
 .contrib-header {
     margin-bottom: 10px;
-}
-
-li a{
-    color: #f33b31; //I wasnt sure where to find the original color for links, so I color picked it
 }

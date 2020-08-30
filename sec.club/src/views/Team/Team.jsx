@@ -58,8 +58,7 @@ export default class TeamView extends Component{
         })
 
         return (
-        <div>
-            <Container>
+            <Container className="team-page">
                 <h1>Executive Board</h1>
                 <Grid container>
                     {this.eboardList.map((member, index) => {
@@ -84,7 +83,6 @@ export default class TeamView extends Component{
                     })}
                 </ul>
             </Container>
-        </div>
         )
     }
 
