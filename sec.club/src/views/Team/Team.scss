@@ -51,12 +51,6 @@ $box-size: 175px;
     }
 }
 
-.profile:hover {
-    img {
-        filter: brightness(50%)
-    }
-    background-color: lighten($background-color, 5%);
-}
 
 .role {
     border: 1px solid #f3f;
