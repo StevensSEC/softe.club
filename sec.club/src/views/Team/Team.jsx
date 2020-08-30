@@ -54,7 +54,7 @@ export default class TeamView extends Component{
             github: "Jordan883",
         },
         {
-            name: "Keye LI",
+            name: "Keye Li",
             github: "nebulouspianist",
         },
         {
