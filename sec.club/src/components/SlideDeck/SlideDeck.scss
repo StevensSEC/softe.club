@@ -1,8 +1,24 @@
-@import "../../variables.scss"; 
+@import "../../variables.scss";
+
+.slide-deck {
+    display: grid;
+    height: 90vh;
+    width: 100%;
+    grid-template-columns: 500px auto;
+    column-gap: 10px;
+}
 
 .slide {
-    display: flex;
-    margin: 10px;
-    height: 90vh;
+    display: grid;
     border: 1px solid $primary-color;
+    height: 100%;
+    grid-column-start: span 2;
+
+    &.sticky-is-present {
+        grid-column-start: 2;
+    }
+
+    &.sticky {
+        grid-column-start: 1;
+    }
 }
