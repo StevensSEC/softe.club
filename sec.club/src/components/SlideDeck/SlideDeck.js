@@ -24,7 +24,13 @@ class SlideDeck extends React.Component {
 
     constructor(props){
         super(props);
-        this.state = { currentSlide: 0, stickiedSlide: null };
+        this.state = {
+            currentSlide: 0,
+            stickied: {
+                current: null,
+                previous: null,
+            },
+         };
 
         this.props.children.forEach(child => {
             if(child.type.name !== "Slide"){
@@ -43,7 +49,16 @@ class SlideDeck extends React.Component {
         }
         let newstate = { currentSlide: next };
         if (this.props.children[this.state.currentSlide].props.sticky) {
-            newstate.stickiedSlide = this.state.currentSlide;
+            newstate.stickied = {
+                current: this.state.currentSlide,
+                previous: this.state.stickied.current,
+            }
+        }
+        else if (this.state.stickied.current && newstate.currentSlide >= this.props.children[this.state.stickied.current].props.stickyUntil) {
+            newstate.stickied = {
+                current: null,
+                previous: this.state.stickied.current,
+            }
         }
         this.setState(newstate);
     }
@@ -54,8 +69,11 @@ class SlideDeck extends React.Component {
             return;
         }
         let newstate = { currentSlide: prev };
-        if (prev === this.state.stickiedSlide) {
-            newstate.stickiedSlide = null;
+        if (prev === this.state.stickied.current) {
+            newstate.stickied = {
+                current: this.state.stickied.previous,
+                previous: null,
+            }
         }
         this.setState(newstate);
     }
@@ -72,15 +90,15 @@ class SlideDeck extends React.Component {
 
     render() {
         let elements = [];
-        if (this.state.stickiedSlide) {
+        if (this.state.stickied.current) {
             elements.push(
                 <div className="slide sticky" key="sticky">
-                    {this.props.children[this.state.stickiedSlide]}
+                    {this.props.children[this.state.stickied.current]}
                 </div>
             );
         }
         elements.push(
-            <div className={`slide primary ${this.state.stickiedSlide ? "sticky-is-present" : ""}`} key="currentSlide">
+            <div className={`slide primary ${this.state.stickied.current ? "sticky-is-present" : ""}`} key="currentSlide">
                 {this.props.children[this.state.currentSlide]}
             </div>
         );
