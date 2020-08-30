@@ -1,13 +1,10 @@
 import React from "react";
 import { Box, Container, Grid } from "@material-ui/core";
-import { ReactSVG } from 'react-svg';
 import "./Home.scss";
-import "../../assets/logo-hero.scss";
-import logo from "../../assets/logo.svg";
 import DocumentTitle from "../../components/DocumentTitle/DocumentTitle.js";
 import EventBanner from "../../components/EventBanner/EventBanner.jsx"
 import EVENTS from "./Events.js"
-
+import Logo from "../../components/Logo/Logo.jsx";
 
 export default function HomeView() {
 	return (
@@ -15,9 +12,7 @@ export default function HomeView() {
 			<DocumentTitle title="" />
 			<Grid container direction="column" justify="center" alignItems="center" className="hero">
 				<Grid item>
-					<ReactSVG
-						className="logo"
-						src={logo} />
+					<Logo animate="true" className="logo" />
 				</Grid>
 				<Grid item>
 					<span>Software Engineering Club</span>
@@ -27,11 +22,11 @@ export default function HomeView() {
 				{EVENTS.map((event, index) => {
 					return (
 						<EventBanner
-						key={"eventBanner-" + index} 
+						key={"eventBanner-" + index}
 						flyerSource={event.flyerSource}
 						title={event.title}
 						desc={event.desc}
-						endDate={event.endDate}/> 
+						endDate={event.endDate}/>
 					)
 				})}
 			</Container>
