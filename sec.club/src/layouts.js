@@ -3,7 +3,7 @@ import { Route } from "react-router-dom";
 import Loader from "./components/Loader/Loader.js";
 
 const Header = lazy(() => import(/* webackChunkName: "components" */"./components/Header/Header"));
-const Footer = lazy(() => import(/* webackChunkName: "components" */"./components/Footer/Footer"));
+//const Footer = lazy(() => import(/* webackChunkName: "components" */"./components/Footer/Footer"));
 
 class DefaultLayout extends React.Component {
     render(){
