@@ -28,7 +28,7 @@ class SlideDeck extends React.Component {
             currentSlide: 0,
             stickied: {
                 current: null,
-                previous: null,
+                previous: [],
             },
          };
 
@@ -49,15 +49,21 @@ class SlideDeck extends React.Component {
         }
         let newstate = { currentSlide: next };
         if (this.props.children[this.state.currentSlide].props.sticky) {
+            let previousStickies = this.state.stickied.previous;
+            if (this.state.stickied.current) {
+                previousStickies.push(this.state.stickied.current);
+            }
             newstate.stickied = {
                 current: this.state.currentSlide,
-                previous: this.state.stickied.current,
+                previous: previousStickies,
             }
         }
         else if (this.state.stickied.current && newstate.currentSlide >= this.props.children[this.state.stickied.current].props.stickyUntil) {
+            let previousStickies = this.state.stickied.previous;
+            previousStickies.push(this.state.stickied.current);
             newstate.stickied = {
                 current: null,
-                previous: this.state.stickied.current,
+                previous: previousStickies,
             }
         }
         this.setState(newstate);
@@ -70,9 +76,10 @@ class SlideDeck extends React.Component {
         }
         let newstate = { currentSlide: prev };
         if (prev === this.state.stickied.current) {
+            let previousStickies = this.state.stickied.previous;
             newstate.stickied = {
-                current: this.state.stickied.previous,
-                previous: null,
+                current: previousStickies.length > 0 ? previousStickies.pop() : null,
+                previous: previousStickies,
             }
         }
         this.setState(newstate);
