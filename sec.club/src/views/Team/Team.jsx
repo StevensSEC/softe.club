@@ -10,44 +10,44 @@ export default class TeamView extends Component{
             role: "President",
             name: "Carson McManus",
             img: "carson.png",
-            github: "https://github.com/dyc3",
+            github: "dyc3",
         },
         {
             role: "Vice President",
             name: "Sarah Wiessler",
             img: "sarah.png",
-            github: "https://github.com/SWiessler",
+            github: "SWiessler",
         },
         {
             role: "Treasurer",
             name: "David Carpenter",
             img: "david.jpeg",
-            github: "https://github.com/carpenterd777",
+            github: "carpenterd777",
         },
         {
             role: "Secretary",
             name: "Adrian Garcia",
             img: "adrian.jpeg",
-            github: "https://github.com/adriang11", 
+            github: "adriang11",
         },
         {
             role: "Logistics Chair",
             name: "Abdullah Hyder",
             img: "user.jpg",
-            github: "https://github.com/abdullahhyder",
+            github: "abdullahhyder",
         },
         {
             role: "Marketing Chair",
             name: "Anjali Paliwal",
             img: "user.jpg",
-            github: "https://github.com/grinchpal",
+            github: "grinchpal",
         }
     ]
 
     memberList = [
         {
             name: "Adam Papenhausen",
-            github: "https://github.com/adapap"
+            github: "adapap"
         }
     ]
 
@@ -64,7 +64,7 @@ export default class TeamView extends Component{
                 <Grid container>
                     {this.eboardList.map((member, index) => {
                         return (
-                        <a href={member.github} target="_blank" rel="noopener noreferrer">
+                        <a href={`https://github.com/${member.github}`} target="_blank" rel="noopener noreferrer">
                             <Grid item key={"profile-" + index} className="profile">
                                 <img src={member.img} alt={member.name}/>
                                 <h2>{member.name}</h2>
@@ -80,7 +80,7 @@ export default class TeamView extends Component{
                 </div>
                 <ul>
                     {this.memberList.map(member => {
-                        return <li><a href={member.github}>{member.name}</a></li>
+                        return <li><a href={`https://github.com/${member.github}`}>{member.name}</a></li>
                     })}
                 </ul>
             </Container>
