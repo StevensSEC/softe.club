@@ -8,17 +8,6 @@
     h1 {
         margin-top: 50px
     }
-
-    a {
-        text-decoration: none;
-        color: $text-color;
-        text-align: center;
-
-    }
-
-    a:visited {
-        text-decoration: none;
-    }
 }
 
 $box-size: 175px;
@@ -42,6 +31,16 @@ $box-size: 175px;
         @media (max-width: $sm-max) {
             height: 150px;
             width: 150px;
+        }
+    }
+
+    a:any-link {
+        text-decoration: none;
+        color: $text-color;
+        text-align: center;
+
+        &:visited {
+            text-decoration: none;
         }
     }
 
@@ -72,8 +71,4 @@ $box-size: 175px;
 
 .contrib-header {
     margin-bottom: 10px;
-}
-
-li a{
-    color: #f33b31; //I wasnt sure where to find the original color for links, so I color picked it
 }

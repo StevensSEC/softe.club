@@ -18,6 +18,7 @@
 	&:hover, &:focus{
 		background-color: lighten($background-color, 10%);
 		outline: none;
+		text-decoration: none;
 	}
 
 	&.sec-kind-primary {

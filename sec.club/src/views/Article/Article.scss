@@ -6,15 +6,6 @@ article {
 	padding-bottom: 8px;
 	overflow-wrap: break-word;
 
-	a:any-link {
-		text-decoration: none;
-		color: lighten($primary-color, 5%);
-
-		&:hover {
-			text-decoration: underline;
-		}
-	}
-
 	img, iframe {
 		max-width: 100%;
 	}
