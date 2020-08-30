@@ -48,7 +48,43 @@ export default class TeamView extends Component{
         {
             name: "Adam Papenhausen",
             github: "adapap"
-        }
+        },
+        {
+            name: "Jordan Fernandes",
+            github: "Jordan883",
+        },
+        {
+            name: "Keye Li",
+            github: "nebulouspianist",
+        },
+        {
+            name: "Simon Wagner",
+            github: "SWSoftware1044",
+        },
+        {
+            name: "Tyler Seliber",
+            github: "Tyler-Seliber",
+        },
+        {
+            name: "Kenneth Skelton",
+            github: "KennethSkelton",
+        },
+        {
+            name: "Bruno Salgado",
+            github: "bsalgado98",
+        },
+        {
+            name: "Eleni Rotsides",
+            github: "elenirotsides",
+        },
+        {
+            name: "Walker Bove",
+            github: "WBot3000",
+        },
+        {
+            name: "Zack Schieberl",
+            github: "Zackatoo",
+        },
     ]
 
     render(){
