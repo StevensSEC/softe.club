@@ -28,11 +28,11 @@ describe('ArticleView', () => {
 	});
 
 	it('renders without crashing', () => {
-		render(<ArticleView source="README.md" title="Basic" />, container);
+		render(<ArticleView source="docs/README.md" title="Basic" />, container);
 	});
 
 	it('should render loader when markdown is null', () => {
-		render(<ArticleView source="README.md" title="Basic" />, container);
+		render(<ArticleView source="docs/README.md" title="Basic" />, container);
 		expect(container.querySelector(".loader-container")).toBeDefined();
 		expect(container.querySelector(".loader-container")).not.toBeNull();
 		expect(container.querySelector(".loader")).toBeDefined();
@@ -109,7 +109,7 @@ describe('ArticleView', () => {
 		fetch.mockResponse(() => Promise.resolve(markdown));
 
 		await act(async () => {
-			render(<ArticleView source="README.md" title="Iframes allowed" />, container);
+			render(<ArticleView source="docs/README.md" title="Iframes allowed" />, container);
 		});
 		expect(container).toContainHTML('<h1>Iframes Allowed</h1>');
 		let iframe = getByTestId(container, 'test-iframe');
@@ -130,9 +130,9 @@ describe('ArticleView', () => {
 		`)
 
 		fetch.mockResponse(() => Promise.resolve(markdown))
-		
+
 		await act(async () => {
-			render(<Router><ArticleView source="README.md" title="Valid Routes" /></Router>, container);
+			render(<Router><ArticleView source="docs/README.md" title="Valid Routes" /></Router>, container);
 		});
 
 		expect(container).toContainHTML('<h1>Valid Routes</h1>');
