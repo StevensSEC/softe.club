@@ -1,3 +1,9 @@
+# softe.club
+
+This is the repo for the Software Engineering Club's website.
+
+Documentation can be found in `src/articles/docs`, or at https://softe.club/dev/docs.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

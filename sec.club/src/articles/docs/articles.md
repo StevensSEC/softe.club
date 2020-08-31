@@ -1,6 +1,6 @@
 # How to write new articles for the website
 
-1. Add a new markdown file under `articles`
+1. Add a new markdown file under `src/articles`
 2. Add a new object of the form below to the `ROUTES` array in `Router.js`:
 
 ```javascript
@@ -12,7 +12,7 @@
 ```
 
 Referencing a route in an article that has not yet been added to this array will cause
-React to throw an error.
+React to throw an error. `source` is a path relative to `src/articles`.
 
 ## Images
 
@@ -21,7 +21,7 @@ Embed images with this syntax
 ![image text](PATH TO IMAGE)
 ```
 
-Note that the path to the image is relative to the `assets` directory.
+Note that the path to the image is relative to the `src/assets` directory.
 
 ### Example
 
