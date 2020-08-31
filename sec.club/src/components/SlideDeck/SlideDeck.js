@@ -1,14 +1,20 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { Container } from "@material-ui/core";
 import "./SlideDeck.scss";
 
 class Slide extends React.Component {
+    static propTypes = {
+        sticky: PropTypes.bool,
+        stickyUntil: PropTypes.number,
+    }
+
     constructor(props){
         super(props);
         this.props = props;
     }
     render() {
-        return <Container className="slide">{this.props.children}</Container>;
+        return <Container className={`slide-content ${this.props.className}`}>{this.props.children}</Container>;
     }
 }
 
@@ -18,7 +24,13 @@ class SlideDeck extends React.Component {
 
     constructor(props){
         super(props);
-        this.state = {currentSlide: 0};
+        this.state = {
+            currentSlide: 0,
+            stickied: {
+                current: null,
+                previous: [],
+            },
+         };
 
         this.props.children.forEach(child => {
             if(child.type.name !== "Slide"){
@@ -35,7 +47,26 @@ class SlideDeck extends React.Component {
         if (next > this.props.children.length - 1){
             return;
         }
-        this.setState({currentSlide: this.state.currentSlide + 1})
+        let newstate = { currentSlide: next };
+        if (this.props.children[this.state.currentSlide].props.sticky) {
+            let previousStickies = this.state.stickied.previous;
+            if (this.state.stickied.current) {
+                previousStickies.push(this.state.stickied.current);
+            }
+            newstate.stickied = {
+                current: this.state.currentSlide,
+                previous: previousStickies,
+            }
+        }
+        else if (this.state.stickied.current && newstate.currentSlide >= this.props.children[this.state.stickied.current].props.stickyUntil) {
+            let previousStickies = this.state.stickied.previous;
+            previousStickies.push(this.state.stickied.current);
+            newstate.stickied = {
+                current: null,
+                previous: previousStickies,
+            }
+        }
+        this.setState(newstate);
     }
 
     prevSlide(){
@@ -43,7 +74,15 @@ class SlideDeck extends React.Component {
         if (prev < 0){
             return;
         }
-        this.setState({currentSlide: this.state.currentSlide - 1})
+        let newstate = { currentSlide: prev };
+        if (prev === this.state.stickied.current) {
+            let previousStickies = this.state.stickied.previous;
+            newstate.stickied = {
+                current: previousStickies.length > 0 ? previousStickies.pop() : null,
+                previous: previousStickies,
+            }
+        }
+        this.setState(newstate);
     }
 
 
@@ -57,9 +96,22 @@ class SlideDeck extends React.Component {
     }
 
     render() {
+        let elements = [];
+        if (this.state.stickied.current) {
+            elements.push(
+                <div className="slide sticky" key="sticky">
+                    {this.props.children[this.state.stickied.current]}
+                </div>
+            );
+        }
+        elements.push(
+            <div className={`slide primary ${this.state.stickied.current ? "sticky-is-present" : ""}`} key="currentSlide">
+                {this.props.children[this.state.currentSlide]}
+            </div>
+        );
         return (
-            <div onClick={this.handleClick} onContextMenu={this.handleOnContext}>
-            {this.props.children[this.state.currentSlide]}
+            <div className="slide-deck" onClick={this.handleClick} onContextMenu={this.handleOnContext}>
+                {elements}
             </div>
         );
     }
