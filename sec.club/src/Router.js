@@ -43,8 +43,23 @@ const ROUTES = [
         Component: lazy(() => import(/* webpackChunkName: "article" */ "./views/Article/Article.js")),
     },
     {
-        path: "/dev/readme",
-        articleProps: { source: "README.md", title: "README",},
+        path: "/dev/docs/articles",
+        articleProps: { source: "docs/articles.md", title: "Article Documentation" },
+        Component: lazy(() => import(/* webpackChunkName: "article" */ "./views/Article/Article.js")),
+    },
+    {
+        path: "/dev/docs/slidedecks",
+        articleProps: { source: "docs/slidedecks.md", title: "Slide Deck Documentation" },
+        Component: lazy(() => import(/* webpackChunkName: "article" */ "./views/Article/Article.js")),
+    },
+    {
+        path: "/dev/docs/design",
+        articleProps: { source: "docs/design.md", title: "Design Specification" },
+        Component: lazy(() => import(/* webpackChunkName: "article" */ "./views/Article/Article.js")),
+    },
+    {
+        path: "/dev/docs",
+        articleProps: { source: "docs/README.md", title: "README" },
         Component: lazy(() => import(/* webpackChunkName: "article" */ "./views/Article/Article.js")),
     },
     {
