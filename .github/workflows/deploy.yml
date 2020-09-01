@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       CI: true
-      working-directory: ./sec.club
+      working-directory: .
     strategy:
       matrix:
         node-version: [12.x]
