@@ -1,5 +1,7 @@
 # softe.club
 
+![Build and Deploy](https://github.com/StevensSEC/sec.club/workflows/Build%20and%20Deploy/badge.svg)
+
 This is the repo for the Software Engineering Club's website.
 
 Documentation can be found in `src/articles/docs`, or at https://softe.club/dev/docs.
