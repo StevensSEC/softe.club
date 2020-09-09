@@ -15,7 +15,7 @@ Add-WindowsCapability -Online -Name OpenSSH.Client~~~~0.0.1.0
 ssh-keygen
 ```
 
-### Copy the public key
+### Copy the public key to GitHub
 
 ```powershell,windows
 cat ~/.ssh/id_rsa.pub | clip
@@ -29,9 +29,13 @@ cat ~/.ssh/id_rsa.pub | pbcopy
 cat ~/.ssh/id_rsa.pub | xclip -selection copy
 ```
 
+Go here: https://github.com/settings/keys and click "New SSH key"
+
 # Configure git
+
+Make sure to use the same email that you used for GitHub!
 
 ```
 git config --global user.name “FirstName LastName”
-git config --global user.email “email” # make sure to use the same email that you used for github
+git config --global user.email “email”
 ```
