@@ -130,6 +130,11 @@ const ROUTES = [
         Component: lazy(() => import(/* webpackChunkName: "article" */ "./views/Article/Article.js")),
     },
     {
+        path: "/event/ctc-intro-to-git-2020",
+        articleProps: { source: "events/ctc-intro-to-git-2020/intro-to-git.md", title: "Intro to Git"},
+        Component: lazy(() => import(/* webpackChunkName: "article" */ "./views/Article/Article.js")),
+    },
+    {
         path: "*",
         Component: lazy(() => import(/* webpackChunkName: "not-found" */"./views/NotFound/NotFound.jsx")),
     },
