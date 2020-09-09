@@ -3,6 +3,18 @@ Download git (Windows): https://git-scm.com/download/win
 
 Windows Terminal (optional): https://www.microsoft.com/en-us/p/windows-terminal/9n0dx20hk701
 
+# Install git on Mac
+
+There are a couple options for installing git on Mac. The least technical way to install it is through the .dmg found here: https://sourceforge.net/projects/git-osx-installer/
+
+If you know that you have [homebrew](https://brew.sh/) installed, then instead you can run:
+
+```bash,mac
+brew install git
+```
+
+If you're not sure if you have homebrew installed use the .dmg for now.
+
 # Install OpenSSH
 
 ```powershell,windows
