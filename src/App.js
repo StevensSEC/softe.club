@@ -6,6 +6,7 @@ import { red, cyan } from "@material-ui/core/colors"
 import Loader from "./components/Loader/Loader.js"
 import ErrorBoundaryLoader from "./components/Loader/ErrorBoundaryLoader.js"
 import ROUTES from "./Router.js"
+import { UxContext } from "./contexts.js";
 
 import SecStyle from "./variables.scss"
 
@@ -39,14 +40,16 @@ function App() {
       tertiary: "cyan",
       quaternary: "white"
     }
-  })
+  });
+  const ux = React.useContext(UxContext);
+
   return (
     <Router>
       <ThemeProvider theme={theme}>
         <div className="App">
         <Suspense fallback={<div>Loading...</div>}>
           <ErrorBoundaryLoader>
-            <Header></Header>
+            {ux.headerVisible ? <Header/> : null}
           </ErrorBoundaryLoader>
           <Suspense fallback={<Loader/>}>
           <ErrorBoundaryLoader>
@@ -76,7 +79,7 @@ function App() {
                 })}
               </Switch>
             </div>
-            <Footer/>
+            {ux.footerVisible ? <Footer/> : null}
           </ErrorBoundaryLoader>
           </Suspense>
         </Suspense>

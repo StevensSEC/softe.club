@@ -4,6 +4,7 @@ import { Drawer, List, Hidden } from "@material-ui/core"
 import MenuIcon from '@material-ui/icons/Menu'
 import "./Header.scss"
 import Button from "../Button/Button.js";
+import { UxContext } from "../../contexts.js";
 
 const useStyles = makeStyles({
   list: {
@@ -14,7 +15,10 @@ const useStyles = makeStyles({
   }
 })
 
+
 const Header = () => {
+  const ux = React.useContext(UxContext);
+
   const classes = useStyles()
   const [state, setState] = React.useState({
     top: false,
@@ -94,43 +98,59 @@ const Header = () => {
     </div>
   )
 
-  return (
-    <header className="sec-header">
-      <div className="header-content">
-        <Hidden mdUp>
-          <Button kind="icon" className="mobile" onClick={toggleDrawer("left", true)}>
-            <MenuIcon />
-          </Button>
-        </Hidden>
-        <Button
-          kind="menu"
-          className="barLogo"
-          to={'/'}
-          key={'menuItem-home'}
-        >
-          SEC
-        </Button>
-        <Hidden smDown>
-          <div className="header-items">
-            {buttonRoutes.map((button, index) => (
-              <Button
-                kind="menu"
-                to={button.route}
-                key={`menuItem-${index}`}
-              >
-                {button.title}
-              </Button>
-            ))}
-            <Button kind="menu" onClick={toggleDrawer("left", true)}>
-              More
-            </Button>
-          </div>
-        </Hidden>
+  const MenuButton = () => (
+    <Button kind="icon" className="mobile" onClick={toggleDrawer("left", true)}>
+      <MenuIcon />
+    </Button>
+  );
+
+  if (ux.headerCompact) {
+    return (
+      <header className="sec-header compact">
+        <MenuButton/>
         <Drawer open={state.left} onClose={toggleDrawer("left", false)}>
           {sideList("left")}
         </Drawer>
-      </div>
-    </header>
-  )
+      </header>
+    );
+  }
+  else {
+    return (
+      <header className="sec-header">
+        <div className="header-content">
+          <Hidden mdUp>
+            <MenuButton/>
+          </Hidden>
+          <Button
+            kind="menu"
+            className="barLogo"
+            to={'/'}
+            key={'menuItem-home'}
+          >
+            SEC
+          </Button>
+          <Hidden smDown>
+            <div className="header-items">
+              {buttonRoutes.map((button, index) => (
+                <Button
+                  kind="menu"
+                  to={button.route}
+                  key={`menuItem-${index}`}
+                >
+                  {button.title}
+                </Button>
+              ))}
+              <Button kind="menu" onClick={toggleDrawer("left", true)}>
+                More
+              </Button>
+            </div>
+          </Hidden>
+          <Drawer open={state.left} onClose={toggleDrawer("left", false)}>
+            {sideList("left")}
+          </Drawer>
+        </div>
+      </header>
+    )
+  }
 }
 export default Header

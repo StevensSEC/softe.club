@@ -17,6 +17,20 @@
         min-height: 64px;
         padding: 0 24px;
     }
+
+    &.compact {
+        position: fixed;
+        border: none;
+        width: 55px;
+        height: 55px;
+        background-color: transparent;
+        z-index: 0;
+        top: 0;
+
+        * {
+            background-color: transparent;
+        }
+    }
 }
 
 .header-items {
