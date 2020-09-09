@@ -26,7 +26,9 @@ export default function HomeView() {
 						flyerSource={event.flyerSource}
 						title={event.title}
 						desc={event.desc}
-						endDate={event.endDate}/>
+						endDate={event.endDate}
+						meetingLink={event.meetingLink}
+						/>
 					)
 				})}
 			</Container>
