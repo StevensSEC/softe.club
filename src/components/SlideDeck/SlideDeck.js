@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Container } from "@material-ui/core";
 import "./SlideDeck.scss";
+import { UxContext } from "../../contexts.js";
 
 class Slide extends React.Component {
     static propTypes = {
@@ -21,6 +22,7 @@ class Slide extends React.Component {
 class InvalidChildComponentError extends TypeError {}
 
 class SlideDeck extends React.Component {
+    static contextType = UxContext;
 
     constructor(props){
         super(props);
@@ -96,6 +98,8 @@ class SlideDeck extends React.Component {
     }
 
     render() {
+        this.context.headerCompact = true;
+        this.context.footerVisible = false;
         let elements = [];
         if (this.state.stickied.current) {
             elements.push(
