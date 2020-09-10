@@ -6,6 +6,8 @@ Contributing to open source projects can seem scary at first. We're here to make
 
 [Track your issues here](https://github.com/orgs/StevensSEC/projects/1)
 
+Find a project: https://github.com/explore
+
 ### Project Suggestions
 
 Are you having trouble finding a project that looks fun? Here are some suggestions!
