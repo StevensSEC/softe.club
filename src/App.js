@@ -57,42 +57,44 @@ function App() {
   }
 
   return (
-    <ThemeProvider theme={theme}>
-      <div className="App">
-      <Suspense fallback={<div>Loading...</div>}>
-        <ErrorBoundaryLoader>
-          {ux.headerVisible ? <Header/> : null}
-        </ErrorBoundaryLoader>
-        <Suspense fallback={<Loader/>}>
-        <ErrorBoundaryLoader>
-          <div className="content-wrap">
-            <Switch>
-            <Redirect from="/pmt" to="/event/pimp-my-terminal" />
-              {ROUTES.map(({ path, Component, articleProps }, index) => {
-                if (path === "/") { //Root view
-                  return (
-                    <Route exact path={path} key={"route-" + index}>
-                      <Component/>
-                    </Route>
-                  )
-                } else if (articleProps){ //Article views
-                  return(
-                    <Route path={path} key={"route-" + index}>
-                      <Component {...articleProps}/>
-                    </Route>
-                  );
-                } else { //Other views
-                  return (
-                    <Route path={path} key={"route-" + index}>
-                      <Component/>
-                    </Route>
-                  )
-                }
-              })}
-            </Switch>
-          </div>
-          {ux.footerVisible ? <Footer/> : null}
-        </ErrorBoundaryLoader>
+      <ThemeProvider theme={theme}>
+        <div className="App">
+        <Suspense fallback={<div>Loading...</div>}>
+          <ErrorBoundaryLoader>
+            {ux.headerVisible ? <Header/> : null}
+          </ErrorBoundaryLoader>
+          <Suspense fallback={<Loader/>}>
+          <ErrorBoundaryLoader>
+            <div className="content-wrap">
+              <Switch>
+              <Redirect from="/pmt" to="/event/pimp-my-terminal" />
+              <Redirect from="/fall2020" to="/guide/open-source-fall-2020" />
+                {ROUTES.map(({ path, Component, articleProps }, index) => {
+                  if (path === "/") { //Root view
+                    return (
+                      <Route exact path={path} key={"route-" + index}>
+                        <Component/>
+                      </Route>
+                    )
+                  } else if (articleProps){ //Article views
+                    return(
+                      <Route path={path} key={"route-" + index}>
+                        <Component {...articleProps}/>
+                      </Route>
+                    );
+                  } else { //Other views
+                    return (
+                      <Route path={path} key={"route-" + index}>
+                        <Component/>
+                      </Route>
+                    )
+                  }
+                })}
+              </Switch>
+            </div>
+            {ux.footerVisible ? <Footer/> : null}
+          </ErrorBoundaryLoader>
+          </Suspense>
         </Suspense>
       </Suspense>
       </div>

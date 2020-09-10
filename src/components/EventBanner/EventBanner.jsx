@@ -1,7 +1,7 @@
 import React from "react";
 import "./EventBanner.scss";
 
-export default function EventBanner({flyerSource, altText, title, desc, endDate}) {
+export default function EventBanner({flyerSource, altText, title, desc, endDate, meetingLink}) {
     let flyer = require(`../../assets/flyers/${flyerSource}`)
     let imageElement;
 
@@ -20,6 +20,7 @@ export default function EventBanner({flyerSource, altText, title, desc, endDate}
                     <div className="text-container">
                         <span className="title">{title}</span>
                         <span className="description">{desc}</span>
+                        { meetingLink ? <span className="description">Join here: <a href={meetingLink}>{meetingLink}</a></span> : <></> }
                     </div>
                 </div>
             </div>
@@ -27,4 +28,4 @@ export default function EventBanner({flyerSource, altText, title, desc, endDate}
     } else {
         return null
     }
-}   
+}

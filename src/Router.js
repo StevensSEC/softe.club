@@ -38,6 +38,14 @@ const ROUTES = [
         },
     },
     {
+        path: "/gh-submit",
+        Component: () => {
+            // Form for submitting github usernames fall 2020
+            window.location.href = 'https://forms.gle/Z5ezNfinyBV6HeqA8';
+            return null;
+        },
+    },
+    {
         path: "/git-cheatsheet",
         articleProps: { source: "git-cheatsheet.md", title: "Git Cheatsheet",},
         Component: lazy(() => import(/* webpackChunkName: "article" */ "./views/Article/Article.js")),
@@ -90,6 +98,15 @@ const ROUTES = [
         Component: lazy(() => import(/* webpackChunkName: "pmt" */ "./views/PimpMyTerminal/PimpMyTerminal.js")),
     },
     {
+        path: "/slides/gbm/fall-2020-welcome-back",
+        Component: lazy(() => import(/* webpackChunkName: "gbm1" */ "./views/Slides/fall-2020-gbm1/fall-2020-gbm1.js")),
+    },
+    {
+        path: "/guide/open-source-fall-2020",
+        articleProps: { source: "fall-2020-open-source-projects.md", title: "Open Source Project Guide - Fall 2020" },
+        Component: lazy(() => import(/* webpackChunkName: "article" */ "./views/Article/Article.js")),
+    },
+    {
         path: "/tutorial/install-wsl",
         articleProps: { source: "events/pimp-my-terminal/howto-install-wsl.md", title: "How to Install the Windows Subsystem for Linux"},
         Component: lazy(() => import(/* webpackChunkName: "article" */ "./views/Article/Article.js")),
@@ -127,6 +144,11 @@ const ROUTES = [
     {
         path: "/tutorial/set-default-terminal",
         articleProps: { source: "events/pimp-my-terminal/howto-set-default-terminal.md", title: "How to set your default terminal"},
+        Component: lazy(() => import(/* webpackChunkName: "article" */ "./views/Article/Article.js")),
+    },
+    {
+        path: "/event/ctc-intro-to-git-2020",
+        articleProps: { source: "events/ctc-intro-to-git-2020/intro-to-git.md", title: "Intro to Git"},
         Component: lazy(() => import(/* webpackChunkName: "article" */ "./views/Article/Article.js")),
     },
     {
