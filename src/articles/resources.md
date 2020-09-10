@@ -44,6 +44,10 @@ Usually, the best resources are the official documentation, but sometimes beginn
 - [w3schools](https://www.w3schools.com/js/)
 - http://npm.anvaka.com
 
+## Markdown
+
+- https://www.tablesgenerator.com/markdown_tables - Markdown table generator
+
 ## C-sharp
 
 - https://channel9.msdn.com/Series/CSharp-Fundamentals-for-Absolute-Beginners
