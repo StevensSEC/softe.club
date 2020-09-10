@@ -96,7 +96,6 @@ function App() {
           </ErrorBoundaryLoader>
           </Suspense>
         </Suspense>
-      </Suspense>
       </div>
     </ThemeProvider>
   )
