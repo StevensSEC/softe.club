@@ -1,11 +1,12 @@
 import React, { Suspense, lazy } from "react"
 import "./App.scss"
 import { createMuiTheme, ThemeProvider } from "@material-ui/core"
-import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom"
+import { Switch, Route, Redirect, useLocation } from "react-router-dom"
 import { red, cyan } from "@material-ui/core/colors"
 import Loader from "./components/Loader/Loader.js"
 import ErrorBoundaryLoader from "./components/Loader/ErrorBoundaryLoader.js"
 import ROUTES from "./Router.js"
+import { UxContext } from "./contexts.js";
 
 import SecStyle from "./variables.scss"
 
@@ -39,14 +40,28 @@ function App() {
       tertiary: "cyan",
       quaternary: "white"
     }
-  })
+  });
+  let ux = React.useContext(UxContext);
+  const location = useLocation();
+  // Conditionally hide and show the header and footer based on the path
+  // React really doesn't like having global state, especially if you need to send that state upwards through the tree
+  // so that's why this piece of shit exists
+  if (location.pathname.startsWith("/slides") || location.pathname === "/dev/slide_deck") {
+    ux.headerCompact = true;
+    ux.footerVisible = false;
+  }
+  else {
+    ux.headerCompact = false;
+    ux.headerVisible = true;
+    ux.footerVisible = true;
+  }
+
   return (
-    <Router>
       <ThemeProvider theme={theme}>
         <div className="App">
         <Suspense fallback={<div>Loading...</div>}>
           <ErrorBoundaryLoader>
-            <Header></Header>
+            {ux.headerVisible ? <Header/> : null}
           </ErrorBoundaryLoader>
           <Suspense fallback={<Loader/>}>
           <ErrorBoundaryLoader>
@@ -77,13 +92,12 @@ function App() {
                 })}
               </Switch>
             </div>
-            <Footer/>
+            {ux.footerVisible ? <Footer/> : null}
           </ErrorBoundaryLoader>
           </Suspense>
         </Suspense>
-        </div>
-      </ThemeProvider>
-    </Router>
+      </div>
+    </ThemeProvider>
   )
 }
 export default App
