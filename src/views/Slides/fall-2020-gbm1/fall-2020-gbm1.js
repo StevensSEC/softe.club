@@ -12,7 +12,9 @@ export default class SlidesFall2020Gbm1 extends React.Component {
                         <Logo />
                     </div>
                     <h1>Welcome Back to SEC!</h1>
+                    <p><em>Open to all majors!</em></p>
                     <h2>Submit your github username: <a href="https://softe.club/gh-submit">softe.club/gh-submit</a></h2>
+                    <h2>Join Slack: <a href="https://softe.club/slack">softe.club/slack</a></h2>
                 </Slide>
                 <Slide>
                     <h1>What are we doing this semester?</h1>
