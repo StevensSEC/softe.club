@@ -19,6 +19,8 @@ If you're not sure if you have homebrew installed use the .dmg for now.
 
 ```powershell,windows
 Add-WindowsCapability -Online -Name OpenSSH.Client~~~~0.0.1.0
+Get-Service -Name ssh-agent | Set-Service -StartupType Manual
+Start-Service ssh-agent
 ```
 
 # Generate ssh key
