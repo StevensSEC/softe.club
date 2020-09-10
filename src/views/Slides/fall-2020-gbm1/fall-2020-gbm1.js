@@ -75,6 +75,13 @@ export default class SlidesFall2020Gbm1 extends React.Component {
                         <li>Submit your github: <a href="https://softe.club/gh-submit">softe.club/gh-submit</a></li>
                         <li>Check your emails for the github org invite.</li>
                     </ol>
+                    <h1>What to have for next week</h1>
+                    <ol>
+                        <l1>A github account</l1>
+                        <li>git installed</li>
+                        <li>An IDE (like Visual Studio Code)</li>
+                        <li>A project or issue picked out (bonus points for starting)</li>
+                    </ol>
                 </Slide>
             </SlideDeck>
         )
