@@ -68,6 +68,14 @@ export default class SlidesFall2020Gbm1 extends React.Component {
                     </ul>
                     <p>That's why SEC is here to support you!</p>
                 </Slide>
+                <Slide>
+                    <h1>Goals for Tonight</h1>
+                    <ol>
+                        <li>Get in slack: <a href="https://softe.club/slack">softe.club/slack</a></li>
+                        <li>Submit your github: <a href="https://softe.club/gh-submit">softe.club/gh-submit</a></li>
+                        <li>Check your emails for the github org invite.</li>
+                    </ol>
+                </Slide>
             </SlideDeck>
         )
     }
