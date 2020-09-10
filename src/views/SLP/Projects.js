@@ -26,5 +26,13 @@ const PROJECTS = [
     year: "2020",
     markdown: "slp/stevens-web-extension.md"
   },
+  {
+    path: "open-source-fall-2020",
+    img: secLogo,
+    name: "Open Source Contributions",
+    semester: "Fall",
+    year: "2020",
+    markdown: "fall-2020-open-source-projects.md" // TODO: replace with our normal SLP page
+  },
 ]
 export default PROJECTS

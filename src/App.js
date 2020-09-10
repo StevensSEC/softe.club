@@ -53,6 +53,7 @@ function App() {
             <div className="content-wrap">
               <Switch>
               <Redirect from="/pmt" to="/event/pimp-my-terminal" />
+              <Redirect from="/fall2020" to="/guide/open-source-fall-2020" />
                 {ROUTES.map(({ path, Component, articleProps }, index) => {
                   if (path === "/") { //Root view
                     return (
