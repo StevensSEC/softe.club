@@ -22,14 +22,14 @@ const EVENTS = [
         flyerSource: 'Pimp my terminal.png',
         title: 'Pimp My Terminal',
         desc: 'Come learn how to make your developing process look pretty by decking out your VSCode and your terminal. Altorfer Software Engineering Lab, March 5th, 9 PM',
-        endDate: new Date('March 5, 2020'),
+        endDate: new Date('March 6, 2020'),
     },
     {
         flyerSource: 'GBM1.png',
         title: 'Welcome back!',
         desc: "Come code with us! We'll help you contribute to any open source project you want! Starting at 8:30 pm on Sep. 10 (Come at 9 if you have class until then).",
         meetingLink: 'https://meet.google.com/ujr-zxxe-idr',
-        endDate: new Date('September 10, 2020'),
+        endDate: new Date('September 11, 2020'),
     }
 ]
 
