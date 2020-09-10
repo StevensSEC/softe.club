@@ -34,6 +34,24 @@ Are you having trouble finding a project that looks fun? Here are some suggestio
 
 ### Issue Suggestions
 
-Having trouble finding an issue? That's OK! We got you covered.
+Having trouble finding an issue? That's OK! We got you covered. *Let us know if one of these issues is closed.*
 
-
+| Language | Link to issue |
+|-|-|
+| Go | [muesli/obs-cli#2](https://github.com/muesli/obs-cli/issues/2)
+| C# | [dyc3/steamguard-cli#10](https://github.com/dyc3/steamguard-cli/issues/10)
+| C++ | [OpenRCT2/OpenRCT2#12456](https://github.com/OpenRCT2/OpenRCT2/issues/12456)
+| Rust | [rust-lang/rustfmt#4364](https://github.com/rust-lang/rustfmt/issues/4364)
+| Javascript | [vercel/hyper#2829](https://github.com/vercel/hyper/issues/2829)
+| Python | [numpy/numpy#14828](https://github.com/numpy/numpy/issues/14828)
+| Rust | [iron/iron#481](https://github.com/iron/iron/issues/481)
+| Rust | [rust-lang/rustfmt#4148](https://github.com/rust-lang/rustfmt/issues/4148)
+| Rust | [rust-lang/rustfmt#4119](https://github.com/rust-lang/rustfmt/issues/4119)
+| Rust | [rust-lang/rustfmt#4091](https://github.com/rust-lang/rustfmt/issues/4091)
+| Typescript | [artalar/reatom#3](https://github.com/artalar/reatom/issues/3)
+| SVG | [FortAwesome/Font-Awesome#17097](https://github.com/FortAwesome/Font-Awesome/issues/17097)
+| SVG | [FortAwesome/Font-Awesome#17102](https://github.com/FortAwesome/Font-Awesome/issues/17102)
+| Javascript | [dyc3/opentogethertube#273](https://github.com/dyc3/opentogethertube/issues/273)
+| Javascript | [dyc3/opentogethertube#267](https://github.com/dyc3/opentogethertube/issues/267)
+| Java | [jellysquid3/sodium-fabric#219](https://github.com/jellysquid3/sodium-fabric/issues/219)
+| Java | [jellysquid3/sodium-fabric#74](https://github.com/jellysquid3/sodium-fabric/issues/74)
