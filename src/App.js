@@ -1,7 +1,7 @@
 import React, { Suspense, lazy } from "react"
 import "./App.scss"
 import { createMuiTheme, ThemeProvider } from "@material-ui/core"
-import { BrowserRouter as Router, Switch, Route, Redirect, useLocation } from "react-router-dom"
+import { Switch, Route, Redirect, useLocation } from "react-router-dom"
 import { red, cyan } from "@material-ui/core/colors"
 import Loader from "./components/Loader/Loader.js"
 import ErrorBoundaryLoader from "./components/Loader/ErrorBoundaryLoader.js"
