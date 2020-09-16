@@ -1,5 +1,6 @@
 article:
-  - sec.club/src/articles/**/*
+  - src/articles/**/*
 
 documentation:
   - ./**/README.md
+  - src/articles/docs/**/*
