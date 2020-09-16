@@ -34,7 +34,7 @@ const EVENTS = [
     {
         flyerSource: 'GBM2.png',
         title: "GBM 2",
-        desc: "Come code with us! We'll help you contribute to any open source project you want! Starting at 8:30 pm on Sep. 10 (Come at 9 if you have class until then).",
+        desc: "Come code with us! We'll help you contribute to any open source project you want! Starting at 8:30 pm on Sep. 17 (Come at 9 if you have class until then).",
         meetingLink: "https://stevens.zoom.us/j/96916277431",
         endDate: new Date('September 18, 2020'),
     },
