@@ -33,6 +33,7 @@ Are you having trouble finding a project that looks fun? Here are some suggestio
 | PicView             | A portable alternate picture viewer                                          | C#                     | [Ruben2776/PicView](https://github.com/Ruben2776/PicView)                                   |
 | YoutubeDownloader   | Downloads YouTube videos, playlists with a GUI                               | C#                     | [Tyrrrz/YoutubeDownloader](https://github.com/Tyrrrz/YoutubeDownloader)                     |
 | leagueoflegends-led | Control RGB LEDs in response to events in LoL                                | C#                     | [nicolasdeory/leagueoflegends-led](https://github.com/nicolasdeory/leagueoflegends-led)     |
+| Vuetify             | Material Component Framework for Vue.js                                      | Typescript             | [vuetifyjs/vuetify](https://github.com/vuetifyjs/vuetify)                                   |
 
 ### Issue Suggestions
 
@@ -57,3 +58,8 @@ Having trouble finding an issue? That's OK! We got you covered. *Let us know if 
 | Javascript | [dyc3/opentogethertube#267](https://github.com/dyc3/opentogethertube/issues/267)
 | Java | [jellysquid3/sodium-fabric#219](https://github.com/jellysquid3/sodium-fabric/issues/219)
 | Java | [jellysquid3/sodium-fabric#74](https://github.com/jellysquid3/sodium-fabric/issues/74)
+| Typescript | [vuetifyjs/vuetify#12234](https://github.com/vuetifyjs/vuetify/issues/12234)
+| Typescript | [vuetifyjs/vuetify#12222](https://github.com/vuetifyjs/vuetify/issues/12222)
+| Typescript | [vuetifyjs/vuetify#12149](https://github.com/vuetifyjs/vuetify/issues/12149)
+| Typescript | [vuetifyjs/vuetify#9870](https://github.com/vuetifyjs/vuetify/issues/9870)
+| Typescript | [vuetifyjs/vuetify#7017](https://github.com/vuetifyjs/vuetify/issues/7017)
