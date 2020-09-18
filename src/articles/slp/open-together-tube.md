@@ -26,3 +26,23 @@ During it's time as the active Semester Long Project, 10 club members made contr
 ![OTT screenshot 1](slp/opentogethertube/ott-screenshot1.png)
 
 ![OTT screenshot 2](slp/opentogethertube/ott-screenshot2.png)
+
+## Resources for Contributing
+
+### Vue
+
+- https://vuejs.org/v2/guide/
+- https://vuejs.org/v2/examples/
+
+### Express
+
+- https://expressjs.com/en/starter/hello-world.html
+- https://expressjs.com/en/4x/api.html
+
+### Vuetify
+
+- https://vuetifyjs.com/en/getting-started/quick-start
+
+### Project Architecture Slides
+
+[9/12 Project Architecture Slides](https://docs.google.com/presentation/d/1XFcEqnJUIQ6YoCvdR2O5dnVv0yPnzxx2xV0irek8xRs/edit?usp=sharing)

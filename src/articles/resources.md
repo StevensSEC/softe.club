@@ -4,63 +4,63 @@ Learning about programming is hard. Hopefully, these resources will make it a li
 
 ## Web (HTML/CSS/JS)
 
-- [marksheet.io](https://marksheet.io)
-- [bundlephobia](https://bundlephobia.com/)
-- [w3schools](https://www.w3schools.com/js/)
+- [marksheet.io](https://marksheet.io) - A written tutorial for HTML and CSS
+- [bundlephobia](https://bundlephobia.com/) - Provides data about packages to help avoid JavaScript bloat
+- [w3schools](https://www.w3schools.com/js/) - A written tutorial for JavaScript
 - [jsbench](https://jsben.ch/) - Benchmark code performance directly in the browser
-- http://npm.anvaka.com
+- [npm.avanka](http://npm.anvaka.com) - A graph visualization of package dependencies
 
 ## Markdown
 
-- https://www.tablesgenerator.com/markdown_tables - Markdown table generator
+- [Tables Generator](https://www.tablesgenerator.com/markdown_tables) - Markdown table generator
 
-## C-sharp
+## C&#35;
 
-- https://channel9.msdn.com/Series/CSharp-Fundamentals-for-Absolute-Beginners
+- [C# Fundamentals for Absolute Beginners](https://channel9.msdn.com/Series/CSharp-Fundamentals-for-Absolute-Beginners) - A video tutorial for C#
 
 ## C/C++
 
-- [Compiler Explorer](https://godbolt.org/)
+- [Compiler Explorer](https://godbolt.org/) - Displays the compiled assembly of provided C++ code
 
 ## Python
 
-- [Automate the Boring Stuff](https://automatetheboringstuff.com)
+- [Automate the Boring Stuff](https://automatetheboringstuff.com) - An ebook outlining practical applications of Python for beginners
 
 ## Rust
 
-- [Official Rust book](https://doc.rust-lang.org/book/)
-- [Rust cookbook](https://rust-lang-nursery.github.io/rust-cookbook/)
-- VSCode Extension: [rust-analyzer](https://marketplace.visualstudio.com/items?itemName=matklad.rust-analyzer)
+- [Official Rust book](https://doc.rust-lang.org/book/) - Documentation for Rust
+- [Rust cookbook](https://rust-lang-nursery.github.io/rust-cookbook/) - Outlines simple examples of good practices
+- [rust-analyzer](https://marketplace.visualstudio.com/items?itemName=matklad.rust-analyzer) - VSCode extension for code completion and goto
 
 ## Git
 
 Git is the most commonly used version control system. Using git is required for participating in the semester long project. If you don't know how to use git, we'll teach you.
 
-- [Official SEC Cheatsheet](/git-cheatsheet)
+- [Official SEC Cheatsheet](/git-cheatsheet) - An overview of basic usage of git's commands
 - [git it](https://github.com/jlord/git-it-electron) - Interactive git tutorial
 
 ## Linux
 
-Even if you don’t develop on Linux, you will encounter it eventually. It’s definitely worth taking the time to learn how Linux works and how to navigate a Linux environment. We recommend installing a virtual machine or [installing the Windows Subsystem for Linux](/tutorials/install-wsl), to play around with it.
+Even if you don’t develop on Linux, you will encounter it eventually. It’s definitely worth taking the time to learn how Linux works and how to navigate a Linux environment. We recommend installing a virtual machine or [installing the Windows Subsystem for Linux](/tutorial/install-wsl), to play around with it.
 
-- [Official SEC Bash Cheatsheet](/bash-cheatsheet)
-- [Linux Journey](https://linuxjourney.com)
-- [How to use CLI text editors](/tutorial/cli-text-editors)
+- [Official SEC Bash Cheatsheet](/bash-cheatsheet) - An overview of frequently used bash commands
+- [Linux Journey](https://linuxjourney.com) - Written guided tutorials of various Linux concepts
+- [How to use CLI text editors](/tutorial/cli-text-editors) - Brief look at using command-line text editors
 - [openvim](https://www.openvim.com) - Interactive Vim tutorial
 
 # Books
 
-- [PacktPub](https://packtpub.com/)
+- [PacktPub](https://packtpub.com/) - Provides a free daily ebook, hosts other ebook resources
 
 # Useful Tools
 
-- https://regexr.com - Make and test regular expressions, includes cheat sheet, real time updates as you type, and explainer.
+- [Regexr](https://regexr.com) - Make and test regular expressions, includes cheat sheet, real time updates as you type, and explainer.
 
 ## VSCode Extensions
 
 Language agnostic VSCode extensions
 
-- [Error Lens (usernamehw.errorlens)](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens)
+- [Error Lens (usernamehw.errorlens)](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens) - Improve highlighting of errors
 
 # Free Courses
 
@@ -77,28 +77,6 @@ Language agnostic VSCode extensions
 - https://unixgame.io
 - https://screeps.com
 - https://codingame.com
-
-# SLP Resources
-
-## OpenTogetherTube
-
-### Vue
-
-- https://vuejs.org/v2/guide/
-- https://vuejs.org/v2/examples/
-
-### Express
-
-- https://expressjs.com/en/starter/hello-world.html
-- https://expressjs.com/en/4x/api.html
-
-### Vuetify
-
-- https://vuetifyjs.com/en/getting-started/quick-start
-
-### Project Architecture Slides
-
-[9/12 Project Architecture Slides](https://docs.google.com/presentation/d/1XFcEqnJUIQ6YoCvdR2O5dnVv0yPnzxx2xV0irek8xRs/edit?usp=sharing)
 
 # Can't find what you want?
 
