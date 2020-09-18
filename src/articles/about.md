@@ -2,6 +2,8 @@
 
 SEC is the undergraduate Software Engineering Club at Stevens Institute of Technology in Hoboken, NJ!
 
+Hello World!
+
 # What does SEC do?
 
 We make software projects together: We are a project based club that
