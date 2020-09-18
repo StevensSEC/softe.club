@@ -58,6 +58,10 @@ const Header = () => {
     {
       title: "Contact",
       route: "/contact"
+    },
+    {
+      title: "FAQ",
+      route: "/faq"
     }
   ]
   const moreRoutes = [
