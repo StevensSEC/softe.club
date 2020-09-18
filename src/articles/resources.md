@@ -43,6 +43,8 @@ Usually, the best resources are the official documentation, but sometimes beginn
 - [bundlephobia](https://bundlephobia.com/)
 - [w3schools](https://www.w3schools.com/js/)
 - http://npm.anvaka.com
+- https://jsben.ch - Benchmark
+  code performance directly in the browser
 
 ## Markdown
 
