@@ -39,6 +39,10 @@ Git is the most commonly used version control system. Using git is required for 
 - [Official SEC Cheatsheet](/git-cheatsheet) - An overview of basic usage of git's commands
 - [git it](https://github.com/jlord/git-it-electron) - Interactive git tutorial
 
+## Powershell
+
+- [Official SEC Powershell Cheatsheet](/powershell-cheatsheet) - An overview of frequently used powershell commands
+
 ## Linux
 
 Even if you don’t develop on Linux, you will encounter it eventually. It’s definitely worth taking the time to learn how Linux works and how to navigate a Linux environment. We recommend installing a virtual machine or [installing the Windows Subsystem for Linux](/tutorial/install-wsl), to play around with it.
