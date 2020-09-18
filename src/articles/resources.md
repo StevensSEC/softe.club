@@ -42,6 +42,7 @@ Usually, the best resources are the official documentation, but sometimes beginn
 - [marksheet.io](https://marksheet.io)
 - [bundlephobia](https://bundlephobia.com/)
 - [w3schools](https://www.w3schools.com/js/)
+- [jsbench](https://jsben.ch/) - Benchmark code performance directly in the browser
 - http://npm.anvaka.com
 
 ## Markdown
@@ -75,7 +76,7 @@ Git is the most commonly used version control system. Using git is required for 
 
 ## Linux
 
-Even if you don’t develop on Linux, you will encounter it eventually. It’s definitely worth taking the time to learn how Linux works and how to navigate a Linux environment. We recommend installing a virtual machine or installing the Windows Subsystem for Linux, to play around with it.
+Even if you don’t develop on Linux, you will encounter it eventually. It’s definitely worth taking the time to learn how Linux works and how to navigate a Linux environment. We recommend installing a virtual machine or [installing the Windows Subsystem for Linux](/tutorials/install-wsl), to play around with it.
 
 - [Official SEC Bash Cheatsheet](/bash-cheatsheet)
 - [Linux Journey](https://linuxjourney.com)
@@ -84,7 +85,7 @@ Even if you don’t develop on Linux, you will encounter it eventually. It’s d
 
 # Books
 
-- [Pakt Pub](https://packtpub.com/)
+- [PacktPub](https://packtpub.com/)
 
 # Useful Tools
 
