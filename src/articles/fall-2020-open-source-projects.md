@@ -80,3 +80,6 @@ Having trouble finding an issue? That's OK! We got you covered. *Let us know if 
 | Rust | https://github.com/connorkuehl/tftp/issues/6
 | Rust | https://github.com/connorkuehl/tftp/issues/1
 | Javascript | https://github.com/jai-dewani/React-Meme-App/issues/6
+| Typescript | https://github.com/microsoft/vscode/issues/1751
+| Typescript | https://github.com/microsoft/vscode/issues/7536
+| Typescript | https://github.com/microsoft/vscode/issues/7772
