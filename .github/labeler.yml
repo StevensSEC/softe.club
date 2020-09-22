@@ -1,6 +1,25 @@
-article:
+content/article:
   - src/articles/**/*
+
+content/slides:
+  - src/views/Slides/**/*
+
+content/events:
+  - src/Home/Events.js
+  - src/articles/events/**/*
+  - src/views/PimpMyTerminal/**/*
 
 documentation:
   - ./**/README.md
   - src/articles/docs/**/*
+
+feature/articles:
+  - src/views/Article/**/*.js
+  - src/views/Article/*.js
+
+feature/slides:
+  - src/components/SlideDeck/**/*.js
+  - src/components/SlideDeck/*.js
+
+testing:
+  - src/**/*.test.js
