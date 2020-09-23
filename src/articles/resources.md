@@ -2,6 +2,8 @@
 
 Learning about programming is hard. Hopefully, these resources will make it a little bit easier. Here are some resources that we recommend for popular tools and languages.
 
+- [repl.it](https://repl.it) - Quickly run code from tons of different languages in your browser
+
 ## Web (HTML/CSS/JS)
 
 - [marksheet.io](https://marksheet.io) - A written tutorial for HTML and CSS
