@@ -9,7 +9,9 @@ reinforces software engineering principles and highlights the different steps in
 
 # When does SEC meet?
 
-SEC meets every Thursday at 9pm in the Altorfer Software Engineering Lab. If the time, day, and/or location has changed, those details will be conveyed via email, the [GroupMe](https://web.groupme.com/join_group/47489910/Iw5HVV), and on our [Instagram](https://www.instagram.com/secstevens/?utm_source=ig_profile_share&igshid=11oehey6qskqx) @secstevens
+<!-- SEC meets every Thursday at 9pm in the Altorfer Software Engineering Lab. -->
+SEC meets every Thursday at 8:30pm. See the home page for the zoom link.
+If the time, day, and/or location has changed, those details will be conveyed via email, the [GroupMe](https://web.groupme.com/join_group/47489910/Iw5HVV), and on our [Slack](/slack) @secstevens
 
 # Where is the Altorfer Software Engineering Lab?
 

@@ -17,27 +17,43 @@ The endDate property is optional if you don't want an event to go away for a lon
 
 */
 
+import dayjs from 'dayjs';
+
+/**
+ * Generate gbm events. All flyers for these events must be present in src/assets/flyers, otherwise this will fail.
+ * @param {dayjs} startDate Date at which to start generating.
+ * @param {dayjs} endDate Date at which to stop generating.
+ * @param {Number} countOffset GBM number offset
+ */
+function generateGbms(startDate, endDate, countOffset=0, limit=10) {
+    let date = startDate.day(4); // next thursday
+    let count = countOffset;
+    limit += countOffset;
+    let gbms = [];
+
+    while (date.isBefore(endDate) && count < limit) {
+        gbms.push({
+            flyerSource: `GBM${count}.png`,
+            title: `GBM ${count}`,
+            desc: `Come code with us! We'll help you contribute to any open source project you want! Starting at 8:30 pm on ${date.format("MMM. D")} (Come at 9 if you have class until then).`,
+            meetingLink: "https://stevens.zoom.us/j/95304643871",
+            startDate: date.hour(20).minute(30),
+            endDate: date.hour(21).minute(30),
+            isGbm: true,
+        });
+        count++;
+        date = date.add(1, 'week');
+    }
+    return gbms;
+}
+
 const EVENTS = [
     {
         flyerSource: 'Pimp my terminal.png',
         title: 'Pimp My Terminal',
         desc: 'Come learn how to make your developing process look pretty by decking out your VSCode and your terminal. Altorfer Software Engineering Lab, March 5th, 9 PM',
-        endDate: new Date('March 6, 2020'),
+        endDate: dayjs(new Date('March 6, 2020')),
     },
-    {
-        flyerSource: 'GBM1.png',
-        title: 'Welcome back!',
-        desc: "Come code with us! We'll help you contribute to any open source project you want! Starting at 8:30 pm on Sep. 10 (Come at 9 if you have class until then).",
-        meetingLink: 'https://meet.google.com/ujr-zxxe-idr',
-        endDate: new Date('September 11, 2020'),
-    },
-    {
-        flyerSource: 'GBM2.png',
-        title: "GBM 2",
-        desc: "Come code with us! We'll help you contribute to any open source project you want! Starting at 8:30 pm on Sep. 17 (Come at 9 if you have class until then).",
-        meetingLink: "https://stevens.zoom.us/j/96916277431",
-        endDate: new Date('September 18, 2020'),
-    },
-]
+].concat(generateGbms(dayjs('2020-9-23', 'YYYY-MM-DD'), dayjs('2020-12-1', 'YYYY-MM-DD'), 3, 3)); // FIXME: put in the actual final gbm date
 
 export default EVENTS;
