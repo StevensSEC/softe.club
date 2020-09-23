@@ -1,26 +1,25 @@
 import React from "react";
 import "./EventBanner.scss";
+import dayjs from 'dayjs';
 
-export default function EventBanner({flyerSource, altText, title, desc, endDate, meetingLink}) {
-    let flyer = require(`../../assets/flyers/${flyerSource}`)
-    let imageElement;
+export default function EventBanner({flyerSource, altText, title, desc, startDate, endDate, meetingLink, isGbm, now=dayjs()}) {
+    let flyer = flyerSource ? require(`../../assets/flyers/${flyerSource}`) : null;
+    let imageElement = flyer ? <img loading="lazy" src={flyer.default} alt={altText ? `${altText}` : `Flyer for ${title ? `${title} ` : ""}event`}/> : null;
 
-    if (altText) {
-        imageElement = <img src={flyer.default} alt={`${altText}`}/>
-    } else {
-        imageElement = <img src={flyer.default} alt={`Flyer for ${title} event`}/>
-    }
+    let inProgress = startDate && endDate && startDate.isBefore(now) && endDate.isAfter(now);
 
-
-    if (endDate === undefined || new Date().getTime() < endDate.getTime()) {
+    console.log("EVENT", title, isGbm, now.toString(), startDate ? startDate.subtract(7, 'day').toString() : startDate);
+    if ((!endDate || now.isBefore(endDate)) && (!startDate || !isGbm || startDate.subtract(7, 'day').isBefore(now))) {
         return(
             <div className="flyer">
+                {startDate ? startDate.toString() : null}
                 <div className="container">
                     {imageElement}
                     <div className="text-container">
                         <span className="title">{title}</span>
                         <span className="description">{desc}</span>
-                        { meetingLink ? <span className="description">Join here: <a href={meetingLink}>{meetingLink}</a></span> : <></> }
+                        { inProgress ? <em>Happening right now!</em> : null }
+                        { meetingLink ? <span className="description">Join here: <a href={meetingLink}>{meetingLink}</a></span> : null }
                     </div>
                 </div>
             </div>

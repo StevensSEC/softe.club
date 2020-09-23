@@ -23,11 +23,7 @@ export default function HomeView() {
 					return (
 						<EventBanner
 						key={"eventBanner-" + index}
-						flyerSource={event.flyerSource}
-						title={event.title}
-						desc={event.desc}
-						endDate={event.endDate}
-						meetingLink={event.meetingLink}
+						{...event}
 						/>
 					)
 				})}
