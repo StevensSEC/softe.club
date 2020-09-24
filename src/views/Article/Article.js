@@ -65,6 +65,7 @@ export default class ArticleView extends PureComponent {
 	}
 
 	buildLink({href, children}) {
+		// FIXME: improve performance by only doing `new URL()` once
 		function shouldUseRouter(link) {
 			try {
 				return link && new URL(link).host == null;
@@ -73,6 +74,18 @@ export default class ArticleView extends PureComponent {
 				return true;
 			}
 		}
+
+		function isGithubLink(link) {
+			try {
+				return link && new URL(link).host === "github.com";
+			}
+			catch (TypeError) {
+				return false;
+			}
+		}
+
+		// The original link's text, as parsed from markdown
+		let originalText = children[0].props.value;
 
 		if (shouldUseRouter(href)) {
 			if(!isValidRoute(href)) {
@@ -83,7 +96,46 @@ export default class ArticleView extends PureComponent {
 					{children}
 				</Link>
 			);
-		} else {
+		}
+		else if (isGithubLink(href)) {
+			let path = new URL(href).pathname.split("/");
+			path.shift(); // get rid of the empty string in front.
+			let getLinkText = (() => {
+				if (path.length === 1) {
+					// The link is a profile
+					return `@${path[0]}`;
+				}
+				else if (path.length >= 3 && path[2] === "projects") {
+					return children;
+				}
+				else {
+					// The link is a repo
+					let text = `${path[0]}/${path[1]}`;
+					if (["issues", "pull"].includes(path[2]) && path.length >= 4) {
+						// The link is an issue/PR in the repo
+						text += `#${path[3]}`;
+					}
+					return text;
+				}
+			});
+
+			if (path.length > 1 && !["explore", "settings", "marketplace", "orgs"].includes(path[0])) {
+				let linkText = getLinkText();
+				return (
+					<a href={href}>
+						{originalText !== href && originalText !== linkText ? `${originalText} (${linkText})` : linkText}
+					</a>
+				)
+			}
+			else {
+				return (
+					<a href={href}>
+						{children}
+					</a>
+				)
+			}
+		}
+		else {
 			return (
 				<a href={href}>
 					{children}
