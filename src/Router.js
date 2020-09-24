@@ -157,6 +157,11 @@ const ROUTES = [
         Component: lazy(() => import(/* webpackChunkName: "article" */ "./views/Article/Article.js")),
     },
     {
+        path: "/guide/what-to-install",
+        articleProps: { source: "guides/what-to-install.md", title: "What to install?" },
+        Component: lazy(() => import(/* webpackChunkName: "article" */ "./views/Article/Article.js")),
+    },
+    {
         path: "*",
         Component: lazy(() => import(/* webpackChunkName: "not-found" */"./views/NotFound/NotFound.jsx")),
     },
