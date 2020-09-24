@@ -83,3 +83,4 @@ Having trouble finding an issue? That's OK! We got you covered. *Let us know if 
 | Typescript | https://github.com/microsoft/vscode/issues/1751
 | Typescript | https://github.com/microsoft/vscode/issues/7536
 | Typescript | https://github.com/microsoft/vscode/issues/7772
+| Go | https://github.com/cli/cli/issues/1898
