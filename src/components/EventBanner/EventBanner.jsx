@@ -12,11 +12,11 @@ export default function EventBanner({flyerSource, altText, title, desc, startDat
     if ((!endDate || now.isBefore(endDate)) && (!startDate || !isGbm || startDate.subtract(7, 'day').isBefore(now))) {
         return(
             <div className="flyer">
-                {startDate ? startDate.format("MMM. D, h:mm a") : null}
                 <div className="container">
                     {imageElement}
                     <div className="text-container">
                         <span className="title">{title}</span>
+                        {startDate ? startDate.format("MMM. D, h:mm a") : null}
                         <span className="description">{desc}</span>
                         { inProgress ? <em>Happening right now!</em> : null }
                         { meetingLink ? <span className="description">Join here: <a href={meetingLink}>{meetingLink}</a></span> : null }
