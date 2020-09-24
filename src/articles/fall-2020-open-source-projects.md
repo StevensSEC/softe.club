@@ -34,6 +34,17 @@ Are you having trouble finding a project that looks fun? Here are some suggestio
 | YoutubeDownloader   | Downloads YouTube videos, playlists with a GUI                               | C#                     | [Tyrrrz/YoutubeDownloader](https://github.com/Tyrrrz/YoutubeDownloader)                     |
 | leagueoflegends-led | Control RGB LEDs in response to events in LoL                                | C#                     | [nicolasdeory/leagueoflegends-led](https://github.com/nicolasdeory/leagueoflegends-led)     |
 | Vuetify             | Material Component Framework for Vue.js                                      | Typescript             | [vuetifyjs/vuetify](https://github.com/vuetifyjs/vuetify)                                   |
+| discord.py          | An API wrapper for Discord                                                   | Python                 | [Rapptz/discord.py](https://github.com/Rapptz/discord.py)                                   |
+| The Fuck            | Magnificent app which corrects your previous console command                 | Python                 | [nvbn/thefuck](https://github.com/nvbn/thefuck)                                             |
+| Flask               | Python micro framework for building web applications                         | Python                 | https://github.com/pallets/flask |
+| youtube-dl          |Command-line program to download videos from YouTube.com and other video sites| Python                 | https://github.com/ytdl-org/youtube-dl |
+| alive-progress      |Command-line Progress Bar with real time throughput, ETA, and cool animations!| Python                 | https://github.com/rsalmei/alive-progress |
+| asciimatics         | Package to create full-screen text UIs (interactive forms, ASCII animations) | Python                 | https://github.com/peterbrittain/asciimatics |
+| doitlive            | Record terminal sessions and replay them. Great for presentations.           | Python                 | https://github.com/sloria/doitlive |
+| howdoi              | Instant coding answers via the command line                                  | Python                 | https://github.com/gleitz/howdoi |
+| spotlight           | Deep recommender models using PyTorch                                        | Python                 | https://github.com/maciejkula/spotlight |
+| Mattermost          | Open source Slack-alternative in Golang and React                            | Go                     | https://github.com/mattermost/mattermost-server |
+| MDX Embed           | Embed 3rd party media content in MDX                                         | Typescript             | https://github.com/PaulieScanlon/mdx-embed
 
 ### Issue Suggestions
 
@@ -64,3 +75,11 @@ Having trouble finding an issue? That's OK! We got you covered. *Let us know if 
 | Typescript | [vuetifyjs/vuetify#12149](https://github.com/vuetifyjs/vuetify/issues/12149)
 | Typescript | [vuetifyjs/vuetify#9870](https://github.com/vuetifyjs/vuetify/issues/9870)
 | Typescript | [vuetifyjs/vuetify#7017](https://github.com/vuetifyjs/vuetify/issues/7017)
+| Javascript | https://github.com/dyc3/opentogethertube/issues/302
+| Javascript | https://github.com/dyc3/opentogethertube/issues/297
+| Rust | https://github.com/connorkuehl/tftp/issues/6
+| Rust | https://github.com/connorkuehl/tftp/issues/1
+| Javascript | https://github.com/jai-dewani/React-Meme-App/issues/6
+| Typescript | https://github.com/microsoft/vscode/issues/1751
+| Typescript | https://github.com/microsoft/vscode/issues/7536
+| Typescript | https://github.com/microsoft/vscode/issues/7772
