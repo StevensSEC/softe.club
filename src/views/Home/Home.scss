@@ -2,7 +2,7 @@
 
 .hero {
 	font-family: "Source Code Pro", monospace;
-	height: 95vh;
+	min-height: 60vh;
 	font-size: 2.5em;
 
 	@media (max-width: $sm-max) {
