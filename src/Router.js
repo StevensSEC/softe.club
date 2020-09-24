@@ -26,7 +26,7 @@ const ROUTES = [
     },
     {
         path: "/resources",
-        articleProps: { source: "resources.md", title: "Resources", },
+        articleProps: { source: "guides/resources.md", title: "Resources", },
         Component: lazy(() => import(/* webpackChunkName: "article" */ "./views/Article/Article.js")),
     },
     {
