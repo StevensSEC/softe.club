@@ -1,5 +1,7 @@
 import { lazy } from "react"
 
+const ATTENDANCE_URL = "https://stevens.campuslabs.com/engage/event/6477354/attend?Vud=9/28/2020&Vut=01:30:00&Hash=BAM3ilIY3rPsqnBHEDXbv9c9wTPNvqvBkhttrnVhey5Tfic-hXjRCMpa_QTlf16bJhzH3vUGcZQ88B0PT5v1zi4dxkrRbPUVIvebBS5GC1VtfRzFE7COQbESSVN0ZtXvZoqTn-6CmgIgrlt1iDYxDyn6zsqU_OODnnucXd2FUP_A6hdguu7arC28BhLABpjQZacykE6qUYrwLCgscukXCP-Xq-HaCT7QnHpt0vAmV6wfZbS_cMj0ZiSza23ShgI1Z1_2b9w4_Dw_iNfWcVYyeQFMB0HtHE2GmhPJQkmfiYl0OfYyC-SwdVlF1eUyhVVaIxPDKqmdEZw_ca4BzojJGg";
+
 const ROUTES = [
     {
         path: "/",
@@ -47,6 +49,15 @@ const ROUTES = [
         Component: () => {
             // Form for submitting github usernames fall 2020
             window.location.href = 'https://forms.gle/Z5ezNfinyBV6HeqA8';
+            return null;
+        },
+    },
+    {
+        path: "/imhere",
+        Component: () => {
+            // shortcut to mark yourself as present at the current event
+            // currently, the url must be updated manually
+            window.location.href = ATTENDANCE_URL;
             return null;
         },
     },
