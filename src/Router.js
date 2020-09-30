@@ -1,6 +1,6 @@
 import { lazy } from "react"
 
-const ATTENDANCE_URL = "https://stevens.campuslabs.com/engage/event/6477354/attend?Vud=9/28/2020&Vut=01:30:00&Hash=BAM3ilIY3rPsqnBHEDXbv9c9wTPNvqvBkhttrnVhey5Tfic-hXjRCMpa_QTlf16bJhzH3vUGcZQ88B0PT5v1zi4dxkrRbPUVIvebBS5GC1VtfRzFE7COQbESSVN0ZtXvZoqTn-6CmgIgrlt1iDYxDyn6zsqU_OODnnucXd2FUP_A6hdguu7arC28BhLABpjQZacykE6qUYrwLCgscukXCP-Xq-HaCT7QnHpt0vAmV6wfZbS_cMj0ZiSza23ShgI1Z1_2b9w4_Dw_iNfWcVYyeQFMB0HtHE2GmhPJQkmfiYl0OfYyC-SwdVlF1eUyhVVaIxPDKqmdEZw_ca4BzojJGg";
+const ATTENDANCE_URL = "https://stevens.campuslabs.com/engage/event/6497040/attend?Vud=10/5/2020&Vut=01:30:00&Hash=mc19g3_TY6UbXfulQz__aM3r6Yf0QpYTPnbAvha5OPfTR76NKRd3vev0Rlws6fn-dvsXXMeGGa4SpVCeg28EL9qQyVz_iDfB3ZAbj3UnCbJIiFll2UjV8Q7tC2nUZmUjzHDPaNeMXZVXigEBf1O4mJhwYJNvM8EtrABA5blLfshDxEREBLnzHvLjq3yO5egs0qBZrVR0hSQ2DM2oz6HFlMPEKedyCMZmtkLaecLm26YI_maz8yaONmPQabEGjqnoHfjQGShkUexqmj_v106W_wReDv3i6s1OEMXqAnDPL4jiIIkysQBRiLzVlg-ds5HA162wA8bPLJgBTBNygzwVgA";
 
 const ROUTES = [
     {
