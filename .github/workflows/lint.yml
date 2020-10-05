@@ -1,0 +1,25 @@
+name: CI Lint
+
+on: [pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    env:
+      CI: true
+    strategy:
+      matrix:
+        node-version: [12.x]
+    steps:
+    - uses: actions/checkout@v1
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - run: npm install --only=dev
+    - name: Check for conflicting rules
+      run: npx eslint --print-config src/App.js | npx eslint-config-prettier-check
+    - name: Check linting
+      run: npx eslint
+    - name: Check format
+      run: npx prettier --check
