@@ -96,7 +96,7 @@ const ROUTES = [
     },
     {
         path: "/event/pair-programming-2020",
-        articleProps: { source: "event/2020-pair-programming.md", title: "Pair Programming 2020", },
+        articleProps: { source: "events/2020-pair-programming.md", title: "Pair Programming 2020", },
         Component: lazy(() => import(/* webpackChunkName: "article" */ "./views/Article/Article.js"))
     },
     {
