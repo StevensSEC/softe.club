@@ -26,6 +26,7 @@ $slide-control-btn-hover: rgba(211, 211, 211, 0.15);
         
         &.slide-deck-fullscreen {
             opacity: 0;
+            bottom: -5rem;
         }
         
         .control-slide, .control-options, .control-feedback {
