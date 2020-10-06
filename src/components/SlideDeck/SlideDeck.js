@@ -88,11 +88,9 @@ class SlideDeck extends React.Component {
             this.setState({
                 isFullscreen: false,
             });
-        }
-        if (e.key === "ArrowLeft") {
+        } else if (e.key === "ArrowLeft") {
             this.prevSlide();
-        }
-        if (e.key === "ArrowRight") {
+        } else if (e.key === "ArrowRight") {
             this.nextSlide();
         }
     }
