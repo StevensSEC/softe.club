@@ -172,8 +172,7 @@ class SlideDeck extends React.Component {
         }
         elements.push(
             <div
-                className={`slide primary ${this.state.stickied.current ? "sticky-is-present" : ""
-                    }`}
+                className={`slide primary ${this.state.stickied.current ? "sticky-is-present" : ""}`}
                 key="currentSlide"
             >
                 {this.props.children[this.state.currentSlide]}
