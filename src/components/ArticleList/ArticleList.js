@@ -10,7 +10,7 @@ function collateArticles() {
     return x.hasOwnProperty('articleProps') && !!x.articleProps;
   }).map((x) => (
     <ListItem>
-      <Link href={x.articleProps.source}>{x.articleProps.title}</Link>
+      <Link href={x.path}>{x.articleProps.title}</Link>
     </ListItem>
   ));
   return articles;
