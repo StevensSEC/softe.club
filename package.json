@@ -25,8 +25,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "deploy": "NODE_ENV=production npm run build && firebase deploy",
-    "lint": "eslint --fix && prettier --config prettier.config.js --write src/**/*.{js,jsx,json,ts,tsx,md,mdx,css,html,yml,yaml,scss}",
-    "lint-check": "eslint && prettier --config prettier.config.js --check src/**/*.{js,jsx,json,ts,tsx,md,mdx,css,html,yml,yaml,scss}"
+    "lint": "eslint --fix . && prettier --config prettier.config.js --write src/**/*.{js,jsx,json,ts,tsx,md,mdx,css,html,yml,yaml,scss}",
+    "lint-check": "eslint . && prettier --config prettier.config.js --check src/**/*.{js,jsx,json,ts,tsx,md,mdx,css,html,yml,yaml,scss}"
   },
   "eslintConfig": {
     "extends": "react-app"
