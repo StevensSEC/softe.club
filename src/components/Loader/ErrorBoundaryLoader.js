@@ -44,13 +44,13 @@ export default class ErrorBoundaryLoader extends Loader {
             },
         }
 
-        this.loaderLogo = 
+        this.loaderLogo =
         <React.Fragment>
         <motion.svg viewBox="0 0 200 200" className="loader">
             <Anime {...this.loaderAnimation}>
                 <polygon points={this.initShape} style={this.style}/>
             </Anime>
-            <motion.path {...drawErrorAnimation} fill="transparent" stroke="#f33" strokeWidth="1px" 
+            <motion.path {...drawErrorAnimation} fill="transparent" stroke="#f33" strokeWidth="1px"
                 d="M 0,100
                 a 100,100 0 1,0 200,0
                 a 100,100 0 1,0 -200,0
@@ -65,6 +65,7 @@ export default class ErrorBoundaryLoader extends Loader {
 
     componentDidCatch(error, info) {
         this.setState({hasError: true})
+        // eslint-disable-next-line no-console
         console.error(error)
     }
 

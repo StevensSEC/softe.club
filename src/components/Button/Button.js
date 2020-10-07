@@ -24,7 +24,7 @@ export default class Button extends Component {
 	shouldUseRouter() {
 		const { to } = this.props;
 		try {
-			return to && !to.startsWith("#") && new URL(to).host == null;
+			return to && !to.startsWith("#") && !new URL(to).host;
 		}
 		catch (TypeError) {
 			return true;

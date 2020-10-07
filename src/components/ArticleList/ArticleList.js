@@ -9,7 +9,7 @@ function collateArticles() {
   let articles = ROUTES.filter((x) => {
     return x.hasOwnProperty('articleProps') && !!x.articleProps;
   }).map((x) => (
-    <ListItem>
+    <ListItem key={x.path}>
       <Link href={x.path}>{x.articleProps.title}</Link>
     </ListItem>
   ));

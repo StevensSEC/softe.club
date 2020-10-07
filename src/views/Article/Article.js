@@ -68,7 +68,7 @@ export default class ArticleView extends PureComponent {
 		// FIXME: improve performance by only doing `new URL()` once
 		function shouldUseRouter(link) {
 			try {
-				return link && new URL(link).host == null;
+				return link && !new URL(link).host;
 			}
 			catch (TypeError) {
 				return true;
@@ -148,7 +148,6 @@ export default class ArticleView extends PureComponent {
 		// This is a fairly recent browser feature. It'll be ignored on older browsers.
 		// https://caniuse.com/#feat=loading-lazy-attr
 		// TODO: make a lazy loading image component/mixin?
-		// eslint-disable-next-line jsx-a11y/alt-text
 		return <img loading="lazy" {...props} />
 	}
 
