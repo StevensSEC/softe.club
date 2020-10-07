@@ -1,18 +1,86 @@
 @import "../../variables.scss";
 
+$slide-control-btn-hover: rgba(211, 211, 211, 0.15);
+
 .slide-deck {
     display: grid;
     height: 90vh;
     width: 100%;
     grid-template-columns: 500px auto;
     column-gap: 10px;
+    
+    &.slide-deck-fullscreen {
+        height: 100vh;
+    }
+    
+    .slide-deck-controls {
+        align-items: center;
+        background: darken(gray, 30%);
+        bottom: 1rem;
+        display: flex;
+        height: 4rem;
+        left: 0.5rem;
+        position: fixed;
+        transition: 0.3s;
+        width: 60%;
+        
+        &.slide-deck-fullscreen {
+            opacity: 0;
+            bottom: -5rem;
+        }
+        
+        .control-slide, .control-options, .control-feedback {
+            align-items: center;
+            display: flex;
+            height: 100%;
+            justify-content: center;
+        }
+        
+        .control-slide {
+            justify-content: space-around;
+            width: 35%;
+        }
+        
+        .control-options {
+            width: 20%;
+        }
+        
+        .control-feedback {
+            width: 45%;
+        }
+        
+        .slide-deck-control-btn {
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 42px;
+            padding: 0.1rem;
+            transition: 0.2s;
+            
+            &:hover {
+                background: $slide-control-btn-hover;    
+            }
+            
+            &:active {
+                background: darken($slide-control-btn-hover, 40%);
+            }
+        }
+        
+        .slide-deck-selector {
+            min-width: 120px;
+        }
+        
+        .slide-deck-progress {
+            width: 90%;
+            margin: 0 auto;
+        }
+    }
 }
 
 .slide {
     display: grid;
-    border: 1px solid $primary-color;
     height: 100%;
     grid-column-start: span 2;
+    overflow: hidden;
 
     &.sticky-is-present {
         grid-column-start: 2;
@@ -23,8 +91,4 @@
     }
 
     font-size: 20px;
-}
-
-body {
-    overflow: hidden;
 }
