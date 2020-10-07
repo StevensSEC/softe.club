@@ -15,9 +15,9 @@ Quick Quack is a Yik Yak clone inspired by the discontinuing of Yik Yak. It's bu
 During Quick Quack's time as the Semester Long Project, 3 people contributed
 to the repo:
 
-- Blake Zimmerman (@blakezimmerman)
-- Adam Papenhausen (@adapap)
-- Carson McManus (@dyc3)
+-   Blake Zimmerman (@blakezimmerman)
+-   Adam Papenhausen (@adapap)
+-   Carson McManus (@dyc3)
 
 ## Screenshots
 

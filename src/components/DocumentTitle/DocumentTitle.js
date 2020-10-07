@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 export default class DocumentTitle extends PureComponent {
 	static propTypes = {
 		title: PropTypes.string.isRequired,
-	}
+	};
 
 	componentDidMount() {
 		this.updateTitle();

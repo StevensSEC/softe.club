@@ -8,9 +8,9 @@ The Stevens Web Extension collects a bunch of useful tools for Stevens students.
 
 During it's time as the active Semester Long Project, 3 club members made contributions to the repo:
 
-- Adam Papenhausen (@adapap)
-- David Carpenter (@carpenterd777)
-- Carson McManus (@dyc3)
+-   Adam Papenhausen (@adapap)
+-   David Carpenter (@carpenterd777)
+-   Carson McManus (@dyc3)
 
 ## Screenshots
 

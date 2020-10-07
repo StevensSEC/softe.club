@@ -7,6 +7,7 @@ Technically, this configuration isn't necessary. You could put all your configur
 1. Check if `~/.profile` exists. If it doesn't, you don't need to do this.
 2. Open `~/.profile`
 3. Check to see if this snippet is in there already. If not, add it.
+
 ```bash
 if [[ $BASH_VERSION ]]; then
 	. $HOME/.bashrc
@@ -17,4 +18,4 @@ if [[ $ZSH_VERSION ]]; then
 fi
 ```
 
-*Source: https://superuser.com/questions/183870/difference-between-bashrc-and-bash-profile*
+_Source: https://superuser.com/questions/183870/difference-between-bashrc-and-bash-profile_

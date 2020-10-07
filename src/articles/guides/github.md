@@ -15,10 +15,11 @@ Above the tabs on the right, `Watch` subscribes you to notifications from the re
 Issues are how all repos keep track of bugs, and feature requests, as well as discuss aspects of the code and coordinate efforts.
 
 Examples:
-- https://github.com/microsoft/vscode/issues/10546
-- https://github.com/microsoft/vscode/issues/52855
-- https://github.com/sequelize/sequelize/issues/12429
-- https://github.com/sequelize/sequelize/issues/12092
+
+-   https://github.com/microsoft/vscode/issues/10546
+-   https://github.com/microsoft/vscode/issues/52855
+-   https://github.com/sequelize/sequelize/issues/12429
+-   https://github.com/sequelize/sequelize/issues/12092
 
 When viewing an issue, the title and description are displayed in the center. Below it is discussion about the issue. You can assign users, add labels, etc. on the right side of the page.
 

@@ -1,4 +1,3 @@
-
 # Questions, Comments, Concerns about SEC?
 
 ## Any ideas you want to share? Are you representing a company that would like to collaborate?

@@ -1,14 +1,14 @@
-import React from 'react';
+import React from "react";
 import { render, unmountComponentAtNode } from "react-dom";
 import "@testing-library/jest-dom";
-import { shallow, mount } from 'enzyme';
+import { shallow, mount } from "enzyme";
 
 import CodeBlock from "./CodeBlock.js";
 
 let container = null;
 describe("CodeBlock appearance", () => {
 	beforeEach(() => {
-		container = document.createElement('div');
+		container = document.createElement("div");
 	});
 
 	afterEach(() => {
@@ -31,7 +31,10 @@ describe("CodeBlock appearance", () => {
 	});
 
 	it("should render text when a language is specified", () => {
-		let wrapper = mount(<CodeBlock language="javascript" value="function example() { return 'Hello'; }" />, container);
+		let wrapper = mount(
+			<CodeBlock language="javascript" value="function example() { return 'Hello'; }" />,
+			container
+		);
 		expect(wrapper.find("code").text()).toEqual("function example() { return 'Hello'; }");
 	});
 });
