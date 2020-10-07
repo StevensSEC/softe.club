@@ -25,8 +25,7 @@ export default class Button extends Component {
 		const { to } = this.props;
 		try {
 			return to && !to.startsWith("#") && !new URL(to).host;
-		}
-		catch (TypeError) {
+		} catch (TypeError) {
 			return true;
 		}
 	}
@@ -35,12 +34,10 @@ export default class Button extends Component {
 		e.preventDefault();
 		if (this.props.onClick) {
 			this.props.onClick(e);
-		}
-		else if (this.props.to) {
+		} else if (this.props.to) {
 			if (this.shouldUseRouter()) {
 				this.props.history.push(this.props.to);
-			}
-			else {
+			} else {
 				window.location = this.props.to;
 			}
 		}
@@ -58,22 +55,19 @@ export default class Button extends Component {
 						{children}
 					</NavLink>
 				);
-			}
-			else {
+			} else {
 				return (
 					<Link to={to} className={classes} onClick={this.handleClick} {...other}>
 						{children}
 					</Link>
 				);
 			}
-		}
-		else {
+		} else {
 			return (
 				<a href={to ? to : null} className={classes} onClick={this.handleClick} {...other}>
 					{children}
 				</a>
 			);
 		}
-
 	}
 }

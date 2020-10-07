@@ -5,97 +5,98 @@ $project-margin: 8px;
 $project-inner-margin: 12px;
 
 .project-wall {
-  position: relative;
-  display: flex;
-  // width: 100%;
-  flex-wrap: nowrap;
-  overflow-x: auto;
-  overflow-y: hidden;
-  height: 100px;
-  align-items: center;
-  scroll-behavior: smooth;
-  border-bottom: #ff3 $border-style $border-size;
+	position: relative;
+	display: flex;
+	// width: 100%;
+	flex-wrap: nowrap;
+	overflow-x: auto;
+	overflow-y: hidden;
+	height: 100px;
+	align-items: center;
+	scroll-behavior: smooth;
+	border-bottom: #ff3 $border-style $border-size;
 
-  .drawer-item {
-    width: 100%;
-    box-sizing: border-box;
-    margin: 0 !important;
-  }
+	.drawer-item {
+		width: 100%;
+		box-sizing: border-box;
+		margin: 0 !important;
+	}
 
-  @media screen and (max-width: $sm-max) {
-    height: $project-wall-height - 30;
+	@media screen and (max-width: $sm-max) {
+		height: $project-wall-height - 30;
 
-    .project {
-      height: 50px;
-      min-width: 250px;
-      font-size: 12px;
+		.project {
+			height: 50px;
+			min-width: 250px;
+			font-size: 12px;
 
-      .img-container {
-        width: 40px;
-      }
-    }
-  }
+			.img-container {
+				width: 40px;
+			}
+		}
+	}
 }
 
 .project {
-  display: flex;
-  background-color: $background-color;
-  height: 100%;
-  height: 70px;
-  min-width: 350px;
-  margin: 0 $project-margin;
-  box-sizing: border-box;
-  transition: background-color 0.25s;
-  font-family: $fonts;
+	display: flex;
+	background-color: $background-color;
+	height: 100%;
+	height: 70px;
+	min-width: 350px;
+	margin: 0 $project-margin;
+	box-sizing: border-box;
+	transition: background-color 0.25s;
+	font-family: $fonts;
 
-  &:any-link {
-    color: $text-color;
-    text-decoration: none;
-  }
+	&:any-link {
+		color: $text-color;
+		text-decoration: none;
+	}
 
-  &:hover, &:focus {
-    outline: none;
-    background-color: lighten($background-color, 10%);
-  }
+	&:hover,
+	&:focus {
+		outline: none;
+		background-color: lighten($background-color, 10%);
+	}
 
-  @media screen and (max-width: $sm-max) {
-    display: none;
-  }
+	@media screen and (max-width: $sm-max) {
+		display: none;
+	}
 
-  &.active {
-    color: #3f3;
-    border: #3f3 $border-style $border-size;
-    margin: 0 ($project-margin - 1);
+	&.active {
+		color: #3f3;
+		border: #3f3 $border-style $border-size;
+		margin: 0 ($project-margin - 1);
 
-    @media screen and (max-width: $sm-max) {
-      display: flex;
-    }
-  }
+		@media screen and (max-width: $sm-max) {
+			display: flex;
+		}
+	}
 
-  &.drawer-item {
-    @media screen and (max-width: $sm-max) {
-      display: flex;
-    }
-  }
+	&.drawer-item {
+		@media screen and (max-width: $sm-max) {
+			display: flex;
+		}
+	}
 
-  .img-container {
-    display: flex;
-    width: 80px;
-    justify-content: center;
-    align-items: center;
+	.img-container {
+		display: flex;
+		width: 80px;
+		justify-content: center;
+		align-items: center;
 
-    img {
-      width: 100%;
-      height: 100%;
-      margin: 0 $project-inner-margin;
-    }
-  }
+		img {
+			width: 100%;
+			height: 100%;
+			margin: 0 $project-inner-margin;
+		}
+	}
 
-  .name {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    margin: 0 $project-inner-margin;
-  }
+	.name {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: flex-start;
+		margin: 0 $project-inner-margin;
+	}
 }

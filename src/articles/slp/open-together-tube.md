@@ -10,16 +10,16 @@ OpenTogetherTube is a website that lets you watch videos with other people onlin
 
 During it's time as the active Semester Long Project, 10 club members made contributions to the repo:
 
-- Carson McManus (@dyc3)
-- Adam Papenhausen (@adapap)
-- David Carpenter (@carpenterd777)
-- Ian B (@ifkb99)
-- Simon Wagner (@SWSoftware1044)
-- Zack Schieberl (@zackatoo)
-- Tyler Seliber (@Tyler-Seliber)
-- Keye LI (@nebulouspianist)
-- Kenny Skelton (@KennethSkelton)
-- Jordan Fernandes (@Jordan883)
+-   Carson McManus (@dyc3)
+-   Adam Papenhausen (@adapap)
+-   David Carpenter (@carpenterd777)
+-   Ian B (@ifkb99)
+-   Simon Wagner (@SWSoftware1044)
+-   Zack Schieberl (@zackatoo)
+-   Tyler Seliber (@Tyler-Seliber)
+-   Keye LI (@nebulouspianist)
+-   Kenny Skelton (@KennethSkelton)
+-   Jordan Fernandes (@Jordan883)
 
 ## Screenshots
 
@@ -31,17 +31,17 @@ During it's time as the active Semester Long Project, 10 club members made contr
 
 ### Vue
 
-- https://vuejs.org/v2/guide/
-- https://vuejs.org/v2/examples/
+-   https://vuejs.org/v2/guide/
+-   https://vuejs.org/v2/examples/
 
 ### Express
 
-- https://expressjs.com/en/starter/hello-world.html
-- https://expressjs.com/en/4x/api.html
+-   https://expressjs.com/en/starter/hello-world.html
+-   https://expressjs.com/en/4x/api.html
 
 ### Vuetify
 
-- https://vuetifyjs.com/en/getting-started/quick-start
+-   https://vuetifyjs.com/en/getting-started/quick-start
 
 ### Project Architecture Slides
 

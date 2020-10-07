@@ -13,10 +13,12 @@ You can also install more themes as extensions, and you can install different ic
 # How to use custom colors for VS Code
 
 1. Open Settings (JSON)
-	1. `Ctrl + Shift + P` to open the command palette.
-	2. Select `Preferences: Open Settings (JSON)`
 
-	![Command Palette](pimp-my-terminal/howto-vscode-settings-json.png)
+    1. `Ctrl + Shift + P` to open the command palette.
+    2. Select `Preferences: Open Settings (JSON)`
+
+    ![Command Palette](pimp-my-terminal/howto-vscode-settings-json.png)
+
 2. You should now see the JSON config for VS Code.
 3. Now you can begin customizing.
 

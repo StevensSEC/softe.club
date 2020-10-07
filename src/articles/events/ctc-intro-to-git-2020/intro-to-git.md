@@ -1,4 +1,5 @@
 # Install git
+
 Download git (Windows): https://git-scm.com/download/win
 
 Windows Terminal (optional): https://www.microsoft.com/en-us/p/windows-terminal/9n0dx20hk701

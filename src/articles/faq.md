@@ -14,18 +14,18 @@ Programming languages are tools. Different languages are good at different thing
 
 However, if you want recommendations for first languages, try something that doesn't let you do anything too strange and there are plenty of tutorials for:
 
-- Python
-- C#
-- Java
+-   Python
+-   C#
+-   Java
 
 **Do not** use any of these as your first language:
 
-- C - Too complex for beginners beyond "Hello World"
-- C++ - Too complex for beginners beyond "Hello World"
-- Javascript - Lets you do weird and stupid things that are hard to understand for beginners, and ecosystem moves too fast for beginners to keep up
-- Rust - Too complex for beginners beyond "Hello World"
-- PHP - Weird syntax
-- Lua - Weird syntax
+-   C - Too complex for beginners beyond "Hello World"
+-   C++ - Too complex for beginners beyond "Hello World"
+-   Javascript - Lets you do weird and stupid things that are hard to understand for beginners, and ecosystem moves too fast for beginners to keep up
+-   Rust - Too complex for beginners beyond "Hello World"
+-   PHP - Weird syntax
+-   Lua - Weird syntax
 
 ## How do I start a project?
 

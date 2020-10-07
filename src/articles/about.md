@@ -10,6 +10,7 @@ reinforces software engineering principles and highlights the different steps in
 # When does SEC meet?
 
 <!-- SEC meets every Thursday at 9pm in the Altorfer Software Engineering Lab. -->
+
 SEC meets every Thursday at 8:30pm. See the home page for the zoom link.
 If the time, day, and/or location has changed, those details will be conveyed via email, the [GroupMe](https://web.groupme.com/join_group/47489910/Iw5HVV), and on our [Slack](/slack) @secstevens
 
@@ -18,4 +19,5 @@ If the time, day, and/or location has changed, those details will be conveyed vi
 Altorfer is a building located next to the River Apartments and is across from the MPK Complex (Morton, Peirce, Kidde buildings).
 
 See the video below!
+
 <iframe width="560" height="315" src="https://www.youtube.com/embed/fBw7a0jRWOE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

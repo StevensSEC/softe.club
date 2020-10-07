@@ -32,11 +32,7 @@ Text body:
 {
 	"type": "default",
 	"header": "Slide header",
-	"body": [
-		"This is one line.",
-		"This is another line.",
-		"Body text *also accepts markdown*.",
-	]
+	"body": ["This is one line.", "This is another line.", "Body text *also accepts markdown*."]
 }
 ```
 
@@ -58,7 +54,7 @@ The path to images is relative to `src/assets`.
 {
 	"type": "default",
 	"title": "Presentation title",
-	"subtitle": "Presentation sub title",
+	"subtitle": "Presentation sub title"
 }
 ```
 
@@ -71,24 +67,24 @@ The path to images is relative to `src/assets`.
 	"body1": [
 		"This body will be shown on the left.",
 		"This is another line.",
-		"Body text *also accepts markdown*.",
+		"Body text *also accepts markdown*."
 	],
 	"body2": [
 		"This body will be shown on the right.",
 		"This is another line.",
-		"These bodies are treated identically to the ones in the `default` slide type.",
+		"These bodies are treated identically to the ones in the `default` slide type."
 	]
 }
 ```
 
 ## Example Quick Slide Deck
 
-```json
+````json
 [
 	{
 		"type": "default",
 		"title": "Presentation title",
-		"subtitle": "Presentation sub title",
+		"subtitle": "Presentation sub title"
 	},
 	{
 		"type": "default",
@@ -97,28 +93,18 @@ The path to images is relative to `src/assets`.
 		"body": [
 			"Here's some instructions",
 			"1. Open your terminal",
-			"2. Open python by typing `python3`",
+			"2. Open python by typing `python3`"
 		]
 	},
 	{
 		"type": "default",
 		"header": "Slide A",
-		"body": [
-			"This is some code",
-			"```python",
-			"print(\"Hello World!\")",
-			"```",
-		]
+		"body": ["This is some code", "```python", "print(\"Hello World!\")", "```"]
 	},
 	{
 		"type": "default",
 		"header": "Slide B",
-		"body": [
-			"This is some more code",
-			"```python",
-			"print(f\"Math: {2+2}\")",
-			"```",
-		]
-	},
+		"body": ["This is some more code", "```python", "print(f\"Math: {2+2}\")", "```"]
+	}
 ]
-```
+````

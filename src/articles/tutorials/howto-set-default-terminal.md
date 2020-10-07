@@ -1,6 +1,6 @@
 # How to set your default terminal
 
-*Not applicable to Windows or Mac*
+_Not applicable to Windows or Mac_
 
 Run the command
 
