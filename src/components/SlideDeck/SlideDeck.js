@@ -178,7 +178,10 @@ class SlideDeck extends React.Component {
 		return (
 			<div
 				className={`slide-deck ${fullscreenClass}`}
-				onClick={this.nextSlide()}
+				onClick={e => {
+					e.preventDefault();
+					this.nextSlide();
+				}}
 				onContextMenu={e => {
 					e.preventDefault();
 					this.prevSlide();
