@@ -31,5 +31,7 @@ module.exports = {
 		"no-debugger": "error",
 		"no-var": "error",
 		"eqeqeq": "error",
+		"react/no-unescaped-entities": "warn",
+		"react/prop-types": "off",
 	}
 }
