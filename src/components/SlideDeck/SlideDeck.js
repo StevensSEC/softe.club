@@ -95,8 +95,7 @@ class SlideDeck extends React.Component {
         }
     }
 
-    nextSlide(e) {
-        e.stopPropagation();
+    nextSlide() {
         let next = this.state.currentSlide + 1;
         if (next > this.props.children.length - 1) {
             return;
@@ -126,8 +125,7 @@ class SlideDeck extends React.Component {
         this.setState(newstate);
     }
 
-    prevSlide(e) {
-        e.stopPropagation();
+    prevSlide() {
         let prev = this.state.currentSlide - 1;
         if (prev < 0) {
             return;
@@ -189,10 +187,10 @@ class SlideDeck extends React.Component {
         return (
             <div
                 className={`slide-deck ${fullscreenClass}`}
-                onClick={this.nextSlide}
+                onClick={this.nextSlide()}
                 onContextMenu={e => {
                     e.preventDefault();
-                    this.prevSlide(e);
+                    this.prevSlide();
                 }}
             >
                 {elements}
@@ -200,11 +198,17 @@ class SlideDeck extends React.Component {
                     <div className="control-slide">
                         <KeyboardArrowLeft
                             className="slide-deck-control-btn"
-                            onClick={this.prevSlide}
+                            onClick={e => {
+                                e.stopPropagation();
+                                this.prevSlide()
+                            }}
                         ></KeyboardArrowLeft>
                         <KeyboardArrowRight
                             className="slide-deck-control-btn"
-                            onClick={this.nextSlide}
+                            onClick={e => {
+                                e.stopPropagation();
+                                this.nextSlide()
+                            }}
                         ></KeyboardArrowRight>
                         <InputLabel id="slide-deck-selector"></InputLabel>
                         <Select
