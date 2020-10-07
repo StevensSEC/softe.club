@@ -3,7 +3,7 @@ name: CI Lint
 on: [pull_request]
 
 jobs:
-  test:
+  lint:
     runs-on: ubuntu-latest
     env:
       CI: true
@@ -16,10 +16,10 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - run: npm install --only=dev
+    - run: npm install
     - name: Check for conflicting rules
-      run: npx eslint --print-config src/App.js | npx eslint-config-prettier-check
+      run: ./scripts/check_lint_rule_conflicts.sh
     - name: Check linting
-      run: npx eslint
+      run: npx eslint .
     - name: Check format
       run: npx prettier --check
