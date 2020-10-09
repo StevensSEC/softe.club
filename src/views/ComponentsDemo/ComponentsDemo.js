@@ -3,6 +3,7 @@ import { Container } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
 import DocumentTitle from "../../components/DocumentTitle/DocumentTitle.js";
 import Button from "../../components/Button/Button.js";
+import Link from "../../components/Link/Link.js";
 
 /**
  * This view is intended to be used to test custom components.
@@ -29,6 +30,10 @@ export default function ComponentsDemo() {
 				<MenuIcon />
 			</Button>
 			<br />
+			<h1>Link</h1>
+			<Link href="/dev/docs">Documention Home</Link><br/>
+			Special link to github repo: <Link href="https://github.com/StevensSEC/sec.club">https://github.com/StevensSEC/sec.club</Link><br/>
+			Special link to github issue/PR: <Link href="https://github.com/StevensSEC/sec.club/issues/194">https://github.com/StevensSEC/sec.club/issues/194</Link><br/>
 		</Container>
 	);
 }

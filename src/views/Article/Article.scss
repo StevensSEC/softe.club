@@ -1,11 +1,6 @@
 @import "../../variables.scss";
 
 article {
-	font-size: 1.15em;
-	line-height: 1.8;
-	padding-bottom: 8px;
-	overflow-wrap: break-word;
-
 	img,
 	iframe {
 		max-width: 100%;
@@ -56,17 +51,5 @@ article {
 
 	h5 {
 		font-size: 1.2em;
-	}
-
-	:not(pre) > code {
-		background: $code-background-color;
-		padding: 0.1em 0.3em;
-		border-radius: 0.3em;
-	}
-
-	pre > code {
-		background: inherit;
-		padding: none;
-		border-radius: none;
 	}
 }
