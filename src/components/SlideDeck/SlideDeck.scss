@@ -7,20 +7,20 @@ $slide-control-btn-hover: rgba(211, 211, 211, 0.15);
 	height: 90vh;
 	width: 100%;
 	grid-template-columns: 500px auto;
-    column-gap: 10px;
-    
-    .side-by-side {
-        display: grid;
-        grid-template-columns: 50%;
-        
-        .left-content {
-            grid-column-start: 1;
-        }
-        
-        .right-content {
-            grid-column-start: 2;
-        }
-    }
+	column-gap: 10px;
+
+	.side-by-side {
+		display: grid;
+		grid-template-columns: 50%;
+
+		.left-content {
+			grid-column-start: 1;
+		}
+
+		.right-content {
+			grid-column-start: 2;
+		}
+	}
 
 	&.slide-deck-fullscreen {
 		height: 100vh;
@@ -95,7 +95,7 @@ $slide-control-btn-hover: rgba(211, 211, 211, 0.15);
 	display: grid;
 	height: 100%;
 	grid-column-start: span 2;
-    overflow: hidden;
+	overflow: hidden;
 
 	&.sticky-is-present {
 		grid-column-start: 2;
@@ -103,6 +103,6 @@ $slide-control-btn-hover: rgba(211, 211, 211, 0.15);
 
 	&.sticky {
 		grid-column-start: 1;
-    }
+	}
 	font-size: 20px;
 }

@@ -1,46 +1,46 @@
 ---
-  slides:
+slides:
     - type: title
       title: Quick Slides Demo
       subtitle: Automatically generate slide decks.
     - type: default
       content: |
           Default slides have 'content' that is parsed as markdown.<br>
-          
+
           They can be *multiline*.
-          
+
           ## BIG HEADER BOI
           You can embed <span style='color: yellow;'>HTML content</span> through markdown.
           This slide will be sticky for **1 slide** (excluding this one).
       sticky: 1
     - type: side-by-side
       content:
-        left: |
-          This content will be rendered on the left.
-          It still renders **markdown** __properly__.
-          
-          Side-by-side slides are equal widths.
-        right: |
-          This is the right side.
-          
-          No, not the correct side.
-          
-          Are we talking about those airplane guys?
+          left: |
+              This content will be rendered on the left.
+              It still renders **markdown** __properly__.
+
+              Side-by-side slides are equal widths.
+          right: |
+              This is the right side.
+
+              No, not the correct side.
+
+              Are we talking about those airplane guys?
     - type: default
       content: |
-        Kind of weird having that sticky slide before.
-        
-        But I guess we support it.
-        
-        Now this slide will be sticky until the end!
+          Kind of weird having that sticky slide before.
+
+          But I guess we support it.
+
+          Now this slide will be sticky until the end!
       sticky: 2
     - type: default
       content: |
-        If you forget to declare a slide type, I will yell it you.
+          If you forget to declare a slide type, I will yell it you.
     - type: default
       content: |
-        In summary, these are the rules for slides:
-        - Choose from default, title, or side-by-side as `type`
-        - For default slides, just add `content` which can support markdown
-        - Title slides take `title` and `subtitle` text content
-        - Side-by-side takes a content object: `content.left` and `content.right`
+          In summary, these are the rules for slides:
+          - Choose from default, title, or side-by-side as `type`
+          - For default slides, just add `content` which can support markdown
+          - Title slides take `title` and `subtitle` text content
+          - Side-by-side takes a content object: `content.left` and `content.right`

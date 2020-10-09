@@ -36,11 +36,11 @@ subtitle: Presentation sub title
 ```yaml
 type: default
 content: |
-  This is one line.
-  
-  This is another line.
-  
-  Content *also accepts markdown*.
+    This is one line.
+
+    This is another line.
+
+    Content *also accepts markdown*.
 ```
 
 ### Side-by-side Slide
@@ -51,21 +51,21 @@ header: Presentation title
 content:
   left: |
     This body will be shown on the left.
-	
+
 	This is another line.
-	
+
 	Body text *also accepts markdown*.
   right: |
 	This body will be shown on the right.
-	
+
 	This is another line.
-	
+
 	These bodies are treated identically to the ones in the `default` slide type
 ```
 
 ## Example Quick Slide Deck
 
-```yaml
+````yaml
 slides:
   - type: default
 	title: Presentation title
@@ -74,13 +74,13 @@ slides:
 	sticky: 2 # This will be stickied for the next 2 slides
 	content:
 	  Here's some instructions
-	  
+
 	  1. Open your terminal
 	  2. Open python by typing `python3`
   - type: default
 	content: |
 	  This is some code
-	  
+
 	  \```python
 	  print(\"Hello World!\")"
 	  \```
@@ -90,4 +90,4 @@ slides:
 	  \```python
 	  print(f\"Math: {2+2}\")
 	  \```
-```
+````
