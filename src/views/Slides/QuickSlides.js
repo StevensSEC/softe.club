@@ -1,7 +1,7 @@
 import { Slide, SlideDeck } from '../../components/SlideDeck/SlideDeck.js';
-import CodeBlock from "../../components/CodeBlock/CodeBlock.js";
-import HtmlParser from "react-markdown/plugins/html-parser";
-import Markdown from "react-markdown";
+import CodeBlock from '../../components/CodeBlock/CodeBlock.js';
+import HtmlParser from 'react-markdown/plugins/html-parser';
+import Markdown from 'react-markdown';
 import React from 'react';
 import yaml from 'js-yaml';
 
@@ -101,11 +101,9 @@ export default class QuickSlides extends React.PureComponent {
             )
         }
         return (
-            <div>
-                <SlideDeck>
-                    {slides}
-                </SlideDeck>
-            </div>
+            <SlideDeck>
+                {slides}
+            </SlideDeck>
         )
     }
 }
