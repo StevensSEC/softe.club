@@ -266,15 +266,11 @@ export { SlideDeck, Slide };
                 previous: [],
             },
         };
-        // This is not a good way to sanity check slides.
-        // It also breaks when there are less than 2 slides as children.
-        // You might want to embed static HTML or non-slide components.
-        // this.props.children.forEach(child => {
-        //     if (child.type.name !== "Slide" && process.env.NODE_ENV !== "production") {
-        //         throw new InvalidChildComponentError(`All children of SlideDeck must be Slide components. Got "${child.type.name}" instead`);
-        //     }
-        // })
-
+        React.Children.toArray(this.props.children).forEach(child => {
+            if (child.type.name !== "Slide" && process.env.NODE_ENV !== "production") {
+                throw new InvalidChildComponentError(`All children of SlideDeck must be Slide components. Got "${child.type.name}" instead`);
+            }
+        })
         this.handleClick = this.handleClick.bind(this);
         this.handleOnContext = this.handleOnContext.bind(this);
     }
