@@ -118,6 +118,13 @@ const ROUTES = [
 		),
 	},
 	{
+		path: "/dev/quick_slides",
+		slideProps: { slidePath: "example-slides.yaml", title: "Example" },
+		Component: lazy(() =>
+			import(/* webpackChunkName: "quick-slides" */ "./views/Slides/QuickSlides.js")
+		),
+	},
+	{
 		path: "/event/pair-programming-2020",
 		articleProps: { source: "events/2020-pair-programming.md", title: "Pair Programming 2020" },
 		Component: lazy(() =>

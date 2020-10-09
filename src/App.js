@@ -50,7 +50,11 @@ function App() {
 	// Conditionally hide and show the header and footer based on the path
 	// React really doesn't like having global state, especially if you need to send that state upwards through the tree
 	// so that's why this piece of shit exists
-	if (location.pathname.startsWith("/slides") || location.pathname === "/dev/slide_deck") {
+	if (
+		location.pathname.startsWith("/slides") ||
+		location.pathname === "/dev/slide_deck" ||
+		location.pathname === "/dev/quick_slides"
+	) {
 		ux.headerCompact = true;
 		ux.footerVisible = false;
 	} else {
@@ -72,30 +76,38 @@ function App() {
 								<Switch>
 									<Redirect from="/pmt" to="/event/pimp-my-terminal" />
 									<Redirect from="/fall2020" to="/guide/open-source-fall-2020" />
-									{ROUTES.map(({ path, Component, articleProps }, index) => {
-										if (path === "/") {
-											//Root view
-											return (
-												<Route exact path={path} key={"route-" + index}>
-													<Component />
-												</Route>
-											);
-										} else if (articleProps) {
-											//Article views
-											return (
-												<Route path={path} key={"route-" + index}>
-													<Component {...articleProps} />
-												</Route>
-											);
-										} else {
-											//Other views
-											return (
-												<Route path={path} key={"route-" + index}>
-													<Component />
-												</Route>
-											);
+									{ROUTES.map(
+										({ path, Component, articleProps, slideProps }, index) => {
+											if (path === "/") {
+												// Root view
+												return (
+													<Route exact path={path} key={"route-" + index}>
+														<Component />
+													</Route>
+												);
+											} else if (articleProps) {
+												// Article views
+												return (
+													<Route path={path} key={"route-" + index}>
+														<Component {...articleProps} />
+													</Route>
+												);
+											} else if (slideProps) {
+												return (
+													<Route path={path} key={"route-" + index}>
+														<Component {...slideProps}></Component>
+													</Route>
+												);
+											} else {
+												//Other views
+												return (
+													<Route path={path} key={"route-" + index}>
+														<Component />
+													</Route>
+												);
+											}
 										}
-									})}
+									)}
 								</Switch>
 							</div>
 							{ux.footerVisible ? <Footer /> : null}

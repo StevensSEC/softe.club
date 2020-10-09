@@ -46,8 +46,7 @@ class SlideDeck extends React.Component {
 				previous: [],
 			},
 		};
-
-		this.props.children.forEach(child => {
+		React.Children.toArray(this.props.children).forEach(child => {
 			if (child.type.name !== "Slide" && process.env.NODE_ENV !== "production") {
 				throw new InvalidChildComponentError(
 					`All children of SlideDeck must be Slide components. Got "${child.type.name}" instead`
@@ -69,13 +68,6 @@ class SlideDeck extends React.Component {
 		document.removeEventListener("keydown", this.handleKeyPress, false);
 	}
 
-	handleSlideChange(e) {
-		e.stopPropagation();
-		this.setState({
-			currentSlide: e.target.value,
-		});
-	}
-
 	handleKeyPress(e) {
 		if (e.key === "Escape") {
 			this.setState({
@@ -86,6 +78,13 @@ class SlideDeck extends React.Component {
 		} else if (e.key === "ArrowRight") {
 			this.nextSlide();
 		}
+	}
+
+	handleSlideChange(e) {
+		e.stopPropagation();
+		this.setState({
+			currentSlide: e.target.value,
+		});
 	}
 
 	nextSlide() {
