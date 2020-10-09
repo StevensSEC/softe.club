@@ -13,6 +13,9 @@ class InvalidRouteError extends Error {}
 const Link = ({ href, children }) => {
 	// FIXME: improve performance by only doing `new URL()` once
 	function shouldUseRouter(link) {
+		if (link.startsWith("mailto")) {
+			return false;
+		}
 		try {
 			return link && !new URL(link).host;
 		} catch (TypeError) {
