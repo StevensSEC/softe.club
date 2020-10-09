@@ -3,6 +3,7 @@ content/article:
 
 content/slides:
   - src/views/Slides/**/*
+  - src/slides/**/*
 
 content/events:
   - src/Home/Events.js
