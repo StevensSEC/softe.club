@@ -1,0 +1,33 @@
+---
+  title: "Automatic Slides"
+  slides:
+    - content: |
+          Hello this is a slide
+          it has benefits blah
+          center justified at the top
+      justify: center
+      align: top
+      sticky:
+        # start: 1
+        end: 6
+    - content: this is slide \#2 in the BOTTOM RIGHT OH YA
+      justify: right
+      align: bottom
+    - content: i am yet another slide (hiding in the left center)
+      justify: left
+      align: center
+    - content: |
+        asdfklj
+        asdfa
+        asdfasdf
+        
+        asdfasdfdfsfd
+        
+        
+        asdfsadfasdf
+        
+        dkfajsdpfjsdpf
+    - content: the last sticky for slide 2!
+    - content: ok BYE
+      justify: right
+      align: bottom
