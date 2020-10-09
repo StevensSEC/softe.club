@@ -23,15 +23,9 @@ slides:
 There are 3 different available slide types: `default`, `title`, `side-by-side`.
 This is the format for each slide in the slides array:
 
-### Title Slide
-
-```yaml
-type: default,
-title: Presentation title
-subtitle: Presentation sub title
-```
-
 ### Default Slide
+
+*NOTE: If `type` is not specified, this is the slide type that is used.*
 
 ```yaml
 type: default
@@ -43,10 +37,18 @@ content: |
     Content *also accepts markdown*.
 ```
 
+### Title Slide
+
+```yaml
+type: title
+title: Presentation title
+subtitle: Presentation sub title
+```
+
 ### Side-by-side Slide
 
 ```yaml
-type: default
+type: side-by-side
 header: Presentation title
 content:
   left: |
@@ -67,18 +69,16 @@ content:
 
 ````yaml
 slides:
-  - type: default
+  - type: title
 	title: Presentation title
 	subtitle: Presentation subtitle
-  - type: default
-	sticky: 2 # This will be stickied for the next 2 slides
+  - sticky: 2 # This will be stickied for the next 2 slides
 	content:
 	  Here's some instructions
 
 	  1. Open your terminal
 	  2. Open python by typing `python3`
-  - type: default
-	content: |
+  - content: |
 	  This is some code
 
 	  \```python
