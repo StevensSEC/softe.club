@@ -2,6 +2,7 @@ import React from "react";
 import yaml from "js-yaml";
 import { Slide, SlideDeck } from "../../components/SlideDeck/SlideDeck.js";
 import SecMarkdown from "../../components/SecMarkdown/SecMarkdown.js";
+import "./QuickSlides.scss";
 
 export default class QuickSlides extends React.PureComponent {
 	constructor(props) {
@@ -66,12 +67,15 @@ export default class QuickSlides extends React.PureComponent {
 					content = <SecMarkdown markdown={slide.content} />;
 					break;
 			}
+			let slideProps = {};
+			if (slide.sticky) {
+				slideProps.sticky = true;
+				if (slide.sticky !== true) {
+					slideProps.stickyUntil = slide.sticky;
+				}
+			}
 			slides.push(
-				<Slide
-					key={i}
-					sticky={slide.sticky ?? false}
-					stickyUntil={i + slide.sticky + 1 ?? 0}
-				>
+				<Slide key={i} {...slideProps}>
 					{content}
 				</Slide>
 			);
