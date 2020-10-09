@@ -98,7 +98,7 @@ const ROUTES = [
     {
         path: "/dev/quick_slides",
         slideProps: { slidePath: "example-slides.yaml", title: "Example" },
-        Component: lazy(() => import(/* webpackChunkName: "auto-slide" */ "./views/Slides/QuickSlides.js")),
+        Component: lazy(() => import(/* webpackChunkName: "quick-slides" */ "./views/Slides/QuickSlides.js")),
     },
     {
         path: "/event/pair-programming-2020",
