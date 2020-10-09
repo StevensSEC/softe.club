@@ -103,7 +103,7 @@ class SlideDeck extends React.Component {
 				previous: previousStickies,
 			};
 		} else if (
-			this.state.stickied.current &&
+			this.state.stickied.current !== null &&
 			newstate.currentSlide >=
 				this.props.children[this.state.stickied.current].props.stickyUntil
 		) {
@@ -151,7 +151,7 @@ class SlideDeck extends React.Component {
 		this.context.headerCompact = true;
 		this.context.footerVisible = false;
 		let elements = [];
-		if (this.state.stickied.current) {
+		if (this.state.stickied.current !== null) {
 			elements.push(
 				<div className="slide sticky" key="sticky">
 					{this.props.children[this.state.stickied.current]}

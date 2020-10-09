@@ -5,10 +5,9 @@ import SecMarkdown from "../../components/SecMarkdown/SecMarkdown.js";
 import "./QuickSlides.scss";
 
 export default class QuickSlides extends React.PureComponent {
-	constructor(props) {
+	constructor() {
 		super();
 		this.state = {
-			slidePath: props.slidePath,
 			data: {
 				slides: [],
 			},
@@ -16,7 +15,7 @@ export default class QuickSlides extends React.PureComponent {
 	}
 
 	componentDidMount() {
-		const src = require(`../../slides/${this.state.slidePath}`);
+		const src = require(`../../slides/${this.props.slidePath}`);
 		fetch(src)
 			.then(res => {
 				return res.text();
@@ -31,15 +30,10 @@ export default class QuickSlides extends React.PureComponent {
 
 	render() {
 		let data = this.state.data;
-		let slides = [];
-		if (data.title) {
-			let titleSlide = (
-				<Slide>
-					<h1>{data.title}</h1>
-				</Slide>
-			);
-			slides.push(titleSlide);
+		if (!data) {
+			return null;
 		}
+		let slides = [];
 		for (const [i, slide] of data.slides.entries()) {
 			let content = "";
 			switch (slide.type) {

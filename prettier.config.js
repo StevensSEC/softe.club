@@ -15,5 +15,14 @@ module.exports = {
 	"tabWidth": 4,
 	"trailingComma": "es5",
 	"useTabs": true,
-	"vueIndentScriptAndStyle": false
+	"vueIndentScriptAndStyle": false,
+	overrides: [
+		{
+			files: ["*.yaml", "*.yml"],
+			options: {
+				useTabs: false,
+				tabWidth: 2,
+			},
+		},
+	],
 };
