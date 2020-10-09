@@ -25,7 +25,7 @@ This is the format for each slide in the slides array:
 
 ### Default Slide
 
-*NOTE: If `type` is not specified, this is the slide type that is used.*
+_NOTE: If `type` is not specified, this is the slide type that is used._
 
 ```yaml
 type: default
