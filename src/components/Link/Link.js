@@ -6,6 +6,10 @@ const isValidRoute = href => ROUTES.map(route => route.path).includes(href);
 
 class InvalidRouteError extends Error {}
 
+/**
+ * Is naming this component "Link" a bad idea because it conflicts with the react router Link? Yes.
+ * If it becomes a problem, change the name.
+ */
 const Link = ({ href, children }) => {
 	// FIXME: improve performance by only doing `new URL()` once
 	function shouldUseRouter(link) {
@@ -25,7 +29,7 @@ const Link = ({ href, children }) => {
 	}
 
 	// The original link's text, as parsed from markdown
-	let originalText = children[0].props.value;
+	let originalText = typeof children === "string" ? children : children[0].props.value;
 
 	if (shouldUseRouter(href)) {
 		if (!isValidRoute(href)) {

@@ -17,6 +17,7 @@ These are some pages used as a playground to test various components and things.
 
 -   [Custom UI Components](/dev/components)
 -   [Slide Deck](/dev/slide_deck)
+-   [Quick Slides demo](/dev/quick_slides)
 
 ### Code Style
 

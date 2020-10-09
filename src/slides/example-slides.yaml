@@ -26,17 +26,17 @@ slides:
               No, not the correct side.
 
               Are we talking about those airplane guys?
-    - type: default
-      content: |
-          Kind of weird having that sticky slide before.
+    - content: |
+          ```brainfuck
+          +[------->++<]>--.---.--.++++++.------------.-[->+++<]>.[->+++<]>++.-.+++++++++++..+++++++.
+          ```
 
-          But I guess we support it.
-
-          Now this slide will be sticky until the end!
-      sticky: 2
-    - type: default
-      content: |
-          If you forget to declare a slide type, I will yell it you.
+          ```bash,linux
+          sudo apt install git
+          ```
+      sticky: true
+    - content: |
+          ![image text](sec-logo.png)
     - type: default
       content: |
           In summary, these are the rules for slides:

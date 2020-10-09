@@ -4,6 +4,7 @@ import Markdown from "react-markdown";
 import HtmlParser from "react-markdown/plugins/html-parser";
 import Link from "../../components/Link/Link.js";
 import CodeBlock from "../../components/CodeBlock/CodeBlock.js";
+import "./SecMarkdown.scss";
 
 // See https://github.com/aknuds1/html-to-react#with-custom-processing-instructions
 // for more info on the processing instructions
@@ -26,6 +27,7 @@ const SecMarkdown = ({ markdown }) => {
 	if (markdown) {
 		return (
 			<Markdown
+				className="markdown"
 				source={markdown}
 				escapeHtml={false}
 				astPlugins={[parseHtml]}
