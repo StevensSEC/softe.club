@@ -1,0 +1,8 @@
+---
+slides:
+  - content: |
+      Test quick slides
+    sticky: true
+  - content: |
+      Test quick slides
+    sticky: 3

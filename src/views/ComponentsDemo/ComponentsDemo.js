@@ -31,9 +31,18 @@ export default function ComponentsDemo() {
 			</Button>
 			<br />
 			<h1>Link</h1>
-			<Link href="/dev/docs">Documention Home</Link><br/>
-			Special link to github repo: <Link href="https://github.com/StevensSEC/sec.club">https://github.com/StevensSEC/sec.club</Link><br/>
-			Special link to github issue/PR: <Link href="https://github.com/StevensSEC/sec.club/issues/194">https://github.com/StevensSEC/sec.club/issues/194</Link><br/>
+			<Link href="/dev/docs">Documention Home</Link>
+			<br />
+			Special link to github repo:{" "}
+			<Link href="https://github.com/StevensSEC/sec.club">
+				https://github.com/StevensSEC/sec.club
+			</Link>
+			<br />
+			Special link to github issue/PR:{" "}
+			<Link href="https://github.com/StevensSEC/sec.club/issues/194">
+				https://github.com/StevensSEC/sec.club/issues/194
+			</Link>
+			<br />
 		</Container>
 	);
 }
