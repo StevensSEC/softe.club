@@ -11,6 +11,7 @@ Learning about programming is hard. Hopefully, these resources will make it a li
 -   [w3schools](https://www.w3schools.com/js/) - A written tutorial for JavaScript
 -   [jsbench](https://jsben.ch/) - Benchmark code performance directly in the browser
 -   [npm.avanka](http://npm.anvaka.com) - A graph visualization of package dependencies
+-	[keycode.info](https://keycode.info) - Displays keycodes for keyboard events.
 
 ## Markdown
 
