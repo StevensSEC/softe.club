@@ -13,6 +13,7 @@ slides:
         the slide will be sticky until.
         
         This will be sticky until the slide with ref `nail-polish-remover` is found.
+      sticky: nail-polish-remover
     - type: default
       content: A slide does not need to contain a ref.
     - type: default

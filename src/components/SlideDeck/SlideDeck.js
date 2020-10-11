@@ -14,7 +14,7 @@ import { Fullscreen, KeyboardArrowLeft, KeyboardArrowRight } from "@material-ui/
 
 class Slide extends React.Component {
 	static propTypes = {
-        ref: PropTypes.string,
+        customRef: PropTypes.string,
 		sticky: PropTypes.bool,
 		stickyUntil: PropTypes.number,
 	};

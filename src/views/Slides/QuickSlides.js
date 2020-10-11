@@ -81,13 +81,12 @@ export default class QuickSlides extends React.PureComponent {
                         throw new Error(`Invalid ref on slide ${i + 1}: ${slide.sticky}`)
                     }
                     slideProps.stickyUntil = this.state.slideRefs[slide.sticky];
-                }
-				if (slide.sticky !== true) {
+                } else if (slide.sticky !== true) {
 					slideProps.stickyUntil = slide.sticky;
 				}
             }
             if (slide.ref) {
-                slideProps.ref = slide.ref;
+                slideProps.customRef = slide.ref;
             }
 			slides.push(
 				<Slide key={i} {...slideProps}>

@@ -11,9 +11,10 @@ $slide-control-btn-hover: rgba(211, 211, 211, 0.15);
     
     .title-slide {
         align-items: center;
-        display: grid;
+        display: flex;
+        flex-direction: column;
         height: 100%;
-        justify-items: center;
+        justify-content: center;
     }
 
 	.side-by-side {
