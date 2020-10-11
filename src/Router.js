@@ -112,14 +112,21 @@ const ROUTES = [
 		),
 	},
 	{
-		path: "/dev/slide_deck",
+		path: "/dev/slide-deck",
 		Component: lazy(() =>
 			import(/* webpackChunkName: "demo" */ "./views/SlideDeckDemo/SlideDeckDemo.js")
 		),
 	},
 	{
-		path: "/dev/quick_slides",
+		path: "/dev/quick-slides",
 		slideProps: { slidePath: "example-slides.yaml", title: "Example" },
+		Component: lazy(() =>
+			import(/* webpackChunkName: "quick-slides" */ "./views/Slides/QuickSlides.js")
+		),
+    },
+    {
+		path: "/dev/slide-refs",
+		slideProps: { slidePath: "slide-refs.yaml", title: "Slide Refs" },
 		Component: lazy(() =>
 			import(/* webpackChunkName: "quick-slides" */ "./views/Slides/QuickSlides.js")
 		),

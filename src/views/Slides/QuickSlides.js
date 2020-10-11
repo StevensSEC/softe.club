@@ -10,7 +10,8 @@ export default class QuickSlides extends React.PureComponent {
 		this.state = {
 			data: {
 				slides: [],
-			},
+            },
+            slideRefs: {},
 		};
 	}
 
@@ -21,25 +22,36 @@ export default class QuickSlides extends React.PureComponent {
 				return res.text();
 			})
 			.then(content => {
-				let data = yaml.load(content);
+                let data = yaml.load(content);
+                let refs = {};
+                // Use string property `ref` to assign a name to a slide
+                for (const [i, slide] of data.slides.entries()) {
+                    if (slide.ref) {
+                        if (slide.ref in refs) {
+                            throw new Error(`Cannot Duplicate slide ref '${slide.ref}'.`)
+                        }
+                        refs[slide.ref] = i;
+                    }
+                }
 				this.setState({
-					data: data,
+                    data: data,
+                    slideRefs: refs,
 				});
-			});
+            });
 	}
 
 	render() {
 		let data = this.state.data;
 		if (!data) {
 			return null;
-		}
+        }
 		let slides = [];
 		for (const [i, slide] of data.slides.entries()) {
 			let content = "";
 			switch (slide.type) {
 				case "title":
 					content = (
-						<div>
+						<div className="title-slide">
 							<h1>{slide.title ?? "Untitled presentation"}</h1>
 							<h2>{slide.subtitle ?? ""}</h2>
 						</div>
@@ -63,11 +75,20 @@ export default class QuickSlides extends React.PureComponent {
 			}
 			let slideProps = {};
 			if (slide.sticky) {
-				slideProps.sticky = true;
+                slideProps.sticky = true;
+                if (typeof slide.sticky === 'string') {
+                    if (!(slide.sticky in this.state.slideRefs)) {
+                        throw new Error(`Invalid ref on slide ${i + 1}: ${slide.sticky}`)
+                    }
+                    slideProps.stickyUntil = this.state.slideRefs[slide.sticky];
+                }
 				if (slide.sticky !== true) {
 					slideProps.stickyUntil = slide.sticky;
 				}
-			}
+            }
+            if (slide.ref) {
+                slideProps.ref = slide.ref;
+            }
 			slides.push(
 				<Slide key={i} {...slideProps}>
 					{content}
