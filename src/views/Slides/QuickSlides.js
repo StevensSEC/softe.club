@@ -10,6 +10,7 @@ export default class QuickSlides extends React.PureComponent {
 		super();
 		this.state = {
 			data: {
+				title: "",
 				slides: [],
 			},
 		};
@@ -42,7 +43,6 @@ export default class QuickSlides extends React.PureComponent {
 					let title = slide.title ?? "Untitled presentation";
 					content = (
 						<div className="title-slide">
-							<DocumentTitle title={title} />
 							<h1>{title}</h1>
 							<h2>{slide.subtitle ?? ""}</h2>
 						</div>
@@ -80,6 +80,11 @@ export default class QuickSlides extends React.PureComponent {
 				</Slide>
 			);
 		}
-		return <SlideDeck>{slides}</SlideDeck>;
+		return (
+			<>
+				<DocumentTitle title={this.state.title} />
+				<SlideDeck>{slides}</SlideDeck>
+			</>
+		);
 	}
 }

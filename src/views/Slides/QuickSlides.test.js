@@ -55,6 +55,14 @@ describe("QuickSlides", () => {
 		expect(wrapper.find(Slide).at(1).props().stickyUntil).toEqual(3);
 	});
 
+	it("should set the page title to the presentation title", async () => {
+		let wrapper;
+		await act(async () => {
+			wrapper = mount(<QuickSlides slidePath="test/names.yaml" />, container);
+		});
+		expect(wrapper.find(DocumentTitle).props().title).toEqual("Custom Title");
+	});
+
 	it("should render markdown", async () => {
 		let wrapper;
 		await act(async () => {
@@ -67,5 +75,19 @@ describe("QuickSlides", () => {
 		expect(wrapper.find(SlideDeck).exists()).toEqual(true);
 		expect(wrapper.exists(".markdown")).toEqual(true);
 		expect(wrapper.exists("h1")).toEqual(true);
+	});
+
+	it("should assign name props to slides", async () => {
+		let wrapper;
+		await act(async () => {
+			wrapper = mount(<QuickSlides slidePath="test/names.yaml" />, container);
+		});
+		wrapper.setState({
+			data: testYamlLoader(wrapper.props().slidePath),
+		});
+		expect(wrapper.find(SlideDeck).exists()).toEqual(true);
+		expect(wrapper.find(Slide).props().name).toEqual("title");
+		expect(wrapper.find(Slide).at(1).props().name).toEqual("second");
+		expect(wrapper.find(Slide).at(2).props().name).toBeUndefined();
 	});
 });

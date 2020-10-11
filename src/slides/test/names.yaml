@@ -1,0 +1,10 @@
+---
+title: Custom Title
+slides:
+  - type: title
+    name: title
+  - type: default
+    name: second
+  - type: default
+    content: Unnamed slide
+    
