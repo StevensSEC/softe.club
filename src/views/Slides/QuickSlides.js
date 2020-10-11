@@ -1,5 +1,6 @@
 import React from "react";
 import yaml from "js-yaml";
+import { Helmet } from "react-helmet";
 import { Slide, SlideDeck } from "../../components/SlideDeck/SlideDeck.js";
 import SecMarkdown from "../../components/SecMarkdown/SecMarkdown.js";
 import "./QuickSlides.scss";
@@ -50,9 +51,13 @@ export default class QuickSlides extends React.PureComponent {
 			let content = "";
 			switch (slide.type) {
 				case "title":
+                    let title = slide.title ?? "Untitled presentation";
 					content = (
 						<div className="title-slide">
-							<h1>{slide.title ?? "Untitled presentation"}</h1>
+                            <Helmet>
+                                <title>{title}</title>
+                            </Helmet>
+							<h1>{title}</h1>
 							<h2>{slide.subtitle ?? ""}</h2>
 						</div>
 					);

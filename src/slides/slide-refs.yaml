@@ -15,7 +15,10 @@ slides:
         This will be sticky until the slide with ref `nail-polish-remover` is found.
       sticky: nail-polish-remover
     - type: default
-      content: A slide does not need to contain a ref.
+      content: |
+        A slide does not need to contain a ref.
+      
+        *Refs are available on slides through the `customRef` prop.*
     - type: default
       content: |
         Refs are only a QoL feature for people making slides. They are precomputed
