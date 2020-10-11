@@ -67,7 +67,7 @@ content:
 
 ## Example Quick Slide Deck
 
-````yaml
+```yaml
 slides:
   - type: title
 	title: Presentation title
@@ -90,4 +90,46 @@ slides:
 	  \```python
 	  print(f\"Math: {2+2}\")
 	  \```
-````
+```
+
+## Slide References
+A slide can be uniquely identified via its `name` property, which acts like a reference
+or unique ID to the slide. The `name` can be used in the `sticky` prop to reference
+the ending slide instead of its index.
+
+
+```yaml
+slides:
+    - type: title
+      title: Slide Names
+      subtitle: Use custom names to reference a slide
+      name: title
+    - type: default
+      content: |
+        This slide will be sticky.
+        
+        Normally, you need to know the slide index ahead of time;
+        however, now you can specify a custom name via the `name` prop which
+        can be used as a dynamic reference.
+        
+        This will be sticky until the slide with name `nail-polish-remover` is found.
+      sticky: nail-polish-remover
+    - type: default
+      content: |
+        A slide does not need to contain a name. Names must be unique.
+      
+        *Names are available on slides programmatically through the `name` prop.*
+    - type: default
+      content: |
+        Names are only a QoL feature for people making slides. They are precomputed
+        before rendering so that no duplicate names exist and if in the future, the
+        need to return to a previous slide arises.
+        
+        An example might be to reference a presentation by slide with a URL.
+        `softe.club/slides/learn-git#making-a-pr` for example.
+    - type: default
+      content: I am the NAIL POLISH REMOVER SLIDE. NO MORE STICKY.
+      name: nail-polish-remover
+    - type: default
+      content: And that's how simple slide names are!
+```

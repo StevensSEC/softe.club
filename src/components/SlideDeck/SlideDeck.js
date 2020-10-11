@@ -14,9 +14,9 @@ import { Fullscreen, KeyboardArrowLeft, KeyboardArrowRight } from "@material-ui/
 
 class Slide extends React.Component {
 	static propTypes = {
-        customRef: PropTypes.string,
+		name: PropTypes.string,
 		sticky: PropTypes.bool,
-		stickyUntil: PropTypes.number,
+		stickyUntil: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
 	};
 
 	constructor(props) {
@@ -47,18 +47,43 @@ class SlideDeck extends React.Component {
 				previous: [],
 			},
 		};
-		React.Children.toArray(this.props.children).forEach(child => {
-			if (child.type.name !== "Slide" && process.env.NODE_ENV !== "production") {
-				throw new InvalidChildComponentError(
-					`All children of SlideDeck must be Slide components. Got "${child.type.name}" instead`
-				);
-			}
-		});
 
+		this.getStickyUntil = this.getStickyUntil.bind(this);
 		this.nextSlide = this.nextSlide.bind(this);
 		this.prevSlide = this.prevSlide.bind(this);
 		this.handleSlideChange = this.handleSlideChange.bind(this);
 		this.handleKeyPress = this.handleKeyPress.bind(this);
+	}
+
+	shouldComponentUpdate(props) {
+		if (this.props.children !== props.children) {
+			let slideNames = {};
+			React.Children.toArray(props.children).forEach((child, i) => {
+				if (child.type.name !== "Slide" && process.env.NODE_ENV !== "production") {
+					throw new InvalidChildComponentError(
+						`All children of SlideDeck must be Slide components. Got "${child.type.name}" instead`
+					);
+				}
+				// Build reference map from slide references (names)
+				let name = child.props.name;
+				if (name) {
+					if (name in slideNames) {
+						throw new Error(`Cannot have duplicate slide name '${name}'.`);
+					}
+					slideNames[name] = i;
+				}
+			});
+			this.setState({ slideNames });
+			// Validates that all slide name references are valid
+			React.Children.toArray(props.children).forEach((slide, i) => {
+				if (typeof slide.stickyUntil === "string") {
+					if (!(slide.stickyUntil in this.state.slideRefs)) {
+						throw new Error(`Invalid name on slide ${i + 1}: ${slide.stickyUntil}`);
+					}
+				}
+			});
+		}
+		return true;
 	}
 
 	componentDidMount() {
@@ -67,6 +92,13 @@ class SlideDeck extends React.Component {
 
 	componentWillUnmount() {
 		document.removeEventListener("keydown", this.handleKeyPress, false);
+	}
+
+	getStickyUntil() {
+		let currentSticky = this.props.children[this.state.stickied.current].props.stickyUntil;
+		return typeof currentSticky === "string"
+			? this.state.slideNames[currentSticky]
+			: currentSticky;
 	}
 
 	handleKeyPress(e) {
@@ -105,8 +137,7 @@ class SlideDeck extends React.Component {
 			};
 		} else if (
 			this.state.stickied.current !== null &&
-			newstate.currentSlide >=
-				this.props.children[this.state.stickied.current].props.stickyUntil
+			newstate.currentSlide >= this.getStickyUntil()
 		) {
 			let previousStickies = this.state.stickied.previous;
 			previousStickies.push(this.state.stickied.current);

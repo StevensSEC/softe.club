@@ -1,7 +1,7 @@
 import React from "react";
 import yaml from "js-yaml";
-import { Helmet } from "react-helmet";
 import { Slide, SlideDeck } from "../../components/SlideDeck/SlideDeck.js";
+import DocumentTitle from "../../components/DocumentTitle/DocumentTitle.js";
 import SecMarkdown from "../../components/SecMarkdown/SecMarkdown.js";
 import "./QuickSlides.scss";
 
@@ -11,8 +11,7 @@ export default class QuickSlides extends React.PureComponent {
 		this.state = {
 			data: {
 				slides: [],
-            },
-            slideRefs: {},
+			},
 		};
 	}
 
@@ -23,40 +22,27 @@ export default class QuickSlides extends React.PureComponent {
 				return res.text();
 			})
 			.then(content => {
-                let data = yaml.load(content);
-                let refs = {};
-                // Use string property `ref` to assign a name to a slide
-                for (const [i, slide] of data.slides.entries()) {
-                    if (slide.ref) {
-                        if (slide.ref in refs) {
-                            throw new Error(`Cannot Duplicate slide ref '${slide.ref}'.`)
-                        }
-                        refs[slide.ref] = i;
-                    }
-                }
+				let data = yaml.load(content);
 				this.setState({
-                    data: data,
-                    slideRefs: refs,
+					data: data,
 				});
-            });
+			});
 	}
 
 	render() {
 		let data = this.state.data;
 		if (!data) {
 			return null;
-        }
+		}
 		let slides = [];
 		for (const [i, slide] of data.slides.entries()) {
 			let content = "";
 			switch (slide.type) {
 				case "title":
-                    let title = slide.title ?? "Untitled presentation";
+					let title = slide.title ?? "Untitled presentation";
 					content = (
 						<div className="title-slide">
-                            <Helmet>
-                                <title>{title}</title>
-                            </Helmet>
+							<DocumentTitle title={title} />
 							<h1>{title}</h1>
 							<h2>{slide.subtitle ?? ""}</h2>
 						</div>
@@ -80,19 +66,14 @@ export default class QuickSlides extends React.PureComponent {
 			}
 			let slideProps = {};
 			if (slide.sticky) {
-                slideProps.sticky = true;
-                if (typeof slide.sticky === 'string') {
-                    if (!(slide.sticky in this.state.slideRefs)) {
-                        throw new Error(`Invalid ref on slide ${i + 1}: ${slide.sticky}`)
-                    }
-                    slideProps.stickyUntil = this.state.slideRefs[slide.sticky];
-                } else if (slide.sticky !== true) {
+				slideProps.sticky = true;
+				if (typeof slide.sticky === "string" || slide.sticky !== true) {
 					slideProps.stickyUntil = slide.sticky;
 				}
-            }
-            if (slide.ref) {
-                slideProps.customRef = slide.ref;
-            }
+			}
+			if (slide.name) {
+				slideProps.name = slide.name;
+			}
 			slides.push(
 				<Slide key={i} {...slideProps}>
 					{content}
