@@ -75,8 +75,8 @@ class SlideDeck extends React.Component {
 
 	static contextType = UxContext;
 
-	constructor(props) {
-		super(props);
+	constructor() {
+		super();
 		this.state = {
 			currentSlide: 0,
 			isFullscreen: false,
@@ -84,10 +84,10 @@ class SlideDeck extends React.Component {
 				current: null,
 				previous: [],
 			},
-			slideNames: {},
 		};
 
 		this.getStickyUntil = this.getStickyUntil.bind(this);
+		this.getSlideNames = this.getSlideNames.bind(this);
 		this.nextSlide = this.nextSlide.bind(this);
 		this.prevSlide = this.prevSlide.bind(this);
 		this.handleSlideChange = this.handleSlideChange.bind(this);
@@ -95,33 +95,6 @@ class SlideDeck extends React.Component {
 	}
 
 	shouldComponentUpdate(props) {
-		if (this.props.children !== props.children) {
-			let slideNames = {};
-			React.Children.toArray(props.children).forEach((child, i) => {
-				if (child.type.name !== "Slide" && process.env.NODE_ENV !== "production") {
-					throw new InvalidChildComponentError(
-						`All children of SlideDeck must be Slide components. Got "${child.type.name}" instead`
-					);
-				}
-				// Build reference map from slide references (names)
-				let name = child.props.name;
-				if (name) {
-					if (name in slideNames) {
-						throw new Error(`Cannot have duplicate slide name '${name}'.`);
-					}
-					slideNames[name] = i;
-				}
-			});
-			this.setState({ slideNames });
-			// Validates that all slide name references are valid
-			React.Children.toArray(props.children).forEach((slide, i) => {
-				if (typeof slide.stickyUntil === "string") {
-					if (!(slide.stickyUntil in this.state.slideNames)) {
-						throw new Error(`Invalid name on slide ${i + 1}: ${slide.stickyUntil}`);
-					}
-				}
-			});
-		}
 		return true;
 	}
 
@@ -133,13 +106,28 @@ class SlideDeck extends React.Component {
 		document.removeEventListener("keydown", this.handleKeyPress, false);
 	}
 
+	getSlideNames() {
+		let slideNames = {};
+		React.Children.toArray(this.props.children).forEach((child, i) => {
+			// Build reference map from slide references (names)
+			let name = child.props.name;
+			if (name) {
+				if (name in slideNames) {
+					throw new Error(`Cannot have duplicate slide name '${name}'.`);
+				}
+				slideNames[name] = i;
+			}
+		});
+		return slideNames;
+	}
+
 	getStickyUntil() {
 		let endSlide = this.props.children[this.state.stickied.current].props.stickyUntil;
 		if (endSlide === undefined) {
 			return undefined;
 		}
 		return typeof endSlide === "string"
-			? this.state.slideNames[endSlide]
+			? this.getSlideNames()[endSlide]
 			: endSlide;
 	}
 

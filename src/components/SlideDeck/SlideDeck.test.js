@@ -171,7 +171,7 @@ describe("SlideDeck", () => {
 			expect(wrapper.instance().state.stickied.current).toEqual(1);
 		});
 
-		it("1 sticky slide with stickyUntil", () => {
+		it("1 sticky slide with stickyUntil using slide index", () => {
 			let wrapper = mount(
 				<SlideDeck>
 					<Slide sticky stickyUntil={2}>
