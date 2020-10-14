@@ -34,7 +34,37 @@ class Slide extends React.Component {
 
 class InvalidChildComponentError extends TypeError {}
 
+/**
+ * Powerpoint, but in react.
+ *
+ * Important gotchas:
+ * - All children must be `Slide` components.
+ * - When a slide is displayed, not all of the slides are rendered to the DOM. Only the current slide, and a sticky slide (if present).
+ *
+ * Docs URL: /dev/docs/slidedecks
+ */
 class SlideDeck extends React.Component {
+	static propTypes = {
+		children: (props, propName, componentName) => {
+			let _tmpSlideNames = {}
+			React.Children.toArray(props.children).forEach((child, i) => {
+				if (child.type.name !== "Slide" && process.env.NODE_ENV !== "production") {
+					return new InvalidChildComponentError(
+						`All children of SlideDeck must be Slide components. Got "${child.type.name}" instead`
+					);
+				}
+				// Build reference map from slide references (names)
+				let name = child.props.name;
+				if (name) {
+					if (name in _tmpSlideNames) {
+						return new Error(`Cannot have duplicate slide name '${name}'.`);
+					}
+					_tmpSlideNames[name] = i;
+				}
+			});
+		},
+	};
+
 	static contextType = UxContext;
 
 	constructor(props) {
@@ -46,6 +76,7 @@ class SlideDeck extends React.Component {
 				current: null,
 				previous: [],
 			},
+			slideNames: {},
 		};
 
 		this.getStickyUntil = this.getStickyUntil.bind(this);
@@ -95,10 +126,13 @@ class SlideDeck extends React.Component {
 	}
 
 	getStickyUntil() {
-		let currentSticky = this.props.children[this.state.stickied.current].props.stickyUntil;
-		return typeof currentSticky === "string"
-			? this.state.slideNames[currentSticky]
-			: currentSticky;
+		let endSlide = this.props.children[this.state.stickied.current].props.stickyUntil;
+		if (endSlide === undefined) {
+			return undefined;
+		}
+		return typeof endSlide === "string"
+			? this.state.slideNames[endSlide]
+			: endSlide;
 	}
 
 	handleKeyPress(e) {

@@ -184,12 +184,15 @@ describe("SlideDeck", () => {
 				container
 			);
 			wrapper.instance().nextSlide();
+			wrapper.update();
 			expect(wrapper.instance().state.currentSlide).toEqual(1);
 			expect(wrapper.instance().state.stickied.current).toEqual(0);
 			wrapper.instance().nextSlide();
+			wrapper.update();
 			expect(wrapper.instance().state.currentSlide).toEqual(2);
 			expect(wrapper.instance().state.stickied.current).toEqual(null);
 			wrapper.instance().nextSlide();
+			wrapper.update();
 			expect(wrapper.instance().state.currentSlide).toEqual(3);
 			expect(wrapper.instance().state.stickied.current).toEqual(null);
 		});
@@ -207,12 +210,15 @@ describe("SlideDeck", () => {
 				container
 			);
 			wrapper.instance().nextSlide();
+			wrapper.update();
 			expect(wrapper.instance().state.currentSlide).toEqual(1);
 			expect(wrapper.instance().state.stickied.current).toEqual(0);
 			wrapper.instance().nextSlide();
+			wrapper.update();
 			expect(wrapper.instance().state.currentSlide).toEqual(2);
 			expect(wrapper.instance().state.stickied.current).toEqual(null);
 			wrapper.instance().nextSlide();
+			wrapper.update();
 			expect(wrapper.instance().state.currentSlide).toEqual(3);
 			expect(wrapper.instance().state.stickied.current).toEqual(null);
 		});
