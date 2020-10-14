@@ -62,6 +62,14 @@ class SlideDeck extends React.Component {
 					_tmpSlideNames[name] = i;
 				}
 			});
+			// Validates that all slide name references are valid
+			React.Children.toArray(props.children).forEach((slide, i) => {
+				if (typeof slide.stickyUntil === "string") {
+					if (!(slide.stickyUntil in _tmpSlideNames)) {
+						return new Error(`Invalid name on slide ${i + 1}: ${slide.stickyUntil}`);
+					}
+				}
+			});
 		},
 	};
 
@@ -108,7 +116,7 @@ class SlideDeck extends React.Component {
 			// Validates that all slide name references are valid
 			React.Children.toArray(props.children).forEach((slide, i) => {
 				if (typeof slide.stickyUntil === "string") {
-					if (!(slide.stickyUntil in this.state.slideRefs)) {
+					if (!(slide.stickyUntil in this.state.slideNames)) {
 						throw new Error(`Invalid name on slide ${i + 1}: ${slide.stickyUntil}`);
 					}
 				}
