@@ -82,7 +82,7 @@ export default class QuickSlides extends React.PureComponent {
 		}
 		return (
 			<>
-				<DocumentTitle title={this.state.title} />
+				<DocumentTitle title={this.state.data.title ?? ""} />
 				<SlideDeck>{slides}</SlideDeck>
 			</>
 		);
