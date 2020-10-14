@@ -57,32 +57,6 @@ const EVENTS = [
 			"Come learn how to make your developing process look pretty by decking out your VSCode and your terminal. Altorfer Software Engineering Lab, March 5th, 9 PM",
 		endDate: dayjs(new Date("March 6, 2020")),
 	},
-	{
-		flyerSource: "hacktoberfestgraphic.png",
-		title: "Hacktoberfest Hackathon",
-		desc:
-			"Need a little bit of motivation? Make 4 pull requests to any participating repo, and earn a FREE t-shirt or plant a tree!",
-		startDate: dayjs(new Date("October 10, 2020 11:00 AM")),
-		endDate: dayjs(new Date("October 10, 2020 9:00 PM")),
-	},
-	{
-		flyerSource: "hacktoberfestgraphic.png",
-		title: "Hacktoberfest Hackathon: Kick off",
-		desc:
-			"Join us to kick off our Hacktoberfest Hackathon, followed by a guide to making your first pull request.",
-		startDate: dayjs(new Date("October 10, 2020 11:00 AM")),
-		endDate: dayjs(new Date("October 10, 2020 12:15 PM")),
-		meetingLink: "https://stevens.zoom.us/j/91570444680",
-	},
-	{
-		flyerSource: "hacktoberfestgraphic.png",
-		title: "Hacktoberfest Hackathon: SEC's repo",
-		desc:
-			"SEC will present a repo for everybody to work on, explaining how it works and how to get started.",
-		startDate: dayjs(new Date("October 10, 2020 12:30 PM")),
-		endDate: dayjs(new Date("October 10, 2020 1:30 PM")),
-		meetingLink: "https://stevens.zoom.us/j/97804588221",
-	},
-].concat(generateGbms(dayjs("2020-9-23", "YYYY-MM-DD"), dayjs("2020-12-1", "YYYY-MM-DD"), 3, 3)); // FIXME: put in the actual final gbm date
+].concat(generateGbms(dayjs("2020-9-23", "YYYY-MM-DD"), dayjs("2020-11-19", "YYYY-MM-DD"), 3));
 
 export default EVENTS;
