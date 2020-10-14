@@ -46,7 +46,7 @@ class InvalidChildComponentError extends TypeError {}
 class SlideDeck extends React.Component {
 	static propTypes = {
 		children: (props, propName, componentName) => {
-			let _tmpSlideNames = {}
+			let _tmpSlideNames = {};
 			React.Children.toArray(props.children).forEach((child, i) => {
 				if (child.type.name !== "Slide" && process.env.NODE_ENV !== "production") {
 					return new InvalidChildComponentError(
@@ -126,9 +126,7 @@ class SlideDeck extends React.Component {
 		if (endSlide === undefined) {
 			return undefined;
 		}
-		return typeof endSlide === "string"
-			? this.getSlideNames()[endSlide]
-			: endSlide;
+		return typeof endSlide === "string" ? this.getSlideNames()[endSlide] : endSlide;
 	}
 
 	handleKeyPress(e) {
