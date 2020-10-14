@@ -51,38 +51,27 @@ function generateGbms(startDate, endDate, countOffset = 0, limit = 10) {
 
 const EVENTS = [
 	{
+		title: "Debugging workshop",
+		desc:
+			"Sometimes, you make logic errors when writing code. Everybody does. You've probably written a few print statements to help you debug. But sometimes, print statement debugging doesn't cut it. Take your debugging to the next level with this workshop! In this workshop, you'll learn how to use VSCode's debugging interface, and use it to debug Python and C++.",
+		startDate: dayjs(new Date("October 21, 2020")).hour(21),
+		endDate: dayjs(new Date("October 21, 2020")).hour(22),
+	},
+	{
+		title: "Rust workshop",
+		desc:
+			"Have you heard of Rust, but you aren't sure where to get started? This is the workshop for you! Rust is a systems programming language with guarenteed memory safety and no garbage collection. These are great for performance, but make it really hard to get a hold of at first. In this workshop, you'll learn how to apply your existing programming knowledge to deal with Rust's ownership model.",
+		startDate: dayjs(new Date("November 18, 2020")).hour(21),
+		endDate: dayjs(new Date("November 18, 2020")).hour(22),
+	},
+	{
 		flyerSource: "Pimp my terminal.png",
 		title: "Pimp My Terminal",
 		desc:
-			"Come learn how to make your developing process look pretty by decking out your VSCode and your terminal. Altorfer Software Engineering Lab, March 5th, 9 PM",
-		endDate: dayjs(new Date("March 6, 2020")),
+			"Come learn how to make your developing process look pretty by decking out your VSCode and your terminal.",
+		startDate: dayjs(new Date("January 27, 2020")).hour(21),
+		endDate: dayjs(new Date("January 27, 2020")).hour(22),
 	},
-	{
-		flyerSource: "hacktoberfestgraphic.png",
-		title: "Hacktoberfest Hackathon",
-		desc:
-			"Need a little bit of motivation? Make 4 pull requests to any participating repo, and earn a FREE t-shirt or plant a tree!",
-		startDate: dayjs(new Date("October 10, 2020 11:00 AM")),
-		endDate: dayjs(new Date("October 10, 2020 9:00 PM")),
-	},
-	{
-		flyerSource: "hacktoberfestgraphic.png",
-		title: "Hacktoberfest Hackathon: Kick off",
-		desc:
-			"Join us to kick off our Hacktoberfest Hackathon, followed by a guide to making your first pull request.",
-		startDate: dayjs(new Date("October 10, 2020 11:00 AM")),
-		endDate: dayjs(new Date("October 10, 2020 12:15 PM")),
-		meetingLink: "https://stevens.zoom.us/j/91570444680",
-	},
-	{
-		flyerSource: "hacktoberfestgraphic.png",
-		title: "Hacktoberfest Hackathon: SEC's repo",
-		desc:
-			"SEC will present a repo for everybody to work on, explaining how it works and how to get started.",
-		startDate: dayjs(new Date("October 10, 2020 12:30 PM")),
-		endDate: dayjs(new Date("October 10, 2020 1:30 PM")),
-		meetingLink: "https://stevens.zoom.us/j/97804588221",
-	},
-].concat(generateGbms(dayjs("2020-9-23", "YYYY-MM-DD"), dayjs("2020-12-1", "YYYY-MM-DD"), 3, 3)); // FIXME: put in the actual final gbm date
+].concat(generateGbms(dayjs("2020-9-23", "YYYY-MM-DD"), dayjs("2020-11-19", "YYYY-MM-DD"), 3));
 
 export default EVENTS;
