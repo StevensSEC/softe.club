@@ -5,7 +5,7 @@ powerpoint. It also allows for painless syntax highlighting for code on slides, 
 slides, consistent visuals, and easier sharing with club members.
 
 # Quick Slide Decks
-
+<!-- This is intentionally placed at the beginning of the article for convenience. -->
 Sometimes, you just need some slides, and you don't want to care about laying everything
 out correctly with CSS. That's precisely what this is for.
 
@@ -133,3 +133,13 @@ slides:
     - type: default
       content: And that's how simple slide names are!
 ```
+
+# Slides
+
+The `Slide` component can contain any element in any layout, as long as it stays within the bounds of the `Slide`.
+
+| Prop | Type | Description |
+|:------|:------|:-------------|
+| `name` | `String` | Assigns a name to the slide. *(Optional)* |
+| `sticky` | `bool` | Sticky slides will stay on the screen on the left side for the rest of the presentation, or the slide specified by `stickyUntil`. *(Optional)* |
+| `stickyUntil` | `Number|String` | Index or name of the slide to un-sticky the sticky slide (**exclusive**). *(Optional)*
