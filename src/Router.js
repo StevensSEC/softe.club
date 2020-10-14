@@ -112,20 +112,20 @@ const ROUTES = [
 		),
 	},
 	{
-		path: "/slides/slide-deck",
+		path: "/dev/slides/slide-deck",
 		Component: lazy(() =>
 			import(/* webpackChunkName: "demo" */ "./views/SlideDeckDemo/SlideDeckDemo.js")
 		),
 	},
 	{
-		path: "/slides/quick-slides",
+		path: "/dev/slides/quick-slides",
 		slideProps: { slidePath: "example-slides.yaml", title: "Example" },
 		Component: lazy(() =>
 			import(/* webpackChunkName: "quick-slides" */ "./views/Slides/QuickSlides.js")
 		),
 	},
 	{
-		path: "/slides/slide-names",
+		path: "/dev/slides/slide-names",
 		slideProps: { slidePath: "slide-names.yaml", title: "Slide Names" },
 		Component: lazy(() =>
 			import(/* webpackChunkName: "quick-slides" */ "./views/Slides/QuickSlides.js")
