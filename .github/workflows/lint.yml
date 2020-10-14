@@ -22,4 +22,4 @@ jobs:
     - name: Check linting
       run: npx eslint .
     - name: Check format
-      run: npx prettier --config prettier.config.js --check src/**/*.{js,jsx,json,ts,tsx,md,mdx,css,html,yml,yaml,scss}
+      run: npx prettier --config prettier.config.js --check "src/**/*.{js,jsx,json,ts,tsx,md,mdx,css,html,yml,yaml,scss}"
