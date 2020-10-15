@@ -52,7 +52,7 @@ function generateGbms(startDate, endDate, countOffset = 0, limit = 10) {
 const EVENTS = [
 	{
 		flyerSource: "debugging-workshop.png",
-		title: "Debugging workshop",
+		title: "Debugging Workshop",
 		desc:
 			"Sometimes, you make logic errors when writing code. Everybody does. You've probably written a few print statements to help you debug. But sometimes, print statement debugging doesn't cut it. Take your debugging to the next level with this workshop! In this workshop, you'll learn how to use VSCode's debugging interface, and use it to debug Python and C++.",
 		startDate: dayjs(new Date("October 21, 2020")).hour(21),
@@ -60,7 +60,7 @@ const EVENTS = [
 		meetingLink: "https://stevens.zoom.us/j/98637599692",
 	},
 	{
-		title: "Rust workshop",
+		title: "Rust Workshop",
 		desc:
 			"Have you heard of Rust, but you aren't sure where to get started? This is the workshop for you! Rust is a systems programming language with guarenteed memory safety and no garbage collection. These are great for performance, but make it really hard to get a hold of at first. In this workshop, you'll learn how to apply your existing programming knowledge to deal with Rust's ownership model.",
 		startDate: dayjs(new Date("November 18, 2020")).hour(21),
