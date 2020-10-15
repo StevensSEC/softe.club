@@ -1,6 +1,7 @@
 import React from "react";
 import yaml from "js-yaml";
 import { Slide, SlideDeck } from "../../components/SlideDeck/SlideDeck.js";
+import DocumentTitle from "../../components/DocumentTitle/DocumentTitle.js";
 import SecMarkdown from "../../components/SecMarkdown/SecMarkdown.js";
 import "./QuickSlides.scss";
 
@@ -9,6 +10,7 @@ export default class QuickSlides extends React.PureComponent {
 		super();
 		this.state = {
 			data: {
+				title: "",
 				slides: [],
 			},
 		};
@@ -38,9 +40,10 @@ export default class QuickSlides extends React.PureComponent {
 			let content = "";
 			switch (slide.type) {
 				case "title":
+					let title = slide.title ?? "Untitled presentation";
 					content = (
-						<div>
-							<h1>{slide.title ?? "Untitled presentation"}</h1>
+						<div className="title-slide">
+							<h1>{title}</h1>
 							<h2>{slide.subtitle ?? ""}</h2>
 						</div>
 					);
@@ -64,9 +67,12 @@ export default class QuickSlides extends React.PureComponent {
 			let slideProps = {};
 			if (slide.sticky) {
 				slideProps.sticky = true;
-				if (slide.sticky !== true) {
+				if (typeof slide.sticky === "string" || slide.sticky !== true) {
 					slideProps.stickyUntil = slide.sticky;
 				}
+			}
+			if (slide.name) {
+				slideProps.name = slide.name;
 			}
 			slides.push(
 				<Slide key={i} {...slideProps}>
@@ -74,6 +80,11 @@ export default class QuickSlides extends React.PureComponent {
 				</Slide>
 			);
 		}
-		return <SlideDeck>{slides}</SlideDeck>;
+		return (
+			<>
+				<DocumentTitle title={this.state.data.title ?? ""} />
+				<SlideDeck>{slides}</SlideDeck>
+			</>
+		);
 	}
 }

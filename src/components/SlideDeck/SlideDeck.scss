@@ -9,6 +9,14 @@ $slide-control-btn-hover: rgba(211, 211, 211, 0.15);
 	grid-template-columns: 500px auto;
 	column-gap: 10px;
 
+	.title-slide {
+		align-items: center;
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+		justify-content: center;
+	}
+
 	.side-by-side {
 		display: grid;
 		grid-template-columns: 50%;

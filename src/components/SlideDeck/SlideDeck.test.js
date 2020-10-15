@@ -171,7 +171,7 @@ describe("SlideDeck", () => {
 			expect(wrapper.instance().state.stickied.current).toEqual(1);
 		});
 
-		it("1 sticky slide with stickyUntil", () => {
+		it("1 sticky slide with stickyUntil using slide index", () => {
 			let wrapper = mount(
 				<SlideDeck>
 					<Slide sticky stickyUntil={2}>
@@ -184,12 +184,41 @@ describe("SlideDeck", () => {
 				container
 			);
 			wrapper.instance().nextSlide();
+			wrapper.update();
 			expect(wrapper.instance().state.currentSlide).toEqual(1);
 			expect(wrapper.instance().state.stickied.current).toEqual(0);
 			wrapper.instance().nextSlide();
+			wrapper.update();
 			expect(wrapper.instance().state.currentSlide).toEqual(2);
 			expect(wrapper.instance().state.stickied.current).toEqual(null);
 			wrapper.instance().nextSlide();
+			wrapper.update();
+			expect(wrapper.instance().state.currentSlide).toEqual(3);
+			expect(wrapper.instance().state.stickied.current).toEqual(null);
+		});
+
+		it("1 sticky slide with stickyUntil using names", () => {
+			let wrapper = mount(
+				<SlideDeck>
+					<Slide sticky stickyUntil={"hide-sticky"}>
+						Slide 0
+					</Slide>
+					<Slide>Slide 1</Slide>
+					<Slide name="hide-sticky">Slide 2</Slide>
+					<Slide>Slide 3</Slide>
+				</SlideDeck>,
+				container
+			);
+			wrapper.instance().nextSlide();
+			wrapper.update();
+			expect(wrapper.instance().state.currentSlide).toEqual(1);
+			expect(wrapper.instance().state.stickied.current).toEqual(0);
+			wrapper.instance().nextSlide();
+			wrapper.update();
+			expect(wrapper.instance().state.currentSlide).toEqual(2);
+			expect(wrapper.instance().state.stickied.current).toEqual(null);
+			wrapper.instance().nextSlide();
+			wrapper.update();
 			expect(wrapper.instance().state.currentSlide).toEqual(3);
 			expect(wrapper.instance().state.stickied.current).toEqual(null);
 		});

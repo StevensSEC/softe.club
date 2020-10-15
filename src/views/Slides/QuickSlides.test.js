@@ -1,6 +1,6 @@
 import React from "react";
 import { render, unmountComponentAtNode } from "react-dom";
-import { mount } from "enzyme";
+import { mount, shallow } from "enzyme";
 import { act } from "react-dom/test-utils";
 import fs from "fs";
 import yaml from "js-yaml";
@@ -8,6 +8,7 @@ import "@testing-library/jest-dom";
 
 import { SlideDeck, Slide } from "../../components/SlideDeck/SlideDeck.js";
 import QuickSlides from "./QuickSlides.js";
+import DocumentTitle from "../../components/DocumentTitle/DocumentTitle.js";
 
 /**
  * Workaround because requiring yaml file doesn't work in tests.
@@ -55,6 +56,18 @@ describe("QuickSlides", () => {
 		expect(wrapper.find(Slide).at(1).props().stickyUntil).toEqual(3);
 	});
 
+	it("should set the page title when provided", async () => {
+		let wrapper;
+		await act(async () => {
+			wrapper = mount(<QuickSlides slidePath="test/names.yaml" />, container);
+		});
+		wrapper.setState({
+			data: testYamlLoader(wrapper.props().slidePath),
+		});
+		wrapper.update();
+		expect(wrapper.find(DocumentTitle).props().title).toEqual("Custom Title");
+	});
+
 	it("should render markdown", async () => {
 		let wrapper;
 		await act(async () => {
@@ -67,5 +80,24 @@ describe("QuickSlides", () => {
 		expect(wrapper.find(SlideDeck).exists()).toEqual(true);
 		expect(wrapper.exists(".markdown")).toEqual(true);
 		expect(wrapper.exists("h1")).toEqual(true);
+	});
+
+	it("should assign name props to slides", async () => {
+		let wrapper;
+		await act(async () => {
+			wrapper = mount(<QuickSlides slidePath="test/names.yaml" />, container);
+		});
+		wrapper.setState({
+			data: testYamlLoader(wrapper.props().slidePath),
+		});
+		wrapper.update();
+		expect(wrapper.find(SlideDeck).exists()).toEqual(true);
+		expect(wrapper.find(Slide).props().name).toEqual("title");
+		wrapper.find(SlideDeck).instance().nextSlide();
+		wrapper.update();
+		expect(wrapper.find(Slide).props().name).toEqual("second");
+		wrapper.find(SlideDeck).instance().nextSlide();
+		wrapper.update();
+		expect(wrapper.find(Slide).props().name).toBeUndefined();
 	});
 });

@@ -50,11 +50,7 @@ function App() {
 	// Conditionally hide and show the header and footer based on the path
 	// React really doesn't like having global state, especially if you need to send that state upwards through the tree
 	// so that's why this piece of shit exists
-	if (
-		location.pathname.startsWith("/slides") ||
-		location.pathname === "/dev/slide_deck" ||
-		location.pathname === "/dev/quick_slides"
-	) {
+	if (location.pathname.startsWith("/slides") || location.pathname.startsWith("/dev/slides")) {
 		ux.headerCompact = true;
 		ux.footerVisible = false;
 	} else {
