@@ -56,7 +56,7 @@ describe("EventBanner appearance", () => {
 			/>,
 			container
 		);
-		expect(wrapper.exists("em")).toEqual(true);
+		expect(wrapper.exists(".in-progress")).toEqual(true);
 	});
 });
 
@@ -80,7 +80,7 @@ describe("Event auto expire", () => {
 			/>,
 			container
 		);
-		expect(wrapper.exists(".flyer")).toEqual(true);
+		expect(wrapper.exists(".club-event")).toEqual(true);
 	});
 
 	it("should render if the event is in progress", () => {
@@ -94,7 +94,7 @@ describe("Event auto expire", () => {
 			/>,
 			container
 		);
-		expect(wrapper.exists(".flyer")).toEqual(true);
+		expect(wrapper.exists(".club-event")).toEqual(true);
 	});
 
 	it("should not render if the end time has been exceeded", () => {
@@ -108,7 +108,7 @@ describe("Event auto expire", () => {
 			/>,
 			container
 		);
-		expect(wrapper.exists(".flyer")).toEqual(false);
+		expect(wrapper.exists(".club-event")).toEqual(false);
 	});
 
 	it("should not render if it's a GBM, and the start time is more than 7 days in the future", () => {
@@ -123,7 +123,7 @@ describe("Event auto expire", () => {
 			/>,
 			container
 		);
-		expect(wrapper.exists(".flyer")).toEqual(false);
+		expect(wrapper.exists(".club-event")).toEqual(false);
 
 		now = dayjs("2020-03-01T16:00:00.000Z");
 		wrapper = mount(
@@ -136,7 +136,7 @@ describe("Event auto expire", () => {
 			/>,
 			container
 		);
-		expect(wrapper.exists(".flyer")).toEqual(false);
+		expect(wrapper.exists(".club-event")).toEqual(false);
 
 		now = dayjs("2020-04-04T21:15:00.000Z").subtract(7, "day");
 		wrapper = mount(
@@ -149,7 +149,7 @@ describe("Event auto expire", () => {
 			/>,
 			container
 		);
-		expect(wrapper.exists(".flyer")).toEqual(true);
+		expect(wrapper.exists(".club-event")).toEqual(true);
 
 		now = dayjs("2020-04-04T16:00:00.000Z").subtract(6, "day");
 		wrapper = mount(
@@ -162,6 +162,6 @@ describe("Event auto expire", () => {
 			/>,
 			container
 		);
-		expect(wrapper.exists(".flyer")).toEqual(true);
+		expect(wrapper.exists(".club-event")).toEqual(true);
 	});
 });
