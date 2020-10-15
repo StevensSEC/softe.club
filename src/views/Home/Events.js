@@ -51,11 +51,13 @@ function generateGbms(startDate, endDate, countOffset = 0, limit = 10) {
 
 const EVENTS = [
 	{
+		flyerSource: "debugging-workshop.png",
 		title: "Debugging workshop",
 		desc:
 			"Sometimes, you make logic errors when writing code. Everybody does. You've probably written a few print statements to help you debug. But sometimes, print statement debugging doesn't cut it. Take your debugging to the next level with this workshop! In this workshop, you'll learn how to use VSCode's debugging interface, and use it to debug Python and C++.",
 		startDate: dayjs(new Date("October 21, 2020")).hour(21),
 		endDate: dayjs(new Date("October 21, 2020")).hour(22),
+		meetingLink: "https://stevens.zoom.us/j/98637599692",
 	},
 	{
 		title: "Rust workshop",
