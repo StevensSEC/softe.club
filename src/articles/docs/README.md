@@ -16,8 +16,8 @@ This document is a hub for this website's documentation.
 These are some pages used as a playground to test various components and things.
 
 -   [Custom UI Components](/dev/components)
--   [Slide Deck](/slides/slide-deck)
--   [Quick Slides demo](/slides/quick-slides)
+-   [Slide Deck](/dev/slides/slide-deck)
+-   [Quick Slides demo](/dev/slides/quick-slides)
 
 ### Code Style
 
