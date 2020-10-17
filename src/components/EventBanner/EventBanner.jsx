@@ -24,28 +24,26 @@ export default function EventBanner({
 
 	let inProgress = startDate && endDate && startDate.isBefore(now) && endDate.isAfter(now);
 
-	console.log(
-		"EVENT",
-		title,
-		isGbm,
-		now.toString(),
-		startDate ? startDate.subtract(7, "day").toString() : startDate
-	);
 	if (
 		(!endDate || now.isBefore(endDate)) &&
 		(!startDate || !isGbm || startDate.subtract(7, "day").isBefore(now))
 	) {
 		return (
-			<div className="flyer">
-				<div className="container">
-					{imageElement}
+			<div className="club-event">
+				<div className={["container", flyerSource ? "has-flyer" : "no-flyer"].join(" ")}>
+					<div className="flyer">{imageElement}</div>
 					<div className="text-container">
 						<span className="title">{title}</span>
-						{startDate ? startDate.format("MMM. D, h:mm a") : null}
+						<hr />
+						<span className="start-time">
+							{startDate ? startDate.format("MMM. D, h:mm a") : null}
+						</span>
 						<span className="description">{desc}</span>
-						{inProgress ? <em>Happening right now!</em> : null}
+						{inProgress ? (
+							<span className="in-progress">Happening right now!</span>
+						) : null}
 						{meetingLink ? (
-							<span className="description">
+							<span className="meeting-link">
 								Join here: <a href={meetingLink}>{meetingLink}</a>
 							</span>
 						) : null}

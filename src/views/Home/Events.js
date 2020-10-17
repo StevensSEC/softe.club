@@ -71,8 +71,8 @@ const EVENTS = [
 		title: "Pimp My Terminal",
 		desc:
 			"Come learn how to make your developing process look pretty by decking out your VSCode and your terminal.",
-		startDate: dayjs(new Date("January 27, 2020")).hour(21),
-		endDate: dayjs(new Date("January 27, 2020")).hour(22),
+		startDate: dayjs(new Date("January 27, 2021")).hour(21),
+		endDate: dayjs(new Date("January 27, 2021")).hour(22),
 	},
 ].concat(generateGbms(dayjs("2020-9-23", "YYYY-MM-DD"), dayjs("2020-11-19", "YYYY-MM-DD"), 3));
 
