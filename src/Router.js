@@ -279,6 +279,13 @@ const ROUTES = [
 		),
 	},
 	{
+		path: "/slides/event/debugging-workshop",
+		slideProps: { slidePath: "events/debugging-workshop.yaml" },
+		Component: lazy(() =>
+			import(/* webpackChunkName: "quick-slides" */ "./views/Slides/QuickSlides.js")
+		),
+	},
+	{
 		path: "*",
 		Component: lazy(() =>
 			import(/* webpackChunkName: "not-found" */ "./views/NotFound/NotFound.jsx")
