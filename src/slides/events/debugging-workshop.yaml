@@ -1,29 +1,34 @@
 title: Debugging Workshop
 slides:
+  - type: title
+    title: Debugging Workshop
+    subtitle: Speed up troubleshooting, fix bugs faster.
   - content: |
       # What you'll need
       - Bare minimum programming knowledge
+        - If you are taking/have taken E155 or CS115, you're good
       - Visual Studio Code
         - [code.visualstudio.com](https://code.visualstudio.com)
         - *This is different from Visual Studio!*
       - Visual Studio
         - Only if you are on Windows
         - Only if you care about following along with the C++ example
-    sticky: 2
-  - type: title
-    title: Debugging Workshop
-    subtitle: Speed up troubleshooting, fix bugs faster.
   - content: |
       # You've probably done this
       - You've written a program and it doesn't work the first time
+      - What to do?
   - content: |
       # What are your tools?
       - Tracebacks
+        - Only if an error occurs
       - Print statements
+        - Messy, clogging up version control and your output
   - content: |
       # What are your tools?
       - Tracebacks
+        - Only if an error occurs
       - Print statements
+        - Messy, clogging up version control and your output
       - Debuggers
         - Your new best friend
   - content: |
@@ -63,7 +68,7 @@ slides:
       *If you are on windows, you are going to want to use Visual Studio.*
 
       Copy this code into a new `.cpp` file.
-      ```cplusplus
+      ```cpp
       #include <iostream>
       using namespace std;
 
