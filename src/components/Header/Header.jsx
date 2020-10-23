@@ -3,7 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import { Drawer, List, Hidden } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
 import "./Header.scss";
-import Button from "../Button/Button.js";
+import * as SEC from "../SEC/lib.js";
 import { UxContext } from "../../contexts.js";
 
 const useStyles = makeStyles({
@@ -75,33 +75,33 @@ const Header = () => {
 		>
 			<List>
 				{buttonRoutes.map((button, index) => (
-					<Button
+					<SEC.Button
 						className="drawer-item"
 						kind="menu"
 						to={button.route}
 						key={`menuItem-${index}`}
 					>
 						{button.title}
-					</Button>
+					</SEC.Button>
 				))}
 				{moreRoutes.map((button, index) => (
-					<Button
+					<SEC.Button
 						className="drawer-item"
 						kind="menu"
 						to={button.route}
 						key={`menuItem-${index + buttonRoutes.length}`}
 					>
 						{button.title}
-					</Button>
+					</SEC.Button>
 				))}
 			</List>
 		</div>
 	);
 
 	const MenuButton = () => (
-		<Button kind="icon" className="mobile" onClick={toggleDrawer("left", true)}>
+		<SEC.Button kind="icon" className="mobile" onClick={toggleDrawer("left", true)}>
 			<MenuIcon />
-		</Button>
+		</SEC.Button>
 	);
 
 	if (ux.headerCompact) {
@@ -120,19 +120,19 @@ const Header = () => {
 					<Hidden mdUp>
 						<MenuButton />
 					</Hidden>
-					<Button kind="menu" className="barLogo" to={"/"} key={"menuItem-home"}>
+					<SEC.Button kind="menu" className="barLogo" to={"/"} key={"menuItem-home"}>
 						SEC
-					</Button>
+					</SEC.Button>
 					<Hidden smDown>
 						<div className="header-items">
 							{buttonRoutes.map((button, index) => (
-								<Button kind="menu" to={button.route} key={`menuItem-${index}`}>
+								<SEC.Button kind="menu" to={button.route} key={`menuItem-${index}`}>
 									{button.title}
-								</Button>
+								</SEC.Button>
 							))}
-							<Button kind="menu" onClick={toggleDrawer("left", true)}>
+							<SEC.Button kind="menu" onClick={toggleDrawer("left", true)}>
 								More
-							</Button>
+							</SEC.Button>
 						</div>
 					</Hidden>
 					<Drawer open={state.left} onClose={toggleDrawer("left", false)}>

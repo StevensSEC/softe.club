@@ -1,3 +1,4 @@
+/* eslint-disable react/forbid-elements */
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { Link, NavLink } from "react-router-dom";
@@ -5,7 +6,15 @@ import "./Button.scss";
 
 export default class Button extends Component {
 	static propTypes = {
-		kind: PropTypes.string.isRequired,
+		kind: PropTypes.oneOf([
+			"generic",
+			"primary",
+			"secondary",
+			"warning",
+			"error",
+			"menu",
+			"icon",
+		]),
 		to: PropTypes.string,
 		onClick: PropTypes.func,
 	};
@@ -46,7 +55,7 @@ export default class Button extends Component {
 	render() {
 		const { children, kind, to, className, ...other } = this.props;
 		delete other.staticContext;
-		let classes = `sec-btn sec-kind-${kind}${className ? " " + className : ""}`;
+		let classes = `sec-btn sec-kind-${kind} ${className ?? ""}`;
 
 		if (this.shouldUseRouter()) {
 			if (this.props.activeClassName) {
@@ -64,7 +73,7 @@ export default class Button extends Component {
 			}
 		} else {
 			return (
-				<a href={to ? to : null} className={classes} onClick={this.handleClick} {...other}>
+				<a href={to ?? null} className={classes} onClick={this.handleClick} {...other}>
 					{children}
 				</a>
 			);

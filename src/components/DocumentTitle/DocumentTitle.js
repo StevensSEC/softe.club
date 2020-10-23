@@ -20,6 +20,7 @@ export default class DocumentTitle extends PureComponent {
 			pageTitle += `${this.props.title} - `;
 		}
 		pageTitle += "Software Engineering Club at Stevens Insitute of Technology";
+		// eslint-disable-next-line no-restricted-properties
 		document.title = pageTitle;
 	}
 

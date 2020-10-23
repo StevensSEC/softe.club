@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Container, Grid } from "@material-ui/core";
+import * as SEC from "../../components/SEC/lib.js";
 
 import "./Team.scss";
 
@@ -99,7 +100,7 @@ export default class TeamView extends Component {
 					{this.eboardList.map((member, index) => {
 						return (
 							<Grid item key={"profile-" + index} className="profile">
-								<a
+								<SEC.Link
 									href={`https://github.com/${member.github}`}
 									target="_blank"
 									rel="noopener noreferrer"
@@ -107,7 +108,7 @@ export default class TeamView extends Component {
 									<img src={member.img} alt={member.name} />
 									<h2>{member.name}</h2>
 									<div className="role">{member.role}</div>
-								</a>
+								</SEC.Link>
 							</Grid>
 						);
 					})}
@@ -120,7 +121,9 @@ export default class TeamView extends Component {
 					{this.memberList.map(member => {
 						return (
 							<li>
-								<a href={`https://github.com/${member.github}`}>{member.name}</a>
+								<SEC.Link href={`https://github.com/${member.github}`}>
+									{member.name}
+								</SEC.Link>
 							</li>
 						);
 					})}

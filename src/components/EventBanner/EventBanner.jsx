@@ -1,6 +1,7 @@
 import React from "react";
 import "./EventBanner.scss";
 import dayjs from "dayjs";
+import * as SEC from "../SEC/lib.js";
 
 export default function EventBanner({
 	flyerSource,
@@ -44,7 +45,7 @@ export default function EventBanner({
 						) : null}
 						{meetingLink ? (
 							<span className="meeting-link">
-								Join here: <a href={meetingLink}>{meetingLink}</a>
+								Join here: <SEC.Link href={meetingLink}>{meetingLink}</SEC.Link>
 							</span>
 						) : null}
 					</div>

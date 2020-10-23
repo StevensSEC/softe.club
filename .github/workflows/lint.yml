@@ -20,6 +20,6 @@ jobs:
     - name: Check for conflicting rules
       run: ./scripts/check_lint_rule_conflicts.sh
     - name: Check linting
-      run: npx eslint .
+      run: npx eslint --config .eslintrc.js .
     - name: Check format
       run: npx prettier --config prettier.config.js --check "src/**/*.{js,jsx,json,ts,tsx,md,mdx,css,html,yml,yaml,scss}"
