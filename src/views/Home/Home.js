@@ -6,6 +6,7 @@ import DocumentTitle from "../../components/DocumentTitle/DocumentTitle.js";
 import EventBanner from "../../components/EventBanner/EventBanner.jsx";
 import EVENTS from "./Events.js";
 import Logo from "../../components/Logo/Logo.jsx";
+import Button from "../../components/Button/Button.js";
 
 export default function HomeView() {
 	return (
@@ -29,8 +30,12 @@ export default function HomeView() {
 				{EVENTS.map((event, index) => {
 					return <EventBanner key={"eventBanner-" + index} {...event} />;
 				})}
+				<ArticleList></ArticleList>
+				<h1>Recorded Workshops</h1>
+				<Button to="https://stevens.zoom.us/rec/share/xz3L4ZF9VjNaK_ClJkDUi_g7yT-IkCj-ZV1Q-M6YSLGzGFWJHUcr8hC-ryz7UKbK.h6GY32tVlS7j11aq">
+					Debugging Workshop
+				</Button>
 			</Container>
-			<ArticleList></ArticleList>
 		</Box>
 	);
 }
