@@ -6,7 +6,15 @@ import "./Button.scss";
 
 export default class Button extends Component {
 	static propTypes = {
-		kind: PropTypes.oneOf(["generic", "primary", "secondary", "warning", "error", "menu", "icon"]).required,
+		kind: PropTypes.oneOf([
+			"generic",
+			"primary",
+			"secondary",
+			"warning",
+			"error",
+			"menu",
+			"icon",
+		]),
 		to: PropTypes.string,
 		onClick: PropTypes.func,
 	};

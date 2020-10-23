@@ -2,8 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import Markdown from "react-markdown";
 import HtmlParser from "react-markdown/plugins/html-parser";
-import Link from "../../components/Link/Link.js";
 import CodeBlock from "../../components/CodeBlock/CodeBlock.js";
+import * as SEC from "../SEC/lib.js";
 import "./SecMarkdown.scss";
 
 // See https://github.com/aknuds1/html-to-react#with-custom-processing-instructions
@@ -31,7 +31,7 @@ const SecMarkdown = ({ markdown }) => {
 				source={markdown}
 				escapeHtml={false}
 				astPlugins={[parseHtml]}
-				renderers={{ code: CodeBlock, link: Link, image: lazyImage }}
+				renderers={{ code: CodeBlock, link: SEC.Link, image: lazyImage }}
 				transformImageUri={uri => {
 					if (uri.startsWith("http")) {
 						return uri;

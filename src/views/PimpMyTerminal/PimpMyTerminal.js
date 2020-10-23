@@ -2,7 +2,7 @@ import React, { lazy } from "react";
 import { Grid } from "@material-ui/core";
 import { motion, useViewportScroll, useSpring } from "framer-motion";
 import "./PimpMyTerminal.scss";
-import Button from "../../components/Button/Button";
+import * as SEC from "../../components/SEC/lib.js";
 
 const ArticleView = lazy(() => import(/* webpackChunkName: "article" */ "../Article/Article.js"));
 
@@ -53,8 +53,8 @@ export default function PimpMyTerminal() {
 			</motion.div>
 			<motion.aside className="quick-links" {...asideInAnimation} y={asideY}>
 				<h3>Quick Links</h3>
-				<Button to="/bash-cheatsheet">Bash Cheatsheet</Button>
-				<Button to="/powershell-cheatsheet">Powershell Cheatsheet</Button>
+				<SEC.Button to="/bash-cheatsheet">Bash Cheatsheet</SEC.Button>
+				<SEC.Button to="/powershell-cheatsheet">Powershell Cheatsheet</SEC.Button>
 			</motion.aside>
 		</div>
 	);

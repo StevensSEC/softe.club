@@ -1,16 +1,16 @@
 import React from "react";
-import { Box, Container, Grid } from "@material-ui/core";
+import { Container, Grid } from "@material-ui/core";
 import "./Home.scss";
 import ArticleList from "../../components/ArticleList/ArticleList.js";
 import DocumentTitle from "../../components/DocumentTitle/DocumentTitle.js";
 import EventBanner from "../../components/EventBanner/EventBanner.jsx";
 import EVENTS from "./Events.js";
 import Logo from "../../components/Logo/Logo.jsx";
-import Button from "../../components/Button/Button.js";
+import * as SEC from "../../components/SEC/lib.js";
 
 export default function HomeView() {
 	return (
-		<Box>
+		<div>
 			<DocumentTitle title="" />
 			<Grid
 				container
@@ -32,10 +32,10 @@ export default function HomeView() {
 				})}
 				<ArticleList></ArticleList>
 				<h1>Recorded Workshops</h1>
-				<Button to="https://stevens.zoom.us/rec/share/xz3L4ZF9VjNaK_ClJkDUi_g7yT-IkCj-ZV1Q-M6YSLGzGFWJHUcr8hC-ryz7UKbK.h6GY32tVlS7j11aq">
+				<SEC.Button to="https://stevens.zoom.us/rec/share/xz3L4ZF9VjNaK_ClJkDUi_g7yT-IkCj-ZV1Q-M6YSLGzGFWJHUcr8hC-ryz7UKbK.h6GY32tVlS7j11aq">
 					Debugging Workshop
-				</Button>
+				</SEC.Button>
 			</Container>
-		</Box>
+		</div>
 	);
 }

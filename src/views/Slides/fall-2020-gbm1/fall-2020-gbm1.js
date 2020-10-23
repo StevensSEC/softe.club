@@ -1,6 +1,7 @@
 import React from "react";
 import Logo from "../../../components/Logo/Logo";
 import { Slide, SlideDeck } from "../../../components/SlideDeck/SlideDeck.js";
+import * as SEC from "../../../components/SEC/lib.js";
 import "./fall-2020-gbm1.scss";
 
 export default class SlidesFall2020Gbm1 extends React.Component {
@@ -17,10 +18,13 @@ export default class SlidesFall2020Gbm1 extends React.Component {
 					</p>
 					<h2>
 						Submit your github username:{" "}
-						<a href="https://softe.club/gh-submit">softe.club/gh-submit</a>
+						<SEC.Link href="https://softe.club/gh-submit">
+							softe.club/gh-submit
+						</SEC.Link>
 					</h2>
 					<h2>
-						Join Slack: <a href="https://softe.club/slack">softe.club/slack</a>
+						Join Slack:{" "}
+						<SEC.Link href="https://softe.club/slack">softe.club/slack</SEC.Link>
 					</h2>
 				</Slide>
 				<Slide>
@@ -62,7 +66,7 @@ export default class SlidesFall2020Gbm1 extends React.Component {
 					<h1>Getting Started</h1>
 					<p>Don't know where to start?</p>
 					<p>
-						<a href="https://softe.club/fall2020">softe.club/fall-2020</a>
+						<SEC.Link href="https://softe.club/fall2020">softe.club/fall-2020</SEC.Link>
 					</p>
 					<h2>Submit your github username</h2>
 					<p>
@@ -70,11 +74,13 @@ export default class SlidesFall2020Gbm1 extends React.Component {
 						profile!
 					</p>
 					<p>
-						<a href="https://softe.club/gh-submit">softe.club/gh-submit</a>
+						<SEC.Link href="https://softe.club/gh-submit">
+							softe.club/gh-submit
+						</SEC.Link>
 					</p>
 					<h2>Make sure to join slack!</h2>
 					<p>
-						<a href="https://softe.club/slack">softe.club/slack</a>
+						<SEC.Link href="https://softe.club/slack">softe.club/slack</SEC.Link>
 					</p>
 				</Slide>
 				<Slide>
@@ -92,11 +98,14 @@ export default class SlidesFall2020Gbm1 extends React.Component {
 					<h1>Goals for Tonight</h1>
 					<ol>
 						<li>
-							Get in slack: <a href="https://softe.club/slack">softe.club/slack</a>
+							Get in slack:{" "}
+							<SEC.Link href="https://softe.club/slack">softe.club/slack</SEC.Link>
 						</li>
 						<li>
 							Submit your github:{" "}
-							<a href="https://softe.club/gh-submit">softe.club/gh-submit</a>
+							<SEC.Link href="https://softe.club/gh-submit">
+								softe.club/gh-submit
+							</SEC.Link>
 						</li>
 						<li>Check your emails for the github org invite.</li>
 					</ol>

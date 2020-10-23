@@ -1,14 +1,13 @@
 import React from "react";
 import "./ProjectWall.scss";
-import { NavLink } from "react-router-dom";
 import { Drawer } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
 import CloseIcon from "@material-ui/icons/Close";
-import Button from "../Button/Button.js";
+import * as SEC from "../SEC/lib.js";
 import PROJECTS from "../../views/SLP/Projects";
 
 const Project = ({ project, className, onClick }) => (
-	<NavLink
+	<SEC.Button
 		kind="menu"
 		to={`/slp/${project.path}`}
 		className={`project${className ? " " + className : ""}`}
@@ -22,7 +21,7 @@ const Project = ({ project, className, onClick }) => (
 			<span>{project.name}</span>
 			<span>{`${project.semester} ${project.year}`}</span>
 		</div>
-	</NavLink>
+	</SEC.Button>
 );
 
 const ProjectWall = () => {
@@ -44,20 +43,20 @@ const ProjectWall = () => {
 
 	return (
 		<div className="project-wall">
-			<Button kind="icon" className="mobile" onClick={toggleDrawer("top", true)}>
+			<SEC.Button kind="icon" className="mobile" onClick={toggleDrawer("top", true)}>
 				<MenuIcon />
-			</Button>
+			</SEC.Button>
 			{PROJECTS.map((project, index) => (
 				<Project project={project} key={`project-${index}`} />
 			))}
 			<Drawer anchor="top" open={state.top} onClose={toggleDrawer("top", false)}>
-				<Button
+				<SEC.Button
 					kind="icon"
 					onClick={toggleDrawer("top", false)}
 					style={{ width: "24px", margin: "4px" }}
 				>
 					<CloseIcon />
-				</Button>
+				</SEC.Button>
 				{PROJECTS.map((project, index) => (
 					<Project
 						project={project}

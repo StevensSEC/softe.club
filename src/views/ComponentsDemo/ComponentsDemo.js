@@ -2,8 +2,7 @@ import React from "react";
 import { Container } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
 import DocumentTitle from "../../components/DocumentTitle/DocumentTitle.js";
-import Button from "../../components/Button/Button.js";
-import Link from "../../components/Link/Link.js";
+import * as SEC from "../../components/SEC/lib.js";
 
 /**
  * This view is intended to be used to test custom components.
@@ -12,36 +11,36 @@ export default function ComponentsDemo() {
 	return (
 		<Container>
 			<DocumentTitle title="Custom Component Demo" />
-			<h1>Buttons</h1>
-			<Button kind="primary">Primary</Button>
+			<h1>SEC.Buttons</h1>
+			<SEC.Button kind="primary">Primary</SEC.Button>
 			<br />
-			<Button kind="secondary">Secondary</Button>
+			<SEC.Button kind="secondary">Secondary</SEC.Button>
 			<br />
-			<Button kind="generic">Generic</Button>
+			<SEC.Button kind="generic">Generic</SEC.Button>
 			<br />
-			<Button kind="warning">Warning</Button>
+			<SEC.Button kind="warning">Warning</SEC.Button>
 			<br />
-			<Button kind="error">Error</Button>
+			<SEC.Button kind="error">Error</SEC.Button>
 			<br />
-			<Button kind="menu">Menu</Button>
+			<SEC.Button kind="menu">Menu</SEC.Button>
 			<br />
 			Icon:{" "}
-			<Button kind="icon">
+			<SEC.Button kind="icon">
 				<MenuIcon />
-			</Button>
+			</SEC.Button>
 			<br />
-			<h1>Link</h1>
-			<Link href="/dev/docs">Documention Home</Link>
+			<h1>SEC.Link</h1>
+			<SEC.Link href="/dev/docs">Documention Home</SEC.Link>
 			<br />
 			Special link to github repo:{" "}
-			<Link href="https://github.com/StevensSEC/sec.club">
+			<SEC.Link href="https://github.com/StevensSEC/sec.club">
 				https://github.com/StevensSEC/sec.club
-			</Link>
+			</SEC.Link>
 			<br />
 			Special link to github issue/PR:{" "}
-			<Link href="https://github.com/StevensSEC/sec.club/issues/194">
+			<SEC.Link href="https://github.com/StevensSEC/sec.club/issues/194">
 				https://github.com/StevensSEC/sec.club/issues/194
-			</Link>
+			</SEC.Link>
 			<br />
 		</Container>
 	);
