@@ -60,6 +60,7 @@ const EVENTS = [
 		meetingLink: "https://stevens.zoom.us/j/98637599692",
 	},
 	{
+		flyerSource: "Become-a-Rustacean.png",
 		title: "Rust Workshop",
 		desc:
 			"Have you heard of Rust, but you aren't sure where to get started? This is the workshop for you! Rust is a systems programming language with guarenteed memory safety and no garbage collection. These are great for performance, but make it really hard to get a hold of at first. In this workshop, you'll learn how to apply your existing programming knowledge to deal with Rust's ownership model.",
@@ -74,6 +75,6 @@ const EVENTS = [
 		startDate: dayjs(new Date("January 27, 2021")).hour(21),
 		endDate: dayjs(new Date("January 27, 2021")).hour(22),
 	},
-].concat(generateGbms(dayjs("2020-9-23", "YYYY-MM-DD"), dayjs("2020-11-19", "YYYY-MM-DD"), 3));
+].concat(generateGbms(dayjs("2020-12-3", "YYYY-MM-DD"), dayjs("2020-12-10", "YYYY-MM-DD"), 9));
 
 export default EVENTS;
