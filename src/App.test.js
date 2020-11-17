@@ -51,7 +51,7 @@ describe("Article route metadata", () => {
 	});
 
 	it("should have all routes with slide decks start with /slides", () => {
-		let match = expect.stringMatching(/^(\/dev)?\/slides/)
+		let match = expect.stringMatching(/^(\/dev)?\/slides/);
 		for (const route of ROUTES) {
 			if (route.slideProps) {
 				expect(route.path).toEqual(match);
