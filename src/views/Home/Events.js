@@ -60,6 +60,7 @@ const EVENTS = [
 		meetingLink: "https://stevens.zoom.us/j/98637599692",
 	},
 	{
+		flyerSource: "Become a _RUSTacean_.png"
 		title: "Rust Workshop",
 		desc:
 			"Have you heard of Rust, but you aren't sure where to get started? This is the workshop for you! Rust is a systems programming language with guarenteed memory safety and no garbage collection. These are great for performance, but make it really hard to get a hold of at first. In this workshop, you'll learn how to apply your existing programming knowledge to deal with Rust's ownership model.",
