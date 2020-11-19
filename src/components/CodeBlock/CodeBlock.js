@@ -9,10 +9,11 @@ function CodeBlockContainer({ children, meta }) {
 	return (
 		<pre className="codeblock">
 			{meta ? (
-				<div className="meta">
-					{meta.language ? <span>{meta.language}</span> : null}
-					{meta.platform ? <span>{meta.platform}</span> : null}
-					<br />
+				<div className="meta-container">
+					<div className="meta">
+						{meta.language ? <span>{meta.language}</span> : null}
+						{meta.platform ? <span>{meta.platform}</span> : null}
+					</div>
 				</div>
 			) : null}
 			{children}

@@ -41,6 +41,23 @@ describe("Article route metadata", () => {
 			}
 		}
 	});
+
+	it("should have a yaml file for all quick slides", () => {
+		for (const route of ROUTES) {
+			if (route.slideProps) {
+				expect(`./src/slides/${route.slideProps.slidePath}`).pathToExist();
+			}
+		}
+	});
+
+	it("should have all routes with slide decks start with /slides", () => {
+		let match = expect.stringMatching(/^(\/dev)?\/slides/);
+		for (const route of ROUTES) {
+			if (route.slideProps) {
+				expect(route.path).toEqual(match);
+			}
+		}
+	});
 });
 
 describe("Event metadata", () => {
