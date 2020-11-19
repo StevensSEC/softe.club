@@ -422,16 +422,17 @@ slides:
   - content: |
       # Your turn!
 
-      Join the repl.it in chat.
+      Join the repl.it in chat and work together!
 
-      Work together to make `get_damage_multiplier` to work for dual type Pokemon.
-
-      You **can't** add any more fields to `struct Pokemon`.
-
-      Finish implementing the existing type weaknesses and implement these new types: (assume gen 6+)
-      - Ice
-      - Ground
-      - Rock
+      ## Tasks
+      1. Let `Pokemon` have 1 or 2 elemental types.
+        - *Hint: You'll need to add a new enum. You don't need to add any fields to `Pokemon`.*
+      2. Make `get_damage_multiplier` work for dual type Pokemon.
+      3. Finish implementing the existing type weaknesses and implement these new types: (assume gen 6+)
+        - Ice
+        - Ground
+        - Rock
+      4. Implement the `Display` trait for `Pokemon` to pass the test case.
 
   - content: |
       # Wanna learn more?
