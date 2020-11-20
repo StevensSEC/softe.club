@@ -1,7 +1,7 @@
 import { lazy } from "react";
 
 const ATTENDANCE_URL =
-	"https://stevens.campuslabs.com/engage/event/6554025/attend?Vud=10/25/2020&Vut=02:00:00&Hash=EMRQ1-WJTUKfayRIfY01f3Sy6XGVVCNiQYzoMTTBnyyqmIne18ZSwXYX0p6KcCe3xJ-wi_1RYCmtQ10caeUS3Cg1e-AB1qW45wSAqAWvmLDvIVTwBzDksROoZUElNjmQkF1ZqocqKGOi1niVf-hu67NjAJiDTewlB6lAfxKop3u94opguESF3TK7OTLju7Hme97GJvQnZXc1DCfdfvItTKx6T6Fn6UuJf-lXDHzQPpQ7FHj51r4j7_jPOO3vzRp97twaVhPA7O_kWoVkHUbBoJ9kHKn3DtxYZbq5JCdRXEQ6JMe8Q7s8Ou5AU-rdIVbZDUH0RPd8PBMbk387mG4NHQ";
+	"https://forms.gle/soy7KrWKAGrfTv996";
 
 const ROUTES = [
 	{
