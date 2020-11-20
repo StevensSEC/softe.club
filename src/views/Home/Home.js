@@ -35,6 +35,9 @@ export default function HomeView() {
 				<SEC.Button to="https://stevens.zoom.us/rec/share/xz3L4ZF9VjNaK_ClJkDUi_g7yT-IkCj-ZV1Q-M6YSLGzGFWJHUcr8hC-ryz7UKbK.h6GY32tVlS7j11aq">
 					Debugging Workshop
 				</SEC.Button>
+				<SEC.Button to="https://stevens.zoom.us/rec/share/hADZSxdh28Ib9DvbX0M3qvWW1OBH1lLaeArnEqEs7VqxQjFa_yupJlX1pBQ8DzHA.AcNRY7JWc_jaoBNm">
+					Rust Workshop
+				</SEC.Button>
 			</Container>
 		</div>
 	);
