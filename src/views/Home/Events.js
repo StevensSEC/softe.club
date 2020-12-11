@@ -76,6 +76,6 @@ const EVENTS = [
 		startDate: dayjs(new Date("January 27, 2021")).hour(21),
 		endDate: dayjs(new Date("January 27, 2021")).hour(22),
 	},
-].concat(generateGbms(dayjs("2020-12-3", "YYYY-MM-DD"), dayjs("2020-12-10", "YYYY-MM-DD"), 9));
+].concat(generateGbms(dayjs("2020-12-3", "YYYY-MM-DD"), dayjs("2020-12-11", "YYYY-MM-DD"), 9));
 
 export default EVENTS;
