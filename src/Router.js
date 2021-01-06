@@ -1,7 +1,6 @@
 import { lazy } from "react";
 
-const ATTENDANCE_URL =
-	"https://forms.gle/soy7KrWKAGrfTv996";
+const ATTENDANCE_URL = "https://forms.gle/soy7KrWKAGrfTv996";
 
 const ROUTES = [
 	{
