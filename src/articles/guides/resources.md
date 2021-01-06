@@ -16,9 +16,9 @@ Learning about programming is hard. Hopefully, these resources will make it a li
 
 ### Vue.js
 
--   [Video Tutorial - Vue.js Crash Course]() - Learn about Vue.js including the Vue-Cli, components, data, events, directives, etc.
--   [Video Tutorial - Vue.js Lifecycle Hooks]() - An introduction to Vue.js lifecycle hooks
--   [Video Tutorial - Vuex Crash Course | State Management]() - Build an application using Vue.js and the Vuex state management library
+-   [Video Tutorial - Vue.js Crash Course](https://www.youtube.com/watch?v=Wy9q22isx3U&ab_channel=TraversyMedia) - Learn about Vue.js including the Vue-Cli, components, data, events, directives, etc.
+-   [Video Tutorial - Vue.js Lifecycle Hooks](https://www.youtube.com/watch?v=8rn3SK4N8Go&ab_channel=TheNetNinja) - An introduction to Vue.js lifecycle hooks
+-   [Video Tutorial - Vuex Crash Course | State Management](https://www.youtube.com/watch?v=5lVQgZzLMHc&ab_channel=TraversyMedia) - Build an application using Vue.js and the Vuex state management library
 
 ## Markdown
 
@@ -61,6 +61,7 @@ Even if you don’t develop on Linux, you will encounter it eventually. It’s d
 -   [Linux Journey](https://linuxjourney.com) - Written guided tutorials of various Linux concepts
 -   [How to use CLI text editors](/tutorial/cli-text-editors) - Brief look at using command-line text editors
 -   [openvim](https://www.openvim.com) - Interactive Vim tutorial
+-   [cheat.sh](https://cheat.sh) - Cheatsheet in your terminal, just do `curl https://cheat.sh`!
 
 # Books
 
