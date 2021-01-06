@@ -42,6 +42,10 @@ Learning about programming is hard. Hopefully, these resources will make it a li
 -   [Rust cookbook](https://rust-lang-nursery.github.io/rust-cookbook/) - Outlines simple examples of good practices
 -   [rust-analyzer](https://marketplace.visualstudio.com/items?itemName=matklad.rust-analyzer) - VSCode extension for code completion and goto
 
+## Go
+
+-   [JSON-to-Go](https://mholt.github.io/json-to-go) - Generate Go structs from JSON objects
+
 ## Git
 
 Git is the most commonly used version control system. Using git is required for participating in the semester long project. If you don't know how to use git, we'll teach you.
