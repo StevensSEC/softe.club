@@ -45,6 +45,7 @@ Learning about programming is hard. Hopefully, these resources will make it a li
 ## Go
 
 -   [JSON-to-Go](https://mholt.github.io/json-to-go) - Generate Go structs from JSON objects
+-   [Video Tutorial - Tour of Go](https://www.youtube.com/watch?v=MzYZhh6gpI0) - A very concise tour of Go's best features
 
 ## Git
 
