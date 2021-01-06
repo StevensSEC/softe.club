@@ -14,6 +14,12 @@ Learning about programming is hard. Hopefully, these resources will make it a li
 -   [npm.avanka](http://npm.anvaka.com) - A graph visualization of package dependencies
 -   [keycode.info](https://keycode.info) - Displays keycodes for keyboard events.
 
+### Vue.js
+
+-   [Video Tutorial - Vue.js Crash Course]() - Learn about Vue.js including the Vue-Cli, components, data, events, directives, etc.
+-   [Video Tutorial - Vue.js Lifecycle Hooks]() - An introduction to Vue.js lifecycle hooks
+-   [Video Tutorial - Vuex Crash Course | State Management]() - Build an application using Vue.js and the Vuex state management library
+
 ## Markdown
 
 -   [Tables Generator](https://www.tablesgenerator.com/markdown_tables) - Markdown table generator
