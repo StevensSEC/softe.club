@@ -53,6 +53,7 @@ Git is the most commonly used version control system. Using git is required for 
 
 -   [Official SEC Cheatsheet](/git-cheatsheet) - An overview of basic usage of git's commands
 -   [git it](https://github.com/jlord/git-it-electron) - Interactive git tutorial
+-   [GitFixUm](https://sethrobertson.github.io/GitFixUm/fixup.html) - Did you make a mistake with git? This guide will help you get out of it
 
 ## Powershell
 
