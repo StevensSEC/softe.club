@@ -54,6 +54,7 @@ Git is the most commonly used version control system. Using git is required for 
 -   [Official SEC Cheatsheet](/git-cheatsheet) - An overview of basic usage of git's commands
 -   [git it](https://github.com/jlord/git-it-electron) - Interactive git tutorial
 -   [GitFixUm](https://sethrobertson.github.io/GitFixUm/fixup.html) - Did you make a mistake with git? This guide will help you get out of it
+-   [fugitive](https://github.com/tpope/vim-fugitive) - A plugin for Vim that wraps Git to allow easier command usage 
 
 ## Powershell
 
@@ -72,6 +73,8 @@ Even if you don’t develop on Linux, you will encounter it eventually. It’s d
 # Books
 
 -   [PacktPub](https://packtpub.com/) - Provides a free daily ebook, hosts other ebook resources
+-   [free-programming-books](https://github.com/EbookFoundation/free-programming-books) - A huge list of free programming books to check out (some links are old but there's a ton there!)
+
 
 # Useful Tools
 
