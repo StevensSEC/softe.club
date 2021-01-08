@@ -29,7 +29,7 @@ export default function Footer() {
 			</footer>
 			<div className="github">
 				This website is open source! Check it out on the SEC{" "}
-				<SEC.Link href="https://github.com/StevensSEC/sec.club">Github</SEC.Link>
+				<SEC.Link href="https://github.com/StevensSEC/softe.club">Github</SEC.Link>
 			</div>
 			<div className="attr">Slack icon made by Pixel perfect from www.flaticon.com</div>
 			<div className="attr">Email icon made by Those Icons from www.flaticon.com</div>
