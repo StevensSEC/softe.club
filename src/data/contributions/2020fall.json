@@ -1,10 +1,6 @@
 {
 	"display": "Fall 2020",
-	"contributors": [
-		"adapap",
-		"dyc3",
-		"elenirotsides"
-	],
+	"contributors": ["adapap", "dyc3", "elenirotsides"],
 	"referenced_prs": [
 		"https://github.com/dyc3/opentogethertube/issues/273",
 		"https://github.com/dyc3/opentogethertube/issues/20",
