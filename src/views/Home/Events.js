@@ -23,9 +23,13 @@ import dayjs from "dayjs";
  * Generate gbm events. All flyers for these events must be present in src/assets/flyers, otherwise this will fail.
  * @param {dayjs} startDate Date at which to start generating.
  * @param {dayjs} endDate Date at which to stop generating.
- * @param {Number} countOffset GBM number offset
+ * @param {Number} countOffset GBM number offset. The first GBM generated will have this number.
+ * @param {Number} limit Limit the maximum number of gbm events that are generated.
  */
-function generateGbms(startDate, endDate, countOffset = 0, limit = 10) {
+function generateGbms(startDate, endDate, countOffset = 1, limit = 10) {
+	if (endDate.isBefore(startDate)) {
+		throw new Error(`endDate ${endDate} is before startDate ${startDate}`);
+	}
 	let date = startDate.day(4); // next thursday
 	let count = countOffset;
 	limit += countOffset;
@@ -35,12 +39,12 @@ function generateGbms(startDate, endDate, countOffset = 0, limit = 10) {
 		gbms.push({
 			flyerSource: `GBM${count}.png`,
 			title: `GBM ${count}`,
-			desc: `Come code with us! We'll help you contribute to any open source project you want! Starting at 8:30 pm on ${date.format(
+			desc: `Like coding AND Pokemon? This semester's project is perfect for you! We're making a Pokemon Battle Library in Go! Starting at 9 pm on ${date.format(
 				"MMM. D"
-			)} (Come at 9 if you have class until then).`,
-			meetingLink: "https://stevens.zoom.us/j/95304643871",
-			startDate: date.hour(20).minute(30),
-			endDate: date.hour(21).minute(30),
+			)}`,
+			meetingLink: "https://stevens.zoom.us/j/93021320820",
+			startDate: date.hour(21),
+			endDate: date.hour(22),
 			isGbm: true,
 		});
 		count++;
@@ -49,33 +53,33 @@ function generateGbms(startDate, endDate, countOffset = 0, limit = 10) {
 	return gbms;
 }
 
-const EVENTS = [
+const EVENTS = generateGbms(dayjs("2021-2-4", "YYYY-MM-DD"), dayjs("2021-2-11", "YYYY-MM-DD"), 1, 1).concat([
 	{
-		flyerSource: "debugging-workshop.png",
-		title: "Debugging Workshop",
+		flyerSource: "learnHack-GO.png",
+		title: "learnHack GO",
 		desc:
-			"Sometimes, you make logic errors when writing code. Everybody does. You've probably written a few print statements to help you debug. But sometimes, print statement debugging doesn't cut it. Take your debugging to the next level with this workshop! In this workshop, you'll learn how to use VSCode's debugging interface, and use it to debug Python and C++.",
-		startDate: dayjs(new Date("October 21, 2020")).hour(21),
-		endDate: dayjs(new Date("October 21, 2020")).hour(22),
-		meetingLink: "https://stevens.zoom.us/j/98637599692",
+			"Don't know Go? Haven't even heard of Go? It doesn't matter, we'll teach you! Perfect for anybody who wants to contribute to the Pokemon battle library.",
+		meetingLink: "https://stevens.zoom.us/j/93021320820",
+		startDate: dayjs("2021-2-6", "YYYY-MM-DD").hour(13),
+		endDate: dayjs("2021-2-6", "YYYY-MM-DD").hour(16),
 	},
-	{
-		flyerSource: "Become-a-Rustacean.png",
-		title: "Rust Workshop",
-		desc:
-			"Have you heard of Rust, but you aren't sure where to get started? This is the workshop for you! Rust is a systems programming language with guarenteed memory safety and no garbage collection. These are great for performance, but make it really hard to get a hold of at first. In this workshop, you'll learn how to apply your existing programming knowledge to deal with Rust's ownership model.",
-		startDate: dayjs(new Date("November 19, 2020")).hour(21),
-		endDate: dayjs(new Date("November 19, 2020")).hour(22),
-		meetingLink: "https://stevens.zoom.us/j/91445524026",
-	},
-	{
-		flyerSource: "Pimp my terminal.png",
-		title: "Pimp My Terminal",
-		desc:
-			"Come learn how to make your developing process look pretty by decking out your VSCode and your terminal.",
-		startDate: dayjs(new Date("January 27, 2021")).hour(21),
-		endDate: dayjs(new Date("January 27, 2021")).hour(22),
-	},
-].concat(generateGbms(dayjs("2020-12-3", "YYYY-MM-DD"), dayjs("2020-12-11", "YYYY-MM-DD"), 9));
+	// TODO: add pair programming here
+// TODO: UNCOMMENT NEXT LINE WHEN WE HAVE GBM FLYERS 2 THROUGH 4
+// ]).concat(generateGbms(dayjs("2021-2-11", "YYYY-MM-DD"), dayjs("2021-3-4", "YYYY-MM-DD"), 2)).concat([
+	// TODO: add ren'py workshop here
+// TODO: UNCOMMENT NEXT LINE WHEN WE HAVE GBM FLYERS 5 THROUGH 6
+// ]).concat(generateGbms(dayjs("2021-3-11", "YYYY-MM-DD"), dayjs("2021-3-18", "YYYY-MM-DD"), 5)).concat([
+	// TODO: update this pimp my terminal event with new flyer and metadata for 2021
+	// {
+	// 	flyerSource: "Pimp my terminal.png",
+	// 	title: "Pimp My Terminal",
+	// 	desc:
+	// 		"Come learn how to make your developing process look pretty by decking out your VSCode and your terminal.",
+	// 	startDate: dayjs(new Date("January 27, 2021")).hour(21),
+	// 	endDate: dayjs(new Date("January 27, 2021")).hour(22),
+	// },
+// TODO: UNCOMMENT NEXT LINE WHEN WE HAVE GBM FLYERS 7 THROUGH 11
+// ]).concat(generateGbms(dayjs("2021-4-8", "YYYY-MM-DD"), dayjs("2021-5-6", "YYYY-MM-DD"), 7)).concat([
+]);
 
 export default EVENTS;
