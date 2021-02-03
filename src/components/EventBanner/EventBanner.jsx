@@ -37,7 +37,7 @@ export default function EventBanner({
 						<span className="title">{title}</span>
 						<hr />
 						<span className="start-time">
-							{startDate ? startDate.format("MMM. D, h:mm a") : null}
+							{startDate ? startDate.format("dddd, MMM. D, h:mm a") : null}
 						</span>
 						<span className="description">{desc}</span>
 						{inProgress ? (
