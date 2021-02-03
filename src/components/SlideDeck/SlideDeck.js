@@ -231,7 +231,8 @@ class SlideDeck extends React.Component {
 		let progress = this.slideProgress();
 		let slideSelect = [];
 		for (let i = 0; i < this.props.children.length; i++) {
-			slideSelect.push(<MenuItem key={i} value={i}>{`Slide ${i + 1}`}</MenuItem>);
+			let name = this.props.children[i].props.name ?? `Slide ${i + 1}`;
+			slideSelect.push(<MenuItem key={i} value={i}>{name}</MenuItem>);
 		}
 		let fullscreenClass = this.state.isFullscreen ? "slide-deck-fullscreen" : "";
 		return (
