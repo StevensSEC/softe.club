@@ -8,6 +8,7 @@ $slide-control-btn-hover: rgba(211, 211, 211, 0.15);
 	width: 100%;
 	grid-template-columns: 500px auto;
 	column-gap: 10px;
+	grid-auto-flow: column;
 
 	&.slide-deck-fullscreen {
 		height: 100vh;
