@@ -84,15 +84,17 @@ $slide-control-btn-hover: rgba(211, 211, 211, 0.15);
 	height: 100%;
 	grid-column-start: span 2;
 	overflow: hidden;
+	font-size: 20px;
+	transition: font-size 1s ease;
 
 	&.sticky-is-present {
 		grid-column-start: 2;
 	}
 
 	&.sticky {
+		font-size: 18px;
 		grid-column-start: 1;
 	}
-	font-size: 20px;
 
 	.markdown {
 		line-height: 1.2;
