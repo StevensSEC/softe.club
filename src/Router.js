@@ -55,8 +55,8 @@ const ROUTES = [
 	{
 		path: "/gh-submit",
 		Component: () => {
-			// Form for submitting github usernames fall 2020
-			window.location.href = "https://forms.gle/Z5ezNfinyBV6HeqA8";
+			// Form for submitting github usernames spring 2021
+			window.location.href = "https://forms.gle/qQWBgAZy9gScAQi99";
 			return null;
 		},
 	},
@@ -287,6 +287,13 @@ const ROUTES = [
 	{
 		path: "/slides/event/rust-workshop",
 		slideProps: { slidePath: "events/rust-workshop.yaml" },
+		Component: lazy(() =>
+			import(/* webpackChunkName: "quick-slides" */ "./views/Slides/QuickSlides.js")
+		),
+	},
+	{
+		path: "/slides/spring-2021-gbm1",
+		slideProps: { slidePath: "spring-2021-gbm1.yaml" },
 		Component: lazy(() =>
 			import(/* webpackChunkName: "quick-slides" */ "./views/Slides/QuickSlides.js")
 		),
