@@ -1,12 +1,15 @@
 {
 	"display": "Fall 2020",
-	"contributors": ["adapap", "dyc3", "elenirotsides"],
+	"contributors": ["elenirotsides", "dyc3", "adapap"],
 	"referenced_prs": [
-		"https://github.com/dyc3/opentogethertube/issues/273",
-		"https://github.com/dyc3/opentogethertube/issues/20",
-		"https://github.com/radareorg/radare2/pull/17770",
 		"https://github.com/dyc3/opentogethertube/issues/267",
-		"https://github.com/mum4k/termdash/issues/249",
-		"https://github.com/dyc3/opentogethertube/issues/311"
+		"https://github.com/StevensSEC/sec.club/pull/190",
+		"https://github.com/StevensSEC/sec.club/issues/204",
+		"https://github.com/dyc3/opentogethertube/issues/311",
+		"https://github.com/StevensSEC/sec.club/pull/191",
+		"https://github.com/dyc3/opentogethertube/issues/273",
+		"https://github.com/radareorg/radare2/pull/17770",
+		"https://github.com/dyc3/opentogethertube/issues/20",
+		"https://github.com/mum4k/termdash/issues/249"
 	]
 }
