@@ -4,3 +4,28 @@
 		max-width: 100%;
 	}
 }
+
+.title-slide {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	justify-content: center;
+
+	.img {
+		height: 40%;
+	}
+}
+
+.side-by-side {
+	display: grid;
+	grid-template-columns: 50%;
+
+	.left-content {
+		grid-column-start: 1;
+	}
+
+	.right-content {
+		grid-column-start: 2;
+	}
+}
