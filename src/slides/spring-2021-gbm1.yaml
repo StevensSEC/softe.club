@@ -81,7 +81,7 @@ slides:
       # What's the goal?
 
       - Portable library that can be used to add Pokemon battles to anything
-      - No need to worry about accuracy or logic, just implement the frontend
+      - Users won't need to worry about accuracy or logic, just implement the frontend
 
       # What needs to be done?
 
