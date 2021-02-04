@@ -41,7 +41,6 @@ export default class QuickSlides extends React.PureComponent {
 			let content = "";
 			switch (slide.type) {
 				case "title":
-					let title = slide.title ?? "Untitled presentation";
 					let img = null;
 					if (slide.img) {
 						if (slide.img === "logo") {
@@ -59,7 +58,7 @@ export default class QuickSlides extends React.PureComponent {
 					content = (
 						<div className="title-slide">
 							{img ? <div className="hero">{img}</div> : null}
-							<h1>{title}</h1>
+							<h1>{slide.title}</h1>
 							<h2>{slide.subtitle ?? ""}</h2>
 						</div>
 					);
