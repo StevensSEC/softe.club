@@ -46,17 +46,15 @@ export default class QuickSlides extends React.PureComponent {
 					if (slide.img) {
 						if (slide.img === "logo") {
 							img = <Logo />;
-						}
-						else {
-							img = <img src={require(slide.img)} alt={slide.imgalt ?? "hero image"} />
+						} else {
+							img = (
+								<img src={require(slide.img)} alt={slide.imgalt ?? "hero image"} />
+							);
 						}
 					}
 					content = (
 						<div className="title-slide">
-							{img ?
-							<div className="hero">
-								{img}
-							</div> : null}
+							{img ? <div className="hero">{img}</div> : null}
 							<h1>{title}</h1>
 							<h2>{slide.subtitle ?? ""}</h2>
 						</div>
