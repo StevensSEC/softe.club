@@ -4,6 +4,7 @@ import { Slide, SlideDeck } from "../../components/SlideDeck/SlideDeck.js";
 import DocumentTitle from "../../components/DocumentTitle/DocumentTitle.js";
 import SecMarkdown from "../../components/SecMarkdown/SecMarkdown.js";
 import "./QuickSlides.scss";
+import Logo from "../../components/Logo/Logo.jsx";
 
 export default class QuickSlides extends React.PureComponent {
 	constructor() {
@@ -41,8 +42,23 @@ export default class QuickSlides extends React.PureComponent {
 			switch (slide.type) {
 				case "title":
 					let title = slide.title ?? "Untitled presentation";
+					let img = null;
+					if (slide.img) {
+						if (slide.img === "logo") {
+							img = <Logo />;
+						} else {
+							let imgurl = require(`../../assets/${slide.img}`);
+							img = (
+								<img
+									src={imgurl.default ?? imgurl}
+									alt={slide.imgalt ?? "hero image"}
+								/>
+							);
+						}
+					}
 					content = (
 						<div className="title-slide">
+							{img ? <div className="hero">{img}</div> : null}
 							<h1>{title}</h1>
 							<h2>{slide.subtitle ?? ""}</h2>
 						</div>
