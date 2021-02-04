@@ -47,8 +47,9 @@ export default class QuickSlides extends React.PureComponent {
 						if (slide.img === "logo") {
 							img = <Logo />;
 						} else {
+							let imgurl = require(`../../assets/${slide.img}`);
 							img = (
-								<img src={require(slide.img)} alt={slide.imgalt ?? "hero image"} />
+								<img src={imgurl.default ?? imgurl} alt={slide.imgalt ?? "hero image"} />
 							);
 						}
 					}
