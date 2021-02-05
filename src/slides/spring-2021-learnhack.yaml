@@ -131,7 +131,6 @@ slides:
       1. Create a file
       2. Add some text, save it
       3. Commit it
-
       4. Create a new branch
       5. Change the file, save and commit it
       6. Switch back to the master/main branch
@@ -158,4 +157,136 @@ slides:
     img: github.png
     imgalt: github logo
   - content: |
-      #
+      # Lets make a pull request!
+
+      Clone this repo:
+
+      ```bash
+      gh repo clone StevensSEC/learnHack-spring-2021
+      ```
+
+      Open it in VS Code
+
+      ```bash
+      cd learnHack-spring-2021
+      code .
+      ```
+  - content: |
+      # Add your name to the list!
+
+      - Create a new branch
+      - Open `README.md`
+      - Add your name to the list
+      - Commit it
+
+      # Create a PR
+
+      - Open the terminal
+        - <kbd>ctrl + `</kbd> to open the one inside VS Code
+      - Create the pull request
+
+      ```bash
+      gh pr create
+      ```
+      *This will walk you through the process!*
+  - type: title
+    name: golang
+    title: Golang
+    img: golang-gopher.png
+    imgalt: golang gopher mascot
+  - content: |
+      # Syntax
+      ## Hello world
+      ```go
+      package main
+
+      func main() {
+        println("Hello world!")
+      }
+      ```
+      - Must start with `package`
+  - content: |
+      # Syntax
+      ## Defining variables
+
+      ```go
+      var n int
+      ```
+      *n is automatically initialized to 0, because it is an `int`*
+
+      OR
+
+      ```go
+      n := 0
+      ```
+  - content: |
+      # Syntax
+      ## Control flow
+      ```go
+      if n == 4 {
+        // n is 4
+      }
+      ```
+      ```go
+      for i := 0; i < 10; i++ {
+        // traditional for loop
+      }
+      ```
+      ```go
+      for n == 4 {
+        // while loop
+      }
+      ```
+      ```go
+      for {
+        // infinite loop
+      }
+      ```
+  - content: |
+      # Functions
+      ```go
+      func f() {
+
+      }
+      ```
+      ```go
+      func add(a, b int) int {
+        return a + b
+      }
+      ```
+      ```go
+      func addsub(a, b int) (int, int) {
+        return a + b, a - b
+      }
+      ```
+      - Variable types go *after* the name
+      - Functions can return more than 1 value
+        - Unlike Python, they are not tuples
+
+      ### Goroutines
+      ```go
+      func worker() {
+        for {}
+      }
+      func main() {
+        go worker()
+      }
+      ```
+      - Goroutines run concurrently
+  - content: |
+      # Importing
+      - Everything is available to everything in the same module
+        - If you make a folder, stuff inside it is a seperate module
+      ```go,pokedex.go
+      const coolPokemon = 4
+      ```
+      ```go,pokemon.go
+      func GetCoolPokemon() int {
+        return coolPokemon
+      }
+      ```
+      - Things that start with a capital letter are public, lowercase is private
+      ```go
+      const ThisIsPublic bool
+      const thisIsPrivate bool
+      ```
