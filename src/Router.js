@@ -299,6 +299,13 @@ const ROUTES = [
 		),
 	},
 	{
+		path: "/slides/spring-2021-learnhack",
+		slideProps: { slidePath: "spring-2021-learnhack.yaml" },
+		Component: lazy(() =>
+			import(/* webpackChunkName: "quick-slides" */ "./views/Slides/QuickSlides.js")
+		),
+	},
+	{
 		path: "*",
 		Component: lazy(() =>
 			import(/* webpackChunkName: "not-found" */ "./views/NotFound/NotFound.jsx")

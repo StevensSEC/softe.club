@@ -1,0 +1,161 @@
+---
+title: learnHack GO - Spring 2021
+slides:
+  - type: title
+    title: Welcome to learnHack GO!
+    subtitle: terminal, git, GitHub, and Golang
+  - name: table-of-contents
+    content: |
+      # What will we be learning?
+
+      - Using your terminal
+      - git and GitHub
+        - Committing changes
+        - Managing branches
+        - Making a pull request
+      - Go programming language
+        - Syntax
+        - Functions
+          - Goroutines
+        - Importing
+        - Type system
+        - Interfaces
+          - How to implement interfaces
+  - name: terminal
+    type: title
+    title: Using your terminal
+  - content: |
+      # Open your terminal
+
+      ### Windows
+      - Install the Windows Subsystem for Linux
+
+      OR
+      - Press <kbd>windows + R</kbd>
+      - Run `powershell`
+
+      *Recommended: Install the Windows Terminal from the Microsoft app store.*
+      **DO NOT USE GIT BASH.** It has only caused us problems. If you want bash on windows, install the Windows Subsystem for Linux.
+
+      ### Mac
+      - Open the terminal app
+
+      ### Linux
+      - Ubuntu: Press <kbd>ctrl + shift + T</kbd>
+
+  - sticky: git
+    content: |
+      # Using the terminal
+
+      ### Cheatsheets
+      - Powershell: [softe.club/powershell-cheatsheet](/powershell-cheatsheet)
+      - Bash: [softe.club/bash-cheatsheet](/bash-cheatsheet)
+
+      ### Vobabulary/symbols
+
+      | Term/Symbol | Definition |
+      |-|-|
+      | path | A string representing a file or directory |
+      | `.` | Special path: current directory |
+      | `..` | Special path: parent directory |
+  - content: |
+      # How to Navigate
+
+      - When you start your terminal, it'll start in your user's home directory.
+
+      Try changing the directory to your desktop:
+
+      ```bash
+      ls
+      cd Desktop
+      ls
+      ```
+  - content: |
+      # Manage files
+
+      ```bash
+      mkdir learnhack
+      cd learnhack
+      touch test
+      code .
+      ```
+
+      Edit the file and save it. Find the folder you just created in your file explorer/browser!
+      Then,
+
+      ```bash
+      ls
+      mv test test2
+      ls
+      cp test2 copied
+      ls
+      rm test2 copied
+      ls
+      ```
+
+      Keep your terminal open for the next part!
+  - type: title
+    name: git
+    img: git-white.png
+    imgalt: git logo
+  - content: |
+      # What is git?
+
+      - Version Control software
+      - Keeps track of changes made to code
+      - Keeps code in a repository
+        - Often abbreviated to repo
+
+      # What is GitHub?
+
+      - Website that hosts git repositories
+      - Has cool features like issues and pull requests
+      - Alternatives:
+        - Gitlab
+        - Bitbucket
+  - content: |
+      # Initialize a new repo
+
+      In your already open terminal:
+      ```bash
+      git init
+      ```
+
+      Open VS Code:
+      ```bash
+      code .
+      ```
+  - content: |
+      # VS Code Demo
+
+      1. Create a file
+      2. Add some text, save it
+      3. Commit it
+
+      4. Create a new branch
+      5. Change the file, save and commit it
+      6. Switch back to the master/main branch
+      7. See that the changes are gone
+      8. Merge the other branch
+      9. See that the changes are back
+  - content: |
+      # Clean up
+
+      We're all done with this section. Close VS Code.
+
+      What's the command to delete a file or folder?
+  - content: |
+      # Clean up
+
+      Delete the git repo we've been working with.
+
+      ```bash
+      rm -r .git
+      ```
+  - type: title
+    name: github
+    title: GitHub
+    img: github.png
+    imgalt: github logo
+  - content: |
+      #
