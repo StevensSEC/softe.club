@@ -290,3 +290,73 @@ slides:
       const ThisIsPublic bool
       const thisIsPrivate bool
       ```
+  - content: |
+      # Types
+      ## Primitive types
+      ```
+      bool
+
+      string
+
+      int  int8  int16  int32  int64
+      uint uint8 uint16 uint32 uint64 uintptr
+
+      byte // alias for uint8
+
+      rune // alias for int32
+          // represents a Unicode character
+
+      float32 float64
+
+      complex64 complex128
+      ```
+
+      - int, uint are 32bit on 32bit systems, 64bit on 64bit systems
+      - putting `*` in front of a type makes it a pointer
+  - content: |
+      # Types
+      ## Making your own types
+
+      ```go
+      type Color int32
+
+      type Painting struct {
+        pixels []Color
+
+        width uint
+        height uint
+      }
+      ```
+
+      ## Types can have functions
+
+      Very similar to how classes have functions in other languages.
+
+      ```go
+      // This creates a copy of p. Any changes to p will not be reflected on the original value.
+      func (p Painting) Draw() {}
+
+      // This creates a pointer to the original value of p.
+      func (*p Painting) Draw() {}
+      ```
+  - content: |
+      # Interfaces
+      - Interfaces are implemented implicitly
+        - no `extends` or "base class"
+      ```go
+      type Shape interface {
+        Area() float64
+      }
+
+      // example implementation
+      type Square struct {
+        size float64
+      }
+
+      func (*s Square) Area() float64 {
+        return s.size * s.size
+      }
+      ```
+  - type: title
+    title: Putting it all together
+    subtitle: Live coding a whole feature
