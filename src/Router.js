@@ -1,6 +1,7 @@
 import { lazy } from "react";
 
-const ATTENDANCE_URL = "https://forms.gle/soy7KrWKAGrfTv996";
+// attendance url is currently for learnHack Go
+const ATTENDANCE_URL = "https://stevens.campuslabs.com/engage/event/6874107/attend?Vud=2/9/2021&Vut=19:00:00&Hash=h-Xw7ilO8TcXFuggxvVPAEdnBeINDpVywJeBOlTUzAeR5M7mmNcxMVFnCKnXrwjOQoytEGNprpi4Ilv1B4XkYhO84BZ0vLsddbD-f2PkF9o0lQ3T_WiIZdlqdBcqo4c_Oev-w0gI2lvcvGvJ2LPoSAHtRjeBicfATUws_RrbeArLb_dc3XXxyzcC2aOpEcohd77d0OPwGL9F25IBN8UMYYEvr_CPQHsf-7jMGVMVQzmxS3q0rOrIiB-BQzMLQ-PcTp4JGaTfmfBIYQVrBN0WPLcwO9qxRwYB3Xq05gSQa0Jdj8NUU2ZHdh_AWSKZDhFZF6Z4O9ZB1hgPA7teLxkt7w";
 
 const ROUTES = [
 	{
