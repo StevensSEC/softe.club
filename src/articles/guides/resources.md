@@ -44,6 +44,7 @@ Learning about programming is hard. Hopefully, these resources will make it a li
 
 ## Go
 
+-   [Go By Example](https://gobyexample.com/) - A comprehesive list of code examples for common things
 -   [JSON-to-Go](https://mholt.github.io/json-to-go) - Generate Go structs from JSON objects
 -   [Video Tutorial - Tour of Go](https://www.youtube.com/watch?v=MzYZhh6gpI0) - A very concise tour of Go's best features
 

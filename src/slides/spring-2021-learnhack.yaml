@@ -1,0 +1,362 @@
+---
+title: learnHack GO - Spring 2021
+slides:
+  - type: title
+    title: Welcome to learnHack GO!
+    subtitle: terminal, git, GitHub, and Golang
+  - name: table-of-contents
+    content: |
+      # What will we be learning?
+
+      - Using your terminal
+      - git and GitHub
+        - Committing changes
+        - Managing branches
+        - Making a pull request
+      - Go programming language
+        - Syntax
+        - Functions
+          - Goroutines
+        - Importing
+        - Type system
+        - Interfaces
+          - How to implement interfaces
+  - name: terminal
+    type: title
+    title: Using your terminal
+  - content: |
+      # Open your terminal
+
+      ### Windows
+      - Install the Windows Subsystem for Linux
+
+      OR
+      - Press <kbd>windows + R</kbd>
+      - Run `powershell`
+
+      *Recommended: Install the Windows Terminal from the Microsoft app store.*
+      **DO NOT USE GIT BASH.** It has only caused us problems. If you want bash on windows, install the Windows Subsystem for Linux.
+
+      ### Mac
+      - Open the terminal app
+
+      ### Linux
+      - Ubuntu: Press <kbd>ctrl + shift + T</kbd>
+
+  - sticky: git
+    content: |
+      # Using the terminal
+
+      ### Cheatsheets
+      - Powershell: [softe.club/powershell-cheatsheet](/powershell-cheatsheet)
+      - Bash: [softe.club/bash-cheatsheet](/bash-cheatsheet)
+
+      ### Vocabulary/symbols
+
+      | Term/Symbol | Definition |
+      |-|-|
+      | path | A string representing a file or directory |
+      | `.` | Special path: current directory |
+      | `..` | Special path: parent directory |
+  - content: |
+      # How to Navigate
+
+      - When you start your terminal, it'll start in your user's home directory.
+
+      Try changing the directory to your desktop:
+
+      ```bash
+      ls
+      cd Desktop
+      ls
+      ```
+  - content: |
+      # Manage files
+
+      ```bash
+      mkdir learnhack
+      cd learnhack
+      touch test
+      code .
+      ```
+
+      Edit the file and save it. Find the folder you just created in your file explorer/browser!
+      Then,
+
+      ```bash
+      ls
+      mv test test2
+      ls
+      cp test2 copied
+      ls
+      rm test2 copied
+      ls
+      ```
+
+      Keep your terminal open for the next part!
+  - type: title
+    name: git
+    img: git-white.png
+    imgalt: git logo
+  - content: |
+      # What is git?
+
+      - Version Control software
+      - Keeps track of changes made to code
+      - Keeps code in a repository
+        - Often abbreviated to repo
+
+      # What is GitHub?
+
+      - Website that hosts git repositories
+      - Has cool features like issues and pull requests
+      - Alternatives:
+        - Gitlab
+        - Bitbucket
+  - content: |
+      # Initialize a new repo
+
+      In your already open terminal:
+      ```bash
+      git init
+      ```
+
+      Open VS Code:
+      ```bash
+      code .
+      ```
+  - content: |
+      # VS Code Demo
+
+      1. Create a file
+      2. Add some text, save it
+      3. Commit it
+      4. Create a new branch
+      5. Change the file, save and commit it
+      6. Switch back to the master/main branch
+      7. See that the changes are gone
+      8. Merge the other branch
+      9. See that the changes are back
+  - content: |
+      # Clean up
+
+      We're all done with this section. Close VS Code.
+
+      What's the command to delete a file or folder?
+  - content: |
+      # Clean up
+
+      Delete the git repo we've been working with.
+
+      ```bash
+      rm -r .git
+      ```
+  - type: title
+    name: github
+    title: GitHub
+    img: github.png
+    imgalt: github logo
+  - content: |
+      # Lets make a pull request!
+
+      Clone this repo:
+
+      ```bash
+      gh repo clone StevensSEC/learnHack-spring-2021
+      ```
+
+      Open it in VS Code
+
+      ```bash
+      cd learnHack-spring-2021
+      code .
+      ```
+  - content: |
+      # Add your name to the list!
+
+      - Create a new branch
+      - Open `README.md`
+      - Add your name to the list
+      - Commit it
+
+      # Create a PR
+
+      - Open the terminal
+        - <kbd>ctrl + `</kbd> to open the one inside VS Code
+      - Create the pull request
+
+      ```bash
+      gh pr create
+      ```
+      *This will walk you through the process!*
+  - type: title
+    name: golang
+    title: Golang
+    img: golang-gopher.png
+    imgalt: golang gopher mascot
+  - content: |
+      # Syntax
+      ## Hello world
+      ```go
+      package main
+
+      func main() {
+        println("Hello world!")
+      }
+      ```
+      - Must start with `package`
+  - content: |
+      # Syntax
+      ## Defining variables
+
+      ```go
+      var n int
+      ```
+      *n is automatically initialized to 0, because it is an `int`*
+
+      OR
+
+      ```go
+      n := 0
+      ```
+  - content: |
+      # Syntax
+      ## Control flow
+      ```go
+      if n == 4 {
+        // n is 4
+      }
+      ```
+      ```go
+      for i := 0; i < 10; i++ {
+        // traditional for loop
+      }
+      ```
+      ```go
+      for n == 4 {
+        // while loop
+      }
+      ```
+      ```go
+      for {
+        // infinite loop
+      }
+      ```
+  - content: |
+      # Functions
+      ```go
+      func f() {
+
+      }
+      ```
+      ```go
+      func add(a, b int) int {
+        return a + b
+      }
+      ```
+      ```go
+      func addsub(a, b int) (int, int) {
+        return a + b, a - b
+      }
+      ```
+      - Variable types go *after* the name
+      - Functions can return more than 1 value
+        - Unlike Python, they are not tuples
+
+      ### Goroutines
+      ```go
+      func worker() {
+        for {}
+      }
+      func main() {
+        go worker()
+      }
+      ```
+      - Goroutines run concurrently
+  - content: |
+      # Importing
+      - Everything is available to everything in the same module
+        - If you make a folder, stuff inside it is a seperate module
+      ```go,pokedex.go
+      const coolPokemon = 4
+      ```
+      ```go,pokemon.go
+      func GetCoolPokemon() int {
+        return coolPokemon
+      }
+      ```
+      - Things that start with a capital letter are public, lowercase is private
+      ```go
+      const ThisIsPublic bool
+      const thisIsPrivate bool
+      ```
+  - content: |
+      # Types
+      ## Primitive types
+      ```
+      bool
+
+      string
+
+      int  int8  int16  int32  int64
+      uint uint8 uint16 uint32 uint64 uintptr
+
+      byte // alias for uint8
+
+      rune // alias for int32
+          // represents a Unicode character
+
+      float32 float64
+
+      complex64 complex128
+      ```
+
+      - int, uint are 32bit on 32bit systems, 64bit on 64bit systems
+      - putting `*` in front of a type makes it a pointer
+  - content: |
+      # Types
+      ## Making your own types
+
+      ```go
+      type Color int32
+
+      type Painting struct {
+        pixels []Color
+
+        width uint
+        height uint
+      }
+      ```
+
+      ## Types can have functions
+
+      Very similar to how classes have functions in other languages.
+
+      ```go
+      // This creates a copy of p. Any changes to p will not be reflected on the original value.
+      func (p Painting) Draw() {}
+
+      // This creates a pointer to the original value of p.
+      func (*p Painting) Draw() {}
+      ```
+  - content: |
+      # Interfaces
+      - Interfaces are implemented implicitly
+        - no `extends` or "base class"
+      ```go
+      type Shape interface {
+        Area() float64
+      }
+
+      // example implementation
+      type Square struct {
+        size float64
+      }
+
+      func (*s Square) Area() float64 {
+        return s.size * s.size
+      }
+      ```
+  - type: title
+    title: Putting it all together
+    subtitle: Live coding a whole feature
