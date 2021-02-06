@@ -35,6 +35,9 @@ export default function HomeView() {
 				<SEC.Button to="https://stevens.zoom.us/rec/share/IJUVzOG3fr8FVdPcAgn47WP75X_pRR16ctlizTbVK6fTW2bUVhoFeJbUCHWkQh69.W3iIJGE1KL8vwO_T?startTime=1612490724000">
 					Spring 2021 GBM 1 - Welcome back and pokemonbattlelib introduction
 				</SEC.Button>
+				<SEC.Button to="https://stevens.zoom.us/rec/share/XgidnIoERiaNyE9C05YraP5G0Z0GEY30MLgjmbuYXzJvhtXLkOnRJr74MVNGyOre.xoHODuzEvwdSG9nk?startTime=1612634446000">
+					Spring 2021 learnHack GO
+				</SEC.Button>
 				<Contributions></Contributions>
 				<ArticleList></ArticleList>
 				<h1>Recorded Workshops</h1>
