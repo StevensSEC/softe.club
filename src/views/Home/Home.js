@@ -31,6 +31,10 @@ export default function HomeView() {
 				{EVENTS.map((event, index) => {
 					return <EventBanner key={"eventBanner-" + index} {...event} />;
 				})}
+				<h1>Recorded Events</h1>
+				<SEC.Button to="https://stevens.zoom.us/rec/share/IJUVzOG3fr8FVdPcAgn47WP75X_pRR16ctlizTbVK6fTW2bUVhoFeJbUCHWkQh69.W3iIJGE1KL8vwO_T?startTime=1612490724000">
+					Spring 2021 GBM 1 - Welcome back and pokemonbattlelib introduction
+				</SEC.Button>
 				<Contributions></Contributions>
 				<ArticleList></ArticleList>
 				<h1>Recorded Workshops</h1>
