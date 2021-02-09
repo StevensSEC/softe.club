@@ -53,38 +53,46 @@ function generateGbms(startDate, endDate, countOffset = 1, limit = 10) {
 	return gbms;
 }
 
-const EVENTS = generateGbms(
-	dayjs("2021-2-4", "YYYY-MM-DD"),
-	dayjs("2021-2-11", "YYYY-MM-DD"),
-	1,
-	1
-).concat([
-	{
-		flyerSource: "learnHack-GO.png",
-		title: "learnHack GO",
-		desc:
-			"Don't know Go? Haven't even heard of Go? It doesn't matter, we'll teach you! Perfect for anybody who wants to contribute to the Pokemon battle library.",
-		meetingLink: "https://stevens.zoom.us/j/93021320820",
-		startDate: dayjs("2021-2-6", "YYYY-MM-DD").hour(13),
-		endDate: dayjs("2021-2-6", "YYYY-MM-DD").hour(16),
-	},
-	// TODO: add pair programming here
-	// TODO: UNCOMMENT NEXT LINE WHEN WE HAVE GBM FLYERS 2 THROUGH 4
-	// ]).concat(generateGbms(dayjs("2021-2-11", "YYYY-MM-DD"), dayjs("2021-3-4", "YYYY-MM-DD"), 2)).concat([
-	// TODO: add ren'py workshop here
-	// TODO: UNCOMMENT NEXT LINE WHEN WE HAVE GBM FLYERS 5 THROUGH 6
-	// ]).concat(generateGbms(dayjs("2021-3-11", "YYYY-MM-DD"), dayjs("2021-3-18", "YYYY-MM-DD"), 5)).concat([
-	// TODO: update this pimp my terminal event with new flyer and metadata for 2021
-	// {
-	// 	flyerSource: "Pimp my terminal.png",
-	// 	title: "Pimp My Terminal",
-	// 	desc:
-	// 		"Come learn how to make your developing process look pretty by decking out your VSCode and your terminal.",
-	// 	startDate: dayjs(new Date("January 27, 2021")).hour(21),
-	// 	endDate: dayjs(new Date("January 27, 2021")).hour(22),
-	// },
-	// TODO: UNCOMMENT NEXT LINE WHEN WE HAVE GBM FLYERS 7 THROUGH 11
-	// ]).concat(generateGbms(dayjs("2021-4-8", "YYYY-MM-DD"), dayjs("2021-5-6", "YYYY-MM-DD"), 7)).concat([
-]);
+const EVENTS = generateGbms(dayjs("2021-2-4", "YYYY-MM-DD"), dayjs("2021-2-11", "YYYY-MM-DD"), 1, 1)
+	.concat([
+		{
+			flyerSource: "learnHack-GO.png",
+			title: "learnHack GO",
+			desc:
+				"Don't know Go? Haven't even heard of Go? It doesn't matter, we'll teach you! Perfect for anybody who wants to contribute to the Pokemon battle library.",
+			meetingLink: "https://stevens.zoom.us/j/93021320820",
+			startDate: dayjs("2021-2-6", "YYYY-MM-DD").hour(13),
+			endDate: dayjs("2021-2-6", "YYYY-MM-DD").hour(16),
+		},
+	])
+	.concat(generateGbms(dayjs("2021-2-11", "YYYY-MM-DD"), dayjs("2021-3-4", "YYYY-MM-DD"), 2, 1))
+	.concat([
+		{
+			flyerSource: "pair-programming.png",
+			title: "Pair Programming",
+			desc:
+				"Grab your Valentine or make a new friend and bond by solving fun coding challenges together at our sweetest annual event!",
+			meetingLink: "https://stevens.zoom.us/j/93021320820",
+			startDate: dayjs("2021-2-12", "YYYY-MM-DD").hour(21),
+			endDate: dayjs("2021-2-12", "YYYY-MM-DD").hour(22),
+		},
+	])
+	.concat(generateGbms(dayjs("2021-3-4", "YYYY-MM-DD"), dayjs("2021-3-4", "YYYY-MM-DD"), 3))
+	.concat([
+		// TODO: add ren'py workshop here
+	])
+	.concat(generateGbms(dayjs("2021-3-11", "YYYY-MM-DD"), dayjs("2021-3-18", "YYYY-MM-DD"), 5))
+	.concat([
+		// TODO: update this pimp my terminal event with new flyer and metadata for 2021
+		// {
+		// 	flyerSource: "Pimp my terminal.png",
+		// 	title: "Pimp My Terminal",
+		// 	desc:
+		// 		"Come learn how to make your developing process look pretty by decking out your VSCode and your terminal.",
+		// 	startDate: dayjs(new Date("January 27, 2021")).hour(21),
+		// 	endDate: dayjs(new Date("January 27, 2021")).hour(22),
+		// },
+	])
+	.concat(generateGbms(dayjs("2021-4-8", "YYYY-MM-DD"), dayjs("2021-5-6", "YYYY-MM-DD"), 7));
 
 export default EVENTS;

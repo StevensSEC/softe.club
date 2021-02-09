@@ -1,7 +1,8 @@
 import { lazy } from "react";
 
-// attendance url is currently for learnHack Go
-const ATTENDANCE_URL = "https://stevens.campuslabs.com/engage/event/6874107/attend?Vud=2/9/2021&Vut=19:00:00&Hash=h-Xw7ilO8TcXFuggxvVPAEdnBeINDpVywJeBOlTUzAeR5M7mmNcxMVFnCKnXrwjOQoytEGNprpi4Ilv1B4XkYhO84BZ0vLsddbD-f2PkF9o0lQ3T_WiIZdlqdBcqo4c_Oev-w0gI2lvcvGvJ2LPoSAHtRjeBicfATUws_RrbeArLb_dc3XXxyzcC2aOpEcohd77d0OPwGL9F25IBN8UMYYEvr_CPQHsf-7jMGVMVQzmxS3q0rOrIiB-BQzMLQ-PcTp4JGaTfmfBIYQVrBN0WPLcwO9qxRwYB3Xq05gSQa0Jdj8NUU2ZHdh_AWSKZDhFZF6Z4O9ZB1hgPA7teLxkt7w";
+// attendance url is currently for GBM 2
+const ATTENDANCE_URL =
+	"https://stevens.campuslabs.com/engage/event/6899655/attend?Vud=2/15/2021&Vut=03:00:00&Hash=kPfKTkTEhHcKTamuO_3esvi4wGOQGkUgz153GKcM38MNzq18pNmJl7RyBITMEYqSZe_btfV8O6CXX4MzP2JKNwl8b70kOtEQmQrgkr-jCo-eyHePsXeRnS5v9Ke-6LzAhXBV1OEgN5TBPynikkI9Urt2LAfUSpii8t_RRU9jJrmzftnVSdp4JY7XPX7MDZm_4B2phK44GkCyyJxHANCsUz8iInSN596ABlX602-wkynnpbajGlmD9cQX5WZeDhLPTdKcAu2Yb0AhodznzMtGbVk4Eit37hJ8MrScf4JZsUSr0BQxIKMIIk0IItuCxQM7sEF1QB7gC4EcjOfiEmj1BQ";
 
 const ROUTES = [
 	{
