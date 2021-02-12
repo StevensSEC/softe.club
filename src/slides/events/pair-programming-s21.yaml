@@ -20,17 +20,17 @@ slides:
         - The ability to communicate your thoughts is an essential skill in programming
       - Try not to let one person do all the work.
         - Note that this is different from designating someone to type the code
-      
+
   - name: replit
     content: |
       # How to get started
-      
+
       - Go to repl.it
       - Click start coding and log in (sign up if you don't already have an account)
         - For new users, set your username and set up your profile
 
       *Only one partner has to do the following*
-      
+
       - Click on "+ New repl" in the top left corner of your screen
       - Communicate with your partner on what language you want to work in and name your project
       - Click share in the top right corner of your screen
@@ -39,9 +39,3 @@ slides:
     type: title
     title: The Fun Part
     subtitle: Time to get coding!
-
-
-
-
-
-

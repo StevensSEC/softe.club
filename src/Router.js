@@ -309,8 +309,10 @@ const ROUTES = [
 	},
 	{
 		path: "/events/pair-programming-s21",
-		articleProps: {source: "events/pair-programming-s21.md", title: "Pair Programming 2021"},
-		Component: lazy(() => import(/* webpackChunkName: "article" */ "./views/Article/Article.js")),
+		articleProps: { source: "events/pair-programming-s21.md", title: "Pair Programming 2021" },
+		Component: lazy(() =>
+			import(/* webpackChunkName: "article" */ "./views/Article/Article.js")
+		),
 	},
 	{
 		path: "/slides/events/pair-programming-s21",

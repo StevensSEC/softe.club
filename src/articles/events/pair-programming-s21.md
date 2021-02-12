@@ -17,12 +17,9 @@ Given a hexadecimal number, determine which segments of the seven-segment displa
 
 For example, given the hexadecimal value ‘0x06’, your program should return True because 0x06 appears as a ‘1’ on the display.
 
-
 <br/><br/>
 
 ---
-
-
 
 ## Question 2 - Strings!
 
@@ -30,12 +27,12 @@ Given a string s, find the longest repeating substring in it. Basically, find tw
 
 Examples:
 
-|   Input                   |    Output  |
-|---|---|
-|   s = "secisnotsec"       |   "sec"   |
-|   s = "boo"               |     "o"   |
-|   s = "aabaabaaba"        |   "aaba"  |
-|   s = "zzzzzzzzzz" (10 z's)|   "zzzzz" |
+| Input                     | Output  |
+| ------------------------- | ------- |
+| s = "secisnotsec"         | "sec"   |
+| s = "boo"                 | "o"     |
+| s = "aabaabaaba"          | "aaba"  |
+| s = "zzzzzzzzzz" (10 z's) | "zzzzz" |
 
 <br/><br/>
 
@@ -46,7 +43,6 @@ Examples:
 You’re in charge of hosting a Pair Programming event but your members are all of different skill levels. Every member attending the event was asked to rank their programming experience from 1-5. The array below represents each member by skill level. If you can only match members with the same skill level, how many pairs can you make?
 
 `1 2 1 4 5 2 1 2 5 2 2 4 1 3 5 2 1 2 3 1 3`
-
 
 Visualization:
 
