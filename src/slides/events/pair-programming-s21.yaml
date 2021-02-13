@@ -39,3 +39,43 @@ slides:
     type: title
     title: The Fun Part
     subtitle: Time to get coding!
+  - content: |
+      # Solution for 7 Segment Display
+
+      ```python
+      print(int(input(), 16) in [0x3f, 0x06, 0x5b, 0x4f, 0x66, 0x6d, 0x7d, 0x07, 0x7f, 0x6f])
+      ```
+  - content: |
+      # Solution for Strings!
+
+      *Disclaimer: This solution is O(n³). The optimized solution is O(n²).*
+
+      ```python
+      s = input()
+      answer = ""
+      for start in range(len(s) - 1):
+        for end in range(start + 1, len(s)):
+          substr = s[start:end]
+          if not substr:
+            continue
+          c = s.count(substr)
+          if c >= 2 and len(substr) > len(answer):
+            answer = substr
+      print(answer)
+      ```
+  - content: |
+      # Solution for Pairing Programmers
+
+      ```python
+      ar = list(map(int, input().rstrip().split())))
+      levels = {}
+      for v in ar:
+        if v in levels:
+          levels[v] += 1
+        else:
+          levels[v] = 1
+      numPairs = 0
+      for skill in levels:
+        numPairs += levels[skill] // 2
+      print(numPairs)
+      ```
