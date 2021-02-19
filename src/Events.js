@@ -81,7 +81,7 @@ const EVENTS = generateGbms(dayjs("2021-2-4", "YYYY-MM-DD"), dayjs("2021-2-11", 
 	.concat([
 		// TODO: add ren'py workshop here
 	])
-	.concat(generateGbms(dayjs("2021-3-11", "YYYY-MM-DD"), dayjs("2021-3-18", "YYYY-MM-DD"), 5))
+	.concat(generateGbms(dayjs("2021-3-11", "YYYY-MM-DD"), dayjs("2021-3-19", "YYYY-MM-DD"), 5))
 	.concat([
 		// TODO: update this pimp my terminal event with new flyer and metadata for 2021
 		// {
