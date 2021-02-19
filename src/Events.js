@@ -77,7 +77,7 @@ const EVENTS = generateGbms(dayjs("2021-2-4", "YYYY-MM-DD"), dayjs("2021-2-11", 
 			endDate: dayjs("2021-2-12", "YYYY-MM-DD").hour(22),
 		},
 	])
-	.concat(generateGbms(dayjs("2021-3-4", "YYYY-MM-DD"), dayjs("2021-3-4", "YYYY-MM-DD"), 3))
+	.concat(generateGbms(dayjs("2021-2-18", "YYYY-MM-DD"), dayjs("2021-3-4", "YYYY-MM-DD"), 3))
 	.concat([
 		// TODO: add ren'py workshop here
 	])
