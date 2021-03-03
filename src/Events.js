@@ -79,7 +79,15 @@ const EVENTS = generateGbms(dayjs("2021-2-4", "YYYY-MM-DD"), dayjs("2021-2-11", 
 	])
 	.concat(generateGbms(dayjs("2021-2-18", "YYYY-MM-DD"), dayjs("2021-3-4", "YYYY-MM-DD"), 3))
 	.concat([
-		// TODO: add ren'py workshop here
+		{
+			flyerSource: "renpy_workshop.png",
+			title: "Ren'Py Workshop",
+			desc:
+				"Learn how to create a visual novel in this fun and easy workshop! Hope to see you there.",
+			meetingLink: "https://stevens.zoom.us/j/93021320820",
+			startDate: dayjs("2021-3-4", "YYYY-MM-DD").hour(21),
+			endDate: dayjs("2021-3-4", "YYYY-MM-DD").hour(22),
+		},
 	])
 	.concat(generateGbms(dayjs("2021-3-11", "YYYY-MM-DD"), dayjs("2021-3-19", "YYYY-MM-DD"), 5))
 	.concat([
@@ -94,5 +102,4 @@ const EVENTS = generateGbms(dayjs("2021-2-4", "YYYY-MM-DD"), dayjs("2021-2-11", 
 		// },
 	])
 	.concat(generateGbms(dayjs("2021-4-8", "YYYY-MM-DD"), dayjs("2021-5-6", "YYYY-MM-DD"), 7));
-
 export default EVENTS;
