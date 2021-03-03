@@ -88,7 +88,6 @@ const EVENTS = generateGbms(dayjs("2021-2-4", "YYYY-MM-DD"), dayjs("2021-2-11", 
 			startDate: dayjs("2021-3-4", "YYYY-MM-DD").hour(21),
 			endDate: dayjs("2021-3-4", "YYYY-MM-DD").hour(22),
 		},
-
 	])
 	.concat(generateGbms(dayjs("2021-3-11", "YYYY-MM-DD"), dayjs("2021-3-19", "YYYY-MM-DD"), 5))
 	.concat([
@@ -102,7 +101,5 @@ const EVENTS = generateGbms(dayjs("2021-2-4", "YYYY-MM-DD"), dayjs("2021-2-11", 
 		// 	endDate: dayjs(new Date("January 27, 2021")).hour(22),
 		// },
 	])
-	.concat(generateGbms(dayjs("2021-4-8", "YYYY-MM-DD"), dayjs("2021-5-6", "YYYY-MM-DD"), 7))
-	;
-
+	.concat(generateGbms(dayjs("2021-4-8", "YYYY-MM-DD"), dayjs("2021-5-6", "YYYY-MM-DD"), 7));
 export default EVENTS;
