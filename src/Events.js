@@ -101,7 +101,7 @@ const EVENTS = generateGbms(dayjs("2021-2-4", "YYYY-MM-DD"), dayjs("2021-2-11", 
 			desc:
 				"Learn how to create a visual novel in this fun and easy workshop! Hope to see you there.",
 			meetingLink: "https://stevens.zoom.us/j/93021320820",
-			startDate: dayjs("2021-3-2", "YYYY-MM-DD").hour(12),
+			startDate: dayjs("2021-3-4", "YYYY-MM-DD").hour(21),
 			endDate: dayjs("2021-3-4", "YYYY-MM-DD").hour(22),
 		},
 	]);
