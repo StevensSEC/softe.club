@@ -1,8 +1,8 @@
 import { lazy } from "react";
 
-// attendance url is currently for Pair programming
+// attendance url is currently for GBM 6
 const ATTENDANCE_URL =
-	"https://stevens.campuslabs.com/engage/event/6967214/attend?Vud=3/8/2021&Vut=03:00:00&Hash=Y38qb_1PLyQOtASUe_uH4vTN432mT8Om6EjLPOyyZqimID3XiJVicvZryD-XZT5sGa68JCNGFtWEdJBEsuq7b7mDdQGKJynOfWFEIBOytPA5d8ibEBXHXftsTwJgC9AcwrkV_aMTcrnLxPJl_NWCdE_CJJ3SQsnx2q4HexBB_UmCV3hVTy6RKupp9Fs_G-lk96CWMhvcYO9CAzUU9xU8ow2xuTXnvAMTNj6S9muA34vNMnm3ZKZl0JspDevIbbwx6_3yh5wfgB2IMQKSXJTXVG5gSn7fe54DQGzc9w8rsUULJqPdI4p7904RNZgVYEGutfKndqr_DQTnyE-viPZTgA";
+	"https://stevens.campuslabs.com/engage/event/6899652/attend?Vud=3/22/2021&Vut=02:00:00&Hash=lgf-PBzxDkwtMbclJCmCLaJdnNXx60wr6bPeAdHo3IGGQjez3WiGJru408foNQDup9W8pNuWC9OogVLzb2N2MlzIPbdnirDYLeb9GbPq_5SC_9Slq4VKmrn5991XrTgArO7mqf_Xrrh7tODGi50YVO_UMKwBApS0jFeDrX6vI_dJqMpkFv9SK_IdwJrxmpo3DP70XbDQ23zT8LveIa32m7TYrL9dp8aJah8aQhwFrsFy65L-m3rHDIWukCCxLIWmH-r6xhJ2aB875-U8EBTHyClusfpVVXot8fstzrb3PJ_9JWQQdy8k1d6j-Tiz9pv3Li7uOvV5SIpj0iXr_j-kpA";
 
 const ROUTES = [
 	{
