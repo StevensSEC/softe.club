@@ -13,6 +13,7 @@ content/events:
 documentation:
   - ./**/README.md
   - src/articles/docs/**/*
+  - .tours/**/*
 
 feature/articles:
   - src/views/Article/**/*.js
