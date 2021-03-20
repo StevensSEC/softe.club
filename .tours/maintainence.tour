@@ -1,0 +1,64 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "Maintainence",
+  "steps": [
+    {
+      "title": "Introduction",
+      "description": "This tour shows you all the parts of the website that are necessary to maintain it."
+    },
+    {
+      "file": "src/Router.js",
+      "description": "This is a list of all the routes that are on the website.\n\n- `path` is the path of the webpage when you put it in your browser. For example: the path `/about` will result in the page appearing at `https://softe.club/about`.\n- `Component` is the react component that renders the page.\n    - IMPORTANT: **The `/* webpackChunkName: \"example\" */` comments are functional! They aren't cosmetic!** They tell webpack to split up parts of the website into smaller chunks, and it makes the website load faster.\n\nThis is a pretty important file, we'll come back to it later.",
+      "line": 7,
+      "selection": {
+        "start": {
+          "line": 11,
+          "character": 32
+        },
+        "end": {
+          "line": 11,
+          "character": 62
+        }
+      }
+    },
+    {
+      "file": "src/views/Home/Home.js",
+      "description": "This is the front page of the website. When you open up the website, this is the page that gets rendered.",
+      "line": 12
+    },
+    {
+      "title": "Adding New Articles",
+      "description": "Here is the gist of how to add a new article to the website:\n\n1. Write your article in markdown. For this example, the file will be called `example.md`.\n2. Place `example.md` into the `src/articles` folder.\n3. Add an entry to `Router.js`\n```javascript\n{\n\tpath: \"/example\",\n\tarticleProps: {\n\t\tsource: \"example.md\",\n\t\ttitle: \"Example Article\",\n\t},\n\tComponent: lazy(() =>\n\t\timport(/* webpackChunkName: \"article\" */ \"./views/Article/Article.js\")\n\t),\n},\n```\n4. Your new page is now available in your browser at `/example`."
+    },
+    {
+      "file": "src/articles/docs/articles.md",
+      "description": "This information is also reiterated here in the documentation. This page is also on the website at https://softe.club/dev/docs/articles.",
+      "line": 10
+    },
+    {
+      "file": "src/articles/docs/articles.md",
+      "description": "This is an extremely important document to read if it is your first time adding an article to the website. **Please actually fucking read it.** **If you don't read it, you *will* break stuff**, and you will learn the knowledge in this document the hard way.",
+      "line": 5
+    },
+    {
+      "title": "Adding New Slides",
+      "description": "Adding new slides is much like adding a new article, with a few key differences.\n\n1. Make your slides in YAML. For an example, see `src/slides/example-slides.yaml`.\n2. Add an entry to `Router.js`\n    - **All slides `path`s MUST start with `/slides` or `/dev/slides`, otherwise the navbar will not be rendered correctly.**\n```javascript\n{\n\tpath: \"/slides/example\",\n\tslideProps: { slidePath: \"example-slides.yaml\", title: \"Example\" },\n\tComponent: lazy(() =>\n\t\timport(/* webpackChunkName: \"quick-slides\" */ \"./views/Slides/QuickSlides.js\")\n\t),\n},\n```\n\nThis information is also reiterated here: https://softe.club/dev/docs/slidedecks"
+    },
+    {
+      "file": "src/articles/docs/slidedecks.md",
+      "description": "Note that Quick Slides are not the only way to create slides, it's simply for convenience. It's possible to create slides with more customized elements.\n\nThis document is available at https://softe.club/dev/docs/slidedecks",
+      "line": 7
+    },
+    {
+      "file": "src/Events.js",
+      "description": "This is where you can add events to the website.\n\n- Flyers go in: `src/assets/flyers`\n- This list is NOT sorted, the order that they are placed is the order that they appear.",
+      "line": 105
+    },
+    {
+      "file": "src/Router.js",
+      "description": "Note here that `/dev/docs` comes *after* `/dev/docs/design`. This is because if it was the other way around, then the path `/dev/docs/design` would match the `/dev/docs` route first, and as a result, display the incorrect page.",
+      "line": 103
+    }
+  ],
+  "ref": "master"
+}
