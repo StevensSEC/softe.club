@@ -2,6 +2,8 @@
 
 Learning about programming is hard. Hopefully, these resources will make it a little bit easier. Here are some resources that we recommend for popular tools and languages.
 
+[!btn:Add new resources here](https://github.com/StevensSEC/softe.club/issues/new?assignees=&labels=enhancement%2C+content%2Farticle&template=new_resource.yml&title=Add+to+resources%3A+)
+
 -   [repl.it](https://repl.it) - Quickly run code from tons of different languages in your browser
 -   [overapi](https://overapi.com) - Lists cheat sheets for a ton of languages
 
