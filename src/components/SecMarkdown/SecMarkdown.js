@@ -21,8 +21,10 @@ const lazyImage = props => {
 };
 
 const mdLink = props => {
-	const cmdPrefix = "!"
-	let command, args, text = props.children[0].props.value;
+	const cmdPrefix = "!";
+	let command,
+		args,
+		text = props.children[0].props.value;
 	if (text.startsWith(cmdPrefix)) {
 		let fullcommand;
 		[fullcommand, text] = text.split(":");
@@ -37,16 +39,20 @@ const mdLink = props => {
 			if (args.length > 0) {
 				kind = args[0];
 			}
-			return <SEC.Button kind={kind} href={props.href}>{text}</SEC.Button>
+			return (
+				<SEC.Button kind={kind} href={props.href}>
+					{text}
+				</SEC.Button>
+			);
+		} else {
+			throw new Error(
+				`Invalid mdLink command: ${command}, original link text: ${props.children[0].props.value}`
+			);
 		}
-		else {
-			throw new Error(`Invalid mdLink command: ${command}, original link text: ${props.children[0].props.value}`);
-		}
+	} else {
+		return <SEC.Link {...props} />;
 	}
-	else {
-		return <SEC.Link {...props} />
-	}
-}
+};
 
 /**
  * Parses and renders markdown with SEC's special flavoring and features.

@@ -19,13 +19,10 @@ describe("ArticleView", () => {
 		const markdown = `[!btn:LINK TEXT](https://softe.club)`;
 
 		await act(async () => {
-			render(
-				<SecMarkdown markdown={markdown} />,
-				container
-			);
+			render(<SecMarkdown markdown={markdown} />, container);
 		});
 
-		expect(container).toHaveTextContent("LINK TEXT")
+		expect(container).toHaveTextContent("LINK TEXT");
 		expect(container.querySelector(".sec-btn")).not.toBeNull();
 		expect(container.querySelector(".sec-kind-generic")).not.toBeNull();
 	});
@@ -34,13 +31,10 @@ describe("ArticleView", () => {
 		const markdown = `[!btn,primary:LINK TEXT](https://softe.club)`;
 
 		await act(async () => {
-			render(
-				<SecMarkdown markdown={markdown} />,
-				container
-			);
+			render(<SecMarkdown markdown={markdown} />, container);
 		});
 
-		expect(container).toHaveTextContent("LINK TEXT")
+		expect(container).toHaveTextContent("LINK TEXT");
 		expect(container.querySelector(".sec-btn")).not.toBeNull();
 		expect(container.querySelector(".sec-kind-primary")).not.toBeNull();
 	});
