@@ -20,6 +20,34 @@ const lazyImage = props => {
 	return <img loading="lazy" {...props} />;
 };
 
+const mdLink = props => {
+	const cmdPrefix = "!"
+	let command, args, text = props.children[0].props.value;
+	if (text.startsWith(cmdPrefix)) {
+		let fullcommand;
+		[fullcommand, text] = text.split(":");
+		let cmdparsed = fullcommand.slice(cmdPrefix.length).split(",");
+		command = cmdparsed[0];
+		args = cmdparsed.length > 1 ? cmdparsed.slice(1) : [];
+	}
+
+	if (command) {
+		if (command === "btn") {
+			let kind = "generic";
+			if (args.length > 0) {
+				kind = args[0];
+			}
+			return <SEC.Button kind={kind} href={props.href}>{text}</SEC.Button>
+		}
+		else {
+			throw new Error(`Invalid mdLink command: ${command}, original link text: ${props.children[0].props.value}`);
+		}
+	}
+	else {
+		return <SEC.Link {...props} />
+	}
+}
+
 /**
  * Parses and renders markdown with SEC's special flavoring and features.
  */
@@ -31,7 +59,7 @@ const SecMarkdown = ({ markdown }) => {
 				source={markdown}
 				escapeHtml={false}
 				astPlugins={[parseHtml]}
-				renderers={{ code: CodeBlock, link: SEC.Link, image: lazyImage }}
+				renderers={{ code: CodeBlock, link: mdLink, image: lazyImage }}
 				transformImageUri={uri => {
 					if (uri.startsWith("http")) {
 						return uri;
