@@ -140,7 +140,7 @@ You can install it from the Windows Store.
 
 There are other options:
 
--   [Windows Terminal](https://github.com/microsoft/terminal)
+-   [Windows Terminal](https://github.com/microsoft/terminal) - [How to install](/tutorial/windows-terminal)
 -   [Alacritty](https://github.com/alacritty/alacritty)
 -   [Hyper](https://hyper.is) - Electron based, written in javascript
 

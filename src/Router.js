@@ -256,6 +256,16 @@ const ROUTES = [
 		),
 	},
 	{
+		path: "/tutorial/windows-terminal",
+		articleProps: {
+			source: "tutorials/howto-install-use-windows-terminal.md",
+			title: "How to install and use Windows Terminal",
+		},
+		Component: lazy(() =>
+			import(/* webpackChunkName: "article" */ "./views/Article/Article.js")
+		),
+	},
+	{
 		path: "/event/ctc-intro-to-git-2020",
 		articleProps: {
 			source: "events/ctc-intro-to-git-2020/intro-to-git.md",
