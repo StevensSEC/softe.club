@@ -92,6 +92,7 @@ _Tip: You can install these quickly by pressing `Ctrl + P` and typing the comman
 -   Path Intellisense `christian-kohler.path-intellisense` - Autocompletes filenames.
 -   Debug Visualizer `hediet.debug-visualizer` - Fancy graphics for visualizing data structures while stepping through code.
 -   Vim for VS Code `vscodevim.vim` - Vim keybinds for VS Code.
+-   Glassit `s-nlf-fh.glassit` - Allows for VS Code to be set to transparent on Windows and Linux systems.
 
 ### Atom
 
@@ -307,6 +308,12 @@ Website: https://github.com/dahlbyk/posh-git
 Example:
 
 ![posh-git example prompt](pimp-my-terminal/posh-git-prompt.png)
+
+## powerlevel10k
+
+A theme for zsh that is highly customizable, includes powerlines to display system information, and emphasizes speed.
+
+![powerlevel10k screenshot](pimp-my-terminal/powerlevel10k.png)
 
 # Other Tools
 
