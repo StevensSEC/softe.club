@@ -223,6 +223,10 @@ It varies, based on your terminal.
 
 ![Cascadia Code preview](pimp-my-terminal/font-preview-cascadia-code.png)
 
+-   [Victor Mono](https://rubjo.github.io/victor-mono/)
+
+![Victor Mono preview](pimp-my-terminal/font-preview-victor-mono.png)
+
 # Useful Info
 
 ### Where are the configs?
