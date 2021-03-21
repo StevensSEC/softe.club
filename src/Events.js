@@ -91,9 +91,8 @@ const EVENTS = generateGbms(dayjs("2021-2-4", "YYYY-MM-DD"), dayjs("2021-2-11", 
 	])
 	.concat(generateGbms(dayjs("2021-3-11", "YYYY-MM-DD"), dayjs("2021-3-19", "YYYY-MM-DD"), 5))
 	.concat([
-		// TODO: update this pimp my terminal event with new flyer and metadata for 2021
 		{
-			flyerSource: "Pimp my terminal.png",
+			flyerSource: "pmt_2021.png",
 			title: "Pimp My Terminal",
 			desc:
 				"Update your terminal's boring, dull style to one that truly matches your vibe: SPECTACULAR!",
@@ -102,5 +101,5 @@ const EVENTS = generateGbms(dayjs("2021-2-4", "YYYY-MM-DD"), dayjs("2021-2-11", 
 			endDate: dayjs("2021-3-25", "YYYY-MM-DD").hour(22),
 		},
 	])
-	.concat(generateGbms(dayjs("2021-4-8", "YYYY-MM-DD"), dayjs("2021-5-6", "YYYY-MM-DD"), 7));
+	.concat(generateGbms(dayjs("2021-4-8", "YYYY-MM-DD"), dayjs("2021-5-6", "YYYY-MM-DD"), 8));
 export default EVENTS;
