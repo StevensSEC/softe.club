@@ -91,15 +91,15 @@ const EVENTS = generateGbms(dayjs("2021-2-4", "YYYY-MM-DD"), dayjs("2021-2-11", 
 	])
 	.concat(generateGbms(dayjs("2021-3-11", "YYYY-MM-DD"), dayjs("2021-3-19", "YYYY-MM-DD"), 5))
 	.concat([
-		// TODO: update this pimp my terminal event with new flyer and metadata for 2021
-		// {
-		// 	flyerSource: "Pimp my terminal.png",
-		// 	title: "Pimp My Terminal",
-		// 	desc:
-		// 		"Come learn how to make your developing process look pretty by decking out your VSCode and your terminal.",
-		// 	startDate: dayjs(new Date("January 27, 2021")).hour(21),
-		// 	endDate: dayjs(new Date("January 27, 2021")).hour(22),
-		// },
+		{
+			flyerSource: "pmt_2021.png",
+			title: "Pimp My Terminal",
+			desc:
+				"Update your terminal's boring, dull style to one that truly matches your vibe: SPECTACULAR!",
+			meetingLink: "https://stevens.zoom.us/j/93021320820",
+			startDate: dayjs("2021-3-25", "YYYY-MM-DD").hour(21),
+			endDate: dayjs("2021-3-25", "YYYY-MM-DD").hour(22),
+		},
 	])
-	.concat(generateGbms(dayjs("2021-4-8", "YYYY-MM-DD"), dayjs("2021-5-6", "YYYY-MM-DD"), 7));
+	.concat(generateGbms(dayjs("2021-4-8", "YYYY-MM-DD"), dayjs("2021-5-6", "YYYY-MM-DD"), 8));
 export default EVENTS;
