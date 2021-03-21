@@ -25,6 +25,28 @@ _Tip: Have the source code for this article open for reference._
 Referencing a route in an article that has not yet been added to this array will cause
 React to throw an error. `source` is a path relative to `src/articles`.
 
+## Links
+
+In markdown links, look like this:
+
+```markdown
+[LINK TEXT](https://softe.club)
+```
+
+Results look like:
+[LINK TEXT](https://softe.club)
+
+Our special SEC flavored markdown allows you to put in a button instead:
+
+```markdown
+[!btn:LINK TEXT](https://softe.club)
+[!btn,primary:LINK TEXT](https://softe.club)
+```
+
+Results look like:
+[!btn:LINK TEXT](https://softe.club)
+[!btn,primary:LINK TEXT](https://softe.club)
+
 ## Images
 
 Embed images with this syntax

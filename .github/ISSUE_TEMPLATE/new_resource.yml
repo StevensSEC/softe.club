@@ -1,0 +1,28 @@
+name: New Resource
+description: Request a new resource to be added to the website.
+title: 'Add to resources: '
+labels: enhancement, content/article
+issue_body: false
+body:
+  - type: input
+    attributes:
+      label: URL
+      placeholder: https://example.com
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: Title
+      description: Required if URL is long.
+      placeholder: Example
+  - type: input
+    attributes:
+      label: description
+      description: Breifly describe what this resource is.
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: For
+      description: 'What is this resource for? This can be omitted if the resource is not for any language in particular. HTML, CSS and javscript resources should be indicated as "Web" resources.'
+      placeholder: Web
