@@ -96,7 +96,7 @@ const EVENTS = generateGbms(dayjs("2021-2-4", "YYYY-MM-DD"), dayjs("2021-2-11", 
 			flyerSource: "Pimp my terminal.png",
 			title: "Pimp My Terminal",
 			desc:
-				"Update your terminal's boring, dull style to one that truly matches your vibe: SPECTACULAR.",
+				"Update your terminal's boring, dull style to one that truly matches your vibe: SPECTACULAR!",
 			meetingLink: "https://stevens.zoom.us/j/93021320820",
 			startDate: dayjs("2021-3-25", "YYYY-MM-DD").hour(21),
 			endDate: dayjs("2021-3-25", "YYYY-MM-DD").hour(22),
