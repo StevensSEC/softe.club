@@ -24,6 +24,14 @@ You can open a new tab in a different shell from the dropdown:
 
 If you have WSL installed, you can also run Bash.
 
+### Opening from File Explorer
+
+While you are still getting comfortable navigating a command-line interface, you may find yourself using File Explorer as a reference. You can open Windows Terminal from a folder in the File Explorer by right-clicking anywhere in the folder and selecting "Open in Windows Terminal".
+
+![Screenshot of Windows Terminal being opened from File Explorer](tutorials/howto-use-windows-terminal5.png)
+
+![Screenshot of Windows Terminal being opened from File Explorer](tutorials/howto-use-windows-terminal6.png)
+
 ### Related
 
 [!btn:Powershell Cheatsheet](/powershell-cheatsheet)
