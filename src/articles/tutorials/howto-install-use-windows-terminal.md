@@ -4,7 +4,13 @@
 
 Install it from the Microsoft Store.
 
-TODO: screenshots
+![Screenshot of typing Microsoft Store in the search bar](tutorials/howto-use-windows-terminal2.png)
+
+![Screenshot of typing Windows Terminal in the MS Store search bar](tutorials/howto-use-windows-terminal3.png)
+
+![Screenshot of Windows Terminal MS Store Page](tutorials/howto-use-windows-terminal4.png)
+
+Once you press "Get", the Microsoft Store should begin immediately start installing Windows Terminal. If it doesn't, you may need to press "Install" to get it started.
 
 ## Usage
 
