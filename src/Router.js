@@ -331,6 +331,13 @@ const ROUTES = [
 			import(/* webpackChunkName: "quick-slides" */ "./views/Slides/QuickSlides.js")
 		),
 	},
+    {
+        path: "/tools",
+        articleProps: { source: "guides/tools.md", title: "Tools" },
+        Component: lazy(() =>
+			import(/* webpackChunkName: "article" */ "./views/Article/Article.js")
+		),
+    },
 	{
 		path: "*",
 		Component: lazy(() =>
