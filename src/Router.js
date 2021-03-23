@@ -332,7 +332,7 @@ const ROUTES = [
 		),
 	},
     {
-        path: "/tools",
+        path: "/guide/tools",
         articleProps: { source: "guides/tools.md", title: "Tools" },
         Component: lazy(() =>
 			import(/* webpackChunkName: "article" */ "./views/Article/Article.js")
