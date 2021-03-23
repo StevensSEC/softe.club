@@ -65,6 +65,10 @@ const Header = () => {
 			title: "Pimp My Terminal",
 			route: "/event/pimp-my-terminal",
 		},
+        {
+            title: "Tools",
+            route: "/tools",
+        }
 	];
 	const sideList = side => (
 		<div
