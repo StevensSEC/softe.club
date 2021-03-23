@@ -63,6 +63,10 @@ Git is the most commonly used version control system. Using git is required for 
 
 -   [Official SEC Powershell Cheatsheet](/powershell-cheatsheet) - An overview of frequently used powershell commands
 
+## zsh
+
+-   [wd](https://github.com/mfaerevaag/wd) - aka "Warp Directory", this command lets you jump to custom directories without typing a long path using `cd`. Comes bundled with oh-my-zsh.
+
 ## Linux
 
 Even if you don’t develop on Linux, you will encounter it eventually. It’s definitely worth taking the time to learn how Linux works and how to navigate a Linux environment. We recommend installing a virtual machine or [installing the Windows Subsystem for Linux](/tutorial/install-wsl), to play around with it.
