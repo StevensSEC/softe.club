@@ -33,11 +33,6 @@ Familiarizing yourself with powerful tools will streamline your workflow and hel
 
 -   [fugitive](https://github.com/tpope/vim-fugitive) - A plugin for Vim that wraps Git to allow easier command usage
 
-
-## zsh
-
--   [wd](https://github.com/mfaerevaag/wd) - aka "Warp Directory", this command lets you jump to custom directories without typing a long path using `cd`. oh-my-zsh comes bundled with this plugin.
-
 ## VSCode Extensions
 
 -   [Error Lens (usernamehw.errorlens)](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens) - Improve highlighting of errors
