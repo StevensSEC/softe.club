@@ -13,6 +13,7 @@ Familiarizing yourself with powerful tools will streamline your workflow and hel
 -   [npm.avanka](http://npm.anvaka.com) - A graph visualization of package dependencies
 -   [keycode.info](https://keycode.info) - Displays keycodes for keyboard events.
 -   [responsively.app](https://responsively.app/) - An application that allows you to preview multiple mobile/desktop version of a website all at the same time
+-   [csslayout.io](https://csslayout.io/) - A collection of popular layouts and patterns made with CSS
 
 ## Markdown
 
