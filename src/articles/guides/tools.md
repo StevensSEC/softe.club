@@ -11,6 +11,8 @@ Familiarizing yourself with powerful tools will streamline your workflow and hel
 -   [jsbench](https://jsben.ch/) - Benchmark code performance directly in the browser
 -   [npm.avanka](http://npm.anvaka.com) - A graph visualization of package dependencies
 -   [keycode.info](https://keycode.info) - Displays keycodes for keyboard events.
+-   [responsively.app](https://responsively.app/) - An application that allows you to preview multiple mobile/desktop version of a website all at the same time
+-   [csslayout.io](https://csslayout.io/) - A collection of popular layouts and patterns made with CSS
 
 ## Markdown
 
@@ -31,6 +33,14 @@ Familiarizing yourself with powerful tools will streamline your workflow and hel
 ## Git
 
 -   [fugitive](https://github.com/tpope/vim-fugitive) - A plugin for Vim that wraps Git to allow easier command usage
+
+## Bash
+
+-   [Bash Scripting Template](https://github.com/ralish/bash-script-template) - A bash scripting template incorporating best practices and several useful functions.
+
+## zsh
+
+-   [wd](https://github.com/mfaerevaag/wd) - aka "Warp Directory", this command lets you jump to custom directories without typing a long path using `cd`. oh-my-zsh comes bundled with this plugin.
 
 ## VSCode Extensions
 
