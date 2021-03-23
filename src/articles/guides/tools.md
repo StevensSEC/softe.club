@@ -45,4 +45,3 @@ Familiarizing yourself with powerful tools will streamline your workflow and hel
 ## VSCode Extensions
 
 -   [Error Lens (usernamehw.errorlens)](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens) - Improve highlighting of errors
-
