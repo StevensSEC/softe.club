@@ -34,7 +34,7 @@ Familiarizing yourself with powerful tools will streamline your workflow and hel
 
 -   [fugitive](https://github.com/tpope/vim-fugitive) - A plugin for Vim that wraps Git to allow easier command usage
 
-## Shell Scripting
+## Bash
 
 -   [Bash Scripting Template](https://github.com/ralish/bash-script-template) - A bash scripting template incorporating best practices and several useful functions.
 
