@@ -1,10 +1,9 @@
 # Tools
 
-Familiarizing yourself with powerful tools will streamline your workflow and help you become more productive. Here are some tools that have been recommended to us before. 
+Familiarizing yourself with powerful tools will streamline your workflow and help you become more productive. Here are some tools that have been recommended to us before.
 
 -   [repl.it](https://repl.it) - Quickly run code from tons of different languages in your browser
 -   [Regexr](https://regexr.com) - Make and test regular expressions, includes cheat sheet, real time updates as you type, and explainer.
-
 
 ## Web (HTML/CSS/JS)
 
