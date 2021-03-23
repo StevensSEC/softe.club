@@ -4,17 +4,12 @@ Learning about programming is hard. Hopefully, these resources will make it a li
 
 [!btn:Add new resources here](https://github.com/StevensSEC/softe.club/issues/new?assignees=&labels=enhancement%2C+content%2Farticle&template=new_resource.yml&title=Add+to+resources%3A+)
 
--   [repl.it](https://repl.it) - Quickly run code from tons of different languages in your browser
 -   [overapi](https://overapi.com) - Lists cheat sheets for a ton of languages
 
 ## Web (HTML/CSS/JS)
 
 -   [marksheet.io](https://marksheet.io) - A written tutorial for HTML and CSS
--   [bundlephobia](https://bundlephobia.com/) - Provides data about packages to help avoid JavaScript bloat
 -   [w3schools](https://www.w3schools.com/js/) - A written tutorial for JavaScript
--   [jsbench](https://jsben.ch/) - Benchmark code performance directly in the browser
--   [npm.avanka](http://npm.anvaka.com) - A graph visualization of package dependencies
--   [keycode.info](https://keycode.info) - Displays keycodes for keyboard events.
 
 ### Vue.js
 
@@ -22,17 +17,9 @@ Learning about programming is hard. Hopefully, these resources will make it a li
 -   [Video Tutorial - Vue.js Lifecycle Hooks](https://www.youtube.com/watch?v=8rn3SK4N8Go&ab_channel=TheNetNinja) - An introduction to Vue.js lifecycle hooks
 -   [Video Tutorial - Vuex Crash Course | State Management](https://www.youtube.com/watch?v=5lVQgZzLMHc&ab_channel=TraversyMedia) - Build an application using Vue.js and the Vuex state management library
 
-## Markdown
-
--   [Tables Generator](https://www.tablesgenerator.com/markdown_tables) - Markdown table generator
-
 ## C&#35;
 
 -   [C# Fundamentals for Absolute Beginners](https://channel9.msdn.com/Series/CSharp-Fundamentals-for-Absolute-Beginners) - A video tutorial for C#
-
-## C/C++
-
--   [Compiler Explorer](https://godbolt.org/) - Displays the compiled assembly of provided C++ code
 
 ## Python
 
@@ -42,12 +29,10 @@ Learning about programming is hard. Hopefully, these resources will make it a li
 
 -   [Official Rust book](https://doc.rust-lang.org/book/) - Documentation for Rust
 -   [Rust cookbook](https://rust-lang-nursery.github.io/rust-cookbook/) - Outlines simple examples of good practices
--   [rust-analyzer](https://marketplace.visualstudio.com/items?itemName=matklad.rust-analyzer) - VSCode extension for code completion and goto
 
 ## Go
 
 -   [Go By Example](https://gobyexample.com/) - A comprehesive list of code examples for common things
--   [JSON-to-Go](https://mholt.github.io/json-to-go) - Generate Go structs from JSON objects
 -   [Video Tutorial - Tour of Go](https://www.youtube.com/watch?v=MzYZhh6gpI0) - A very concise tour of Go's best features
 
 ## Git
@@ -57,7 +42,6 @@ Git is the most commonly used version control system. Using git is required for 
 -   [Official SEC Cheatsheet](/git-cheatsheet) - An overview of basic usage of git's commands
 -   [git it](https://github.com/jlord/git-it-electron) - Interactive git tutorial
 -   [GitFixUm](https://sethrobertson.github.io/GitFixUm/fixup.html) - Did you make a mistake with git? This guide will help you get out of it
--   [fugitive](https://github.com/tpope/vim-fugitive) - A plugin for Vim that wraps Git to allow easier command usage
 
 ## Powershell
 
@@ -77,16 +61,6 @@ Even if you don’t develop on Linux, you will encounter it eventually. It’s d
 
 -   [PacktPub](https://packtpub.com/) - Provides a free daily ebook, hosts other ebook resources
 -   [free-programming-books](https://github.com/EbookFoundation/free-programming-books) - A huge list of free programming books to check out (some links are old but there's a ton there!)
-
-# Useful Tools
-
--   [Regexr](https://regexr.com) - Make and test regular expressions, includes cheat sheet, real time updates as you type, and explainer.
-
-## VSCode Extensions
-
-Language agnostic VSCode extensions
-
--   [Error Lens (usernamehw.errorlens)](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens) - Improve highlighting of errors
 
 # Free Courses
 
