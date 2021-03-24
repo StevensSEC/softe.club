@@ -13,6 +13,7 @@ Familiarizing yourself with powerful tools will streamline your workflow and hel
 -   [keycode.info](https://keycode.info) - Displays keycodes for keyboard events.
 -   [responsively.app](https://responsively.app/) - An application that allows you to preview multiple mobile/desktop version of a website all at the same time
 -   [csslayout.io](https://csslayout.io/) - A collection of popular layouts and patterns made with CSS
+-   [flexbox.help](https://flexbox.help/) - A sandbox to test CSS flexbox rules
 
 ## Markdown
 
