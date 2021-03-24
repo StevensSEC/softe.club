@@ -10,6 +10,7 @@ Learning about programming is hard. Hopefully, these resources will make it a li
 
 -   [marksheet.io](https://marksheet.io) - A written tutorial for HTML and CSS
 -   [w3schools](https://www.w3schools.com/js/) - A written tutorial for JavaScript
+-   [A Complete Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) - A guide to flexbox layout with graphic examples and explanations
 
 ### Vue.js
 
