@@ -1,8 +1,8 @@
 import { lazy } from "react";
 
-// attendance url is currently for GBM 6
+// attendance url is currently for pimp my terminal
 const ATTENDANCE_URL =
-	"https://stevens.campuslabs.com/engage/event/6899652/attend?Vud=3/22/2021&Vut=02:00:00&Hash=lgf-PBzxDkwtMbclJCmCLaJdnNXx60wr6bPeAdHo3IGGQjez3WiGJru408foNQDup9W8pNuWC9OogVLzb2N2MlzIPbdnirDYLeb9GbPq_5SC_9Slq4VKmrn5991XrTgArO7mqf_Xrrh7tODGi50YVO_UMKwBApS0jFeDrX6vI_dJqMpkFv9SK_IdwJrxmpo3DP70XbDQ23zT8LveIa32m7TYrL9dp8aJah8aQhwFrsFy65L-m3rHDIWukCCxLIWmH-r6xhJ2aB875-U8EBTHyClusfpVVXot8fstzrb3PJ_9JWQQdy8k1d6j-Tiz9pv3Li7uOvV5SIpj0iXr_j-kpA";
+	"https://stevens.campuslabs.com/engage/event/7017877/attend?Vud=4/2/2021&Vut=02:00:00&Hash=bPdpf_IvyJdxqTywq1kGL3-mgYS_ZLeMO90aOlSa5lcc10lo5anOxM49FrmC4urRw3h0HOJTkLUx60RswyUzDv3p9YDmbCEiV0UbfBFETS-qD2wMgVV_4V1RMTWp0Ps1MOOVxXvqFbvtehPEnBGsFg4e3UbeMoiHKH5X_fc6uUf8_D7WjWVPiCpVN29TuMfcr4h90LLN9Rol2J0akuoXJz-grHBVt3zEsnSj4We-ZKLppcWUTwgkNX220fdsNGTtDuE4Ev1-fnGjcmS0TuCSNu0_wFWTnyPWie04b2H9quQuC2U9vqnHOckQsU6bHaJq7BMV8USns7Jt6bOrebFSOQ";
 
 const ROUTES = [
 	{
