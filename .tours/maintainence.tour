@@ -37,7 +37,7 @@
     },
     {
       "file": "src/articles/docs/articles.md",
-      "description": "This is an extremely important document to read if it is your first time adding an article to the website. **Please actually fucking read it.** **If you don't read it, you *will* break stuff**, and you will learn the knowledge in this document the hard way.",
+      "description": "This is an extremely important document to read if it is your first time adding an article to the website. **Please take the time read it.** **If you don't read it, you *will* break stuff**, and you will learn the knowledge in this document the hard way.",
       "line": 5
     },
     {
