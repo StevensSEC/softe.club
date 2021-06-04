@@ -38,9 +38,9 @@ export default class TeamView extends Component {
 		},
 		{
 			role: "Marketing Chair",
-			name: "Anjali Paliwal",
-			img: "user.jpg",
-			github: "grinchpal",
+			name: "Kristin Kim",
+			img: "kristin.jpg",
+			github: "krixstin",
 		},
 	];
 
