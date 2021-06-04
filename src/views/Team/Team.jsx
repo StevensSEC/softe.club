@@ -8,9 +8,9 @@ export default class TeamView extends Component {
 	eboardList = [
 		{
 			role: "President",
-			name: "Carson McManus",
-			img: "carson.png",
-			github: "dyc3",
+			name: "David Carpenter",
+			img: "david.jpg",
+			github: "carpenterd777",
 		},
 		{
 			role: "Vice President",
@@ -21,7 +21,7 @@ export default class TeamView extends Component {
 		{
 			role: "Treasurer",
 			name: "David Carpenter",
-			img: "david.jpeg",
+			img: "david.jpg",
 			github: "carpenterd777",
 		},
 		{
