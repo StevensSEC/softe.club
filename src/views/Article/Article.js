@@ -29,7 +29,7 @@ export default class ArticleView extends PureComponent {
 			markdown: null,
 		});
 
-		fetch(url)
+		fetch(url.default)
 			.then(resp => resp.text())
 			.then(text => {
 				this.setState({
