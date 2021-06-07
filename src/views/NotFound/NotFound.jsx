@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid, Box } from "@material-ui/core";
+import { Grid, Container } from "@material-ui/core";
 import { useLocation } from "react-router-dom";
 import DocumentTitle from "../../components/DocumentTitle/DocumentTitle";
 import "./NotFound.scss";
@@ -9,7 +9,7 @@ export default function NotFoundView() {
 	let location = useLocation().pathname;
 
 	return (
-		<Box>
+		<Container>
 			<DocumentTitle title="Uh oh! (404 Not Found)" />
 			<Grid
 				container
@@ -28,6 +28,6 @@ export default function NotFoundView() {
 					</div>
 				</Grid>
 			</Grid>
-		</Box>
+		</Container>
 	);
 }
