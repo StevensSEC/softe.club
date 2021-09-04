@@ -339,6 +339,13 @@ const ROUTES = [
 		),
 	},
 	{
+		path: "/guide/code-reviews",
+		articleProps: { source: "guides/code-reviews.md", title: "SEC's guide to code reviews" },
+		Component: lazy(() =>
+			import(/* webpackChunkName: "article" */ "./views/Article/Article.js")
+		),
+	},
+	{
 		path: "*",
 		Component: lazy(() =>
 			import(/* webpackChunkName: "not-found" */ "./views/NotFound/NotFound.jsx")
