@@ -46,6 +46,10 @@ const ROUTES = [
 			import(/* webpackChunkName: "article" */ "./views/Article/Article.js")
 		),
 	},
+	{
+		path: "/recordings",
+		Component: lazy(() => import(/* webpackChunkName: "recordings" */ "./views/Recordings/Recordings.js"))
+	},
 	// HACK: This is required to redirect to an external page. The `Redirect` component only redirects to paths on the same host.
 	{
 		path: "/slack",
