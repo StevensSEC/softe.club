@@ -6,7 +6,7 @@ import * as SEC from "../SEC/lib.js";
  * Display Open Source Contributions made by club members.
  */
 export default function Contributions(props) {
-	return ( props.semesters.map(data => {
+	return props.semesters.map(data => {
 		return (
 			<div key={data.display}>
 				<span>
@@ -30,9 +30,9 @@ export default function Contributions(props) {
 				</ul>
 			</div>
 		);
-	}));
+	});
 }
 
 Contributions.PropTypes = {
-	semesters: PropTypes.array
-}
+	semesters: PropTypes.array,
+};

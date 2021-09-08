@@ -48,11 +48,15 @@ const ROUTES = [
 	},
 	{
 		path: "/recordings",
-		Component: lazy(() => import(/* webpackChunkName: "recordings" */ "./views/Recordings/Recordings.js"))
+		Component: lazy(() =>
+			import(/* webpackChunkName: "recordings" */ "./views/Recordings/Recordings.js")
+		),
 	},
 	{
 		path: "/contributions",
-		Component: lazy(() => import(/* webpackChunkName: "contributions" */ "./views/Contributions/Contributions.js"))
+		Component: lazy(() =>
+			import(/* webpackChunkName: "contributions" */ "./views/Contributions/Contributions.js")
+		),
 	},
 	// HACK: This is required to redirect to an external page. The `Redirect` component only redirects to paths on the same host.
 	{

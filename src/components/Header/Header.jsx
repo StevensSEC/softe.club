@@ -76,7 +76,7 @@ const Header = () => {
 		{
 			title: "Contributions",
 			route: "/contributions",
-		}
+		},
 	];
 	const sideList = side => (
 		<div
