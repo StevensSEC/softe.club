@@ -55,6 +55,13 @@ const ROUTES = [
 		},
 	},
 	{
+		path: "/discord",
+		Component: () => {
+			window.location.href = "https://discord.gg/nr3tqCfR2a";
+			return null;
+		},
+	},
+	{
 		path: "/gh-submit",
 		Component: () => {
 			// Form for submitting github usernames spring 2021
@@ -308,6 +315,13 @@ const ROUTES = [
 		slideProps: { slidePath: "spring-2021-gbm1.yaml" },
 		Component: lazy(() =>
 			import(/* webpackChunkName: "quick-slides" */ "./views/Slides/QuickSlides.js")
+		),
+	},
+	{
+		path: "/slides/fall-2021-gbm1",
+		slideProps: { slidePath: "fall-2021-gbm1.yaml" },
+		Component: lazy(() =>
+			import(/*webpackChunkName: "quick-slides" */ "./views/Slides/QuickSlides.js")
 		),
 	},
 	{

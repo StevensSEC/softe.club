@@ -1,0 +1,100 @@
+---
+title: SEC GBM 1 Fall 2021
+slides:
+  - type: default
+    sticky: true
+    content: |
+      ## Programs to Install:
+
+      - git (git-scm.com)
+      - GitHub CLI (cli.github.com)
+      - VSCode (code.visualstudio.com)
+      - Node (nodejs.org)
+      - Yarn (yarnpkg.com)
+      - Expo Go (on your phone's app store)
+
+      ## Submit your GitHub username
+
+      We'll send you an invite to the org if you aren't in it, and add you to the team.
+
+      [softe.club/gh-submit](https://softe.club/gh-submit)
+
+      ## Join Discord
+
+      [softe.club/discord](https://softe.club/discord)
+  - type: title
+    title: Welcome back, or nice to meet you!
+    img: logo
+  - type: title
+    title: About the Club
+  - type: default
+    content: |
+      # What we did last semester...
+
+      ## pokemonbattlelib - pokemon battle library written in Go
+
+      Check it out on github.com/StevenSEC/pokemonbattlelib
+  - type: default
+    content: |
+      # Contributions
+
+      Since the project's inception, we have...
+
+      - made 642 commits
+      - closed 139 issues
+      - received contributions from 9 different club members
+
+      The repo is still open for contributions if you are interested!
+  - type: title
+    title: What are we making?
+  - type: title
+    title: Monocle - an app to read printed text from images
+  - type: default
+    content: |
+      # What languages and frameworks?
+
+      - Typescript
+      - React
+      - React-Native
+  - type: default
+    name: clone-instructions
+    sticky: true
+    content: |
+      # How to clone the repo
+
+      1. Open a terminal
+      - Powershell on Windows
+      2. Navigate to the folder that you want to place the project into
+      - *It'll automatically create a folder inside the current folder called `monocle`.*
+      3. Run this command:
+
+      ```bash
+      gh repo clone StevensSEC/monocle
+      ```
+      4. Open it in VSCode
+      ```bash
+      cd monocle
+      code .
+      ```
+      *Tip: Press tab to autocomplete.*
+  - type: title
+    title: Goal - create mobile app fit to be downloaded on an app store
+  - type: title
+    title: the app's main purpose will be to read text from an image using ML
+  - type: title
+    title: Just beginning to code?
+  - type: default
+    content: |
+      # How this works
+
+      - Pick an issue to work on, or we can recommend one.
+      - Make a new branch
+      - Make your changes, commit them
+      - Create a pull request
+      - *Your code doesn't have to be perfect to make a pull request!*
+
+      *This command will guide you through the process.*
+      ```bash
+      gh pr create
+      ```
+      - Automated tests will get run, and somebody else will review your code and give feedback.
