@@ -8,6 +8,20 @@ Documentation can be found in `src/articles/docs`, or at https://softe.club/dev/
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Setup
+
+Download and install [node version 14](https://nodejs.org/download/release/v14.17.6/). You can also do this with [nvm](https://github.com/nvm-sh/nvm#installing-and-updating) if you like, in which case you run:
+```
+nvm install 14
+```
+
+Once node is installed, run:
+```
+npm install
+```
+
+to install all dependencies.
+
 ## Available Scripts
 
 In the project directory, you can run:
