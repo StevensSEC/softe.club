@@ -2,6 +2,7 @@ import React from "react";
 import contrib_2020fall from "../../data/contributions/2020fall.json";
 import * as SEC from "../../components/SEC/lib.js";
 import Contributions from "../../components/Contributions/Contributions"
+import "./Contributions.scss"
 
 
 const ContributionsView = () => {
