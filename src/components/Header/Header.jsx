@@ -72,6 +72,10 @@ const Header = () => {
 		{
 			title: "Recordings",
 			route: "/recordings",
+		},
+		{
+			title: "Contributions",
+			route: "/contributions",
 		}
 	];
 	const sideList = side => (

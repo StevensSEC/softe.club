@@ -2,7 +2,6 @@ import React from "react";
 import { Container, Grid } from "@material-ui/core";
 import "./Home.scss";
 import ArticleList from "../../components/ArticleList/ArticleList.js";
-import Contributions from "../../components/Contributions/Contributions.js";
 import DocumentTitle from "../../components/DocumentTitle/DocumentTitle.js";
 import EventBanner from "../../components/EventBanner/EventBanner.jsx";
 import EVENTS from "../../Events.js";
@@ -30,7 +29,6 @@ export default function HomeView() {
 				{EVENTS.map((event, index) => {
 					return <EventBanner key={"eventBanner-" + index} {...event} />;
 				})}
-				<Contributions></Contributions>
 				<ArticleList></ArticleList>
 			</Container>
 		</div>
