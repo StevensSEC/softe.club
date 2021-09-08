@@ -31,8 +31,9 @@ slides:
     content: |
       # What we did last semester...
 
-      <br/><br/><br/><br/>
-      We created pokemonbattlelib!
+      ## pokemonbattlelib - pokemon battle library written in Go
+
+      Check it out on github.com/StevenSEC/pokemonbattlelib
   - type: default
     content: |
       # Contributions
@@ -49,6 +50,13 @@ slides:
   - type: title
     title: Monocle - an app to read printed text from images
   - type: default
+    content: |
+      # What languages and frameworks?
+
+      - Typescript
+      - React
+      - React-Native
+  - type: default
     name: clone-instructions
     sticky: true
     content: |
@@ -57,7 +65,7 @@ slides:
       1. Open a terminal
       - Powershell on Windows
       2. Navigate to the folder that you want to place the project into
-      - *It'll automatically create a folder inside the current folder called `pokemonbattlelib`.*
+      - *It'll automatically create a folder inside the current folder called `monocle`.*
       3. Run this command:
 
       ```bash
@@ -65,7 +73,7 @@ slides:
       ```
       4. Open it in VSCode
       ```bash
-      cd pokemonbattlelib
+      cd monocle
       code .
       ```
       *Tip: Press tab to autocomplete.*
