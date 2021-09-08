@@ -14,15 +14,15 @@ export default class TeamView extends Component {
 		},
 		{
 			role: "Vice President",
-			name: "Sarah Wiessler",
-			img: "sarah.png",
-			github: "SWiessler",
+			name: "Anjali Paliwal",
+			img: "user.jpg",
+			github: "grinchpal",
 		},
 		{
 			role: "Treasurer",
-			name: "David Carpenter",
-			img: "david.jpg",
-			github: "carpenterd777",
+			name: "Adrian Garcia",
+			img: "adrian.jpeg",
+			github: "adriang11",
 		},
 		{
 			role: "Secretary",
@@ -32,9 +32,9 @@ export default class TeamView extends Component {
 		},
 		{
 			role: "Logistics Chair",
-			name: "Abdullah Hyder",
+			name: "Rishabh Dhadda",
 			img: "user.jpg",
-			github: "abdullahhyder",
+			github: "rdhadda123",
 		},
 		{
 			role: "Marketing Chair",
@@ -44,48 +44,8 @@ export default class TeamView extends Component {
 		},
 	];
 
-	memberList = [
-		{
-			name: "Adam Papenhausen",
-			github: "adapap",
-		},
-		{
-			name: "Jordan Fernandes",
-			github: "Jordan883",
-		},
-		{
-			name: "Keye Li",
-			github: "nebulouspianist",
-		},
-		{
-			name: "Simon Wagner",
-			github: "SWSoftware1044",
-		},
-		{
-			name: "Tyler Seliber",
-			github: "Tyler-Seliber",
-		},
-		{
-			name: "Kenneth Skelton",
-			github: "KennethSkelton",
-		},
-		{
-			name: "Bruno Salgado",
-			github: "bsalgado98",
-		},
-		{
-			name: "Eleni Rotsides",
-			github: "elenirotsides",
-		},
-		{
-			name: "Walker Bove",
-			github: "WBot3000",
-		},
-		{
-			name: "Zack Schieberl",
-			github: "Zackatoo",
-		},
-	];
+	//TODO: automate list of members in the general body
+	memberList = [];
 
 	render() {
 		this.eboardList = this.eboardList.map(member => {
