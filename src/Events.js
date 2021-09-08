@@ -43,8 +43,8 @@ function generateGbms(startDate, endDate, countOffset = 1, limit = 10) {
 				"MMM. D"
 			)}`,
 			meetingLink: "https://stevens.zoom.us/j/98789531305",
-			startDate: date.hour(20).add(30, 'm'),
-			endDate: date.hour(21).add(30, 'm'),
+			startDate: date.hour(20).add(30, "m"),
+			endDate: date.hour(21).add(30, "m"),
 			isGbm: true,
 		});
 		count++;
@@ -53,17 +53,22 @@ function generateGbms(startDate, endDate, countOffset = 1, limit = 10) {
 	return gbms;
 }
 
-const EVENTS = generateGbms(dayjs("2021-9-9", "YYYY-MM-DD"), dayjs("2021-30-09", "YYYY-MM-DD"), 1, 4)
-	// .concat([
-	// 	{
-	// 		flyerSource: "learnhack_2021f.png",
-	// 		title: "LearnHack",
-	// 		desc: "Learn more about git, Javascript, and developing in React Native.",
-	// 		meetingLink: "https://stevens.zoom.us/j/98789531305",
-	// 		startDate: dayjs("2021-9-18", "YYYY-MM-DD").hour(12),
-	// 		endDate: ddayjs("2021-9-18", "YYYY-MM-DD").hour(14)
-	// 	}
-	// ])
-	// .concat(generateGbms(dayjs("2021-10-7", "YYYY-MM-DD"), dayjs("2021-11-18", "YYYY-MM-DD")), 5)
-	// .concat(generateGbms(dayjs("2021-12-2", "YYYY-MM-DD"), dayjs("2021-12-9", "YYYY-MM-DD")), 12)
+const EVENTS = generateGbms(
+	dayjs("2021-9-9", "YYYY-MM-DD"),
+	dayjs("2021-30-09", "YYYY-MM-DD"),
+	1,
+	4
+);
+// .concat([
+// 	{
+// 		flyerSource: "learnhack_2021f.png",
+// 		title: "LearnHack",
+// 		desc: "Learn more about git, Javascript, and developing in React Native.",
+// 		meetingLink: "https://stevens.zoom.us/j/98789531305",
+// 		startDate: dayjs("2021-9-18", "YYYY-MM-DD").hour(12),
+// 		endDate: ddayjs("2021-9-18", "YYYY-MM-DD").hour(14)
+// 	}
+// ])
+// .concat(generateGbms(dayjs("2021-10-7", "YYYY-MM-DD"), dayjs("2021-11-18", "YYYY-MM-DD")), 5)
+// .concat(generateGbms(dayjs("2021-12-2", "YYYY-MM-DD"), dayjs("2021-12-9", "YYYY-MM-DD")), 12)
 export default EVENTS;
