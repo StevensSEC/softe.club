@@ -37,14 +37,14 @@ function generateGbms(startDate, endDate, countOffset = 1, limit = 10) {
 
 	while (date.isBefore(endDate) && count < limit) {
 		gbms.push({
-			flyerSource: `GBM${count}.png`,
+			flyerSource: `GBM${count}2021F.png`,
 			title: `GBM ${count}`,
-			desc: `Like coding AND Pokemon? This semester's project is perfect for you! We're making a Pokemon Battle Library in Go! Starting at 9 pm on ${date.format(
+			desc: `Come join us as we construct a mobile app that can pull text from images. Starting at 8:30 pm on ${date.format(
 				"MMM. D"
 			)}`,
-			meetingLink: "https://stevens.zoom.us/j/93021320820",
-			startDate: date.hour(21),
-			endDate: date.hour(22),
+			meetingLink: "https://stevens.zoom.us/j/98789531305",
+			startDate: date.hour(20).add(30, 'm'),
+			endDate: date.hour(21).add(30, 'm'),
 			isGbm: true,
 		});
 		count++;
@@ -53,53 +53,17 @@ function generateGbms(startDate, endDate, countOffset = 1, limit = 10) {
 	return gbms;
 }
 
-const EVENTS = generateGbms(dayjs("2021-2-4", "YYYY-MM-DD"), dayjs("2021-2-11", "YYYY-MM-DD"), 1, 1)
-	.concat([
-		{
-			flyerSource: "learnHack-GO.png",
-			title: "learnHack GO",
-			desc:
-				"Don't know Go? Haven't even heard of Go? It doesn't matter, we'll teach you! Perfect for anybody who wants to contribute to the Pokemon battle library.",
-			meetingLink: "https://stevens.zoom.us/j/93021320820",
-			startDate: dayjs("2021-2-6", "YYYY-MM-DD").hour(13),
-			endDate: dayjs("2021-2-6", "YYYY-MM-DD").hour(16),
-		},
-	])
-	.concat(generateGbms(dayjs("2021-2-11", "YYYY-MM-DD"), dayjs("2021-3-4", "YYYY-MM-DD"), 2, 1))
-	.concat([
-		{
-			flyerSource: "pair-programming.png",
-			title: "Pair Programming",
-			desc:
-				"Grab your Valentine or make a new friend and bond by solving fun coding challenges together at our sweetest annual event!",
-			meetingLink: "https://stevens.zoom.us/j/93021320820",
-			startDate: dayjs("2021-2-12", "YYYY-MM-DD").hour(21),
-			endDate: dayjs("2021-2-12", "YYYY-MM-DD").hour(22),
-		},
-	])
-	.concat(generateGbms(dayjs("2021-2-18", "YYYY-MM-DD"), dayjs("2021-3-4", "YYYY-MM-DD"), 3))
-	.concat([
-		{
-			flyerSource: "renpy_workshop.png",
-			title: "Ren'Py Workshop",
-			desc:
-				"Learn how to create a visual novel in this fun and easy workshop! Hope to see you there.",
-			meetingLink: "https://stevens.zoom.us/j/93021320820",
-			startDate: dayjs("2021-3-4", "YYYY-MM-DD").hour(21),
-			endDate: dayjs("2021-3-4", "YYYY-MM-DD").hour(22),
-		},
-	])
-	.concat(generateGbms(dayjs("2021-3-11", "YYYY-MM-DD"), dayjs("2021-3-19", "YYYY-MM-DD"), 5))
-	.concat([
-		{
-			flyerSource: "pmt_2021.png",
-			title: "Pimp My Terminal",
-			desc:
-				"Update your terminal's boring, dull style to one that truly matches your vibe: SPECTACULAR!",
-			meetingLink: "https://stevens.zoom.us/j/93021320820",
-			startDate: dayjs("2021-3-25", "YYYY-MM-DD").hour(21),
-			endDate: dayjs("2021-3-25", "YYYY-MM-DD").hour(22),
-		},
-	])
-	.concat(generateGbms(dayjs("2021-4-8", "YYYY-MM-DD"), dayjs("2021-5-6", "YYYY-MM-DD"), 8));
+const EVENTS = generateGbms(dayjs("2021-9-9", "YYYY-MM-DD"), dayjs("2021-30-09", "YYYY-MM-DD"), 1, 4)
+	// .concat([
+	// 	{
+	// 		flyerSource: "learnhack_2021f.png",
+	// 		title: "LearnHack",
+	// 		desc: "Learn more about git, Javascript, and developing in React Native.",
+	// 		meetingLink: "https://stevens.zoom.us/j/98789531305",
+	// 		startDate: dayjs("2021-9-18", "YYYY-MM-DD").hour(12),
+	// 		endDate: ddayjs("2021-9-18", "YYYY-MM-DD").hour(14)
+	// 	}
+	// ])
+	// .concat(generateGbms(dayjs("2021-10-7", "YYYY-MM-DD"), dayjs("2021-11-18", "YYYY-MM-DD")), 5)
+	// .concat(generateGbms(dayjs("2021-12-2", "YYYY-MM-DD"), dayjs("2021-12-9", "YYYY-MM-DD")), 12)
 export default EVENTS;
