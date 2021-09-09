@@ -4,18 +4,18 @@ import dayjs from "dayjs";
 import * as SEC from "../SEC/lib.js";
 
 interface EventBannerProps {
-	flyerSource: any,
-	altText: string,
-	title: string,
-	desc: string,
-	startDate: dayjs.Dayjs,
-	endDate: dayjs.Dayjs,
-	meetingLink: string,
-	isGbm: boolean,
-	now?: dayjs.Dayjs,
+	flyerSource: any;
+	altText: string;
+	title: string;
+	desc: string;
+	startDate: dayjs.Dayjs;
+	endDate: dayjs.Dayjs;
+	meetingLink: string;
+	isGbm: boolean;
+	now?: dayjs.Dayjs;
 }
 
-const EventBanner = (props : EventBannerProps) : JSX.Element | null => {
+const EventBanner = (props: EventBannerProps): JSX.Element | null => {
 	let now: dayjs.Dayjs = props.now ? props.now : dayjs();
 
 	let flyer = props.flyerSource ? require(`../../assets/flyers/${props.flyerSource}`) : null;
@@ -23,11 +23,19 @@ const EventBanner = (props : EventBannerProps) : JSX.Element | null => {
 		<img
 			loading="lazy"
 			src={flyer.default}
-			alt={props.altText ? `${props.altText}` : `Flyer for ${props.title ? `${props.title} ` : ""}event`}
+			alt={
+				props.altText
+					? `${props.altText}`
+					: `Flyer for ${props.title ? `${props.title} ` : ""}event`
+			}
 		/>
 	) : null;
 
-	let inProgress = props.startDate && props.endDate && props.startDate.isBefore(now) && props.endDate.isAfter(now);
+	let inProgress =
+		props.startDate &&
+		props.endDate &&
+		props.startDate.isBefore(now) &&
+		props.endDate.isAfter(now);
 
 	if (
 		(!props.endDate || now.isBefore(props.endDate)) &&
@@ -35,13 +43,19 @@ const EventBanner = (props : EventBannerProps) : JSX.Element | null => {
 	) {
 		return (
 			<div className="club-event">
-				<div className={["container", props.flyerSource ? "has-flyer" : "no-flyer"].join(" ")}>
+				<div
+					className={["container", props.flyerSource ? "has-flyer" : "no-flyer"].join(
+						" "
+					)}
+				>
 					<div className="flyer">{imageElement}</div>
 					<div className="text-container">
 						<span className="title">{props.title}</span>
 						<hr />
 						<span className="start-time">
-							{props.startDate ? props.startDate.format("dddd, MMM. D, h:mm a") : null}
+							{props.startDate
+								? props.startDate.format("dddd, MMM. D, h:mm a")
+								: null}
 						</span>
 						<span className="description">{props.desc}</span>
 						{inProgress ? (
@@ -49,7 +63,8 @@ const EventBanner = (props : EventBannerProps) : JSX.Element | null => {
 						) : null}
 						{props.meetingLink ? (
 							<span className="meeting-link">
-								Join here: <SEC.Link href={props.meetingLink}>{props.meetingLink}</SEC.Link>
+								Join here:{" "}
+								<SEC.Link href={props.meetingLink}>{props.meetingLink}</SEC.Link>
 							</span>
 						) : null}
 					</div>
@@ -59,6 +74,6 @@ const EventBanner = (props : EventBannerProps) : JSX.Element | null => {
 	} else {
 		return null;
 	}
-}
+};
 
 export default EventBanner;
