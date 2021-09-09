@@ -4,7 +4,7 @@ import "./Home.scss";
 import ArticleList from "../../components/ArticleList/ArticleList.js";
 import Contributions from "../../components/Contributions/Contributions.js";
 import DocumentTitle from "../../components/DocumentTitle/DocumentTitle.js";
-import EventBanner from "../../components/EventBanner/EventBanner.jsx";
+import EventBanner from "../../components/EventBanner/EventBanner";
 import EVENTS from "../../Events.js";
 import Logo from "../../components/Logo/Logo.jsx";
 import * as SEC from "../../components/SEC/lib.js";

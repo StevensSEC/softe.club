@@ -16,9 +16,7 @@ interface EventBannerProps {
 }
 
 const EventBanner = (props : EventBannerProps) : JSX.Element | null => {
-	if (props.now == undefined) {
-		props.now = dayjs();
-	}
+	let now: dayjs.Dayjs = props.now ? props.now : dayjs();
 
 	let flyer = props.flyerSource ? require(`../../assets/flyers/${props.flyerSource}`) : null;
 	let imageElement = flyer ? (
@@ -29,11 +27,11 @@ const EventBanner = (props : EventBannerProps) : JSX.Element | null => {
 		/>
 	) : null;
 
-	let inProgress = props.startDate && props.endDate && props.startDate.isBefore(props.now) && props.endDate.isAfter(props.now);
+	let inProgress = props.startDate && props.endDate && props.startDate.isBefore(now) && props.endDate.isAfter(now);
 
 	if (
-		(!props.endDate || props.now.isBefore(props.endDate)) &&
-		(!props.startDate || !props.isGbm || props.startDate.subtract(7, "day").isBefore(props.now))
+		(!props.endDate || now.isBefore(props.endDate)) &&
+		(!props.startDate || !props.isGbm || props.startDate.subtract(7, "day").isBefore(now))
 	) {
 		return (
 			<div className="club-event">
