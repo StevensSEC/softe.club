@@ -18,7 +18,9 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "^3.4.3",
     "react-svg": "^11.0.42",
-    "react-syntax-highlighter": "^12.2.1"
+    "react-syntax-highlighter": "^12.2.1",
+    "source-map-loader": "^3.0.0",
+    "ts-loader": "^9.2.5"
   },
   "scripts": {
     "start": "react-scripts start",
