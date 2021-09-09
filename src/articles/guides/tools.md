@@ -22,6 +22,7 @@ Familiarizing yourself with powerful tools will streamline your workflow and hel
 ## C/C++
 
 -   [Compiler Explorer](https://godbolt.org/) - Displays the compiled assembly of provided C++ code
+-   [cdecl](https://cdecl.org/) - C gibberish ↔ English
 
 ## Rust
 
