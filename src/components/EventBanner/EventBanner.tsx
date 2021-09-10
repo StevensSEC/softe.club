@@ -4,7 +4,7 @@ import dayjs from "dayjs";
 import * as SEC from "../SEC/lib.js";
 
 interface EventBannerProps {
-	flyerSource: any;
+	flyerSource: string;
 	altText: string;
 	title: string;
 	desc: string;
