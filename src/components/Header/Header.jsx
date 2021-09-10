@@ -69,6 +69,14 @@ const Header = () => {
 			title: "Tools",
 			route: "/guide/tools",
 		},
+		{
+			title: "Recordings",
+			route: "/recordings",
+		},
+		{
+			title: "Contributions",
+			route: "/contributions",
+		},
 	];
 	const sideList = side => (
 		<div
