@@ -4,7 +4,7 @@ import { mount } from "enzyme";
 import "@testing-library/jest-dom";
 import dayjs from "dayjs";
 
-import EventBanner from "./EventBanner.jsx";
+import EventBanner from "./EventBanner";
 
 let container = null;
 describe("EventBanner appearance", () => {
