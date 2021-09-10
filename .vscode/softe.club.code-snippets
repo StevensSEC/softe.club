@@ -1,0 +1,60 @@
+{
+	"component": {
+		"prefix": ["component"],
+		"body": [
+			"import React from \"react\";",
+			"",
+			"const $1 = () => {",
+			"}",
+			"",
+			"export default $1;"
+		]
+	},
+	"view": {
+		"prefix": ["view"],
+		"body": [
+			"import React from \"react\";",
+			"import { Container } from \"@material-ui/core\"",
+			"import \"./$1.scss\"",
+			"",
+			"const $1 = () => {",
+			"\treturn(",
+			"\t\t<Container></Container>",
+			"\t)",
+			"}",
+			"",
+			"export default $1;"
+		]
+	},
+	"route": {
+		"prefix": "route",
+		"body": [
+			"{",
+			"\tpath: \"/$1\",",
+			"\tComponent: lazy(() => import(/* webpackChunkName: \"$1\"*/ \"./views/$1/$1\")),",
+			"},"
+		]
+	},
+	"article-route": {
+		"prefix": "article-route",
+		"body": [
+			"{",
+			"\tpath: \"/$1\",",
+			"\tarticleProps: { source: \"$1.md\", title: \"$2\" },",
+			"\tComponent: lazy(() => import(/* webpackChunkName: \"article\"*/ \"./views/Article/Article.js\")),",
+			"},"
+		]
+	},
+	"slide-route": {
+		"prefix": "slide-route",
+		"body" : [
+			"{",
+			"\tpath: \"/slides/$1\",",
+			"\tslideProps: { slidePath: \"$1.yaml\", title: \"$2\" },",
+			"\tComponent: lazy(() =>",
+			"\t\timport(/* webpackChunkName: \"quick-slides\"*/ \"./views/Slides/QuickSlides.js\")",
+			"\t),",
+			"},"
+		]
+	}
+}
