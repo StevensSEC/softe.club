@@ -4,13 +4,13 @@ import dayjs from "dayjs";
 import * as SEC from "../SEC/lib.js";
 
 interface EventBannerProps {
-	flyerSource: string;
-	altText: string;
-	title: string;
+	flyerSource?: string;
+	altText?: string;
+	title?: string;
 	desc: string;
 	startDate: dayjs.Dayjs;
 	endDate: dayjs.Dayjs;
-	meetingLink: string;
+	meetingLink?: string;
 	isGbm: boolean;
 	now?: dayjs.Dayjs;
 }
