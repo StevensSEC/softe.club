@@ -16,7 +16,7 @@ interface EventBannerProps {
 }
 
 const EventBanner = (props: EventBannerProps): JSX.Element | null => {
-	let now: dayjs.Dayjs = props.now ? props.now : dayjs();
+	let now: dayjs.Dayjs = props.now ?? dayjs();
 
 	let flyer = props.flyerSource ? require(`../../assets/flyers/${props.flyerSource}`) : null;
 	let imageElement = flyer ? (
