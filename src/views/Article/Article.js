@@ -5,6 +5,7 @@ import "./Article.scss";
 import SecMarkdown from "../../components/SecMarkdown/SecMarkdown.js";
 import Loader from "../../components/Loader/Loader.js";
 import DocumentTitle from "../../components/DocumentTitle/DocumentTitle.js";
+import fetchArticle from "../../modules/fetchArticle";
 
 export default class ArticleView extends PureComponent {
 	static propTypes = {
@@ -18,25 +19,7 @@ export default class ArticleView extends PureComponent {
 	}
 
 	fetchArticle() {
-		if (this.props.source === this.state.__previousSource) {
-			// don't fetch again if the source hasn't changed
-			return;
-		}
-
-		let url = require(`../../articles/${this.props.source}`);
-
-		this.setState({
-			markdown: null,
-		});
-
-		fetch(url)
-			.then(resp => resp.text())
-			.then(text => {
-				this.setState({
-					markdown: text,
-					__previousSource: this.props.source,
-				});
-			});
+		fetchArticle(this.props.source, this.state.__previousSource, this);
 	}
 
 	componentDidMount() {
