@@ -1,6 +1,7 @@
 import ottScreenshot from "../../assets/slp/opentogethertube/ott-screenshot2.png";
 import qqScreenshot from "../../assets/slp/quick-quack.png";
 import sweScreenshot from "../../assets/slp/stevens-web-extension/popup.png";
+import pblScreenshot from "../../assets/slp/pokemonbattlelib.png";
 
 interface SLPInfo {
 	img: any,
@@ -9,6 +10,11 @@ interface SLPInfo {
 }
 
 const PROJECTS : SLPInfo[] = [
+	{
+		img: pblScreenshot,
+		name: "pokemonbattlelib",
+		markdown: "slp/pokemonbattlelib.md",
+	},
 	{
 		img: sweScreenshot,
 		name: "Stevens Web Extension",
