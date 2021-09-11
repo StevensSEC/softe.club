@@ -1,6 +1,5 @@
 import React from "react";
 import * as SEC from "../SEC/lib.js";
-import "./Contributions.scss";
 
 interface ContributionsProps {
 	display: string;

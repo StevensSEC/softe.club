@@ -4,6 +4,7 @@ import Contributions from "../../components/Contributions/Contributions";
 import { Container } from "@material-ui/core";
 import SecMarkdown from "../../components/SecMarkdown/SecMarkdown";
 import { fnFetchMarkdown } from "../../modules/fetchMarkdown";
+import "./Contributions.scss";
 
 const ContributionsView = (): JSX.Element => {
 	const [markdown, setMarkdown] = useState("");
