@@ -11,6 +11,9 @@ const SLPView = () : JSX.Element => {
 	let orientation : Orientation = "right";
 	return (
 		<div>
+			<Container>
+				<h1>Here you can view a history of SEC's projects...</h1>
+			</Container>
 			{PROJECTS.map((project) => {
 				orientation = getNextOrientation(orientation)
 				return (
