@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import SECMarkdown from "../../components/SecMarkdown/SecMarkdown";
 import "./SLP.scss";
-import { fnFetchArticle } from "../../modules/fetchArticle";
+import { fnFetchMarkdown } from "../../modules/fetchMarkdown";
 
 export type Orientation = "left" | "right";
 interface SLPProps {
@@ -16,7 +16,7 @@ const SLP = (props : SLPProps) : JSX.Element => {
     const [__previousSource, setPreviousSource] = useState("");
 
     useEffect(() => {
-        fnFetchArticle(props.textSource, __previousSource, setMarkdown, setPreviousSource);
+        fnFetchMarkdown(props.textSource, __previousSource, setMarkdown, setPreviousSource);
     }, [props.textSource, __previousSource])
 
     let imageDiv = (

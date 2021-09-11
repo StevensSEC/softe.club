@@ -5,7 +5,7 @@ import "./Article.scss";
 import SecMarkdown from "../../components/SecMarkdown/SecMarkdown.js";
 import Loader from "../../components/Loader/Loader.js";
 import DocumentTitle from "../../components/DocumentTitle/DocumentTitle.js";
-import fetchArticle from "../../modules/fetchArticle";
+import { fetchMarkdown } from "../../modules/fetchMarkdown";
 
 export default class ArticleView extends PureComponent {
 	static propTypes = {
@@ -19,7 +19,7 @@ export default class ArticleView extends PureComponent {
 	}
 
 	fetchArticle() {
-		fetchArticle(this.props.source, this.state.__previousSource, this);
+		fetchMarkdown(this.props.source, this.state.__previousSource, this);
 	}
 
 	componentDidMount() {
