@@ -2,14 +2,19 @@ import ottScreenshot from "../../assets/slp/opentogethertube/ott-screenshot2.png
 import qqScreenshot from "../../assets/slp/quick-quack.png";
 import sweScreenshot from "../../assets/slp/stevens-web-extension/popup.png";
 import pblScreenshot from "../../assets/slp/pokemonbattlelib.png";
+import SECLogo from "../../assets/sec-logo.png";
 
 interface SLPInfo {
-	img: any,
+	img?: any,
 	name: string,
 	markdown: string,
 }
 
 const PROJECTS : SLPInfo[] = [
+	{
+		name: "Monocle",
+		markdown: "slp/monocle.md",
+	},
 	{
 		img: pblScreenshot,
 		name: "pokemonbattlelib",

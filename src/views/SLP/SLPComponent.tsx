@@ -7,7 +7,7 @@ import { useMediaQuery } from "@material-ui/core";
 export type Orientation = "left" | "right";
 interface SLPProps {
     orientation : Orientation
-    imgSource : string,
+    imgSource? : string,
     textSource : string
     name : string
 }
@@ -22,7 +22,7 @@ const SLP = (props : SLPProps) : JSX.Element => {
         fnFetchMarkdown(props.textSource, __previousSource, setMarkdown, setPreviousSource);
     }, [props.textSource, __previousSource])
 
-    let imageDiv = onMobile ? (
+    let imageDiv = onMobile && props.imgSource ? (
         <div className="img-div">
             <img
                 loading="lazy"

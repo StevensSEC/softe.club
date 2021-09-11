@@ -19,7 +19,7 @@ const SLPView = () : JSX.Element => {
 				return (
 					<SLP
 						orientation={orientation}
-						imgSource={project.img}
+						imgSource={project.img ?? ""}
 						textSource={project.markdown}
 						name={project.name}/>
 				)
