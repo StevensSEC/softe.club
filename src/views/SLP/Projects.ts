@@ -4,12 +4,12 @@ import sweScreenshot from "../../assets/slp/stevens-web-extension/popup.png";
 import pblScreenshot from "../../assets/slp/pokemonbattlelib.png";
 
 interface SLPInfo {
-	img?: any,
-	name: string,
-	markdown: string,
+	img?: any;
+	name: string;
+	markdown: string;
 }
 
-const PROJECTS : SLPInfo[] = [
+const PROJECTS: SLPInfo[] = [
 	{
 		name: "Monocle",
 		markdown: "slp/monocle.md",

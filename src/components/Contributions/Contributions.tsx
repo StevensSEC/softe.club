@@ -3,15 +3,15 @@ import * as SEC from "../SEC/lib.js";
 import "./Contributions.scss";
 
 interface ContributionsProps {
-	display: string,
-	contributors: string[],
-	referenced_prs: string[],
+	display: string;
+	contributors: string[];
+	referenced_prs: string[];
 }
 
 /**
  * Display Open Source Contributions made by club members.
  */
-const Contributions = (props : ContributionsProps) : JSX.Element => {
+const Contributions = (props: ContributionsProps): JSX.Element => {
 	return (
 		<div key={props.display}>
 			<h4>
@@ -19,7 +19,7 @@ const Contributions = (props : ContributionsProps) : JSX.Element => {
 				source contributions.
 			</h4>
 			<ul>
-				{props.contributors.map((username : string) => (
+				{props.contributors.map((username: string) => (
 					<li key={username}>
 						<SEC.Link href={`https://github.com/${username}`}>{username}</SEC.Link>
 					</li>
@@ -27,7 +27,7 @@ const Contributions = (props : ContributionsProps) : JSX.Element => {
 			</ul>
 			<h4>Combined, they finished {props.referenced_prs.length} pull requests.</h4>
 			<ul>
-				{props.referenced_prs.map((link : string) => (
+				{props.referenced_prs.map((link: string) => (
 					<li key={link}>
 						<SEC.Link href={link}>{link}</SEC.Link>
 					</li>
@@ -35,6 +35,6 @@ const Contributions = (props : ContributionsProps) : JSX.Element => {
 			</ul>
 		</div>
 	);
-}
+};
 
 export default Contributions;

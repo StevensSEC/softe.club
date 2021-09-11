@@ -1,13 +1,14 @@
 #### 10 club members have made contributions to the pokemonbattlelib repo:
-- [Carson McManus](https://github.com/dyc3)
-- [Adam Papenhausen](https://github.com/adapap)
-- [David Carpenter](https://github.com/carpenterd777)
-- [Avery Cunningham](https://github.com/A-very-Cunning-ham)
-- [Jordan Fernandes](https://github.com/Jordan883)
-- [Rishabh Dhadda](https://github.com/rdhadda123)
-- [Sabrina Vuong](https://github.com/svuong959)
-- [Anjali Paliwal](https://github.com/grinchpal)
-- [Kristin Kim](https://github.com/krixstin)
+
+-   [Carson McManus](https://github.com/dyc3)
+-   [Adam Papenhausen](https://github.com/adapap)
+-   [David Carpenter](https://github.com/carpenterd777)
+-   [Avery Cunningham](https://github.com/A-very-Cunning-ham)
+-   [Jordan Fernandes](https://github.com/Jordan883)
+-   [Rishabh Dhadda](https://github.com/rdhadda123)
+-   [Sabrina Vuong](https://github.com/svuong959)
+-   [Anjali Paliwal](https://github.com/grinchpal)
+-   [Kristin Kim](https://github.com/krixstin)
 
 #### 3 club members have made contributions to the Stevens Web Extenstion repo:
 
