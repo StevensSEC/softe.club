@@ -12,13 +12,15 @@ const ContributionsView = () : JSX.Element => {
     useEffect(() => {
         fnFetchMarkdown("contributions.md", __previousSource, setMarkdown, setPreviousSource);
     }, [__previousSource])
-
+	let contrib_data = [contrib_2020fall]
 	return (
 		<Container>
 			<h1>Contributions</h1>
 			<h2>Open Source Contributions</h2>
 			<hr />
-			<Contributions semesters={[contrib_2020fall]} />
+			{contrib_data.map((semester) => {
+				return (<Contributions display={semester.display} contributors={semester.contributors} referenced_prs={semester.referenced_prs}/>)
+			})}
 			<h2>SLP Contributions</h2>
 			<hr />
 			<SecMarkdown markdown={markdown}/>
