@@ -12,7 +12,7 @@ const ROUTES = [
 	},
 	{
 		path: "/slp",
-		Component: lazy(() => import(/* webpackChunkName: "slp" */ "./views/SLP/SLP.js")),
+		Component: lazy(() => import(/* webpackChunkName: "slp" */ "./views/SLP/SLP")),
 	},
 	{
 		path: "/about",

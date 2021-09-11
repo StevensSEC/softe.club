@@ -1,38 +1,31 @@
-import openTogetherTubeLogo from "../../assets/project-wall/open-together-tube-logo.svg";
-import secLogo from "../../assets/logo.svg";
+import ottScreenshot from "../../assets/slp/opentogethertube/ott-screenshot2.png";
+import qqScreenshot from "../../assets/slp/quick-quack.png";
+import sweScreenshot from "../../assets/slp/stevens-web-extension/popup.png";
 
 const PROJECTS = [
 	{
-		path: "quick-quack",
-		img: secLogo,
-		name: "Quick Quack",
-		semester: "Spring",
-		year: "2019",
-		markdown: "slp/quick-quack.md",
-	},
-	{
-		path: "open-together-tube",
-		img: openTogetherTubeLogo,
-		name: "Open Together Tube",
-		semester: "Fall",
-		year: "2019",
-		markdown: "slp/open-together-tube.md",
-	},
-	{
 		path: "stevens-web-extension",
-		img: secLogo,
+		img: sweScreenshot,
 		name: "Stevens Web Extension",
 		semester: "Spring",
 		year: "2020",
 		markdown: "slp/stevens-web-extension.md",
 	},
 	{
-		path: "open-source-fall-2020",
-		img: secLogo,
-		name: "Open Source Contributions",
+		path: "open-together-tube",
+		img: ottScreenshot,
+		name: "Open Together Tube",
 		semester: "Fall",
-		year: "2020",
-		markdown: "fall-2020-open-source-projects.md", // TODO: replace with our normal SLP page
+		year: "2019",
+		markdown: "slp/open-together-tube.md",
+	},
+	{
+		path: "quick-quack",
+		img: qqScreenshot,
+		name: "Quick Quack",
+		semester: "Spring",
+		year: "2019",
+		markdown: "slp/quick-quack.md",
 	},
 ];
 export default PROJECTS;
