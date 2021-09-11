@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import * as SEC from "../SEC/lib.js";
+import "./Contributions.scss";
 
 /**
  * Display Open Source Contributions made by club members.
@@ -9,10 +10,10 @@ export default function Contributions(props) {
 	return props.semesters.map(data => {
 		return (
 			<div key={data.display}>
-				<span>
+				<h4>
 					During {data.display}, we had {data.contributors.length} club members make open
 					source contributions.
-				</span>
+				</h4>
 				<ul>
 					{data.contributors.map(username => (
 						<li key={username}>
@@ -20,7 +21,7 @@ export default function Contributions(props) {
 						</li>
 					))}
 				</ul>
-				<span>Combined, they finished {data.referenced_prs.length} pull requests.</span>
+				<h4>Combined, they finished {data.referenced_prs.length} pull requests.</h4>
 				<ul>
 					{data.referenced_prs.map(link => (
 						<li key={link}>
