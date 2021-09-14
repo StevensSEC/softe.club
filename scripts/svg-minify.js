@@ -11,42 +11,42 @@
  * in the top-level directory.
  */
 exports.__esModule = true;
-var fs = require("fs");
-var jsdom = require("jsdom");
+let fs = require("fs");
+let jsdom = require("jsdom");
 console.log("Minifying svgs...");
-var mediaDir = fs.opendirSync("./build/static/media");
-var svgs = [];
-for (var entry = mediaDir.readSync(); entry != null; entry = mediaDir.readSync()) {
+let mediaDir = fs.opendirSync("./build/static/media");
+let svgs = [];
+for (let entry = mediaDir.readSync(); entry != null; entry = mediaDir.readSync()) {
     if (entry.isFile() && entry.name.endsWith(".svg")) {
         svgs.push(entry.name);
     }
 }
 mediaDir.closeSync();
 svgs.forEach(function (svg) {
-    var filename = "./build/static/media/" + svg;
-    var fileContents = fs.readFileSync(filename);
+    let filename = "./build/static/media/" + svg;
+    let fileContents = fs.readFileSync(filename);
     // remove whitespaces from text content of file
-    var dom = new jsdom.JSDOM(fileContents, {
+    let dom = new jsdom.JSDOM(fileContents, {
         contentType: "image/svg+xml",
         runScripts: "outside-only"
     });
-    var svgElement = dom.window.document.querySelector("svg");
+    let svgElement = dom.window.document.querySelector("svg");
     console.log("Minifying " + svg + "...");
     for (var i = 0; i < svgElement.children.length; i++) {
-        var child = svgElement.children.item(i);
+        let child = svgElement.children.item(i);
         if (child.innerHTML != "") {
             child.innerHTML = child.innerHTML.replace(/\n|\t| /g, "");
         }
     }
     // remove newlines and tabs from entirety of file
     // preserve spaces as required for tag names and properties
-    var fileAsString = dom.serialize();
-    var noNewlines = fileAsString.replace(/\n|\t/g, "");
+    let fileAsString = dom.serialize();
+    let noNewlines = fileAsString.replace(/\n|\t/g, "");
     // remove spaces from between tags
-    var noSpacesBetween = "";
-    var doRemoveSpaces = false;
+    let noSpacesBetween = "";
+    let doRemoveSpaces = false;
     for (var i = 0; i < noNewlines.length; i++) {
-        var currentChar = noNewlines.charAt(i);
+        let currentChar = noNewlines.charAt(i);
         if (currentChar === ">") { // a tag just ended
             doRemoveSpaces = true;
         }
