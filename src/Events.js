@@ -42,7 +42,7 @@ function generateGbms(startDate, endDate, countOffset = 1, limit = 10) {
 			desc: `Come join us as we construct a mobile app that can pull text from images. Starting at 9:00 pm on ${date.format(
 				"MMM. D"
 			)}`,
-			meetingLink: "https://stevens.zoom.us/j/98789531305",
+			meetingLink: "https://discord.gg/nr3tqCfR2a",
 			startDate: date.hour(21),
 			endDate: date.hour(22),
 			isGbm: true,
