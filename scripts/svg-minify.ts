@@ -25,26 +25,47 @@ for (let entry = mediaDir.readSync(); entry != null; entry = mediaDir.readSync()
 }
 mediaDir.closeSync()
 
-svgs.forEach(async svg => {
+svgs.forEach(svg => {
     const filename = `./build/static/media/${svg}`
+    const fileContents = fs.readFileSync(filename)
+    
     // remove whitespaces from text content of file
-    const dom =  await jsdom.JSDOM.fromFile(filename, {
+    const dom =  new jsdom.JSDOM(fileContents, {
         contentType: "text/xml", // for some reason it does not like image/svg+xml
         runScripts: "outside-only"}
         )
-    console.log(`Trying to minify ${svg}`)
-    
-    const getTextContent = () : string => {return dom.window._document.querySelector("svg").textContent}
-    const setTextContent = (text : string) => {dom.window._document.querySelector("svg").textContent = text}
+    const svgElement = dom.window.document.querySelector("svg")
+    console.log(`Minifying ${svg}...`)
 
-    let updatedText = getTextContent().replace(/\n|\t| /g, "")
-    setTextContent(updatedText);
-    
+    for (let i = 0; i < svgElement.children.length; i++) {
+        let child = svgElement.children.item(i)
+        if (child.innerHTML != "") {
+            child.innerHTML = child.innerHTML.replace(/\n|\t| /g, "");
+        }
+    }
+
     // remove newlines and tabs from entirety of file
     // preserve spaces as required for tag names and properties
     const fileAsString = dom.serialize()
-    let update = fileAsString.replace(/\n|\t/g, "")
-    fs.writeFileSync(filename, update)
+    const noNewlines = fileAsString.replace(/\n|\t/g, "")
+
+    // remove spaces from between tags
+    let noSpacesBetween = ""
+    let doRemoveSpaces = false
+    for (let i = 0; i < noNewlines.length; i++) {
+        const currentChar = noNewlines.charAt(i)
+        if (currentChar === ">") { // a tag just ended
+            doRemoveSpaces = true
+        }
+        if (currentChar === "<") { // a tag just started
+            doRemoveSpaces = false
+        }
+        if (!doRemoveSpaces || currentChar !== " ") {
+            noSpacesBetween = noSpacesBetween.concat(currentChar)
+        }
+    }
+
+    fs.writeFileSync(filename, noSpacesBetween)
 
     console.log(`Minified ${svg}.`)
 });
