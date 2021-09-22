@@ -1,23 +1,15 @@
-/*
-Adding an event to the site:
-
-1. Upload a picture or flyer for the event and add it to /assets/flyers.
-2. Add an object to the EVENTS list of this format:
-    {
-        flyerSource: [name_of_uploaded_picture],
-        altText: [some_alt_text_for_the_picture],
-        title: [name_of_event],
-        desc: [A brief description of the event],
-        meetingLink: [(optional) link to an online meeting]
-        endDate: new Date([the day the you want this event to stop showing on the home page])
-    }
-
-The altText property is optional if you don't want to set custom altText for the flyer.
-The endDate property is optional if you don't want an event to go away for a long time.
-
-*/
-
 import dayjs from "dayjs";
+import type { Dayjs } from "dayjs";
+
+interface SECEvent {
+	flyerSource: string; // name of uploaded picture
+	altText?: string; // alt text for accessibility
+	title: string; // name of event
+	desc: string; // brief description of event
+	meetingLink?: string; // link to an online meeting
+	startDate: Dayjs; // time event begins
+	endDate?: Dayjs; // time event ends
+}
 
 /**
  * Generate gbm events. All flyers for these events must be present in src/assets/flyers, otherwise this will fail.
@@ -26,7 +18,12 @@ import dayjs from "dayjs";
  * @param {Number} countOffset GBM number offset. The first GBM generated will have this number.
  * @param {Number} limit Limit the maximum number of gbm events that are generated.
  */
-function generateGbms(startDate, endDate, countOffset = 1, limit = 10) {
+const generateGbms = (
+	startDate: Dayjs,
+	endDate: Dayjs,
+	countOffset = 1,
+	limit = 10
+): Array<SECEvent> => {
 	if (endDate.isBefore(startDate)) {
 		throw new Error(`endDate ${endDate} is before startDate ${startDate}`);
 	}
@@ -51,7 +48,7 @@ function generateGbms(startDate, endDate, countOffset = 1, limit = 10) {
 		date = date.add(1, "week");
 	}
 	return gbms;
-}
+};
 
 const EVENTS = generateGbms(
 	dayjs("2021-9-9", "YYYY-MM-DD"),
