@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import SECMarkdown from "../../components/SecMarkdown/SecMarkdown";
 import "./SLP.scss";
-import { fnFetchMarkdown } from "../../modules/fetchMarkdown";
+import { fetchMarkdown } from "../../modules/fetchMarkdown";
 import { useMediaQuery } from "@material-ui/core";
 
 export type Orientation = "left" | "right";
@@ -19,7 +19,13 @@ const SLP = (props: SLPProps): JSX.Element => {
 	const onMobile = useMediaQuery("(min-width:600px)");
 
 	useEffect(() => {
-		fnFetchMarkdown(props.textSource, __previousSource, setMarkdown, setPreviousSource);
+		(async () => {
+			if (props.textSource !== __previousSource) {
+				const result = await fetchMarkdown(props.textSource)
+				setPreviousSource(result.__previousSource)
+				setMarkdown(result.markdown)
+			}
+		})()
 	}, [props.textSource, __previousSource]);
 
 	let imageDiv =

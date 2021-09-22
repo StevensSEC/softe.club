@@ -3,7 +3,7 @@ import contrib_2020fall from "../../data/contributions/2020fall.json";
 import Contributions from "../../components/Contributions/Contributions";
 import { Container } from "@material-ui/core";
 import SecMarkdown from "../../components/SecMarkdown/SecMarkdown";
-import { fnFetchMarkdown } from "../../modules/fetchMarkdown";
+import { fetchMarkdown } from "../../modules/fetchMarkdown";
 import "./Contributions.scss";
 
 const ContributionsView = (): JSX.Element => {
@@ -11,7 +11,13 @@ const ContributionsView = (): JSX.Element => {
 	const [__previousSource, setPreviousSource] = useState("");
 
 	useEffect(() => {
-		fnFetchMarkdown("contributions.md", __previousSource, setMarkdown, setPreviousSource);
+		(async () => {
+			if (__previousSource === "") {
+				const result = await fetchMarkdown("contributions.md")
+				setPreviousSource(result.__previousSource)
+				setMarkdown(result.markdown)
+			}
+		})()
 	}, [__previousSource]);
 	let contrib_data = [contrib_2020fall];
 	return (
