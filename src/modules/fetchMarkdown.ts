@@ -1,49 +1,26 @@
-import React from "react";
+interface MarkdownResult {
+	markdown: string
+	__previousSource: string
+}
 
-const fetchMarkdown = (source: string, __previousSource: string, component: React.Component) => {
+const fetchMarkdown = async (source: string, __previousSource: string, oldText: string) : Promise<MarkdownResult> => {
 	if (source === __previousSource) {
 		// don't fetch again if the source hasn't changed
-		return;
+		return {
+			markdown: oldText,
+			__previousSource: __previousSource
+		};
 	}
 
 	let url = require(`../articles/${source}`);
 
-	component.setState({
-		markdown: null,
-	});
-
-	fetch(url)
-		.then(resp => resp.text())
-		.then(text => {
-			component.setState({
-				markdown: text,
-				__previousSource: source,
-			});
-		});
-};
-
-// For use inside functional components.
-const fnFetchMarkdown = (
-	source: string,
-	__previousSource: string,
-	setmd: React.Dispatch<React.SetStateAction<string>>,
-	setPrev: React.Dispatch<React.SetStateAction<string>>
-) => {
-	if (source === __previousSource) {
-		// don't fetch again if the source hasn't changed
-		return;
+	const response = await fetch(url)
+	const newText = await response.text()
+	return {
+		markdown: newText,
+		__previousSource: source
 	}
-
-	let url = require(`../articles/${source}`);
-
-	setmd("");
-
-	fetch(url)
-		.then(resp => resp.text())
-		.then(text => {
-			setmd(text);
-			setPrev(source);
-		});
 };
 
-export { fetchMarkdown, fnFetchMarkdown };
+export type { MarkdownResult }
+export { fetchMarkdown };
