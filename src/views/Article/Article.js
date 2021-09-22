@@ -5,7 +5,7 @@ import "./Article.scss";
 import SecMarkdown from "../../components/SecMarkdown/SecMarkdown.js";
 import Loader from "../../components/Loader/Loader.js";
 import DocumentTitle from "../../components/DocumentTitle/DocumentTitle.js";
-import { fetchMarkdown } from "../../modules/fetchMarkdown";
+import { fetchMarkdown } from "../../utils/fetchMarkdown";
 
 export default class ArticleView extends PureComponent {
 	static propTypes = {

@@ -3,7 +3,7 @@ import contrib_2020fall from "../../data/contributions/2020fall.json";
 import Contributions from "../../components/Contributions/Contributions";
 import { Container } from "@material-ui/core";
 import SecMarkdown from "../../components/SecMarkdown/SecMarkdown";
-import { fetchMarkdown } from "../../modules/fetchMarkdown";
+import { fetchMarkdown } from "../../utils/fetchMarkdown";
 import "./Contributions.scss";
 
 const ContributionsView = (): JSX.Element => {

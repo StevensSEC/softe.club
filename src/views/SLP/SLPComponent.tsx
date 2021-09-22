@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import SECMarkdown from "../../components/SecMarkdown/SecMarkdown";
 import "./SLP.scss";
-import { fetchMarkdown } from "../../modules/fetchMarkdown";
+import { fetchMarkdown } from "../../utils/fetchMarkdown";
 import { useMediaQuery } from "@material-ui/core";
 
 export type Orientation = "left" | "right";
