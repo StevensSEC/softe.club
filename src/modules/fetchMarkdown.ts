@@ -1,18 +1,18 @@
 interface MarkdownResult {
-	markdown: string
-	__previousSource: string
+	markdown: string;
+	__previousSource: string;
 }
 
-const fetchMarkdown = async (source: string) : Promise<MarkdownResult> => {
+const fetchMarkdown = async (source: string): Promise<MarkdownResult> => {
 	let url = require(`../articles/${source}`);
 
-	const response = await fetch(url)
-	const newText = await response.text()
+	const response = await fetch(url);
+	const newText = await response.text();
 	return {
 		markdown: newText,
-		__previousSource: source
-	}
+		__previousSource: source,
+	};
 };
 
-export type { MarkdownResult }
+export type { MarkdownResult };
 export { fetchMarkdown };

@@ -21,11 +21,11 @@ const SLP = (props: SLPProps): JSX.Element => {
 	useEffect(() => {
 		(async () => {
 			if (props.textSource !== __previousSource) {
-				const result = await fetchMarkdown(props.textSource)
-				setPreviousSource(result.__previousSource)
-				setMarkdown(result.markdown)
+				const result = await fetchMarkdown(props.textSource);
+				setPreviousSource(result.__previousSource);
+				setMarkdown(result.markdown);
 			}
-		})()
+		})();
 	}, [props.textSource, __previousSource]);
 
 	let imageDiv =

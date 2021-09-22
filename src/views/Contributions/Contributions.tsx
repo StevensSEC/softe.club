@@ -13,11 +13,11 @@ const ContributionsView = (): JSX.Element => {
 	useEffect(() => {
 		(async () => {
 			if (__previousSource === "") {
-				const result = await fetchMarkdown("contributions.md")
-				setPreviousSource(result.__previousSource)
-				setMarkdown(result.markdown)
+				const result = await fetchMarkdown("contributions.md");
+				setPreviousSource(result.__previousSource);
+				setMarkdown(result.markdown);
 			}
-		})()
+		})();
 	}, [__previousSource]);
 	let contrib_data = [contrib_2020fall];
 	return (
