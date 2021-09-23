@@ -3,22 +3,18 @@ import contrib_2020fall from "../../data/contributions/2020fall.json";
 import Contributions from "../../components/Contributions/Contributions";
 import { Container } from "@material-ui/core";
 import SecMarkdown from "../../components/SecMarkdown/SecMarkdown";
-import { fetchMarkdown } from "../../utils/fetchMarkdown";
+import fetchMarkdown from "../../utils/fetchMarkdown";
 import "./Contributions.scss";
 
 const ContributionsView = (): JSX.Element => {
 	const [markdown, setMarkdown] = useState("");
-	const [__previousSource, setPreviousSource] = useState("");
 
 	useEffect(() => {
 		(async () => {
-			if (__previousSource === "") {
-				const result = await fetchMarkdown("contributions.md");
-				setPreviousSource(result.__previousSource);
-				setMarkdown(result.markdown);
-			}
+			const result = await fetchMarkdown("contributions.md");
+			setMarkdown(result);
 		})();
-	}, [__previousSource]);
+	});
 	let contrib_data = [contrib_2020fall];
 	return (
 		<Container>

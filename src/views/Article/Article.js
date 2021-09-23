@@ -23,7 +23,7 @@ export default class ArticleView extends PureComponent {
 			if (this.props.source !== this.state.__previousSource) {
 				const result = await fetchMarkdown(this.props.source);
 				this.setState({
-					__previousSource: result.__previousSource,
+					__previousSource: this.props.source,
 					markdown: result.markdown,
 				});
 			}

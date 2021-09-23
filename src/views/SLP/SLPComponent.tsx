@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import SECMarkdown from "../../components/SecMarkdown/SecMarkdown";
 import "./SLP.scss";
-import { fetchMarkdown } from "../../utils/fetchMarkdown";
+import fetchMarkdown from "../../utils/fetchMarkdown";
 import { useMediaQuery } from "@material-ui/core";
 
 export type Orientation = "left" | "right";
@@ -22,8 +22,8 @@ const SLP = (props: SLPProps): JSX.Element => {
 		(async () => {
 			if (props.textSource !== __previousSource) {
 				const result = await fetchMarkdown(props.textSource);
-				setPreviousSource(result.__previousSource);
-				setMarkdown(result.markdown);
+				setPreviousSource(props.textSource);
+				setMarkdown(result);
 			}
 		})();
 	}, [props.textSource, __previousSource]);
