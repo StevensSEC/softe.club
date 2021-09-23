@@ -4,30 +4,30 @@ import "./Article.scss";
 import SecMarkdown from "../../components/SecMarkdown/SecMarkdown.js";
 import Loader from "../../components/Loader/Loader.js";
 import DocumentTitle from "../../components/DocumentTitle/DocumentTitle.js";
-import fetchMarkdown  from "../../utils/fetchMarkdown";
+import fetchMarkdown from "../../utils/fetchMarkdown";
 
 interface ArticleViewProps {
-	source: string
-	title: string
+	source: string;
+	title: string;
 }
 
-const ArticleView = (props: ArticleViewProps) : JSX.Element => {
-	const [markdown, setMarkdown] = useState<string>()
-	const [__previousSource, setPreviousSource] = useState<string>()
+const ArticleView = (props: ArticleViewProps): JSX.Element => {
+	const [markdown, setMarkdown] = useState<string>();
+	const [__previousSource, setPreviousSource] = useState<string>();
 
 	const fetchArticle = () => {
 		(async () => {
 			if (props.source !== __previousSource) {
 				const text = await fetchMarkdown(props.source);
-				setPreviousSource(props.source)
-				setMarkdown(text)
+				setPreviousSource(props.source);
+				setMarkdown(text);
 			}
 		})();
-	}
+	};
 
 	useEffect(() => {
-		fetchArticle()
-	})
+		fetchArticle();
+	});
 
 	if (!markdown) {
 		return <Loader />;
@@ -40,8 +40,7 @@ const ArticleView = (props: ArticleViewProps) : JSX.Element => {
 				<SecMarkdown markdown={markdown} />
 			</article>
 		</Container>
-	)
-
-}
+	);
+};
 
 export default ArticleView;
