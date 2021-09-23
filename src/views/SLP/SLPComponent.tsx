@@ -21,9 +21,9 @@ const SLP = (props: SLPProps): JSX.Element => {
 	useEffect(() => {
 		(async () => {
 			if (props.textSource !== __previousSource) {
-				const result = await fetchMarkdown(props.textSource);
+				const text = await fetchMarkdown(props.textSource);
 				setPreviousSource(props.textSource);
-				setMarkdown(result);
+				setMarkdown(text);
 			}
 		})();
 	}, [props.textSource, __previousSource]);

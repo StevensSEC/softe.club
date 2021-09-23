@@ -11,8 +11,8 @@ const ContributionsView = (): JSX.Element => {
 
 	useEffect(() => {
 		(async () => {
-			const result = await fetchMarkdown("contributions.md");
-			setMarkdown(result);
+			const text = await fetchMarkdown("contributions.md");
+			setMarkdown(text);
 		})();
 	});
 	let contrib_data = [contrib_2020fall];
