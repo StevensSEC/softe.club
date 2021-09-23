@@ -28,7 +28,7 @@
     },
     {
       "title": "Adding New Articles",
-      "description": "Here is the gist of how to add a new article to the website:\n\n1. Write your article in markdown. For this example, the file will be called `example.md`.\n2. Place `example.md` into the `src/articles` folder.\n3. Add an entry to `Router.js`\n```javascript\n{\n\tpath: \"/example\",\n\tarticleProps: {\n\t\tsource: \"example.md\",\n\t\ttitle: \"Example Article\",\n\t},\n\tComponent: lazy(() =>\n\t\timport(/* webpackChunkName: \"article\" */ \"./views/Article/Article.js\")\n\t),\n},\n```\n4. Your new page is now available in your browser at `/example`."
+      "description": "Here is the gist of how to add a new article to the website:\n\n1. Write your article in markdown. For this example, the file will be called `example.md`.\n2. Place `example.md` into the `src/articles` folder.\n3. Add an entry to `Router.js`\n```javascript\n{\n\tpath: \"/example\",\n\tarticleProps: {\n\t\tsource: \"example.md\",\n\t\ttitle: \"Example Article\",\n\t},\n\tComponent: lazy(() =>\n\t\timport(/* webpackChunkName: \"article\" */ \"./views/Article/Article\")\n\t),\n},\n```\n4. Your new page is now available in your browser at `/example`."
     },
     {
       "file": "src/articles/docs/articles.md",

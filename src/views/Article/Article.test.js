@@ -5,7 +5,7 @@ import { getByTestId, queryByTestId } from "@testing-library/dom";
 import "@testing-library/jest-dom";
 import { BrowserRouter as Router } from "react-router-dom";
 
-import ArticleView from "./Article.js";
+import ArticleView from "./Article";
 
 function removeIndents(s) {
 	let result = "";

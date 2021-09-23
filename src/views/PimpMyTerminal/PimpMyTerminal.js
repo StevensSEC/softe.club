@@ -4,7 +4,7 @@ import { motion, useViewportScroll, useSpring } from "framer-motion";
 import "./PimpMyTerminal.scss";
 import * as SEC from "../../components/SEC/lib.js";
 
-const ArticleView = lazy(() => import(/* webpackChunkName: "article" */ "../Article/Article.js"));
+const ArticleView = lazy(() => import(/* webpackChunkName: "article" */ "../Article/Article"));
 
 export default function PimpMyTerminal() {
 	const articleInAnimation = {
