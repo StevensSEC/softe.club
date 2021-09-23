@@ -55,17 +55,16 @@ const EVENTS = generateGbms(
 	dayjs("2021-30-09", "YYYY-MM-DD"),
 	1,
 	4
-);
-// .concat([
-// 	{
-// 		flyerSource: "learnhack_2021f.png",
-// 		title: "LearnHack",
-// 		desc: "Learn more about git, Javascript, and developing in React Native.",
-// 		meetingLink: "https://stevens.zoom.us/j/98789531305",
-// 		startDate: dayjs("2021-9-18", "YYYY-MM-DD").hour(12),
-// 		endDate: ddayjs("2021-9-18", "YYYY-MM-DD").hour(14)
-// 	}
-// ])
+).concat([
+	{
+		flyerSource: "learnhack_2021f.png",
+		title: "learnHack",
+		desc: "Learn more about git, Javascript, and developing in React.",
+		meetingLink: "https://discord.gg/nr3tqCfR2a",
+		startDate: dayjs("2021-9-29", "YYYY-MM-DD").hour(15),
+		endDate: dayjs("2021-9-29", "YYYY-MM-DD").hour(17),
+	},
+]);
 // .concat(generateGbms(dayjs("2021-10-7", "YYYY-MM-DD"), dayjs("2021-11-18", "YYYY-MM-DD")), 5)
 // .concat(generateGbms(dayjs("2021-12-2", "YYYY-MM-DD"), dayjs("2021-12-9", "YYYY-MM-DD")), 12)
 export default EVENTS;
