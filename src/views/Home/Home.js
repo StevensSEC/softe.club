@@ -4,7 +4,7 @@ import "./Home.scss";
 import ArticleList from "../../components/ArticleList/ArticleList.js";
 import DocumentTitle from "../../components/DocumentTitle/DocumentTitle.js";
 import EventBanner from "../../components/EventBanner/EventBanner";
-import EVENTS from "../../Events.js";
+import EVENTS from "../../Events";
 import Logo from "../../components/Logo/Logo.jsx";
 
 export default function HomeView() {

@@ -50,7 +50,7 @@
       "line": 7
     },
     {
-      "file": "src/Events.js",
+      "file": "src/Events.ts",
       "description": "This is where you can add events to the website.\n\n- Flyers go in: `src/assets/flyers`\n- This list is NOT sorted, the order that they are placed is the order that they appear.",
       "line": 56
     },

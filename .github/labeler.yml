@@ -6,7 +6,7 @@ content/slides:
   - src/slides/**/*
 
 content/events:
-  - src/Events.js
+  - src/Events.ts
   - src/articles/events/**/*
   - src/views/PimpMyTerminal/**/*
 
