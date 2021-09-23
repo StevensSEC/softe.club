@@ -11,14 +11,12 @@ const ROUTES = [
 	},
 	{
 		path: "/slp",
-		Component: lazy(() => import(/* webpackChunkName: "slp" */ "./views/SLP/SLP.js")),
+		Component: lazy(() => import(/* webpackChunkName: "slp" */ "./views/SLP/SLP")),
 	},
 	{
 		path: "/about",
 		articleProps: { source: "about.md", title: "About" },
-		Component: lazy(() =>
-			import(/* webpackChunkName: "article" */ "./views/Article/Article.js")
-		),
+		Component: lazy(() => import(/* webpackChunkName: "article" */ "./views/Article/Article")),
 	},
 	{
 		path: "/team",
@@ -27,23 +25,17 @@ const ROUTES = [
 	{
 		path: "/contact",
 		articleProps: { source: "contact.md", title: "Contact" },
-		Component: lazy(() =>
-			import(/* webpackChunkName: "article" */ "./views/Article/Article.js")
-		),
+		Component: lazy(() => import(/* webpackChunkName: "article" */ "./views/Article/Article")),
 	},
 	{
 		path: "/resources",
 		articleProps: { source: "guides/resources.md", title: "Resources" },
-		Component: lazy(() =>
-			import(/* webpackChunkName: "article" */ "./views/Article/Article.js")
-		),
+		Component: lazy(() => import(/* webpackChunkName: "article" */ "./views/Article/Article")),
 	},
 	{
 		path: "/faq",
 		articleProps: { source: "faq.md", title: "FAQ" },
-		Component: lazy(() =>
-			import(/* webpackChunkName: "article" */ "./views/Article/Article.js")
-		),
+		Component: lazy(() => import(/* webpackChunkName: "article" */ "./views/Article/Article")),
 	},
 	{
 		path: "/recordings",
@@ -54,7 +46,7 @@ const ROUTES = [
 	{
 		path: "/contributions",
 		Component: lazy(() =>
-			import(/* webpackChunkName: "contributions" */ "./views/Contributions/Contributions.js")
+			import(/* webpackChunkName: "article" */ "./views/Contributions/Contributions")
 		),
 	},
 	// HACK: This is required to redirect to an external page. The `Redirect` component only redirects to paths on the same host.
@@ -92,37 +84,27 @@ const ROUTES = [
 	{
 		path: "/git-cheatsheet",
 		articleProps: { source: "cheatsheets/git.md", title: "Git Cheatsheet" },
-		Component: lazy(() =>
-			import(/* webpackChunkName: "article" */ "./views/Article/Article.js")
-		),
+		Component: lazy(() => import(/* webpackChunkName: "article" */ "./views/Article/Article")),
 	},
 	{
 		path: "/dev/docs/articles",
 		articleProps: { source: "docs/articles.md", title: "Article Documentation" },
-		Component: lazy(() =>
-			import(/* webpackChunkName: "article" */ "./views/Article/Article.js")
-		),
+		Component: lazy(() => import(/* webpackChunkName: "article" */ "./views/Article/Article")),
 	},
 	{
 		path: "/dev/docs/slidedecks",
 		articleProps: { source: "docs/slidedecks.md", title: "Slide Deck Documentation" },
-		Component: lazy(() =>
-			import(/* webpackChunkName: "article" */ "./views/Article/Article.js")
-		),
+		Component: lazy(() => import(/* webpackChunkName: "article" */ "./views/Article/Article")),
 	},
 	{
 		path: "/dev/docs/design",
 		articleProps: { source: "docs/design.md", title: "Design Specification" },
-		Component: lazy(() =>
-			import(/* webpackChunkName: "article" */ "./views/Article/Article.js")
-		),
+		Component: lazy(() => import(/* webpackChunkName: "article" */ "./views/Article/Article")),
 	},
 	{
 		path: "/dev/docs",
 		articleProps: { source: "docs/README.md", title: "README" },
-		Component: lazy(() =>
-			import(/* webpackChunkName: "article" */ "./views/Article/Article.js")
-		),
+		Component: lazy(() => import(/* webpackChunkName: "article" */ "./views/Article/Article")),
 	},
 	{
 		path: "/dev/components",
@@ -153,23 +135,17 @@ const ROUTES = [
 	{
 		path: "/event/pair-programming-2020",
 		articleProps: { source: "events/2020-pair-programming.md", title: "Pair Programming 2020" },
-		Component: lazy(() =>
-			import(/* webpackChunkName: "article" */ "./views/Article/Article.js")
-		),
+		Component: lazy(() => import(/* webpackChunkName: "article" */ "./views/Article/Article")),
 	},
 	{
 		path: "/bash-cheatsheet",
 		articleProps: { source: "cheatsheets/bash.md", title: "Bash Cheatsheet" },
-		Component: lazy(() =>
-			import(/* webpackChunkName: "article" */ "./views/Article/Article.js")
-		),
+		Component: lazy(() => import(/* webpackChunkName: "article" */ "./views/Article/Article")),
 	},
 	{
 		path: "/powershell-cheatsheet",
 		articleProps: { source: "cheatsheets/powershell.md", title: "Powershell Cheatsheet" },
-		Component: lazy(() =>
-			import(/* webpackChunkName: "article" */ "./views/Article/Article.js")
-		),
+		Component: lazy(() => import(/* webpackChunkName: "article" */ "./views/Article/Article")),
 	},
 	{
 		path: "/event/pimp-my-terminal",
@@ -189,9 +165,7 @@ const ROUTES = [
 			source: "fall-2020-open-source-projects.md",
 			title: "Open Source Project Guide - Fall 2020",
 		},
-		Component: lazy(() =>
-			import(/* webpackChunkName: "article" */ "./views/Article/Article.js")
-		),
+		Component: lazy(() => import(/* webpackChunkName: "article" */ "./views/Article/Article")),
 	},
 	{
 		path: "/tutorial/install-wsl",
@@ -199,9 +173,7 @@ const ROUTES = [
 			source: "tutorials/howto-install-wsl.md",
 			title: "How to Install the Windows Subsystem for Linux",
 		},
-		Component: lazy(() =>
-			import(/* webpackChunkName: "article" */ "./views/Article/Article.js")
-		),
+		Component: lazy(() => import(/* webpackChunkName: "article" */ "./views/Article/Article")),
 	},
 	{
 		path: "/tutorial/enable-colors-mac",
@@ -209,9 +181,7 @@ const ROUTES = [
 			source: "tutorials/howto-enable-terminal-colors-mac.md",
 			title: "How to Enable Terminal Colors on Mac",
 		},
-		Component: lazy(() =>
-			import(/* webpackChunkName: "article" */ "./views/Article/Article.js")
-		),
+		Component: lazy(() => import(/* webpackChunkName: "article" */ "./views/Article/Article")),
 	},
 	{
 		path: "/tutorial/iterm2-import-colors",
@@ -219,9 +189,7 @@ const ROUTES = [
 			source: "tutorials/howto-install-iterm2-themes.md",
 			title: "How to Install iTerm2 Color Themes",
 		},
-		Component: lazy(() =>
-			import(/* webpackChunkName: "article" */ "./views/Article/Article.js")
-		),
+		Component: lazy(() => import(/* webpackChunkName: "article" */ "./views/Article/Article")),
 	},
 	{
 		path: "/tutorial/set-default-shell",
@@ -229,9 +197,7 @@ const ROUTES = [
 			source: "tutorials/howto-set-default-shell.md",
 			title: "How to set the default shell",
 		},
-		Component: lazy(() =>
-			import(/* webpackChunkName: "article" */ "./views/Article/Article.js")
-		),
+		Component: lazy(() => import(/* webpackChunkName: "article" */ "./views/Article/Article")),
 	},
 	{
 		path: "/tutorial/ensure-bashrc-profile-setup",
@@ -239,9 +205,7 @@ const ROUTES = [
 			source: "tutorials/howto-ensure-bashrc-profile-setup.md",
 			title: "How to make sure your bashrc/profile is set up",
 		},
-		Component: lazy(() =>
-			import(/* webpackChunkName: "article" */ "./views/Article/Article.js")
-		),
+		Component: lazy(() => import(/* webpackChunkName: "article" */ "./views/Article/Article")),
 	},
 	{
 		path: "/tutorial/cli-text-editors",
@@ -249,9 +213,7 @@ const ROUTES = [
 			source: "tutorials/howto-use-cli-text-editors.md",
 			title: "How to use terminal text editors",
 		},
-		Component: lazy(() =>
-			import(/* webpackChunkName: "article" */ "./views/Article/Article.js")
-		),
+		Component: lazy(() => import(/* webpackChunkName: "article" */ "./views/Article/Article")),
 	},
 	{
 		path: "/tutorial/vscode-theme",
@@ -259,9 +221,7 @@ const ROUTES = [
 			source: "tutorials/howto-vscode-set-theme.md",
 			title: "How to set your theme in VS Code",
 		},
-		Component: lazy(() =>
-			import(/* webpackChunkName: "article" */ "./views/Article/Article.js")
-		),
+		Component: lazy(() => import(/* webpackChunkName: "article" */ "./views/Article/Article")),
 	},
 	{
 		path: "/tutorial/set-default-terminal",
@@ -269,9 +229,7 @@ const ROUTES = [
 			source: "tutorials/howto-set-default-terminal.md",
 			title: "How to set your default terminal",
 		},
-		Component: lazy(() =>
-			import(/* webpackChunkName: "article" */ "./views/Article/Article.js")
-		),
+		Component: lazy(() => import(/* webpackChunkName: "article" */ "./views/Article/Article")),
 	},
 	{
 		path: "/tutorial/windows-terminal",
@@ -279,9 +237,7 @@ const ROUTES = [
 			source: "tutorials/howto-install-use-windows-terminal.md",
 			title: "How to install and use Windows Terminal",
 		},
-		Component: lazy(() =>
-			import(/* webpackChunkName: "article" */ "./views/Article/Article.js")
-		),
+		Component: lazy(() => import(/* webpackChunkName: "article" */ "./views/Article/Article")),
 	},
 	{
 		path: "/event/ctc-intro-to-git-2020",
@@ -289,23 +245,17 @@ const ROUTES = [
 			source: "events/ctc-intro-to-git-2020/intro-to-git.md",
 			title: "Intro to Git",
 		},
-		Component: lazy(() =>
-			import(/* webpackChunkName: "article" */ "./views/Article/Article.js")
-		),
+		Component: lazy(() => import(/* webpackChunkName: "article" */ "./views/Article/Article")),
 	},
 	{
 		path: "/guide/what-to-install",
 		articleProps: { source: "guides/what-to-install.md", title: "What to install?" },
-		Component: lazy(() =>
-			import(/* webpackChunkName: "article" */ "./views/Article/Article.js")
-		),
+		Component: lazy(() => import(/* webpackChunkName: "article" */ "./views/Article/Article")),
 	},
 	{
 		path: "/guide/github",
 		articleProps: { source: "guides/github.md", title: "SEC's guide to GitHub" },
-		Component: lazy(() =>
-			import(/* webpackChunkName: "article" */ "./views/Article/Article.js")
-		),
+		Component: lazy(() => import(/* webpackChunkName: "article" */ "./views/Article/Article")),
 	},
 	{
 		path: "/slides/event/debugging-workshop",
@@ -345,9 +295,7 @@ const ROUTES = [
 	{
 		path: "/events/pair-programming-s21",
 		articleProps: { source: "events/pair-programming-s21.md", title: "Pair Programming 2021" },
-		Component: lazy(() =>
-			import(/* webpackChunkName: "article" */ "./views/Article/Article.js")
-		),
+		Component: lazy(() => import(/* webpackChunkName: "article" */ "./views/Article/Article")),
 	},
 	{
 		path: "/slides/events/pair-programming-s21",
@@ -359,16 +307,12 @@ const ROUTES = [
 	{
 		path: "/guide/tools",
 		articleProps: { source: "guides/tools.md", title: "Tools" },
-		Component: lazy(() =>
-			import(/* webpackChunkName: "article" */ "./views/Article/Article.js")
-		),
+		Component: lazy(() => import(/* webpackChunkName: "article" */ "./views/Article/Article")),
 	},
 	{
 		path: "/guide/code-reviews",
 		articleProps: { source: "guides/code-reviews.md", title: "SEC's guide to code reviews" },
-		Component: lazy(() =>
-			import(/* webpackChunkName: "article" */ "./views/Article/Article.js")
-		),
+		Component: lazy(() => import(/* webpackChunkName: "article" */ "./views/Article/Article")),
 	},
 	{
 		path: "*",

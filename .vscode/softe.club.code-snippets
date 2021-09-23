@@ -41,7 +41,7 @@
 			"{",
 			"\tpath: \"/$1\",",
 			"\tarticleProps: { source: \"$1.md\", title: \"$2\" },",
-			"\tComponent: lazy(() => import(/* webpackChunkName: \"article\"*/ \"./views/Article/Article.js\")),",
+			"\tComponent: lazy(() => import(/* webpackChunkName: \"article\"*/ \"./views/Article/Article\")),",
 			"},"
 		]
 	},
