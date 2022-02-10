@@ -305,6 +305,13 @@ const ROUTES = [
 		),
 	},
 	{
+		path: "/slides/events/pair-programming-s22",
+		slideProps: { slidePath: "events/pair-programming-s22.yaml" },
+		Component: lazy(() =>
+			import(/* webpackChunkName: "quick-slides" */ "./views/Slides/QuickSlides.js")
+		),
+	},
+	{
 		path: "/guide/tools",
 		articleProps: { source: "guides/tools.md", title: "Tools" },
 		Component: lazy(() => import(/* webpackChunkName: "article" */ "./views/Article/Article")),
