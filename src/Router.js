@@ -305,6 +305,14 @@ const ROUTES = [
 		),
 	},
 	{
+		path: "/events/pair-programming-s22-solutions",
+		articleProps: {
+			source: "events/2022-pair-programming-sol.md",
+			title: "Pair Programming 2022 Solutions",
+		},
+		Component: lazy(() => import(/* webpackChunkName: "article" */ "./views/Article/Article")),
+	},
+	{
 		path: "/slides/events/pair-programming-s22",
 		slideProps: { slidePath: "events/pair-programming-s22.yaml" },
 		Component: lazy(() =>
