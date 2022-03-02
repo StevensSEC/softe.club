@@ -1,0 +1,41 @@
+title: React Native & Expo Workshop Slides
+slides:
+  - content: |
+      # Tools to Install
+
+      ## On Your Laptop
+      npm - Go to [nodejs.org](https://nodejs.org)    
+      git - Go to [git-scm.com](https://git-scm.com/)    
+      yarn - 
+      ```bash
+      npm install -g yarn
+      ```
+
+      Expo CLI -
+
+      ```bash
+      yarn global add expo-cli
+      ```
+
+      ## On Your Phone
+      Expo Go - Search for 'Expo Go' on App Store or Google Play Store
+    sticky: 5
+  - type: title
+    title: React Native & Expo
+    subtitle: How to create mobile apps using React
+    img: logosmall.png
+  - content: |
+      # What is Expo?
+
+      App development platform using React Native
+
+        - Provides a test platform for 'hot reloading'
+        - Builds the app for you so that it can be compatible with iOS, Android, and the web all at once
+        - Provides some other tools for app developers
+    img: expo
+  - content: |
+      # What is React Native?
+
+      A development framework for creating mobile apps using React.
+  - type: title
+    title: Let's Get Started
