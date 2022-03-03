@@ -152,3 +152,94 @@ export default function TabOneScreen({ navigation }: RootTabScreenProps<"TabOne"
 ```
 
 If you added the exact styling shown above, your "Hello world!" should now be blue, and much larger. Experiment with adding different styles to text and other components (`View`s also can be styled). If you are familiar with CSS, you will notice that this is very similar and many of the same properties are valid.
+
+## Step 4. First Functionality
+
+Let's make our app do something in response to a user. The most basic way that a user provides in input to any app is by pushing a button on the screen. So, let's add a `Button`.
+
+First, we need to import it so that the compiler knows where the component is coming from. Change line 1 to:
+
+```tsx
+import { StyleSheet, Button } from "react-native";
+```
+
+Then, add the `Button` to the screen by making the change below:
+
+```tsx
+export default function TabOneScreen({ navigation }: RootTabScreenProps<"TabOne">) {
+	return (
+		<View style={styles.container}>
+			<Text style={styles.title}>Tab One</Text>
+			<Text style={{ color: "#67CDFE", fontSize: 50 }}>Hello world!</Text>
+			<Button
+				onPress={() => {
+					/* TODO */
+				}}
+				title="Change my color"
+				accessibilityLabel="Press this button to change the color of the button"
+				color="#67CDFE"
+			/>
+			<View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
+			<EditScreenInfo path="/screens/TabOneScreen.tsx" />
+		</View>
+	);
+}
+```
+
+The button should be rendered to the screen now. Currently, when pressed, it will not do anything. Say we want to make the button cycle between three set colors when pressed. We might do that by having a list of intended colors and some variable that stores the current button color state. Here's a way to do that below:
+
+```tsx
+export default function TabOneScreen({ navigation }: RootTabScreenProps<"TabOne">) {
+	const colors = ["#67CDFE", "#43c9a2", "#dcdcaa"];
+	const [currentColor, setCurrentColor] = useState(0);
+	return (
+		<View style={styles.container}>
+			<Text style={styles.title}>Tab One</Text>
+			<Text style={{ color: "#67CDFE", fontSize: 50 }}>Hello world!</Text>
+			<Button
+				onPress={() => {
+					/* TODO */
+				}}
+				title="Change my color"
+				accessibilityLabel="Press this button to change the color of the button"
+				color={colors[currentColor]}
+			/>
+			<View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
+			<EditScreenInfo path="/screens/TabOneScreen.tsx" />
+		</View>
+	);
+}
+```
+
+`useState()` is a React hook - do not worry too much about it for now if you do not know what that is. Just know that when the value stored in `currentColor` changes, this will cause the app to re-render, and that passing `0` as an argument makes it the starting value of `currentColor`. We also need to import it. Add this line underneath line 1;
+
+```tsx
+import { useState } from "react";
+```
+
+Now we add the actual logic. So far, we have left the `onPress` prop with an empty function, but this is where our logiv should go, since this code will be run each time the button is pressed (this is called an "event handler"). We want our button's current color to change from the first to the second color, the second to the third color, and the third to the first color in a cycle. We can achieve this by incrementing `currentColor` and performing a modulo operation on it, and then storing the result in `currentColor`. Take a look at the code below:
+
+```tsx
+export default function TabOneScreen({ navigation }: RootTabScreenProps<"TabOne">) {
+	const colors = ["#67CDFE", "#43c9a2", "#dcdcaa"];
+	const [currentColor, setCurrentColor] = useState(0);
+	return (
+		<View style={styles.container}>
+			<Text style={styles.title}>Tab One</Text>
+			<Text style={{ color: "#67CDFE", fontSize: 50 }}>Hello world!</Text>
+			<Button
+				onPress={() => {
+					setCurrentColor((currentColor + 1) % 3);
+				}}
+				title="Change my color"
+				accessibilityLabel="Press this button to change the color of the button"
+				color={colors[currentColor]}
+			/>
+			<View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
+			<EditScreenInfo path="/screens/TabOneScreen.tsx" />
+		</View>
+	);
+}
+```
+
+Once it reloads, pressing the button should do as we expect - cycling through the three colors each time the user presses a button. To make this code more robust to change, we could replace `3` with the length of the colors list. This way, they do not need to be updated separately.
