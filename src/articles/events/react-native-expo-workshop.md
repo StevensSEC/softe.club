@@ -23,3 +23,88 @@ yarn global add expo-cli
 ### On Your Phone
 
 Expo Go - Search for 'Expo Go' on App Store or Google Play Store
+
+## Step 1. Creating the App Workspace
+
+Let's make a new Expo app on the Desktop (or folder of your choice).
+
+On Windows, open up the Git Bash. On MacOS or Linux, open up your terminal. Run:
+
+```bash
+cd
+cd Desktop
+expo init my-app
+```
+
+A prompt will appear that looks like this:
+
+```
+? Choose a template: › - Use arrow-keys. Return to submit.
+    ----- Managed workflow -----
+❯   blank               a minimal app as clean as an empty canvas
+    blank (TypeScript)  same as blank but with TypeScript configuration
+    tabs (TypeScript)   several example screens and tabs using react-navigation and TypeScript
+    ----- Bare workflow -----
+    minimal             bare and minimal, just the essentials to get you started
+```
+
+(
+
+If you not get this prompt and instead get an error starting with: `Command 'expo' not found, did you mean:` then you may need to update your \$PATH environment variable. Do:
+
+```bash
+cd
+nano .bashrc
+```
+
+And add this line to the bottom of `.bashrc`
+
+```bash
+export $PATH="$(yarn global bin):$PATH"
+```
+
+)
+
+Navigate using the arrow-keys to the selection labeled "tabs" and press Enter. A message indicating that a download is in progress should now appear. When it is finished, you should see the following message:
+
+```
+✅ Your project is ready!
+
+To run your project, navigate to the directory and run one of the following yarn commands.
+
+- cd my-app
+- yarn start # you can open iOS, Android, or web from here, or run them directly with the commands below.
+- yarn android
+- yarn ios # requires an iOS device or macOS for access to an iOS simulator
+- yarn web
+```
+
+An app workspace has been created for us! We can enter that folder with:
+
+```bash
+cd my-app
+```
+
+## Step 2. First Launch
+
+Let's start our new app. Run:
+
+```
+yarn start --tunnel
+```
+
+You should see:
+
+![Metro Dev Dashboard](/react-native-expo/metro.png)
+
+Now you can try to open your app on your phone! Open up Expo Go on Android, or your Camera app on iOS and scan the QR code in the bottom left corner of your screen. (You can hover over the QR code to make it larger.)
+
+(
+NOTE FROM THE AUTHOR: On-campus, there are network rules set by the system administrators that limit what we can do with Expo. This may cause you to run into an error when attempting to download your app from your computer to your phone. In my experience, this error is more common with Android users than with iOS ones. If you are struggling to open it on your phone, try clicking "Run in web browser" on the sidebar on the left. Once you are off campus, try following these steps again for the ✨authentic✨ mobile developer experience.
+)
+
+## Step 3. Hello World!
+
+Now we have an app running on our phone (or web browser). Let's make it say something we want. Of course, there is no better place to start than "Hello World!".
+
+Open up the `my-app` project folder in your text editor of choice (VS Code is recommended). From there, open up the file `screens/TabOneScreen.tsx`.
