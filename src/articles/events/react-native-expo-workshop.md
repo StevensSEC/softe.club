@@ -243,3 +243,14 @@ export default function TabOneScreen({ navigation }: RootTabScreenProps<"TabOne"
 ```
 
 Once it reloads, pressing the button should do as we expect - cycling through the three colors each time the user presses a button. To make this code more robust to change, we could replace `3` with the length of the colors list. This way, they do not need to be updated separately.
+
+## Conclusion
+
+After following the steps above, you should now know how to set up a React Native mobile app with Expo. You saw how to start up the project using your terminal, how to add some text to the app, and how to make a button with some basic functionality. If you are interested in learning more about developing with Expo and React Native, the documentation also includes some tutorials that you may be interested in:
+
+-   [reactnative.dev](https://reactnative.dev)
+-   [docs.expo.dev](https://docs.expo.dev)
+
+If you want to know more about using Yarn:
+
+-   [classic.yarnpkg.com](https://classic.yarnpkg.com/en/)
