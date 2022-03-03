@@ -37,5 +37,7 @@ slides:
       # What is React Native?
 
       A development framework for creating mobile apps using React.
-  - type: title
-    title: Let's Get Started
+  - content: |
+      # Let's Get Started
+
+      [softe.club/events/react-native-expo-workshop](https://softe.club/events/react-native-expo-workshop/)

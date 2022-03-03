@@ -48,9 +48,9 @@ A prompt will appear that looks like this:
     minimal             bare and minimal, just the essentials to get you started
 ```
 
-(
+(((
 
-If you not get this prompt and instead get an error starting with: `Command 'expo' not found, did you mean:` then you may need to update your \$PATH environment variable. Do:
+If you not get this prompt and instead get an error starting with: `Command 'expo' not found, did you mean:` then you may need to update your `$PATH` environment variable. Do:
 
 ```bash
 cd
@@ -63,7 +63,7 @@ And add this line to the bottom of `.bashrc`
 export $PATH="$(yarn global bin):$PATH"
 ```
 
-)
+)))
 
 Navigate using the arrow-keys to the selection labeled "tabs" and press Enter. A message indicating that a download is in progress should now appear. When it is finished, you should see the following message:
 
@@ -95,19 +95,19 @@ yarn start --tunnel
 
 You should see:
 
-![Metro Dev Dashboard](/react-native-expo/metro.png)
+![Metro Dev Dashboard](react-native-expo/metro.png)
 
 Now you can try to open your app on your phone! Open up Expo Go on Android, or your Camera app on iOS and scan the QR code in the bottom left corner of your screen. (You can hover over the QR code to make it larger.)
 
 (
-NOTE FROM THE AUTHOR: On-campus, there are network rules set by the system administrators that limit what we can do with Expo. This may cause you to run into an error when attempting to download your app from your computer to your phone. In my experience, this error is more common with Android users than with iOS ones. If you are struggling to open it on your phone, try clicking "Run in web browser" on the sidebar on the left. Once you are off campus, try following these steps again for the ✨authentic✨ mobile developer experience.
+_NOTE FROM THE AUTHOR: On-campus, there are network rules set by the system administrators that limit what we can do with Expo. This may cause you to run into an error when attempting to download your app from your computer to your phone. In my experience, this error is more common with Android users than with iOS ones. If you are struggling to open it on your phone, try clicking "Run in web browser" on the sidebar on the left. Once you are off campus, try following these steps again for the ✨authentic✨ mobile developer experience._
 )
 
 ## Step 3. Hello World!
 
 Now we have an app running on our phone (or web browser). Let's make it say something we want. Of course, there is no better place to start than "Hello World!".
 
-Open up the `my-app` project folder in your text editor of choice (VS Code is recommended). From there, open up the file `screens/TabOneScreen.tsx`. Focus your attention on the following section in this file:
+Open up the `my-app` project folder in your text editor. From there, open up the file `screens/TabOneScreen.tsx`. Focus your attention on the following section in this file:
 
 ```tsx
 export default function TabOneScreen({ navigation }: RootTabScreenProps<"TabOne">) {
@@ -211,13 +211,13 @@ export default function TabOneScreen({ navigation }: RootTabScreenProps<"TabOne"
 }
 ```
 
-`useState()` is a React hook - do not worry too much about it for now if you do not know what that is. Just know that when the value stored in `currentColor` changes, this will cause the app to re-render, and that passing `0` as an argument makes it the starting value of `currentColor`. We also need to import it. Add this line underneath line 1;
+`useState()` is a React hook - do not worry too much about it for now if you do not know what that is. Just know that when the value stored in `currentColor` changes, this will cause the app to re-render, and that passing `0` as an argument makes it the starting value of `currentColor`. We also need to import it. Add this line underneath line 1:
 
 ```tsx
 import { useState } from "react";
 ```
 
-Now we add the actual logic. So far, we have left the `onPress` prop with an empty function, but this is where our logiv should go, since this code will be run each time the button is pressed (this is called an "event handler"). We want our button's current color to change from the first to the second color, the second to the third color, and the third to the first color in a cycle. We can achieve this by incrementing `currentColor` and performing a modulo operation on it, and then storing the result in `currentColor`. Take a look at the code below:
+Now we add the actual logic. So far, we have left the `onPress` prop with an empty function, but this is where our logic should go. This code will be run each time the button is pressed (this is called an "event handler"). We want our button's current color to change from the first to the second color, the second to the third color, and the third to the first color in a cycle. We can achieve this by incrementing `currentColor` and performing a modulo operation on it, and then storing the result in `currentColor`. Take a look at the code below:
 
 ```tsx
 export default function TabOneScreen({ navigation }: RootTabScreenProps<"TabOne">) {
@@ -254,3 +254,8 @@ After following the steps above, you should now know how to set up a React Nativ
 If you want to know more about using Yarn:
 
 -   [classic.yarnpkg.com](https://classic.yarnpkg.com/en/)
+
+Finally, if you are interested in videos, there are many on YouTube. Here are a couple of the top results:
+
+-   [React Native Tutorial for Beginners - Build a React Native App [2020]](https://www.youtube.com/watch?v=0-S5a0eXPoc)
+-   [React Native Crash Course - Full App tutorial with Expo](https://www.youtube.com/watch?v=NgDaPmxewcg)
