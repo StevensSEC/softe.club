@@ -107,4 +107,48 @@ NOTE FROM THE AUTHOR: On-campus, there are network rules set by the system admin
 
 Now we have an app running on our phone (or web browser). Let's make it say something we want. Of course, there is no better place to start than "Hello World!".
 
-Open up the `my-app` project folder in your text editor of choice (VS Code is recommended). From there, open up the file `screens/TabOneScreen.tsx`.
+Open up the `my-app` project folder in your text editor of choice (VS Code is recommended). From there, open up the file `screens/TabOneScreen.tsx`. Focus your attention on the following section in this file:
+
+```tsx
+export default function TabOneScreen({ navigation }: RootTabScreenProps<"TabOne">) {
+	return (
+		<View style={styles.container}>
+			<Text style={styles.title}>Tab One</Text>
+			<View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
+			<EditScreenInfo path="/screens/TabOneScreen.tsx" />
+		</View>
+	);
+}
+```
+
+The "Text" component in React Native is the one responsible for rendering text to the screen. We can add another one of our own:
+
+```tsx
+export default function TabOneScreen({ navigation }: RootTabScreenProps<"TabOne">) {
+	return (
+		<View style={styles.container}>
+			<Text style={styles.title}>Tab One</Text>
+			<Text>Hello world!</Text>
+			<View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
+			<EditScreenInfo path="/screens/TabOneScreen.tsx" />
+		</View>
+	);
+}
+```
+
+There should now be a small line reading "Hello world!" under "Tab One". Notice how it does not look the same as "Tab One" above it. This is because the above text is _styled_ to look different from the default. We can add some styling to our text too:
+
+```tsx
+export default function TabOneScreen({ navigation }: RootTabScreenProps<"TabOne">) {
+	return (
+		<View style={styles.container}>
+			<Text style={styles.title}>Tab One</Text>
+			<Text style={{ color: "#67CDFE", fontSize: 50 }}>Hello world!</Text>
+			<View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
+			<EditScreenInfo path="/screens/TabOneScreen.tsx" />
+		</View>
+	);
+}
+```
+
+If you added the exact styling shown above, your "Hello world!" should now be blue, and much larger. Experiment with adding different styles to text and other components (`View`s also can be styled). If you are familiar with CSS, you will notice that this is very similar and many of the same properties are valid.
