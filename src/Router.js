@@ -320,6 +320,21 @@ const ROUTES = [
 		),
 	},
 	{
+		path: "/slides/events/react-native-expo-workshop",
+		slideProps: { slidePath: "events/react-native-expo-workshop.yaml" },
+		Component: lazy(() =>
+			import(/* webpackChunkName: "quick-slides" */ "./views/Slides/QuickSlides.js")
+		),
+	},
+	{
+		path: "/events/react-native-expo-workshop",
+		articleProps: {
+			source: "events/react-native-expo-workshop.md",
+			title: "React Native & Expo Workshop",
+		},
+		Component: lazy(() => import(/* webpackChunkName: "article" */ "./views/Article/Article")),
+	},
+	{
 		path: "/guide/tools",
 		articleProps: { source: "guides/tools.md", title: "Tools" },
 		Component: lazy(() => import(/* webpackChunkName: "article" */ "./views/Article/Article")),
