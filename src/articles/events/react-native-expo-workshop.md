@@ -155,7 +155,7 @@ If you added the exact styling shown above, your "Hello world!" should now be bl
 
 ## Step 4. First Functionality
 
-Let's make our app do something in response to a user. The most basic way that a user provides in input to any app is by pushing a button on the screen. So, let's add a `Button`.
+Let's make our app do something in response to a user. The most basic way that a user provides input to any app is by pushing a button on the screen. So, let's add a `Button`.
 
 First, we need to import it so that the compiler knows where the component is coming from. Change line 1 to:
 
