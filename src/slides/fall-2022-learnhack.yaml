@@ -1,0 +1,45 @@
+---
+title: PyGame Learnhack
+slides:
+  - type: title
+    title: PyGame Learnhack Workshop
+    subtitle: Build games in Python
+  - content: |
+      # What is PyGame?
+      - Wrapper for SDL (Simple DirectMedia Layer) Library
+      - Access system's multimedia hardware (mouse, keyboard, joystick etc.)
+  - content: |
+      # Game Loop
+      - Event Driven System
+      ```python
+      pygame.init()
+      running = True
+      while running:
+        for event in pygame.event.get():
+          if event.type == TARGET EVENT:
+            DO ACTION
+      pygame.quit()
+      ```
+  - content: |
+      # Sprites
+      - 2D representation of something on the screen
+      - Player, Obstacles, Duck
+  - content: |
+      # Sprite Groups
+      - Group of sprites
+      - Why?
+      - Helps manage all similar items together
+  - content: |
+      # Custom Events
+      - Helps define new operations in the game
+      ```python
+      # Create a custom event for adding a new enemy
+        ADDENEMY = pygame.USEREVENT + 1
+        pygame.time.set_timer(ADDENEMY, 250)
+      ```
+  - content: |
+      # Collision Detection
+      - No need for complex geometric firmuale!
+      ```python
+        pygame.sprite.spritecollideany(player, enemies)
+      ```
