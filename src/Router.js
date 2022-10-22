@@ -279,15 +279,8 @@ const ROUTES = [
 		),
 	},
 	{
-		path: "/slides/spring-2021-gbm1",
-		slideProps: { slidePath: "spring-2021-gbm1.yaml" },
-		Component: lazy(() =>
-			import(/* webpackChunkName: "quick-slides" */ "./views/Slides/QuickSlides.js")
-		),
-	},
-	{
-		path: "/events/pygame-learnhack-spring-2022",
-		slideProps: { slidePath: "pygame-learnhack-2022.yaml" },
+		path: "/slides/fall-2022-learnhack",
+		slideProps: { slidePath: "fall-2022-learnhack.yaml" },
 		Component: lazy(() =>
 			import(/*webpackChunkName: "quick-slides" */ "./views/Slides/QuickSlides.js")
 		),
