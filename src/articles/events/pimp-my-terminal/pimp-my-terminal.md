@@ -86,7 +86,8 @@ something that works for you.
 #### Extensions
 
 _Tip: You can install these quickly by pressing `Ctrl + P` and typing the command `ext install PACKAGE`_
-- Github Copilot - Amazing AI code completion trained on all the code in github. Completes whole functions for you. Free for students.
+
+-   [Github Copilot](https://github.com/features/copilot) `GitHub.copilot` - Amazing AI code completion trained on all the code in github. Completes whole functions for you. Free for students.
 -   TabNine `tabnine.tabnine-vscode` - Uses machine learning to help you write code faster. - Not battery friendy, not memory friendly.
 -   GitLens `eamodio.gitlens` - Extra git integration features.
 -   Path Intellisense `christian-kohler.path-intellisense` - Autocompletes filenames.
@@ -325,8 +326,9 @@ A theme for zsh that is highly customizable, includes powerlines to display syst
 -   [fuck](https://github.com/nvbn/thefuck) - Corrects typos in commands
 
 ![fuck demo](https://raw.githubusercontent.com/nvbn/thefuck/master/example.gif)
-- [fzf](https://github.com/junegunn/fzf) - A command-line fuzzy finder, aka another really good autocomplete solution.
-- [bashtop](https://github.com/aristocratos/bashtop) - A terminal system monitor
+
+-   [fzf](https://github.com/junegunn/fzf) - A command-line fuzzy finder, aka another really good autocomplete solution.
+-   [bashtop](https://github.com/aristocratos/bashtop) - A terminal system monitor
 -   [Homebrew](https://brew.sh) - package manager for Mac
 -   [Chocolatey](https://chocolatey.org) - package manager for Windows
 -   [Rectangle](https://github.com/rxhanson/Rectangle) - Window management utility for Mac
