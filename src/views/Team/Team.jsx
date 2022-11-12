@@ -20,9 +20,9 @@ export default class TeamView extends Component {
 		},
 		{
 			role: "Treasurer",
-			name: "Adrian Garcia",
-			img: "adrian.jpeg",
-			github: "adriang11",
+			name: "Mohammad Khan",
+			img: "mohammad.png",
+			github: "MHKhan18",
 		},
 		{
 			role: "Secretary",
