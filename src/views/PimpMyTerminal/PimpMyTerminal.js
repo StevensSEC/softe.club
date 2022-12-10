@@ -42,7 +42,7 @@ export default function PimpMyTerminal() {
 
 	return (
 		<div>
-			<Grid container direction="column" justify="center" alignItems="center">
+			<Grid container direction="column" justifyContent="center" alignItems="center">
 				<Hero className="logo" />
 			</Grid>
 			<motion.div {...articleInAnimation}>
