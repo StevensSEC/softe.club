@@ -78,9 +78,9 @@ export default class TeamView extends Component {
 					Contributors to the Semester Long Project are added here.
 				</div>
 				<ul>
-					{this.memberList.map(member => {
+					{this.memberList.map((member, i) => {
 						return (
-							<li>
+							<li key={i}>
 								<SEC.Link href={`https://github.com/${member.github}`}>
 									{member.name}
 								</SEC.Link>

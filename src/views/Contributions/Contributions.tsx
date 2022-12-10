@@ -21,9 +21,10 @@ const ContributionsView = (): JSX.Element => {
 			<h1>Contributions</h1>
 			<h2>Open Source Contributions</h2>
 			<hr />
-			{contrib_data.map(semester => {
+			{contrib_data.map((semester, i) => {
 				return (
 					<Contributions
+						key={i}
 						display={semester.display}
 						contributors={semester.contributors}
 						referenced_prs={semester.referenced_prs}
