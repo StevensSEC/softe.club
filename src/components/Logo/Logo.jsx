@@ -154,9 +154,21 @@ export default class Logo extends React.Component {
 				<motion.circle {...drawCirclesAnimation} className="le" cx="2020" cy="1690" />
 				<motion.circle {...drawCirclesAnimation} className="le" cx="2120" cy="1690" />
 				<motion.circle {...drawCirclesAnimation} className="le" cx="2220" cy="1690" />
-				<motion.path {...drawLinesAnimation} className="lc" d="M760 2160H600L450 1900H370" />
-				<motion.path {...drawLinesAnimation} className="lc" d="M760 2240H550L400 1990H320" />
-				<motion.path {...drawLinesAnimation} className="lc" d="M760 2320H480L340 2070H270" />
+				<motion.path
+					{...drawLinesAnimation}
+					className="lc"
+					d="M760 2160H600L450 1900H370"
+				/>
+				<motion.path
+					{...drawLinesAnimation}
+					className="lc"
+					d="M760 2240H550L400 1990H320"
+				/>
+				<motion.path
+					{...drawLinesAnimation}
+					className="lc"
+					d="M760 2320H480L340 2070H270"
+				/>
 				<motion.circle {...drawCirclesAnimation} className="le" cx="760" cy="2240" />
 				<motion.circle {...drawCirclesAnimation} className="le" cx="760" cy="2320" />
 				<motion.circle {...drawCirclesAnimation} className="le" cx="320" cy="1990" />
