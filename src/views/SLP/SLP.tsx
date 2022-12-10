@@ -12,7 +12,7 @@ const SLPView = (): JSX.Element => {
 	return (
 		<div>
 			<Container>
-				<h1>Here you can view a history of SEC's projects...</h1>
+				<h1>Here you can view a history of SEC&apos;s projects...</h1>
 			</Container>
 			{PROJECTS.map((project, i) => {
 				orientation = getNextOrientation(orientation);

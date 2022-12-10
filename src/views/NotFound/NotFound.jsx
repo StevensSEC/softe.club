@@ -23,7 +23,7 @@ export default function NotFoundView() {
 				</Grid>
 				<Grid item>
 					<div className="message">
-						There doesn't seem to be a page called &quot;{location}&quot; on our
+						There doesn&apos;t seem to be a page called &quot;{location}&quot; on our
 						website. Sorry about that!
 					</div>
 				</Grid>
