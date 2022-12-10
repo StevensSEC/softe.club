@@ -322,7 +322,7 @@ A theme for zsh that is highly customizable, includes powerlines to display syst
 
 # Other Tools
 
--   [Fig](fig.io) - A tool that lets you autocomplete commands and search through your history, as well as install and manage other tools in its GUI settings.
+-   [Fig](https://fig.io) - A tool that lets you autocomplete commands and search through your history, as well as install and manage other tools in its GUI settings.
 -   [fuck](https://github.com/nvbn/thefuck) - Corrects typos in commands
 
 ![fuck demo](https://raw.githubusercontent.com/nvbn/thefuck/master/example.gif)
