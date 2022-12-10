@@ -4,6 +4,8 @@ import { act } from "react-dom/test-utils";
 import { getByTestId, queryByTestId } from "@testing-library/dom";
 import "@testing-library/jest-dom";
 import { BrowserRouter as Router } from "react-router-dom";
+import ROUTES from "../../Router.js";
+import fs from "fs";
 
 import ArticleView from "./Article";
 
@@ -147,5 +149,38 @@ describe("ArticleView", () => {
 		expect(container.querySelector("a")).toHaveAttribute("href");
 		expect(container.querySelector("a").getAttribute("href")).toEqual("/dev/components");
 		expect(container.querySelector("a")).toContainHTML("Valid Route");
+	});
+
+	describe("don't break existing articles", () => {
+		let routes = ROUTES.filter(route => !!route.articleProps).map(route => [
+			route.articleProps.source,
+			route,
+		]);
+
+		// PMT event has a custom wrapper, so we are going to manually add it to the list here
+		routes.push([
+			"events/pimp-my-terminal/pimp-my-terminal.md",
+			{
+				articleProps: {
+					source: "events/pimp-my-terminal/pimp-my-terminal.md",
+					title: "Pimp My Terminal",
+				},
+			},
+		]);
+
+		it.each(routes)("should be able to render %s", async (_source, route) => {
+			const markdown = fs.readFileSync("src/articles/" + route.articleProps.source, "utf8");
+
+			fetch.mockResponse(() => Promise.resolve(markdown));
+
+			await act(async () => {
+				render(
+					<Router>
+						<ArticleView {...route.articleProps} />
+					</Router>,
+					container
+				);
+			});
+		});
 	});
 });
