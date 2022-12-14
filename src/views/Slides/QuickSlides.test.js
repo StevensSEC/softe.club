@@ -23,6 +23,10 @@ describe("QuickSlides", () => {
 		document.body.appendChild(container);
 	});
 
+	beforeEach(() => {
+		fetch.resetMocks();
+	});
+
 	afterEach(() => {
 		unmountComponentAtNode(container);
 	});

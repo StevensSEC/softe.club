@@ -1,11 +1,13 @@
 {
   "extends": "@tsconfig/create-react-app/tsconfig.json",
-    "compilerOptions": {
-      "outDir": "./built",
-      "allowJs": true,
-      "target": "es5",
-      "jsx": "react",
-      "strictNullChecks": true,
-    },
-    "include": ["./src/**/*"]
+  "compilerOptions": {
+    "outDir": "./built",
+    "allowJs": true,
+    "target": "es5",
+    "jsx": "react-jsx",
+    "strictNullChecks": true
+  },
+  "include": [
+    "./src/**/*"
+  ]
 }

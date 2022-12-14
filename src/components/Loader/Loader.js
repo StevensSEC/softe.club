@@ -55,7 +55,7 @@ export default class Loader extends Component {
 					<Grid
 						container
 						direction="column"
-						justify="center"
+						justifyContent="center"
 						alignItems="center"
 						className="loader-container"
 					>

@@ -18,7 +18,10 @@ export default class QuickSlides extends React.PureComponent {
 	}
 
 	componentDidMount() {
-		const src = require(`../../slides/${this.props.slidePath}`);
+		let src = require(`../../slides/${this.props.slidePath}`);
+		if (src.default) {
+			src = src.default;
+		}
 		fetch(src)
 			.then(res => {
 				return res.text();

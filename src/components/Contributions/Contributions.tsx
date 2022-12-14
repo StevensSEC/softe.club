@@ -12,7 +12,7 @@ interface ContributionsProps {
  */
 const Contributions = (props: ContributionsProps): JSX.Element => {
 	return (
-		<div key={props.display}>
+		<div>
 			<h4>
 				During {props.display}, we had {props.contributors.length} club members make open
 				source contributions.

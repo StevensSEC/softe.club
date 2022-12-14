@@ -13,8 +13,7 @@ export default class ErrorBoundaryLoader extends Loader {
 
 		//the shape morphs into the body of the exclamation point
 		this.loaderAnimation.points.push({
-			value:
-				"100 36 100 40 100 41 100 42 100 43 100 44 100 45 100 46 100 47 100 48 100 49 100 135",
+			value: "100 36 100 40 100 41 100 42 100 43 100 44 100 45 100 46 100 47 100 48 100 49 100 135",
 		});
 		this.loaderAnimation.loop = false;
 

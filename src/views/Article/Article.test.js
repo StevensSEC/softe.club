@@ -27,12 +27,16 @@ describe("ArticleView", () => {
 		unmountComponentAtNode(container);
 	});
 
-	it("renders without crashing", () => {
-		render(<ArticleView source="docs/README.md" title="Basic" />, container);
+	it("renders without crashing", async () => {
+		await act(async () => {
+			render(<ArticleView source="docs/README.md" title="Basic" />, container);
+		});
 	});
 
-	it("should render loader when markdown is null", () => {
-		render(<ArticleView source="docs/README.md" title="Basic" />, container);
+	it("should render loader when markdown is null", async () => {
+		await act(async () => {
+			render(<ArticleView source="docs/README.md" title="Basic" />, container);
+		});
 		expect(container.querySelector(".loader-container")).toBeDefined();
 		expect(container.querySelector(".loader-container")).not.toBeNull();
 		expect(container.querySelector(".loader")).toBeDefined();

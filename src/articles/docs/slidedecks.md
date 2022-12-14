@@ -141,7 +141,7 @@ slides:
 The `Slide` component can contain any element in any layout, as long as it stays within the bounds of the `Slide`.
 
 | Prop          | Type     | Description                                                                                                                                    |
-| :------------ | :------- | :--------------------------------------------------------------------------------------------------------------------------------------------- |
+| :------------ | :------- | :--------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
 | `name`        | `String` | Assigns a name to the slide. _(Optional)_                                                                                                      |
 | `sticky`      | `bool`   | Sticky slides will stay on the screen on the left side for the rest of the presentation, or the slide specified by `stickyUntil`. _(Optional)_ |
 | `stickyUntil` | `Number  | String`                                                                                                                                        | Index or name of the slide to un-sticky the sticky slide (**exclusive**). _(Optional)_ |

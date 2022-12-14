@@ -14,12 +14,12 @@ export default function HomeView() {
 			<Grid
 				container
 				direction="column"
-				justify="center"
+				justifyContent="center"
 				alignItems="center"
 				className="hero"
 			>
 				<Grid item>
-					<Logo animate="true" className="logo" />
+					<Logo animate={true} className="logo" />
 				</Grid>
 				<Grid item>
 					<span>Software Engineering Club</span>

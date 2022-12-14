@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid, Box } from "@material-ui/core";
+import { Grid } from "@material-ui/core";
 import { useLocation } from "react-router-dom";
 import DocumentTitle from "../../components/DocumentTitle/DocumentTitle";
 import "./NotFound.scss";
@@ -9,7 +9,7 @@ export default function NotFoundView() {
 	let location = useLocation().pathname;
 
 	return (
-		<Box>
+		<>
 			<DocumentTitle title="Uh oh! (404 Not Found)" />
 			<Grid
 				container
@@ -23,11 +23,11 @@ export default function NotFoundView() {
 				</Grid>
 				<Grid item>
 					<div className="message">
-						There doesn't seem to be a page called &quot;{location}&quot; on our
+						There doesn&apos;t seem to be a page called &quot;{location}&quot; on our
 						website. Sorry about that!
 					</div>
 				</Grid>
 			</Grid>
-		</Box>
+		</>
 	);
 }

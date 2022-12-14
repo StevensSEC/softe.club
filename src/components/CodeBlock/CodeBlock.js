@@ -21,42 +21,42 @@ function CodeBlockContainer({ children, meta }) {
 	);
 }
 
-export default class CodeBlock extends PureComponent {
-	static propTypes = {
-		value: PropTypes.string,
-		language: PropTypes.string,
-		platform: PropTypes.string,
-	};
+function CodeBlock(props) {
+	let { language, platform, value } = props;
 
-	static defaultProps = {
-		language: null,
-		platform: null,
-	};
+	if (language && language.includes(",")) {
+		[language, platform] = language.split(",").map(x => x.trim());
+	}
 
-	render() {
-		let { language, platform, value } = this.props;
-
-		if (language && language.includes(",")) {
-			[language, platform] = language.split(",").map(x => x.trim());
-		}
-
-		if (language !== null) {
-			return (
-				<SyntaxHighlighter
-					language={language}
-					style={okaidia}
-					PreTag={CodeBlockContainer}
-					meta={{ language: language, platform: platform }}
-				>
-					{value}
-				</SyntaxHighlighter>
-			);
-		} else {
-			return (
-				<CodeBlockContainer>
-					<code>{value}</code>
-				</CodeBlockContainer>
-			);
-		}
+	if (language !== null) {
+		return (
+			<SyntaxHighlighter
+				language={language}
+				style={okaidia}
+				PreTag={CodeBlockContainer}
+				meta={{ language: language, platform: platform }}
+			>
+				{value}
+			</SyntaxHighlighter>
+		);
+	} else {
+		return (
+			<CodeBlockContainer>
+				<code>{value}</code>
+			</CodeBlockContainer>
+		);
 	}
 }
+
+CodeBlock.propTypes = {
+	value: PropTypes.string,
+	language: PropTypes.string,
+	platform: PropTypes.string,
+};
+
+CodeBlock.defaultProps = {
+	language: null,
+	platform: null,
+};
+
+export default CodeBlock;
