@@ -15,25 +15,25 @@ jobs:
       matrix:
         node-version: [14.x]
     steps:
-    - uses: actions/checkout@v1
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
-    - name: npm install
-      working-directory: ${{ env.working-directory }}
-      run: npm ci
-    - name: Test
-      working-directory: ${{ env.working-directory }}
-      run: npm test
-    - name: Build
-      working-directory: ${{ env.working-directory }}
-      run: npm run build
-    - name: Archive Production Artifact
-      uses: actions/upload-artifact@master
-      with:
-        name: build
-        path: ${{ env.working-directory }}/build
+      - uses: actions/checkout@v4
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: npm install
+        working-directory: ${{ env.working-directory }}
+        run: npm ci
+      - name: Test
+        working-directory: ${{ env.working-directory }}
+        run: npm test
+      - name: Build
+        working-directory: ${{ env.working-directory }}
+        run: npm run build
+      - name: Archive Production Artifact
+        uses: actions/upload-artifact@master
+        with:
+          name: build
+          path: ${{ env.working-directory }}/build
   deploy:
     needs: build
     runs-on: ubuntu-latest
@@ -44,21 +44,21 @@ jobs:
       matrix:
         node-version: [14.x]
     steps:
-    - name: Checkout Repo
-      uses: actions/checkout@master
-    - name: Download Artifact
-      uses: actions/download-artifact@master
-      with:
-        name: build
-        path: ${{ env.working-directory }}/build
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
-    - name: Deploy to Firebase
-      uses: FirebaseExtended/action-hosting-deploy@v0
-      with:
-        repoToken: '${{ secrets.GITHUB_TOKEN }}'
-        firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_SEC_WEBSITE_CA255 }}'
-        channelId: live
-        projectId: sec-website-ca255
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+      - name: Download Artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: build
+          path: ${{ env.working-directory }}/build
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Deploy to Firebase
+        uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: "${{ secrets.GITHUB_TOKEN }}"
+          firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_SEC_WEBSITE_CA255 }}"
+          channelId: live
+          projectId: sec-website-ca255
