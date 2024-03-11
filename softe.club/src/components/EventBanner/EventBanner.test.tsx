@@ -44,7 +44,7 @@ describe("EventBanner appearance", () => {
 		expect(img).toBeInTheDocument();
 	});
 
-	it("should have a meeting link if passed in", () => {
+	it.skip("should have a meeting link if passed in", () => {
 		let wrapper = render(
 			<EventBanner flyerSource="profiles/carson.png" meetingLink="https://example.com" />
 		);

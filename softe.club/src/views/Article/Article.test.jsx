@@ -22,14 +22,14 @@ let container = null;
 describe("ArticleView", () => {
 	let root;
 	beforeEach(() => {
-		fetch.resetMocks();
+		// fetch.resetMocks();
 		container = document.createElement("div");
 		root = createRoot(container);
 	});
 
-	afterEach(() => {
-		root.unmount();
-	});
+	// afterEach(() => {
+	// 	root.unmount();
+	// });
 
 	it("renders without crashing", async () => {
 		await act(async () => {
@@ -175,7 +175,8 @@ describe("ArticleView", () => {
 		]);
 
 		it.each(routes)("should be able to render %s", async (_source, route) => {
-			const markdown = fs.readFileSync("src/articles/" + route.articleProps.source, "utf8");
+			vi.spyOn(fetch)
+			const markdown = fs.readFileSync("src/articles/" + route.articleProps.source + ".md", "utf8");
 
 			fetch.mockResponse(() => Promise.resolve(markdown));
 

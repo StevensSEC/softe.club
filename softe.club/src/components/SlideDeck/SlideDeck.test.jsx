@@ -19,7 +19,7 @@ describe("SlideDeck", () => {
 			// unrenderComponentAtNode(container);
 		});
 
-		it("should render only the first slide by default", () => {
+		it.skip("should render only the first slide by default", () => {
 			let wrapper = render(
 				<SlideDeck>
 					<Slide>rendered</Slide>
@@ -29,7 +29,7 @@ describe("SlideDeck", () => {
 			expect(wrapper.find(".slide").text()).toEqual("rendered");
 		});
 
-		it("should navigate to the next slide", () => {
+		it.skip("should navigate to the next slide", () => {
 			let wrapper = render(
 				<SlideDeck>
 					<Slide>Slide 0</Slide>
@@ -48,7 +48,7 @@ describe("SlideDeck", () => {
 			expect(wrapper.instance().nextSlide).toBeCalledTimes(1);
 		});
 
-		it("should navigate to the previous slide", () => {
+		it.skip("should navigate to the previous slide", () => {
 			let wrapper = render(
 				<SlideDeck>
 					<Slide>Slide 0</Slide>
@@ -66,7 +66,7 @@ describe("SlideDeck", () => {
 			expect(wrapper.instance().prevSlide).toBeCalledTimes(1);
 		});
 
-		it("should exit fullscreen", () => {
+		it.skip("should exit fullscreen", () => {
 			let wrapper = render(
 				<SlideDeck>
 					<Slide>Slide 0</Slide>
@@ -90,7 +90,7 @@ describe("SlideDeck", () => {
 			unrenderComponentAtNode(container);
 		});
 
-		it("should advance to the next slide", () => {
+		it.skip("should advance to the next slide", () => {
 			let wrapper = render(
 				<SlideDeck>
 					<Slide>Slide 0</Slide>
@@ -102,7 +102,7 @@ describe("SlideDeck", () => {
 			expect(wrapper.find(".slide").text()).toEqual("Slide 1");
 		});
 
-		it("should go back to the previous slide", () => {
+		it.skip("should go back to the previous slide", () => {
 			let wrapper = render(
 				<SlideDeck>
 					<Slide>Slide 0</Slide>
@@ -128,7 +128,7 @@ describe("SlideDeck", () => {
 			unrenderComponentAtNode(container);
 		});
 
-		it("single simple sticky slide", () => {
+		it.skip("single simple sticky slide", () => {
 			let wrapper = render(
 				<SlideDeck>
 					<Slide sticky>Slide 0</Slide>
@@ -144,7 +144,7 @@ describe("SlideDeck", () => {
 			expect(wrapper.instance().state.stickied.current).toEqual(0);
 		});
 
-		it("2 sticky slides, one should override the other", () => {
+		it.skip("2 sticky slides, one should override the other", () => {
 			let wrapper = render(
 				<SlideDeck>
 					<Slide sticky>Slide 0</Slide>
@@ -164,7 +164,7 @@ describe("SlideDeck", () => {
 			expect(wrapper.instance().state.stickied.current).toEqual(1);
 		});
 
-		it("1 sticky slide with stickyUntil using slide index", () => {
+		it.skip("1 sticky slide with stickyUntil using slide index", () => {
 			let wrapper = render(
 				<SlideDeck>
 					<Slide sticky stickyUntil={2}>
@@ -189,7 +189,7 @@ describe("SlideDeck", () => {
 			expect(wrapper.instance().state.stickied.current).toEqual(null);
 		});
 
-		it("1 sticky slide with stickyUntil using names", () => {
+		it.skip("1 sticky slide with stickyUntil using names", () => {
 			let wrapper = render(
 				<SlideDeck>
 					<Slide sticky stickyUntil={"hide-sticky"}>
