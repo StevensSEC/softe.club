@@ -48,10 +48,10 @@
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
   "main": "index.js",
   "devDependencies": {
-    "@babel/core": "^7.20.5",
-    "@babel/eslint-parser": "^7.19.1",
+    "@babel/core": "^7.24.0",
+    "@babel/eslint-parser": "^7.23.10",
     "@babel/preset-env": "^7.20.2",
-    "@babel/preset-react": "^7.18.6",
+    "@babel/preset-react": "^7.23.3",
     "@babel/preset-typescript": "^7.18.6",
     "@testing-library/dom": "^6.16.0",
     "@testing-library/jest-dom": "^5.16.5",
