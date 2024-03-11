@@ -7,6 +7,8 @@ import "./QuickSlides.scss";
 import Logo from "../../components/Logo/Logo";
 import type { SlideProps } from "../../components/SlideDeck/SlideDeck.js";
 
+const slides = import.meta.glob("../../slides/**/*.yaml");
+
 interface QuickSlidesProps {
 	slidePath: string;
 }
@@ -30,20 +32,23 @@ export default class QuickSlides extends React.PureComponent<QuickSlidesProps, Q
 	}
 
 	componentDidMount() {
-		let src = require(`../../slides/${this.props.slidePath}`);
-		if (src.default) {
-			src = src.default;
-		}
-		fetch(src)
-			.then(res => {
+		console.log(slides)
+		slides[`../../slides/${this.props.slidePath}.yaml`]().then((src: any) => {
+			if (src.default) {
+				return src.default;
+			}
+			return src
+		}).then((src: string) => {
+			fetch(src).then((res: Response) => {
 				return res.text();
 			})
-			.then(content => {
+			.then((content: string) => {
 				let data = yaml.load(content);
 				this.setState({
 					data: data as any,
 				});
 			});
+		});
 	}
 
 	render() {

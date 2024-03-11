@@ -129,14 +129,14 @@ export const ROUTES: Route[] = [
 	},
 	{
 		path: "/dev/slides/quick-slides",
-		slideProps: { slidePath: "example-slides.yaml", title: "Example" },
+		slideProps: { slidePath: "example-slides", title: "Example" },
 		Component: lazy(() =>
 			import(/* webpackChunkName: "quick-slides" */ "./views/Slides/QuickSlides.js")
 		),
 	},
 	{
 		path: "/dev/slides/slide-names",
-		slideProps: { slidePath: "slide-names.yaml", title: "Slide Names" },
+		slideProps: { slidePath: "slide-names", title: "Slide Names" },
 		Component: lazy(() =>
 			import(/* webpackChunkName: "quick-slides" */ "./views/Slides/QuickSlides.js")
 		),
@@ -268,35 +268,35 @@ export const ROUTES: Route[] = [
 	},
 	{
 		path: "/slides/event/debugging-workshop",
-		slideProps: { slidePath: "events/debugging-workshop.yaml" },
+		slideProps: { slidePath: "events/debugging-workshop" },
 		Component: lazy(() =>
 			import(/* webpackChunkName: "quick-slides" */ "./views/Slides/QuickSlides.js")
 		),
 	},
 	{
 		path: "/slides/event/rust-workshop",
-		slideProps: { slidePath: "events/rust-workshop.yaml" },
+		slideProps: { slidePath: "events/rust-workshop" },
 		Component: lazy(() =>
 			import(/* webpackChunkName: "quick-slides" */ "./views/Slides/QuickSlides.js")
 		),
 	},
 	{
 		path: "/slides/spring-2021-gbm1",
-		slideProps: { slidePath: "spring-2021-gbm1.yaml" },
+		slideProps: { slidePath: "spring-2021-gbm1" },
 		Component: lazy(() =>
 			import(/* webpackChunkName: "quick-slides" */ "./views/Slides/QuickSlides.js")
 		),
 	},
 	{
 		path: "/slides/fall-2022-learnhack",
-		slideProps: { slidePath: "fall-2022-learnhack.yaml" },
+		slideProps: { slidePath: "fall-2022-learnhack" },
 		Component: lazy(() =>
 			import(/*webpackChunkName: "quick-slides" */ "./views/Slides/QuickSlides.js")
 		),
 	},
 	{
 		path: "/slides/spring-2021-learnhack",
-		slideProps: { slidePath: "spring-2021-learnhack.yaml" },
+		slideProps: { slidePath: "spring-2021-learnhack" },
 		Component: lazy(() =>
 			import(/* webpackChunkName: "quick-slides" */ "./views/Slides/QuickSlides.js")
 		),
@@ -308,7 +308,7 @@ export const ROUTES: Route[] = [
 	},
 	{
 		path: "/slides/events/pair-programming-s21",
-		slideProps: { slidePath: "events/pair-programming-s21.yaml" },
+		slideProps: { slidePath: "events/pair-programming-s21" },
 		Component: lazy(() =>
 			import(/* webpackChunkName: "quick-slides" */ "./views/Slides/QuickSlides.js")
 		),
@@ -323,14 +323,14 @@ export const ROUTES: Route[] = [
 	},
 	{
 		path: "/slides/events/pair-programming-s22",
-		slideProps: { slidePath: "events/pair-programming-s22.yaml" },
+		slideProps: { slidePath: "events/pair-programming-s22" },
 		Component: lazy(() =>
 			import(/* webpackChunkName: "quick-slides" */ "./views/Slides/QuickSlides.js")
 		),
 	},
 	{
 		path: "/slides/events/react-native-expo-workshop",
-		slideProps: { slidePath: "events/react-native-expo-workshop.yaml" },
+		slideProps: { slidePath: "events/react-native-expo-workshop" },
 		Component: lazy(() =>
 			import(/* webpackChunkName: "quick-slides" */ "./views/Slides/QuickSlides.js")
 		),
