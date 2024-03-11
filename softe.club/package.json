@@ -11,8 +11,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "lint": "eslint --config .eslintrc.js --report-unused-disable-directives --fix . && prettier --config prettier.config.js --write src/**/*.{js,jsx,json,ts,tsx,md,mdx,css,html,yml,yaml,scss}",
-    "lint-check": "eslint --config .eslintrc.js --report-unused-disable-directives . && prettier --config prettier.config.js --check src/**/*.{js,jsx,json,ts,tsx,md,mdx,css,html,yml,yaml,scss}",
+    "lint": "eslint --config .eslintrc.cjs --report-unused-disable-directives --fix . && prettier --config .prettierrc --write src/**/*.{js,jsx,json,ts,tsx,md,mdx,css,html,yml,yaml,scss}",
+    "lint-check": "eslint --config .eslintrc.cjs --report-unused-disable-directives . && prettier --config .prettierrc --check src/**/*.{js,jsx,json,ts,tsx,md,mdx,css,html,yml,yaml,scss}",
     "preview": "vite preview",
     "serve": "vite serve"
   },
@@ -36,6 +36,12 @@
     "sass": "1.56.1"
   },
   "devDependencies": {
+    "@babel/core": "^7.24.0",
+    "@babel/eslint-parser": "^7.23.10",
+    "@babel/plugin-proposal-class-properties": "^7.18.6",
+    "@babel/preset-env": "^7.20.2",
+    "@babel/preset-react": "^7.23.3",
+    "@babel/preset-typescript": "^7.18.6",
     "@types/animejs": "^3.1.12",
     "@types/js-yaml": "^4.0.9",
     "@types/prop-types": "^15.7.11",
