@@ -7,7 +7,7 @@ import EventBanner from "../../components/EventBanner/EventBanner";
 import { EVENTS } from "../../Events";
 import Logo from "../../components/Logo/Logo";
 
-export default function HomeView() {
+export const HomeView: React.FC<void> = () => {
 	return (
 		<div>
 			<DocumentTitle title="" />
@@ -34,3 +34,5 @@ export default function HomeView() {
 		</div>
 	);
 }
+
+export default HomeView;

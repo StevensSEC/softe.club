@@ -1,0 +1,56 @@
+---
+title: Pair Programming - Spring 2022
+slides:
+  - type: title
+    title: Pair Programming 2022
+    subtitle: Hosted by SEC & SWiCS
+    img: secandswics.png
+    name: title
+  - name: intro
+    content: |
+      # What is Pair Programming?
+
+      One person writes the code, the other person observes and reviews each line to check for quality
+
+      First person has role of the *driver*, while second person is the *navigator*
+  - name: why
+    content: |
+      # Why is Pair Programming?
+
+      The code produced will have less defects because:
+        - two people are reviewing the code instead of one
+        - each person's perspective will be different and result in a stronger combined design
+        - people in different roles will assess problem differently than people in same role
+  - name: pitfalls
+    content: |
+      # Pitfalls
+
+      Pair programming is a tool: it cannot be applied effectively in all scenarios. These are often related to pairing of different skill-levels:
+
+      - Expert-novice: can be effective coaching session with the right expert, or can be "just watch as I type"
+      - Novice-novice: Neither person is encouraging the other to develop good habits
+
+      For this workshop, try to aim for a expert-expert or novice-novice pairing (there will be people coming around to help!)
+  - title: Tips Before We Start
+    content: |
+      # Tips Before We Start
+      - Don't be afraid to talk!
+        - The ability to communicate your thoughts is an essential skill in programming
+        - Driver can be speaking their thought process aloud as they type
+      - Try not to let one person do all the work (Expert-novice pairing)
+      - The driver's role includes thinking about what they are writing while the navigator reviews and researches
+  - content: |
+      # What We'll Do Tonight
+      1. Find a partner
+      2. Choose who is driver and who is navigator
+      3. Choose a problem to try
+      4. Timer for 10 mins will start, when timer rings switch driver and navigator roles
+      5. When you solve a problem let us know
+  - type: side-by-side
+    content:
+      left: |
+        # Easy 
+        https://leetcode.com/problems/number-of-recent-calls/
+      right: |
+        # Medium 
+        https://leetcode.com/problems/minimum-path-sum/

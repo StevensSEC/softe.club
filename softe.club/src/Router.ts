@@ -3,9 +3,9 @@ import type { ArticleViewProps } from "./views/Article/Article";
 
 export interface Route {
 	path: string;
-	Component: React.LazyExoticComponent<React.ComponentType<any>>;
+	Component: React.FC<any>;
 	articleProps?: ArticleViewProps | null;
-	slideProps?: { slidePath: string; title: string };
+	slideProps?: { slidePath: string; title?: string };
 
 }
 
@@ -49,7 +49,7 @@ export const ROUTES: Route[] = [
 	{
 		path: "/recordings",
 		Component: lazy(() =>
-			import(/* webpackChunkName: "recordings" */ "./views/Recordings/Recordings.js")
+			import(/* webpackChunkName: "recordings" */ "./views/Recordings/Recordings")
 		),
 	},
 	{
@@ -159,7 +159,7 @@ export const ROUTES: Route[] = [
 	{
 		path: "/event/pimp-my-terminal",
 		Component: lazy(() =>
-			import(/* webpackChunkName: "pmt" */ "./views/PimpMyTerminal/PimpMyTerminal.js")
+			import(/* webpackChunkName: "pmt" */ "./views/PimpMyTerminal/PimpMyTerminal")
 		),
 	},
 	{
@@ -356,7 +356,7 @@ export const ROUTES: Route[] = [
 	{
 		path: "*",
 		Component: lazy(() =>
-			import(/* webpackChunkName: "not-found" */ "./views/NotFound/NotFound.jsx")
+			import(/* webpackChunkName: "not-found" */ "./views/NotFound/NotFound")
 		),
 	},
 ];

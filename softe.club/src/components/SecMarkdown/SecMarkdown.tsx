@@ -1,6 +1,6 @@
 import React from "react";
-import PropTypes from "prop-types";
 import Markdown from "react-markdown";
+// @ts-expect-error temporary fix until react-markdown is updated
 import HtmlParser from "react-markdown/plugins/html-parser";
 import CodeBlock from "../../components/CodeBlock/CodeBlock";
 import * as SEC from "../SEC/lib.js";
@@ -9,6 +9,7 @@ import "./SecMarkdown.scss";
 // See https://github.com/aknuds1/html-to-react#with-custom-processing-instructions
 // for more info on the processing instructions
 const parseHtml = HtmlParser({
+	// @ts-expect-error temporary fix until react-markdown is updated
 	isValidNode: node => node.type !== "script",
 });
 
@@ -40,6 +41,7 @@ const mdLink: React.FC<{ href: string }> = props => {
 				kind = args[0];
 			}
 			return (
+				// @ts-expect-error temp
 				<SEC.Button kind={kind} href={props.href}>
 					{text}
 				</SEC.Button>
@@ -50,6 +52,7 @@ const mdLink: React.FC<{ href: string }> = props => {
 			);
 		}
 	} else {
+		// @ts-expect-error temp
 		return <SEC.Link {...props} />;
 	}
 };

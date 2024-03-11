@@ -1,82 +1,71 @@
 /* eslint-disable react/forbid-elements */
-import React, { Component } from "react";
-import PropTypes from "prop-types";
-import { Link, NavLink } from "react-router-dom";
+import React from "react";
+import { Link, NavLink, useHistory } from "react-router-dom";
 import "./Button.scss";
 
-export default class Button extends Component {
-	static propTypes = {
-		kind: PropTypes.oneOf([
-			"generic",
-			"primary",
-			"secondary",
-			"warning",
-			"error",
-			"menu",
-			"icon",
-		]),
-		to: PropTypes.string,
-		onClick: PropTypes.func,
-	};
+interface ButtonProps {
+	kind?: "generic" | "primary" | "secondary" | "warning" | "error" | "menu" | "icon";
+	to?: string;
+	onClick?: React.MouseEventHandler;
+	className?: string;
+	activeClassName?: string;
+}
 
-	static defaultProps = {
-		kind: "generic",
-		to: null,
-		onClick: null,
-	};
+const Button: React.FC<ButtonProps> = ({ kind = "generic", to, onClick, className, activeClassName, children, ...other }) => {
+	const history = useHistory();
 
-	constructor(props) {
-		super(props);
-		this.handleClick = this.handleClick.bind(this);
-	}
-
-	shouldUseRouter() {
-		const { to } = this.props;
+	const shouldUseRouter = () => {
 		try {
 			return to && !to.startsWith("#") && !new URL(to).host;
 		} catch (TypeError) {
 			return true;
 		}
-	}
+	};
 
-	handleClick(e) {
+	const handleClick: React.MouseEventHandler = (e) => {
 		e.preventDefault();
-		if (this.props.onClick) {
-			this.props.onClick(e);
-		} else if (this.props.to) {
-			if (this.shouldUseRouter()) {
-				this.props.history.push(this.props.to);
+		if (onClick) {
+			onClick(e);
+		} else if (to) {
+			if (shouldUseRouter()) {
+				history.push(to);
 			} else {
-				window.location = this.props.to;
+				window.location.href = to;
 			}
 		}
-	}
+	};
 
-	render() {
-		const { children, kind, to, className, ...other } = this.props;
-		delete other.staticContext;
-		let classes = `sec-btn sec-kind-${kind} ${className ?? ""}`;
+	let classes = `sec-btn sec-kind-${kind} ${className ?? ""}`;
 
-		if (this.shouldUseRouter()) {
-			if (this.props.activeClassName) {
-				return (
-					<NavLink to={to} className={classes} onClick={this.handleClick} {...other}>
-						{children}
-					</NavLink>
-				);
-			} else {
-				return (
-					<Link to={to} className={classes} onClick={this.handleClick} {...other}>
-						{children}
-					</Link>
-				);
-			}
+	if (shouldUseRouter()) {
+		if (activeClassName) {
+			return (
+				// @ts-expect-error idk
+				<NavLink to={to} className={classes} onClick={handleClick} {...other}>
+					{children}
+				</NavLink>
+			);
 		} else {
 			return (
-				<a href={to ?? null} className={classes} onClick={this.handleClick} {...other}>
+				// @ts-expect-error idk
+				<Link to={to} className={classes} onClick={handleClick} {...other}>
 					{children}
-				</a>
+				</Link>
 			);
 		}
+	} else {
+		return (
+			<a href={to} className={classes} onClick={handleClick} {...other}>
+				{children}
+			</a>
+		);
 	}
+};
+
+Button.defaultProps = {
+	kind: "generic",
+	to: undefined,
+	onClick: undefined,
 }
+
+export default Button;

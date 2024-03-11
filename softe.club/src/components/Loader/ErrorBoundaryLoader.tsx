@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import Anime from "react-anime";
 
-import Loader from "./Loader.js";
+import Loader from "./Loader";
 import "./Loader.scss";
 
 export default class ErrorBoundaryLoader extends Loader {

@@ -3,7 +3,7 @@ import "./App.scss";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core";
 import { Switch, Route, Redirect, useLocation } from "react-router-dom";
 import { red, cyan } from "@material-ui/core/colors";
-import Loader from "./components/Loader/Loader.js";
+import Loader from "./components/Loader/Loader";
 import ErrorBoundaryLoader from "./components/Loader/ErrorBoundaryLoader.js";
 import ROUTES from "./Router.js";
 import { UxContext } from "./contexts.ts";

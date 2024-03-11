@@ -1,0 +1,96 @@
+title: Debugging Workshop
+slides:
+  - type: title
+    title: Debugging Workshop
+    subtitle: Speed up troubleshooting, fix bugs faster.
+  - content: |
+      # What you'll need
+      - Bare minimum programming knowledge
+        - If you are taking/have taken E155 or CS115, you're good
+      - Visual Studio Code
+        - [code.visualstudio.com](https://code.visualstudio.com)
+        - *This is different from Visual Studio!*
+      - Visual Studio
+        - Only if you are on Windows
+        - Only if you care about following along with the C++ example
+  - content: |
+      # You've probably done this
+      - You've written a program and it doesn't work the first time
+      - What to do?
+  - content: |
+      # What are your tools?
+      - Tracebacks
+        - Only if an error occurs
+      - Print statements
+        - Messy, clogging up version control and your output
+  - content: |
+      # What are your tools?
+      - Tracebacks
+        - Only if an error occurs
+      - Print statements
+        - Messy, clogging up version control and your output
+      - Debuggers
+        - Your new best friend
+  - content: |
+      # What is a debugger?
+      - Pauses execution at breakpoints
+      - Lets you step line by line
+      - Lets you inspect memory in the middle of execution
+  - name: python-example
+    content: |
+      # How do you use a debugger?
+      We'll be using VSCode as a front end for the debugger.
+
+      Copy this code into a new `.py` file.
+      ```python
+      for i in range(100):
+        if i % 15 == 0:
+          print("fizzbuzz")
+        elif i % 3 == 0:
+          print("fizz")
+        elif i % 5 == 0:
+          print("buzz")
+        else:
+          print(i)
+      ```
+    sticky: c++-example
+  - content: |
+      # Debugger features
+      - Set breakpoints
+      - Step to the next line
+      - Conditional breakpoints
+      - Inspect and edit memory
+  - name: c++-example
+    content: |
+      # How do you use a debugger?
+      Here's a C++ example
+
+      *If you are on windows, you are going to want to use Visual Studio.*
+
+      Copy this code into a new `.cpp` file.
+      ```cpp
+      #include <iostream>
+      using namespace std;
+
+      int main() {
+        for (size_t i = 0; i < 100; i++) {
+          cout << i << endl;
+        }
+      }
+      ```
+  - content: |
+      # But why?
+      ## Here are some actually useful examples
+      DEMOS
+      - misbehaving-cli
+      - mini-assembly-interpreter
+      - code a-la mode bot
+  - content: |
+      # That's all there is to it.
+      Using breakpoints to debug is
+      - easy
+      - clean
+      - fast
+      - more useful the more complex a bug is
+
+      Now you know how to use it to your advantage.

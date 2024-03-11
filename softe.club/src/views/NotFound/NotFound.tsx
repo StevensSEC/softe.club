@@ -5,7 +5,7 @@ import DocumentTitle from "../../components/DocumentTitle/DocumentTitle";
 import "./NotFound.scss";
 import Logo from "../../components/Logo/Logo.jsx";
 
-export default function NotFoundView() {
+export const NotFoundView: React.FC<void> = () => {
 	let location = useLocation().pathname;
 
 	return (
@@ -19,7 +19,7 @@ export default function NotFoundView() {
 				className="grid"
 			>
 				<Grid item>
-					<Logo className="logo" />
+					<Logo animate />
 				</Grid>
 				<Grid item>
 					<div className="message">
@@ -31,3 +31,5 @@ export default function NotFoundView() {
 		</>
 	);
 }
+
+export default NotFoundView;
