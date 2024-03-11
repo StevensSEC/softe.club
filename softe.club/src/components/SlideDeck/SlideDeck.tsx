@@ -116,6 +116,7 @@ class SlideDeck extends React.Component<SlideDeckProps, SlideDeckState> {
 
 	getSlideNames() {
 		let slideNames: Record<string, number> = {};
+		// @ts-expect-error temporary
 		React.Children.toArray(this.props.children).forEach((child, i) => {
 			if (!React.isValidElement(child)) {
 				return;
@@ -133,6 +134,7 @@ class SlideDeck extends React.Component<SlideDeckProps, SlideDeckState> {
 	}
 
 	getStickyUntil(): number | undefined {
+		// @ts-expect-error temporary
 		if (!this.state.stickied.current || !this.props.children) {
 			return undefined;
 		}

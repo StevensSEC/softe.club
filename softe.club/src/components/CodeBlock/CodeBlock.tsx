@@ -9,7 +9,8 @@ interface CodeBlockProps extends CodeBlockMeta {
 }
 
 interface CodeBlockContainerProps {
-	meta: CodeBlockMeta;
+	meta?: CodeBlockMeta;
+	children: any;
 }
 
 interface CodeBlockMeta {
@@ -53,7 +54,7 @@ const CodeBlock: React.FC<CodeBlockProps> = (props) => {
 		);
 	} else {
 		return (
-			<CodeBlockContainer meta={{ language, platform }}>
+			<CodeBlockContainer>
 				<code>{value}</code>
 			</CodeBlockContainer>
 		);
