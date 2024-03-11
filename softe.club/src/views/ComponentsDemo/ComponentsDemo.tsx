@@ -1,4 +1,3 @@
-import React from "react";
 import { Container } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
 import DocumentTitle from "../../components/DocumentTitle/DocumentTitle.js";

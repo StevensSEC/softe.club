@@ -1,4 +1,4 @@
-import React, { lazy } from "react";
+import { lazy } from "react";
 import { Grid } from "@material-ui/core";
 import { motion, useViewportScroll, useSpring } from "framer-motion";
 import "./PimpMyTerminal.scss";
@@ -51,6 +51,7 @@ export default function PimpMyTerminal() {
 					title="Pimp My Terminal"
 				/>
 			</motion.div>
+			{/* @ts-expect-error temp */}
 			<motion.aside className="quick-links" {...asideInAnimation} y={asideY}>
 				<h3>Quick Links</h3>
 				<SEC.Button to="/bash-cheatsheet">Bash Cheatsheet</SEC.Button>
@@ -60,7 +61,7 @@ export default function PimpMyTerminal() {
 	);
 }
 
-function Hero(props) {
+const Hero: React.FC<any> = (props) => {
 	const drawTextAnimation = {
 		animate: {
 			pathLength: [0, 0.3],

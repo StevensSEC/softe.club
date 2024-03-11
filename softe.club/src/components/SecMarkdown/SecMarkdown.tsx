@@ -25,6 +25,7 @@ const mdLink: React.FC<{ href: string }> = props => {
 	const cmdPrefix = "!";
 	let command: string | undefined = undefined;
 	let args: string[] = [];
+	// @ts-expect-error temp
 	let text: string = Array.isArray(props.children) ? props.children[0].props.value : props.children;
 	if (text.startsWith(cmdPrefix)) {
 		let fullcommand;

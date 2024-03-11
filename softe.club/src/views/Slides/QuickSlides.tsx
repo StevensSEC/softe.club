@@ -118,7 +118,6 @@ export default class QuickSlides extends React.PureComponent<QuickSlidesProps, Q
 		return (
 			<>
 				<DocumentTitle title={this.state.data.title ?? ""} />
-				{/* @ts-expect-error temporary */}
 				<SlideDeck>{...slides}</SlideDeck>
 			</>
 		);

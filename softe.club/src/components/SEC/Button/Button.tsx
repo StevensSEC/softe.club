@@ -9,6 +9,7 @@ interface ButtonProps {
 	onClick?: React.MouseEventHandler;
 	className?: string;
 	activeClassName?: string;
+	children: any;
 }
 
 const Button: React.FC<ButtonProps> = ({ kind = "generic", to, onClick, className, activeClassName, children, ...other }) => {

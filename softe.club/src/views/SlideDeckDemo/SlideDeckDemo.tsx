@@ -1,7 +1,7 @@
 import React from "react";
 import { Slide, SlideDeck } from "../../components/SlideDeck/SlideDeck.js";
 
-function SlideDeckDemo() {
+const SlideDeckDemo: React.FC<any> = () => {
 	return (
 		<div>
 			<SlideDeck>
