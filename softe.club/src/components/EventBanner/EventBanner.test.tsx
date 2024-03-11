@@ -6,7 +6,7 @@ import { createRoot } from "react-dom/client";
 import {render, cleanup} from '@testing-library/react';
 
 import EventBanner from "./EventBanner";
-import testPoster from "../../assets/flyers/Test.jpg";
+import testPoster from "../../assets/profiles/carson.png";
 
 let container = null;
 describe("EventBanner appearance", () => {
@@ -26,25 +26,27 @@ describe("EventBanner appearance", () => {
 
 	it("should contain the text content", () => {
 		let wrapper = render(<EventBanner title="Title" desc="Desc" />);
-		expect(wrapper.find(".title").text()).toEqual("Title");
-		expect(wrapper.find(".description").text()).toEqual("Desc");
+		expect(wrapper.getByText("Title")).toBeInTheDocument();
+		expect(wrapper.getByText("Desc")).toBeInTheDocument();
 	});
 
-	it.skip("should contain the image content", async () => {
-		let wrapper = render(<EventBanner flyerSource="Test.jpg" />);
+	it("should contain the image content", async () => {
+		let wrapper = render(<EventBanner flyerSource="profiles/carson.png" />);
 		let image = testPoster;
-		expect(wrapper.find("img").prop("src")).toEqual(image);
-		expect(wrapper.find("img").prop("alt")).toEqual("Flyer for event");
+		const img = wrapper.getByAltText("Flyer for event");
+		expect(img).toBeInTheDocument();
+		expect(img).toHaveAttribute("src", image);
 	});
 
 	it("should use the specified alt text if passed in", () => {
-		let wrapper = render(<EventBanner flyerSource="Test.jpg" altText="Test" />);
-		expect(wrapper.find("img").prop("alt")).toEqual("Test");
+		let wrapper = render(<EventBanner flyerSource="profiles/carson.png" altText="Test" />);
+		const img = wrapper.getByAltText("Test");
+		expect(img).toBeInTheDocument();
 	});
 
 	it("should have a meeting link if passed in", () => {
 		let wrapper = render(
-			<EventBanner flyerSource="Test.jpg" meetingLink="https://example.com" />
+			<EventBanner flyerSource="profiles/carson.png" meetingLink="https://example.com" />
 		);
 		expect(wrapper.find("a").prop("href")).toEqual("https://example.com");
 	});
@@ -59,7 +61,7 @@ describe("EventBanner appearance", () => {
 				now={now}
 			/>,
 		);
-		expect(wrapper.exists(".in-progress")).toEqual(true);
+		expect(wrapper.container.querySelector(".in-progress")).toBeInTheDocument();
 	});
 });
 
@@ -84,7 +86,7 @@ describe("Event auto expire", () => {
 				now={now}
 			/>,
 		);
-		expect(wrapper.exists(".club-event")).toEqual(true);
+		expect(wrapper.container.querySelector(".club-event")).toBeInTheDocument();
 	});
 
 	it("should render if the event is in progress", () => {
@@ -97,7 +99,7 @@ describe("Event auto expire", () => {
 				now={now}
 			/>,
 		);
-		expect(wrapper.exists(".club-event")).toEqual(true);
+		expect(wrapper.container.querySelector(".club-event")).toBeInTheDocument();
 	});
 
 	it("should not render if the end time has been exceeded", () => {
@@ -110,7 +112,7 @@ describe("Event auto expire", () => {
 				now={now}
 			/>,
 		);
-		expect(wrapper.exists(".club-event")).toEqual(false);
+		expect(wrapper.container.querySelector(".club-event")).not.toBeInTheDocument();
 	});
 
 	it("should not render if it's a GBM, and the start time is more than 7 days in the future", () => {
@@ -124,7 +126,7 @@ describe("Event auto expire", () => {
 				now={now}
 			/>,
 		);
-		expect(wrapper.exists(".club-event")).toEqual(false);
+		expect(wrapper.container.querySelector(".club-event")).not.toBeInTheDocument();
 
 		now = dayjs("2020-03-01T16:00:00.000Z");
 		wrapper = render(
@@ -136,7 +138,7 @@ describe("Event auto expire", () => {
 				now={now}
 			/>,
 		);
-		expect(wrapper.exists(".club-event")).toEqual(false);
+		expect(wrapper.container.querySelector(".club-event")).not.toBeInTheDocument();
 
 		now = dayjs("2020-04-04T21:15:00.000Z").subtract(7, "day");
 		wrapper = render(
@@ -148,7 +150,7 @@ describe("Event auto expire", () => {
 				now={now}
 			/>,
 		);
-		expect(wrapper.exists(".club-event")).toEqual(true);
+		expect(wrapper.container.querySelector(".club-event")).toBeInTheDocument();
 
 		now = dayjs("2020-04-04T16:00:00.000Z").subtract(6, "day");
 		wrapper = render(
@@ -160,6 +162,6 @@ describe("Event auto expire", () => {
 				now={now}
 			/>,
 		);
-		expect(wrapper.exists(".club-event")).toEqual(true);
+		expect(wrapper.container.querySelector(".club-event")).toBeInTheDocument();
 	});
 });

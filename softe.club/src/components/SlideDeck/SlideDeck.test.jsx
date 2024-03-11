@@ -4,7 +4,7 @@ import React from "react";
 import "@testing-library/jest-dom";
 import {render, cleanup} from '@testing-library/react';
 
-import { SlideDeck, Slide } from "./SlideDeck.js";
+import { SlideDeck, Slide } from "./SlideDeck";
 
 describe("SlideDeck", () => {
 	describe("UI/UX", () => {
@@ -36,7 +36,7 @@ describe("SlideDeck", () => {
 					<Slide>Slide 1</Slide>
 				</SlideDeck>,
 			);
-			wrapper.instance().nextSlide = jest.fn();
+			wrapper.instance().nextSlide = vi.fn();
 			wrapper.find(".slide").simulate("click");
 			expect(wrapper.instance().nextSlide).toBeCalledTimes(1);
 
@@ -55,7 +55,7 @@ describe("SlideDeck", () => {
 					<Slide>Slide 1</Slide>
 				</SlideDeck>,
 			);
-			wrapper.instance().prevSlide = jest.fn();
+			wrapper.instance().prevSlide = vi.fn();
 			wrapper.instance().setState({ currentSlide: 1 });
 			wrapper.find(".slide").simulate("contextmenu");
 			expect(wrapper.instance().prevSlide).toBeCalledTimes(1);

@@ -1,9 +1,12 @@
-import { useEffect } from "react";
+// import { useEffect } from "react";
 import "./EventBanner.scss";
 import dayjs from "dayjs";
 import * as SEC from "../SEC/lib";
 import type { SECEvent } from "../../Events";
 
+import testimg from "../../assets/profiles/carson.png";
+
+const images = import.meta.glob("../../assets/**/*.(png|jpg|svg)", { eager: true });
 interface EventBannerProps extends SECEvent {
 	now?: dayjs.Dayjs;
 }
@@ -15,15 +18,7 @@ const EventBanner: React.FC<EventBannerProps> = props => {
 		(!props.endDate || now.isBefore(props.endDate)) &&
 		(!props.startDate || !props.isGbm || props.startDate.subtract(7, "day").isBefore(now));
 
-	let flyer: string | null = null;
-	useEffect(() => {
-		if (!props.flyerSource || !isVisible) {
-			return;
-		}
-		(async () => {
-			flyer = (await import(`../../assets/${props.flyerSource}.png`)).default;
-		})();
-	});
+	let flyer: string | null = images[`../../assets/${props.flyerSource}`]?.default ?? null;
 
 	let imageElement = flyer ? (
 		<img

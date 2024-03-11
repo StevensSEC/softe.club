@@ -4,7 +4,7 @@ import { act } from "react-dom/test-utils";
 import { getByTestId, queryByTestId } from "@testing-library/dom";
 import "@testing-library/jest-dom";
 import { BrowserRouter as Router } from "react-router-dom";
-import ROUTES from "../../Router.js";
+import ROUTES from "../../Router";
 import fs from "fs";
 
 import ArticleView from "./Article";
@@ -157,7 +157,7 @@ describe("ArticleView", () => {
 		expect(container.querySelector("a")).toContainHTML("Valid Route");
 	});
 
-	describe("don't break existing articles", () => {
+	describe.only("don't break existing articles", () => {
 		let routes = ROUTES.filter(route => !!route.articleProps).map(route => [
 			route.articleProps.source,
 			route,
@@ -179,14 +179,11 @@ describe("ArticleView", () => {
 
 			fetch.mockResponse(() => Promise.resolve(markdown));
 
-			await act(async () => {
-				root.render(
-					<Router>
-						<ArticleView {...route.articleProps} />
-					</Router>,
-					container
-				);
-			});
+			const wrapper = render(
+				<Router>
+					<ArticleView {...route.articleProps} />
+				</Router>,
+			);
 		});
 	});
 });

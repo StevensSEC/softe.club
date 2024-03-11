@@ -125,14 +125,13 @@ describe("Button functionality", () => {
 					Test
 				</Button>
 			</MemoryRouter>,
-			container
 		);
 		let btn = wrapper.find("[data-testid='btn']").at(0).instance();
 		expect(btn.shouldUseRouter()).toBe(false);
 	});
 
 	it("should run custom onClick when clicked", () => {
-		let click = jest.fn();
+		let click = vi.fn();
 		let wrapper = render(
 			<MemoryRouter>
 				<Button onClick={click} data-testid="btn">
