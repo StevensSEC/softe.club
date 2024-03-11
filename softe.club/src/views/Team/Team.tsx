@@ -1,6 +1,8 @@
-import { Component } from "react";
+import { Component, useEffect } from "react";
 import { Container, Grid } from "@material-ui/core";
 import * as SEC from "../../components/SEC/lib";
+
+const images = import.meta.glob("../../assets/profiles/*.(png|jpg)", { eager: true });
 
 import "./Team.scss";
 
@@ -58,8 +60,13 @@ export default class TeamView extends Component {
 	memberList: ClubMember[] = [];
 
 	render() {
-		this.eboardList = this.eboardList.map(member => {
-			member.img = require(`../../assets/profiles/${member.img}`).default;
+		console.log(images);
+		const eboardList = this.eboardList.map(member => {
+			console.log(`../../assets/profiles/${member.img}`);
+			member = {
+				...member,
+				img: images[`../../assets/profiles/${member.img}`].default,
+			};
 			return member;
 		});
 
@@ -67,7 +74,7 @@ export default class TeamView extends Component {
 			<Container className="team-page">
 				<h1>Executive Board</h1>
 				<Grid container>
-					{this.eboardList.map((member, index) => {
+					{eboardList.map((member, index) => {
 						return (
 							<Grid item key={"profile-" + index} className="profile">
 								<SEC.Link
