@@ -175,15 +175,18 @@ describe.skip("ArticleView", () => {
 		]);
 
 		it.each(routes)("should be able to render %s", async (_source, route) => {
-			vi.spyOn(fetch)
-			const markdown = fs.readFileSync("src/articles/" + route.articleProps.source + ".md", "utf8");
+			vi.spyOn(fetch);
+			const markdown = fs.readFileSync(
+				"src/articles/" + route.articleProps.source + ".md",
+				"utf8"
+			);
 
 			fetch.mockResponse(() => Promise.resolve(markdown));
 
 			const wrapper = render(
 				<Router>
 					<ArticleView {...route.articleProps} />
-				</Router>,
+				</Router>
 			);
 		});
 	});

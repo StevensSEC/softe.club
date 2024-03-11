@@ -2,7 +2,7 @@ import { describe, it, expect, beforeEach, afterEach } from "vitest";
 import React from "react";
 // import { unrenderComponentAtNode } from "react-dom";
 import "@testing-library/jest-dom";
-import {render, cleanup} from '@testing-library/react';
+import { render, cleanup } from "@testing-library/react";
 
 import { SlideDeck, Slide } from "./SlideDeck";
 
@@ -24,7 +24,7 @@ describe("SlideDeck", () => {
 				<SlideDeck>
 					<Slide>rendered</Slide>
 					<Slide>not rendered</Slide>
-				</SlideDeck>,
+				</SlideDeck>
 			);
 			expect(wrapper.find(".slide").text()).toEqual("rendered");
 		});
@@ -34,7 +34,7 @@ describe("SlideDeck", () => {
 				<SlideDeck>
 					<Slide>Slide 0</Slide>
 					<Slide>Slide 1</Slide>
-				</SlideDeck>,
+				</SlideDeck>
 			);
 			wrapper.instance().nextSlide = vi.fn();
 			wrapper.find(".slide").simulate("click");
@@ -53,7 +53,7 @@ describe("SlideDeck", () => {
 				<SlideDeck>
 					<Slide>Slide 0</Slide>
 					<Slide>Slide 1</Slide>
-				</SlideDeck>,
+				</SlideDeck>
 			);
 			wrapper.instance().prevSlide = vi.fn();
 			wrapper.instance().setState({ currentSlide: 1 });
@@ -70,7 +70,7 @@ describe("SlideDeck", () => {
 			let wrapper = render(
 				<SlideDeck>
 					<Slide>Slide 0</Slide>
-				</SlideDeck>,
+				</SlideDeck>
 			);
 			wrapper.instance().setState({ isFullscreen: true });
 			document.dispatchEvent(new KeyboardEvent("keydown", { key: "Escape", keyCode: 27 }));
@@ -95,7 +95,7 @@ describe("SlideDeck", () => {
 				<SlideDeck>
 					<Slide>Slide 0</Slide>
 					<Slide>Slide 1</Slide>
-				</SlideDeck>,
+				</SlideDeck>
 			);
 			wrapper.instance().nextSlide();
 			expect(wrapper.instance().state.currentSlide).toEqual(1);
@@ -107,7 +107,7 @@ describe("SlideDeck", () => {
 				<SlideDeck>
 					<Slide>Slide 0</Slide>
 					<Slide>Slide 1</Slide>
-				</SlideDeck>,
+				</SlideDeck>
 			);
 			wrapper.instance().setState({ currentSlide: 1 });
 			wrapper.instance().prevSlide();
@@ -134,7 +134,7 @@ describe("SlideDeck", () => {
 					<Slide sticky>Slide 0</Slide>
 					<Slide>Slide 1</Slide>
 					<Slide>Slide 2</Slide>
-				</SlideDeck>,
+				</SlideDeck>
 			);
 			wrapper.instance().nextSlide();
 			expect(wrapper.instance().state.currentSlide).toEqual(1);
@@ -151,7 +151,7 @@ describe("SlideDeck", () => {
 					<Slide sticky>Slide 1</Slide>
 					<Slide>Slide 2</Slide>
 					<Slide>Slide 3</Slide>
-				</SlideDeck>,
+				</SlideDeck>
 			);
 			wrapper.instance().nextSlide();
 			expect(wrapper.instance().state.currentSlide).toEqual(1);
@@ -173,7 +173,7 @@ describe("SlideDeck", () => {
 					<Slide>Slide 1</Slide>
 					<Slide>Slide 2</Slide>
 					<Slide>Slide 3</Slide>
-				</SlideDeck>,
+				</SlideDeck>
 			);
 			wrapper.instance().nextSlide();
 			wrapper.update();
@@ -198,7 +198,7 @@ describe("SlideDeck", () => {
 					<Slide>Slide 1</Slide>
 					<Slide name="hide-sticky">Slide 2</Slide>
 					<Slide>Slide 3</Slide>
-				</SlideDeck>,
+				</SlideDeck>
 			);
 			wrapper.instance().nextSlide();
 			wrapper.update();

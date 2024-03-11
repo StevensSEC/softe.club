@@ -3,7 +3,7 @@ import React from "react";
 import "@testing-library/jest-dom";
 import dayjs from "dayjs";
 import { createRoot } from "react-dom/client";
-import {render, cleanup} from '@testing-library/react';
+import { render, cleanup } from "@testing-library/react";
 
 import EventBanner from "./EventBanner";
 import testPoster from "../../assets/profiles/carson.png";
@@ -59,7 +59,7 @@ describe("EventBanner appearance", () => {
 				startDate={dayjs("2020-04-04T03:00:00.000Z")}
 				endDate={dayjs("2020-04-04T04:00:00.000Z")}
 				now={now}
-			/>,
+			/>
 		);
 		expect(wrapper.container.querySelector(".in-progress")).toBeInTheDocument();
 	});
@@ -84,7 +84,7 @@ describe("Event auto expire", () => {
 				startDate={dayjs("2020-04-04T03:00:00.000Z")}
 				endDate={dayjs("2020-04-04T04:00:00.000Z")}
 				now={now}
-			/>,
+			/>
 		);
 		expect(wrapper.container.querySelector(".club-event")).toBeInTheDocument();
 	});
@@ -97,7 +97,7 @@ describe("Event auto expire", () => {
 				startDate={dayjs("2020-04-04T03:00:00.000Z")}
 				endDate={dayjs("2020-04-04T04:00:00.000Z")}
 				now={now}
-			/>,
+			/>
 		);
 		expect(wrapper.container.querySelector(".club-event")).toBeInTheDocument();
 	});
@@ -110,7 +110,7 @@ describe("Event auto expire", () => {
 				startDate={dayjs("2020-04-04T03:00:00.000Z")}
 				endDate={dayjs("2020-04-04T04:00:00.000Z")}
 				now={now}
-			/>,
+			/>
 		);
 		expect(wrapper.container.querySelector(".club-event")).not.toBeInTheDocument();
 	});
@@ -124,7 +124,7 @@ describe("Event auto expire", () => {
 				startDate={dayjs("2020-04-09T21:00:00.000Z")}
 				endDate={dayjs("2020-04-09T22:00:00.000Z")}
 				now={now}
-			/>,
+			/>
 		);
 		expect(wrapper.container.querySelector(".club-event")).not.toBeInTheDocument();
 
@@ -136,7 +136,7 @@ describe("Event auto expire", () => {
 				startDate={dayjs("2020-03-09T21:00:00.000Z")}
 				endDate={dayjs("2020-03-09T22:00:00.000Z")}
 				now={now}
-			/>,
+			/>
 		);
 		expect(wrapper.container.querySelector(".club-event")).not.toBeInTheDocument();
 
@@ -148,7 +148,7 @@ describe("Event auto expire", () => {
 				startDate={dayjs("2020-04-04T21:00:00.000Z")}
 				endDate={dayjs("2020-04-04T22:00:00.000Z")}
 				now={now}
-			/>,
+			/>
 		);
 		expect(wrapper.container.querySelector(".club-event")).toBeInTheDocument();
 
@@ -160,7 +160,7 @@ describe("Event auto expire", () => {
 				startDate={dayjs("2020-04-04T21:00:00.000Z")}
 				endDate={dayjs("2020-04-04T22:00:00.000Z")}
 				now={now}
-			/>,
+			/>
 		);
 		expect(wrapper.container.querySelector(".club-event")).toBeInTheDocument();
 	});

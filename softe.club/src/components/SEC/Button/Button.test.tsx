@@ -4,7 +4,7 @@ import { getByTestId, queryByTestId } from "@testing-library/dom";
 import { MemoryRouter } from "react-router-dom";
 import "@testing-library/jest-dom";
 import { createRoot } from "react-dom/client";
-import {render, cleanup} from '@testing-library/react';
+import { render, cleanup } from "@testing-library/react";
 
 import Button from "./Button";
 
@@ -36,7 +36,7 @@ describe("Button appearance", () => {
 		render(
 			<Button kind="primary" data-testid="btn">
 				Test
-			</Button>,
+			</Button>
 		);
 		let btn = getByTestId(container, "btn");
 		expect(btn).toHaveClass("sec-kind-primary");
@@ -46,7 +46,7 @@ describe("Button appearance", () => {
 		render(
 			<Button className="test" data-testid="btn">
 				Test
-			</Button>,
+			</Button>
 		);
 		let btn = getByTestId(container, "btn");
 		expect(btn).toHaveClass("sec-btn");
@@ -58,7 +58,7 @@ describe("Button appearance", () => {
 		render(
 			<Button className="test" data-testid="btn">
 				Test
-			</Button>,
+			</Button>
 		);
 		let btn = getByTestId(container, "btn");
 		expect(btn).toHaveTextContent("Test");
@@ -88,7 +88,7 @@ describe("Button functionality", () => {
 				<Button to="/" data-testid="btn">
 					Test
 				</Button>
-			</MemoryRouter>,
+			</MemoryRouter>
 		);
 		let btn = getByTestId(container, "btn");
 		expect(btn).toHaveAttribute("href", "/");
@@ -100,7 +100,7 @@ describe("Button functionality", () => {
 				<Button to="/" data-testid="btn">
 					Test
 				</Button>
-			</MemoryRouter>,
+			</MemoryRouter>
 		);
 		let btn = wrapper.find("[data-testid='btn']").at(0).instance();
 		expect(btn.shouldUseRouter()).toBe(true);
@@ -112,7 +112,7 @@ describe("Button functionality", () => {
 				<Button to="something/relative" data-testid="btn">
 					Test
 				</Button>
-			</MemoryRouter>,
+			</MemoryRouter>
 		);
 		let btn = wrapper.find("[data-testid='btn']").at(0).instance();
 		expect(btn.shouldUseRouter()).toBe(true);
@@ -124,7 +124,7 @@ describe("Button functionality", () => {
 				<Button to="https://example.com" data-testid="btn">
 					Test
 				</Button>
-			</MemoryRouter>,
+			</MemoryRouter>
 		);
 		let btn = wrapper.find("[data-testid='btn']").at(0).instance();
 		expect(btn.shouldUseRouter()).toBe(false);
@@ -137,7 +137,7 @@ describe("Button functionality", () => {
 				<Button onClick={click} data-testid="btn">
 					Test
 				</Button>
-			</MemoryRouter>,
+			</MemoryRouter>
 		);
 		let btn = wrapper.find("[data-testid='btn']").at(0);
 		btn.simulate("click");
