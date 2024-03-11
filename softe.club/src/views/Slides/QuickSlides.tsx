@@ -33,7 +33,6 @@ export default class QuickSlides extends React.PureComponent<QuickSlidesProps, Q
 	}
 
 	componentDidMount() {
-		console.log(slides)
 		slides[`../../slides/${this.props.slidePath}.yaml`]().then((src: any) => {
 			if (src.default) {
 				return src.default;

@@ -60,9 +60,7 @@ export default class TeamView extends Component {
 	memberList: ClubMember[] = [];
 
 	render() {
-		console.log(images);
 		const eboardList = this.eboardList.map(member => {
-			console.log(`../../assets/profiles/${member.img}`);
 			member = {
 				...member,
 				img: (images[`../../assets/profiles/${member.img}`] as {default: string}).default,
