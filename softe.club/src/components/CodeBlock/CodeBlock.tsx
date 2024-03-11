@@ -1,7 +1,7 @@
 import React from "react";
 import { PrismAsyncLight as SyntaxHighlighter } from "react-syntax-highlighter";
 // TODO: custom colors that match the rest of the site's design
-import okaidia from "react-syntax-highlighter/dist/cjs/styles/prism/okaidia";
+import okaidia from "react-syntax-highlighter/dist/esm/styles/prism/okaidia";
 import "./CodeBlock.scss";
 
 interface CodeBlockProps extends CodeBlockMeta {

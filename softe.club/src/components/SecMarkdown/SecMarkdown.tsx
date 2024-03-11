@@ -67,10 +67,10 @@ interface SecMarkdownProps {
  */
 const SecMarkdown: React.FC<SecMarkdownProps> = ({ markdown }) => {
 	if (markdown) {
+		// return <div>{markdown}</div>
 		return (
 			<Markdown
 				className="markdown"
-				source={markdown}
 				escapeHtml={false}
 				astPlugins={[parseHtml]}
 				renderers={{ code: CodeBlock, link: mdLink, image: lazyImage }}
@@ -78,10 +78,12 @@ const SecMarkdown: React.FC<SecMarkdownProps> = ({ markdown }) => {
 					if (uri.startsWith("http")) {
 						return uri;
 					}
-					let img = require(`../../assets/${uri}`);
-					return img.default ? img.default : img;
+					let img = new URL(uri, import.meta.url).toString();
+					return img;
 				}}
-			/>
+			>
+				{markdown}
+			</Markdown>
 		);
 	} else {
 		return null;

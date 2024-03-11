@@ -1,5 +1,5 @@
 const fetchMarkdown = async (source: string): Promise<string> => {
-	let url = await import(`../articles/${source}`);
+	let url = await import(`../articles/${source}.md`);
 	if (url.default) {
 		url = url.default;
 	}

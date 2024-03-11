@@ -16,7 +16,7 @@ export const ROUTES: Route[] = [
 	{
 		path: "/",
 		articleProps: null,
-		Component: lazy(() => import(/* webpackChunkName: "home" */ "./views/Home/Home.js")),
+		Component: lazy(() => import(/* webpackChunkName: "home" */ "./views/Home/Home")),
 	},
 	{
 		path: "/slp",
@@ -24,7 +24,7 @@ export const ROUTES: Route[] = [
 	},
 	{
 		path: "/about",
-		articleProps: { source: "about.md", title: "About" },
+		articleProps: { source: "about", title: "About" },
 		Component: lazy(() => import(/* webpackChunkName: "article" */ "./views/Article/Article")),
 	},
 	{
@@ -33,17 +33,17 @@ export const ROUTES: Route[] = [
 	},
 	{
 		path: "/contact",
-		articleProps: { source: "contact.md", title: "Contact" },
+		articleProps: { source: "contact", title: "Contact" },
 		Component: lazy(() => import(/* webpackChunkName: "article" */ "./views/Article/Article")),
 	},
 	{
 		path: "/resources",
-		articleProps: { source: "guides/resources.md", title: "Resources" },
+		articleProps: { source: "guides/resources", title: "Resources" },
 		Component: lazy(() => import(/* webpackChunkName: "article" */ "./views/Article/Article")),
 	},
 	{
 		path: "/faq",
-		articleProps: { source: "faq.md", title: "FAQ" },
+		articleProps: { source: "faq", title: "FAQ" },
 		Component: lazy(() => import(/* webpackChunkName: "article" */ "./views/Article/Article")),
 	},
 	{
@@ -92,27 +92,27 @@ export const ROUTES: Route[] = [
 	},
 	{
 		path: "/git-cheatsheet",
-		articleProps: { source: "cheatsheets/git.md", title: "Git Cheatsheet" },
+		articleProps: { source: "cheatsheets/git", title: "Git Cheatsheet" },
 		Component: lazy(() => import(/* webpackChunkName: "article" */ "./views/Article/Article")),
 	},
 	{
 		path: "/dev/docs/articles",
-		articleProps: { source: "docs/articles.md", title: "Article Documentation" },
+		articleProps: { source: "docs/articles", title: "Article Documentation" },
 		Component: lazy(() => import(/* webpackChunkName: "article" */ "./views/Article/Article")),
 	},
 	{
 		path: "/dev/docs/slidedecks",
-		articleProps: { source: "docs/slidedecks.md", title: "Slide Deck Documentation" },
+		articleProps: { source: "docs/slidedecks", title: "Slide Deck Documentation" },
 		Component: lazy(() => import(/* webpackChunkName: "article" */ "./views/Article/Article")),
 	},
 	{
 		path: "/dev/docs/design",
-		articleProps: { source: "docs/design.md", title: "Design Specification" },
+		articleProps: { source: "docs/design", title: "Design Specification" },
 		Component: lazy(() => import(/* webpackChunkName: "article" */ "./views/Article/Article")),
 	},
 	{
 		path: "/dev/docs",
-		articleProps: { source: "docs/README.md", title: "README" },
+		articleProps: { source: "docs/README", title: "README" },
 		Component: lazy(() => import(/* webpackChunkName: "article" */ "./views/Article/Article")),
 	},
 	{
@@ -143,17 +143,17 @@ export const ROUTES: Route[] = [
 	},
 	{
 		path: "/event/pair-programming-2020",
-		articleProps: { source: "events/2020-pair-programming.md", title: "Pair Programming 2020" },
+		articleProps: { source: "events/2020-pair-programming", title: "Pair Programming 2020" },
 		Component: lazy(() => import(/* webpackChunkName: "article" */ "./views/Article/Article")),
 	},
 	{
 		path: "/bash-cheatsheet",
-		articleProps: { source: "cheatsheets/bash.md", title: "Bash Cheatsheet" },
+		articleProps: { source: "cheatsheets/bash", title: "Bash Cheatsheet" },
 		Component: lazy(() => import(/* webpackChunkName: "article" */ "./views/Article/Article")),
 	},
 	{
 		path: "/powershell-cheatsheet",
-		articleProps: { source: "cheatsheets/powershell.md", title: "Powershell Cheatsheet" },
+		articleProps: { source: "cheatsheets/powershell", title: "Powershell Cheatsheet" },
 		Component: lazy(() => import(/* webpackChunkName: "article" */ "./views/Article/Article")),
 	},
 	{
@@ -171,7 +171,7 @@ export const ROUTES: Route[] = [
 	{
 		path: "/guide/open-source-fall-2020",
 		articleProps: {
-			source: "fall-2020-open-source-projects.md",
+			source: "fall-2020-open-source-projects",
 			title: "Open Source Project Guide - Fall 2020",
 		},
 		Component: lazy(() => import(/* webpackChunkName: "article" */ "./views/Article/Article")),
@@ -179,7 +179,7 @@ export const ROUTES: Route[] = [
 	{
 		path: "/tutorial/install-wsl",
 		articleProps: {
-			source: "tutorials/howto-install-wsl.md",
+			source: "tutorials/howto-install-wsl",
 			title: "How to Install the Windows Subsystem for Linux",
 		},
 		Component: lazy(() => import(/* webpackChunkName: "article" */ "./views/Article/Article")),
@@ -187,7 +187,7 @@ export const ROUTES: Route[] = [
 	{
 		path: "/tutorial/enable-colors-mac",
 		articleProps: {
-			source: "tutorials/howto-enable-terminal-colors-mac.md",
+			source: "tutorials/howto-enable-terminal-colors-mac",
 			title: "How to Enable Terminal Colors on Mac",
 		},
 		Component: lazy(() => import(/* webpackChunkName: "article" */ "./views/Article/Article")),
@@ -195,7 +195,7 @@ export const ROUTES: Route[] = [
 	{
 		path: "/tutorial/iterm2-import-colors",
 		articleProps: {
-			source: "tutorials/howto-install-iterm2-themes.md",
+			source: "tutorials/howto-install-iterm2-themes",
 			title: "How to Install iTerm2 Color Themes",
 		},
 		Component: lazy(() => import(/* webpackChunkName: "article" */ "./views/Article/Article")),
@@ -203,7 +203,7 @@ export const ROUTES: Route[] = [
 	{
 		path: "/tutorial/set-default-shell",
 		articleProps: {
-			source: "tutorials/howto-set-default-shell.md",
+			source: "tutorials/howto-set-default-shell",
 			title: "How to set the default shell",
 		},
 		Component: lazy(() => import(/* webpackChunkName: "article" */ "./views/Article/Article")),
@@ -211,7 +211,7 @@ export const ROUTES: Route[] = [
 	{
 		path: "/tutorial/ensure-bashrc-profile-setup",
 		articleProps: {
-			source: "tutorials/howto-ensure-bashrc-profile-setup.md",
+			source: "tutorials/howto-ensure-bashrc-profile-setup",
 			title: "How to make sure your bashrc/profile is set up",
 		},
 		Component: lazy(() => import(/* webpackChunkName: "article" */ "./views/Article/Article")),
@@ -219,7 +219,7 @@ export const ROUTES: Route[] = [
 	{
 		path: "/tutorial/cli-text-editors",
 		articleProps: {
-			source: "tutorials/howto-use-cli-text-editors.md",
+			source: "tutorials/howto-use-cli-text-editors",
 			title: "How to use terminal text editors",
 		},
 		Component: lazy(() => import(/* webpackChunkName: "article" */ "./views/Article/Article")),
@@ -227,7 +227,7 @@ export const ROUTES: Route[] = [
 	{
 		path: "/tutorial/vscode-theme",
 		articleProps: {
-			source: "tutorials/howto-vscode-set-theme.md",
+			source: "tutorials/howto-vscode-set-theme",
 			title: "How to set your theme in VS Code",
 		},
 		Component: lazy(() => import(/* webpackChunkName: "article" */ "./views/Article/Article")),
@@ -235,7 +235,7 @@ export const ROUTES: Route[] = [
 	{
 		path: "/tutorial/set-default-terminal",
 		articleProps: {
-			source: "tutorials/howto-set-default-terminal.md",
+			source: "tutorials/howto-set-default-terminal",
 			title: "How to set your default terminal",
 		},
 		Component: lazy(() => import(/* webpackChunkName: "article" */ "./views/Article/Article")),
@@ -243,7 +243,7 @@ export const ROUTES: Route[] = [
 	{
 		path: "/tutorial/windows-terminal",
 		articleProps: {
-			source: "tutorials/howto-install-use-windows-terminal.md",
+			source: "tutorials/howto-install-use-windows-terminal",
 			title: "How to install and use Windows Terminal",
 		},
 		Component: lazy(() => import(/* webpackChunkName: "article" */ "./views/Article/Article")),
@@ -251,19 +251,19 @@ export const ROUTES: Route[] = [
 	{
 		path: "/event/ctc-intro-to-git-2020",
 		articleProps: {
-			source: "events/ctc-intro-to-git-2020/intro-to-git.md",
+			source: "events/ctc-intro-to-git-2020/intro-to-git",
 			title: "Intro to Git",
 		},
 		Component: lazy(() => import(/* webpackChunkName: "article" */ "./views/Article/Article")),
 	},
 	{
 		path: "/guide/what-to-install",
-		articleProps: { source: "guides/what-to-install.md", title: "What to install?" },
+		articleProps: { source: "guides/what-to-install", title: "What to install?" },
 		Component: lazy(() => import(/* webpackChunkName: "article" */ "./views/Article/Article")),
 	},
 	{
 		path: "/guide/github",
-		articleProps: { source: "guides/github.md", title: "SEC's guide to GitHub" },
+		articleProps: { source: "guides/github", title: "SEC's guide to GitHub" },
 		Component: lazy(() => import(/* webpackChunkName: "article" */ "./views/Article/Article")),
 	},
 	{
@@ -303,7 +303,7 @@ export const ROUTES: Route[] = [
 	},
 	{
 		path: "/events/pair-programming-s21",
-		articleProps: { source: "events/pair-programming-s21.md", title: "Pair Programming 2021" },
+		articleProps: { source: "events/pair-programming-s21", title: "Pair Programming 2021" },
 		Component: lazy(() => import(/* webpackChunkName: "article" */ "./views/Article/Article")),
 	},
 	{
@@ -316,7 +316,7 @@ export const ROUTES: Route[] = [
 	{
 		path: "/events/pair-programming-s22-solutions",
 		articleProps: {
-			source: "events/2022-pair-programming-sol.md",
+			source: "events/2022-pair-programming-sol",
 			title: "Pair Programming 2022 Solutions",
 		},
 		Component: lazy(() => import(/* webpackChunkName: "article" */ "./views/Article/Article")),
@@ -338,19 +338,19 @@ export const ROUTES: Route[] = [
 	{
 		path: "/events/react-native-expo-workshop",
 		articleProps: {
-			source: "events/react-native-expo-workshop.md",
+			source: "events/react-native-expo-workshop",
 			title: "React Native & Expo Workshop",
 		},
 		Component: lazy(() => import(/* webpackChunkName: "article" */ "./views/Article/Article")),
 	},
 	{
 		path: "/guide/tools",
-		articleProps: { source: "guides/tools.md", title: "Tools" },
+		articleProps: { source: "guides/tools", title: "Tools" },
 		Component: lazy(() => import(/* webpackChunkName: "article" */ "./views/Article/Article")),
 	},
 	{
 		path: "/guide/code-reviews",
-		articleProps: { source: "guides/code-reviews.md", title: "SEC's guide to code reviews" },
+		articleProps: { source: "guides/code-reviews", title: "SEC's guide to code reviews" },
 		Component: lazy(() => import(/* webpackChunkName: "article" */ "./views/Article/Article")),
 	},
 	{

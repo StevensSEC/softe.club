@@ -19,7 +19,7 @@ const EventBanner: React.FC<EventBannerProps> = (props) => {
 			return;
 		}
 		(async () => {
-			flyer = (await import(`../../assets/${props.flyerSource}`)).default;
+			flyer = (await import(`../../assets/${props.flyerSource}.png`)).default;
 		})()
 	})
 
