@@ -33,10 +33,13 @@ function App() {
 			primary: red,
 			secondary: cyan,
 			background: {
+				// @ts-expect-error temp
 				default: SecStyle.backgroundColor,
+				// @ts-expect-error temp
 				paper: SecStyle.backgroundColor,
 			},
 		},
+		// @ts-expect-error temp
 		text: {
 			//change these to values in variables.scss when webpack is set up
 			primary: "black",

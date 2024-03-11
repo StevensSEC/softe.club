@@ -2,13 +2,20 @@ import React from "react";
 import { motion } from "framer-motion";
 import Anime from "react-anime";
 
-import Loader from "./Loader";
+import Loader, { type LoaderProps } from "./Loader";
 import "./Loader.scss";
 
-export default class ErrorBoundaryLoader extends Loader {
-	constructor(props) {
+const style = { fill: "transparent", stroke: "#f33", strokeWidth: "1px" };
+
+interface ErrorBoundaryLoaderProps extends LoaderProps {
+	children: any;
+}
+
+// this one cannot be converted to a functional component
+
+export default class ErrorBoundaryLoader extends Loader<ErrorBoundaryLoaderProps, { hasError: boolean }> {
+	constructor(props: any) {
 		super(props);
-		this.style = { fill: "transparent", stroke: "#f33", strokeWidth: "1px" };
 		this.state = { hasError: false };
 
 		//the shape morphs into the body of the exclamation point
@@ -45,8 +52,9 @@ export default class ErrorBoundaryLoader extends Loader {
 		this.loaderLogo = (
 			<React.Fragment>
 				<motion.svg viewBox="0 0 200 200" className="loader">
+					{/* @ts-expect-error temp */}
 					<Anime {...this.loaderAnimation}>
-						<polygon points={this.initShape} style={this.style} />
+						<polygon points={this.initShape} style={style} />
 					</Anime>
 					<motion.path
 						{...drawErrorAnimation}
@@ -67,7 +75,7 @@ export default class ErrorBoundaryLoader extends Loader {
 		);
 	}
 
-	componentDidCatch(error, info) {
+	componentDidCatch(error: any, _info: any) {
 		this.setState({ hasError: true });
 		// eslint-disable-next-line no-console
 		console.error(error);
@@ -77,6 +85,6 @@ export default class ErrorBoundaryLoader extends Loader {
 		if (this.state.hasError) {
 			return super.render();
 		}
-		return this.props.children;
+		return <>{this.props.children}</>;
 	}
 }

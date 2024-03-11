@@ -165,7 +165,7 @@ export const ROUTES: Route[] = [
 	{
 		path: "/slides/gbm/fall-2020-welcome-back",
 		Component: lazy(() =>
-			import(/* webpackChunkName: "gbm1" */ "./views/Slides/fall-2020-gbm1/fall-2020-gbm1.js")
+			import(/* webpackChunkName: "gbm1" */ "./views/Slides/fall-2020-gbm1/fall-2020-gbm1")
 		),
 	},
 	{
