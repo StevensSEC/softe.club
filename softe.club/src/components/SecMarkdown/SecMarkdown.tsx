@@ -6,7 +6,6 @@ import CodeBlock from "../../components/CodeBlock/CodeBlock";
 import * as SEC from "../SEC/lib.js";
 import "./SecMarkdown.scss";
 import remarkGfm from 'remark-gfm';
-import rehypePrism from '@mapbox/rehype-prism';
 
 // See https://github.com/aknuds1/html-to-react#with-custom-processing-instructions
 // for more info on the processing instructions
@@ -72,6 +71,7 @@ const SecMarkdown: React.FC<SecMarkdownProps> = ({ markdown }) => {
 		return (
 			<Markdown
 				className="markdown"
+				// @ts-expect-error temp
 				components={{ pre: CodeBlock, a: mdLink, img: lazyImage }}
 				remarkPlugins={[remarkGfm]}
 				disallowedElements={["script"]}
