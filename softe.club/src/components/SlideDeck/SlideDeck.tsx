@@ -1,4 +1,4 @@
-import React from "react";
+import React, { type ReactNode } from "react";
 import PropTypes from "prop-types";
 import {
 	Container,
@@ -12,17 +12,21 @@ import "./SlideDeck.scss";
 import { UxContext } from "../../contexts.js";
 import { Fullscreen, KeyboardArrowLeft, KeyboardArrowRight } from "@material-ui/icons";
 
-class Slide extends React.Component {
+export interface SlideProps {
+	name: string;
+	sticky: boolean;
+	stickyUntil: number | string;
+	className: string;
+	children: any;
+}
+
+class Slide extends React.Component<SlideProps> {
 	static propTypes = {
 		name: PropTypes.string,
 		sticky: PropTypes.bool,
 		stickyUntil: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
 	};
 
-	constructor(props) {
-		super(props);
-		this.props = props;
-	}
 	render() {
 		return (
 			<Container className={`slide-content ${this.props.className}`}>
@@ -34,6 +38,19 @@ class Slide extends React.Component {
 
 class InvalidChildComponentError extends TypeError {}
 
+interface SlideDeckProps {
+	children: Slide[];
+}
+
+interface SlideDeckState {
+	currentSlide: number;
+	isFullscreen: boolean;
+	stickied: {
+		current: number | null;
+		previous: number[];
+	};
+}
+
 /**
  * Powerpoint, but in react.
  *
@@ -43,40 +60,40 @@ class InvalidChildComponentError extends TypeError {}
  *
  * Docs URL: /dev/docs/slidedecks
  */
-class SlideDeck extends React.Component {
-	static propTypes = {
-		children: (props, propName, componentName) => {
-			let _tmpSlideNames = {};
-			React.Children.toArray(props.children).forEach((child, i) => {
-				if (child.type.name !== "Slide" && process.env.NODE_ENV !== "production") {
-					return new InvalidChildComponentError(
-						`All children of SlideDeck must be Slide components. Got "${child.type.name}" instead`
-					);
-				}
-				// Build reference map from slide references (names)
-				let name = child.props.name;
-				if (name) {
-					if (name in _tmpSlideNames) {
-						return new Error(`Cannot have duplicate slide name '${name}'.`);
-					}
-					_tmpSlideNames[name] = i;
-				}
-			});
-			// Validates that all slide name references are valid
-			React.Children.toArray(props.children).forEach((slide, i) => {
-				if (typeof slide.stickyUntil === "string") {
-					if (!(slide.stickyUntil in _tmpSlideNames)) {
-						return new Error(`Invalid name on slide ${i + 1}: ${slide.stickyUntil}`);
-					}
-				}
-			});
-		},
-	};
+class SlideDeck extends React.Component<SlideDeckProps, SlideDeckState> {
+	// static propTypes = {
+	// 	children: (props: SlideProps, propName: string, componentName: string) => {
+	// 		let _tmpSlideNames = {};
+	// 		React.Children.toArray(props.children).forEach((child, i) => {
+	// 			if (child.type.name !== "Slide" && process.env.NODE_ENV !== "production") {
+	// 				return new InvalidChildComponentError(
+	// 					`All children of SlideDeck must be Slide components. Got "${child.type.name}" instead`
+	// 				);
+	// 			}
+	// 			// Build reference map from slide references (names)
+	// 			let name = child.props.name;
+	// 			if (name) {
+	// 				if (name in _tmpSlideNames) {
+	// 					return new Error(`Cannot have duplicate slide name '${name}'.`);
+	// 				}
+	// 				_tmpSlideNames[name] = i;
+	// 			}
+	// 		});
+	// 		// Validates that all slide name references are valid
+	// 		React.Children.toArray(props.children).forEach((slide, i) => {
+	// 			if (typeof slide.stickyUntil === "string") {
+	// 				if (!(slide.stickyUntil in _tmpSlideNames)) {
+	// 					return new Error(`Invalid name on slide ${i + 1}: ${slide.stickyUntil}`);
+	// 				}
+	// 			}
+	// 		});
+	// 	},
+	// };
 
 	static contextType = UxContext;
 
-	constructor() {
-		super();
+	constructor(props: any) {
+		super(props);
 		this.state = {
 			currentSlide: 0,
 			isFullscreen: false,
@@ -94,7 +111,7 @@ class SlideDeck extends React.Component {
 		this.handleKeyPress = this.handleKeyPress.bind(this);
 	}
 
-	shouldComponentUpdate(props) {
+	shouldComponentUpdate() {
 		return true;
 	}
 
@@ -107,9 +124,10 @@ class SlideDeck extends React.Component {
 	}
 
 	getSlideNames() {
-		let slideNames = {};
-		React.Children.toArray(this.props.children).forEach((child, i) => {
+		let slideNames: Record<string, number> = {};
+		React.Children.toArray(this.props.children).forEach((_child, i) => {
 			// Build reference map from slide references (names)
+			const child = _child as Slide;
 			let name = child.props.name;
 			if (name) {
 				if (name in slideNames) {
@@ -121,7 +139,10 @@ class SlideDeck extends React.Component {
 		return slideNames;
 	}
 
-	getStickyUntil() {
+	getStickyUntil(): number | undefined {
+		if (!this.state.stickied.current) {
+			return undefined;
+		}
 		let endSlide = this.props.children[this.state.stickied.current].props.stickyUntil;
 		if (endSlide === undefined) {
 			return undefined;
@@ -129,7 +150,7 @@ class SlideDeck extends React.Component {
 		return typeof endSlide === "string" ? this.getSlideNames()[endSlide] : endSlide;
 	}
 
-	handleKeyPress(e) {
+	handleKeyPress(e: KeyboardEvent) {
 		if (e.key === "Escape") {
 			this.setState({
 				isFullscreen: false,
@@ -141,7 +162,7 @@ class SlideDeck extends React.Component {
 		}
 	}
 
-	handleSlideChange(e) {
+	handleSlideChange(e: any) {
 		e.stopPropagation();
 		this.setState({
 			currentSlide: e.target.value,
@@ -153,7 +174,7 @@ class SlideDeck extends React.Component {
 		if (next > this.props.children.length - 1) {
 			return;
 		}
-		let newstate = { currentSlide: next };
+		let newstate = { currentSlide: next, stickied: this.state.stickied };
 		if (this.props.children[this.state.currentSlide].props.sticky) {
 			let previousStickies = this.state.stickied.previous;
 			if (this.state.stickied.current) {
@@ -165,7 +186,7 @@ class SlideDeck extends React.Component {
 			};
 		} else if (
 			this.state.stickied.current !== null &&
-			newstate.currentSlide >= this.getStickyUntil()
+			newstate.currentSlide >= (this.getStickyUntil() ?? 0)
 		) {
 			let previousStickies = this.state.stickied.previous;
 			previousStickies.push(this.state.stickied.current);
@@ -182,18 +203,18 @@ class SlideDeck extends React.Component {
 		if (prev < 0) {
 			return;
 		}
-		let newstate = { currentSlide: prev };
+		let newstate = { currentSlide: prev, stickied: this.state.stickied };
 		if (prev === this.state.stickied.current) {
 			let previousStickies = this.state.stickied.previous;
 			newstate.stickied = {
-				current: previousStickies.length > 0 ? previousStickies.pop() : null,
+				current: previousStickies.length > 0 ? previousStickies.pop() ?? null : null,
 				previous: previousStickies,
 			};
 		}
 		this.setState(newstate);
 	}
 
-	setFullscreen(s) {
+	setFullscreen(s: boolean) {
 		this.setState({
 			isFullscreen: s,
 		});
@@ -208,13 +229,15 @@ class SlideDeck extends React.Component {
 	}
 
 	render() {
+		// @ts-expect-error temporary
 		this.context.headerCompact = true;
+		// @ts-expect-error temporary
 		this.context.footerVisible = false;
 		let elements = [];
 		if (this.state.stickied.current !== null) {
 			elements.push(
 				<div className="slide sticky" key="sticky">
-					{this.props.children[this.state.stickied.current]}
+					{this.props.children[this.state.stickied.current] as ReactNode}
 				</div>
 			);
 		}

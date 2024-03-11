@@ -1,7 +1,7 @@
 import dayjs from "dayjs";
 import type { Dayjs } from "dayjs";
 
-interface SECEvent {
+export interface SECEvent {
 	flyerSource: string; // name of uploaded picture
 	altText?: string; // alt text for accessibility
 	title: string; // name of event
@@ -31,7 +31,7 @@ const generateGbms = (
 	let date = startDate.day(4); // next thursday
 	let count = countOffset;
 	limit += countOffset;
-	let gbms = [];
+	let gbms: SECEvent[] = [];
 
 	while (date.isBefore(endDate) && count < limit) {
 		gbms.push({

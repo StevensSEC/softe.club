@@ -2,6 +2,7 @@ import React from "react";
 import { Grid, Fade } from "@material-ui/core";
 // @ts-expect-error temporary
 import anime from "animejs";
+// @ts-ignore temporary
 import Anime from "react-anime";
 import "./Loader.scss";
 

@@ -2,7 +2,7 @@ import React from "react";
 import * as SEC from "../../components/SEC/lib.js";
 import { List, ListItem, Container } from "@material-ui/core";
 
-const RecordingsView = () => {
+const RecordingsView: React.FC<any> = () => {
 	return (
 		<Container>
 			<h3>Here are some recordings for events related to past SLPs.</h3>

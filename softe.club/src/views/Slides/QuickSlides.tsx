@@ -1,14 +1,26 @@
 import React from "react";
 import yaml from "js-yaml";
-import { Slide, SlideDeck } from "../../components/SlideDeck/SlideDeck.js";
+import { Slide, SlideDeck } from "../../components/SlideDeck/SlideDeck";
 import DocumentTitle from "../../components/DocumentTitle/DocumentTitle.js";
 import SecMarkdown from "../../components/SecMarkdown/SecMarkdown.js";
 import "./QuickSlides.scss";
-import Logo from "../../components/Logo/Logo.jsx";
+import Logo from "../../components/Logo/Logo";
+import type { SlideProps } from "../../components/SlideDeck/SlideDeck.js";
 
-export default class QuickSlides extends React.PureComponent {
-	constructor() {
-		super();
+interface QuickSlidesProps {
+	slidePath: string;
+}
+
+interface QuickSlidesState {
+	data: {
+		title: string;
+		slides: any[];
+	};
+}
+
+export default class QuickSlides extends React.PureComponent<QuickSlidesProps, QuickSlidesState> {
+	constructor(props: QuickSlidesProps) {
+		super(props);
 		this.state = {
 			data: {
 				title: "",
@@ -29,7 +41,7 @@ export default class QuickSlides extends React.PureComponent {
 			.then(content => {
 				let data = yaml.load(content);
 				this.setState({
-					data: data,
+					data: data as any,
 				});
 			});
 	}
@@ -41,13 +53,13 @@ export default class QuickSlides extends React.PureComponent {
 		}
 		let slides = [];
 		for (const [i, slide] of data.slides.entries()) {
-			let content = "";
+			let content: string | JSX.Element = "";
 			switch (slide.type) {
 				case "title":
 					let img = null;
 					if (slide.img) {
 						if (slide.img === "logo") {
-							img = <Logo />;
+							img = <Logo animate={false} />;
 						} else {
 							let imgurl = require(`../../assets/${slide.img}`);
 							img = (
@@ -82,7 +94,12 @@ export default class QuickSlides extends React.PureComponent {
 					content = <SecMarkdown markdown={slide.content} />;
 					break;
 			}
-			let slideProps = {};
+			let slideProps: Omit<SlideProps, "children"> = {
+				name: slide.name,
+				sticky: false,
+				stickyUntil: "",
+				className: "",
+			};
 			if (slide.sticky) {
 				slideProps.sticky = true;
 				if (typeof slide.sticky === "string" || slide.sticky !== true) {
@@ -101,7 +118,8 @@ export default class QuickSlides extends React.PureComponent {
 		return (
 			<>
 				<DocumentTitle title={this.state.data.title ?? ""} />
-				<SlideDeck>{slides}</SlideDeck>
+				{/* @ts-expect-error temporary */}
+				<SlideDeck>{...slides}</SlideDeck>
 			</>
 		);
 	}

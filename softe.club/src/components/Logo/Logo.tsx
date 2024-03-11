@@ -1,6 +1,5 @@
 import React from "react";
 import "./Logo.scss";
-import PropTypes from "prop-types";
 import { motion } from "framer-motion";
 
 interface LogoProps {

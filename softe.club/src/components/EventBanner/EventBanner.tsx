@@ -1,16 +1,9 @@
 import "./EventBanner.scss";
 import dayjs from "dayjs";
-import * as SEC from "../SEC/lib.js";
+import * as SEC from "../SEC/lib";
+import type { SECEvent } from "../../Events";
 
-interface EventBannerProps {
-	flyerSource?: string;
-	altText?: string;
-	title?: string;
-	desc: string;
-	startDate: dayjs.Dayjs;
-	endDate: dayjs.Dayjs;
-	meetingLink?: string;
-	isGbm?: boolean;
+interface EventBannerProps extends SECEvent {
 	now?: dayjs.Dayjs;
 }
 

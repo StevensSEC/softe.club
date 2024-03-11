@@ -1,5 +1,5 @@
 import React from "react";
-import * as SEC from "../SEC/lib.js";
+import * as SEC from "../SEC/lib";
 
 interface ContributionsProps {
 	display: string;
@@ -10,7 +10,7 @@ interface ContributionsProps {
 /**
  * Display Open Source Contributions made by club members.
  */
-const Contributions = (props: ContributionsProps): JSX.Element => {
+const Contributions: React.FC<ContributionsProps> = (props) => {
 	return (
 		<div>
 			<h4>
