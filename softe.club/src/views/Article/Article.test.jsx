@@ -168,7 +168,7 @@ describe("ArticleView", () => {
 			"events/pimp-my-terminal/pimp-my-terminal.md",
 			{
 				articleProps: {
-					source: "events/pimp-my-terminal/pimp-my-terminal.md",
+					source: "events/pimp-my-terminal/pimp-my-terminal",
 					title: "Pimp My Terminal",
 				},
 			},

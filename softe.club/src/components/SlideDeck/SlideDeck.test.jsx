@@ -1,7 +1,8 @@
+import { describe, it, expect, beforeEach, afterEach } from "vitest";
 import React from "react";
-// import { unmountComponentAtNode } from "react-dom";
-import { mount } from "enzyme";
+// import { unrenderComponentAtNode } from "react-dom";
 import "@testing-library/jest-dom";
+import {render, cleanup} from '@testing-library/react';
 
 import { SlideDeck, Slide } from "./SlideDeck.js";
 
@@ -15,27 +16,25 @@ describe("SlideDeck", () => {
 		});
 
 		afterEach(() => {
-			// unmountComponentAtNode(container);
+			// unrenderComponentAtNode(container);
 		});
 
 		it("should render only the first slide by default", () => {
-			let wrapper = mount(
+			let wrapper = render(
 				<SlideDeck>
 					<Slide>rendered</Slide>
 					<Slide>not rendered</Slide>
 				</SlideDeck>,
-				container
 			);
 			expect(wrapper.find(".slide").text()).toEqual("rendered");
 		});
 
 		it("should navigate to the next slide", () => {
-			let wrapper = mount(
+			let wrapper = render(
 				<SlideDeck>
 					<Slide>Slide 0</Slide>
 					<Slide>Slide 1</Slide>
 				</SlideDeck>,
-				container
 			);
 			wrapper.instance().nextSlide = jest.fn();
 			wrapper.find(".slide").simulate("click");
@@ -50,12 +49,11 @@ describe("SlideDeck", () => {
 		});
 
 		it("should navigate to the previous slide", () => {
-			let wrapper = mount(
+			let wrapper = render(
 				<SlideDeck>
 					<Slide>Slide 0</Slide>
 					<Slide>Slide 1</Slide>
 				</SlideDeck>,
-				container
 			);
 			wrapper.instance().prevSlide = jest.fn();
 			wrapper.instance().setState({ currentSlide: 1 });
@@ -69,11 +67,10 @@ describe("SlideDeck", () => {
 		});
 
 		it("should exit fullscreen", () => {
-			let wrapper = mount(
+			let wrapper = render(
 				<SlideDeck>
 					<Slide>Slide 0</Slide>
 				</SlideDeck>,
-				container
 			);
 			wrapper.instance().setState({ isFullscreen: true });
 			document.dispatchEvent(new KeyboardEvent("keydown", { key: "Escape", keyCode: 27 }));
@@ -90,16 +87,15 @@ describe("SlideDeck", () => {
 		});
 
 		afterEach(() => {
-			unmountComponentAtNode(container);
+			unrenderComponentAtNode(container);
 		});
 
 		it("should advance to the next slide", () => {
-			let wrapper = mount(
+			let wrapper = render(
 				<SlideDeck>
 					<Slide>Slide 0</Slide>
 					<Slide>Slide 1</Slide>
 				</SlideDeck>,
-				container
 			);
 			wrapper.instance().nextSlide();
 			expect(wrapper.instance().state.currentSlide).toEqual(1);
@@ -107,12 +103,11 @@ describe("SlideDeck", () => {
 		});
 
 		it("should go back to the previous slide", () => {
-			let wrapper = mount(
+			let wrapper = render(
 				<SlideDeck>
 					<Slide>Slide 0</Slide>
 					<Slide>Slide 1</Slide>
 				</SlideDeck>,
-				container
 			);
 			wrapper.instance().setState({ currentSlide: 1 });
 			wrapper.instance().prevSlide();
@@ -130,17 +125,16 @@ describe("SlideDeck", () => {
 		});
 
 		afterEach(() => {
-			unmountComponentAtNode(container);
+			unrenderComponentAtNode(container);
 		});
 
 		it("single simple sticky slide", () => {
-			let wrapper = mount(
+			let wrapper = render(
 				<SlideDeck>
 					<Slide sticky>Slide 0</Slide>
 					<Slide>Slide 1</Slide>
 					<Slide>Slide 2</Slide>
 				</SlideDeck>,
-				container
 			);
 			wrapper.instance().nextSlide();
 			expect(wrapper.instance().state.currentSlide).toEqual(1);
@@ -151,14 +145,13 @@ describe("SlideDeck", () => {
 		});
 
 		it("2 sticky slides, one should override the other", () => {
-			let wrapper = mount(
+			let wrapper = render(
 				<SlideDeck>
 					<Slide sticky>Slide 0</Slide>
 					<Slide sticky>Slide 1</Slide>
 					<Slide>Slide 2</Slide>
 					<Slide>Slide 3</Slide>
 				</SlideDeck>,
-				container
 			);
 			wrapper.instance().nextSlide();
 			expect(wrapper.instance().state.currentSlide).toEqual(1);
@@ -172,7 +165,7 @@ describe("SlideDeck", () => {
 		});
 
 		it("1 sticky slide with stickyUntil using slide index", () => {
-			let wrapper = mount(
+			let wrapper = render(
 				<SlideDeck>
 					<Slide sticky stickyUntil={2}>
 						Slide 0
@@ -181,7 +174,6 @@ describe("SlideDeck", () => {
 					<Slide>Slide 2</Slide>
 					<Slide>Slide 3</Slide>
 				</SlideDeck>,
-				container
 			);
 			wrapper.instance().nextSlide();
 			wrapper.update();
@@ -198,7 +190,7 @@ describe("SlideDeck", () => {
 		});
 
 		it("1 sticky slide with stickyUntil using names", () => {
-			let wrapper = mount(
+			let wrapper = render(
 				<SlideDeck>
 					<Slide sticky stickyUntil={"hide-sticky"}>
 						Slide 0
@@ -207,7 +199,6 @@ describe("SlideDeck", () => {
 					<Slide name="hide-sticky">Slide 2</Slide>
 					<Slide>Slide 3</Slide>
 				</SlideDeck>,
-				container
 			);
 			wrapper.instance().nextSlide();
 			wrapper.update();

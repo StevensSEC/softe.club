@@ -9,5 +9,9 @@ export default defineConfig({
   assetsInclude: ['**/*.md', '**/*.yaml'],
   build: {
     cssMinify: "lightningcss",
+  },
+  test: {
+    environment: "jsdom",
+    globals: true,
   }
 })

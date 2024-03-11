@@ -1,4 +1,5 @@
 /* eslint-disable no-console */
+import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
 import React from "react";
 import { mount } from "enzyme";
 
@@ -6,16 +7,16 @@ import ErrorBoundaryLoader from "./ErrorBoundaryLoader.js";
 
 let wrapper = null;
 describe("ErrorBoundaryLoader tests", () => {
+	let consoleErrorSpy;
 	beforeEach(() => {
-		jest.spyOn(console, "error");
-		console.error.mockImplementation(() => {});
+		consoleErrorSpy = vi.spyOn(console, "error").mockImplementation(() => {});
 	});
 
 	afterEach(() => {
 		if (wrapper) {
 			wrapper.unmount();
 		}
-		console.error.mockRestore();
+		consoleErrorSpy?.mockRestore();
 	});
 
 	it("should render without crashing", () => {
