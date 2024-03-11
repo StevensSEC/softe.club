@@ -8,6 +8,7 @@ import Logo from "../../components/Logo/Logo";
 import type { SlideProps } from "../../components/SlideDeck/SlideDeck.js";
 
 const slides = import.meta.glob("../../slides/**/*.yaml");
+const images = import.meta.glob("../../assets/**/*.(png|jpg|svg)", { eager: true });
 
 interface QuickSlidesProps {
 	slidePath: string;
@@ -66,7 +67,7 @@ export default class QuickSlides extends React.PureComponent<QuickSlidesProps, Q
 						if (slide.img === "logo") {
 							img = <Logo animate={false} />;
 						} else {
-							let imgurl = require(`../../assets/${slide.img}`);
+							let imgurl = images[`../../assets/${slide.img}`].default;
 							img = (
 								<img
 									src={imgurl.default ?? imgurl}
