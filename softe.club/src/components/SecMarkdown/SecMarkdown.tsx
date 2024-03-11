@@ -48,11 +48,11 @@ const mdLink: React.FC<{ href: string }> = props => {
 			);
 		} else {
 			throw new Error(
+				// @ts-expect-error temp
 				`Invalid mdLink command: ${command}, original link text: ${props.children[0].props.value}`
 			);
 		}
 	} else {
-		// @ts-expect-error temp
 		return <SEC.Link {...props} />;
 	}
 };

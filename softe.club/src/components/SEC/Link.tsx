@@ -11,7 +11,6 @@ class InvalidRouteError extends Error {}
 
 interface LinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
 	href: string;
-	children: string | React.ReactElement[];
 }
 
 /**
@@ -40,6 +39,7 @@ const Link: React.FC<LinkProps> = ({ href, children, target }) => {
 	}
 
 	// The original link's text, as parsed from markdown
+	// @ts-expect-error temp
 	let originalText = typeof children === "string" ? children : children[0].props.value;
 
 	if (shouldUseRouter(href)) {

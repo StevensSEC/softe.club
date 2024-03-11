@@ -7,7 +7,7 @@ import EventBanner from "../../components/EventBanner/EventBanner";
 import { EVENTS } from "../../Events";
 import Logo from "../../components/Logo/Logo";
 
-export const HomeView: React.FC<void> = () => {
+export const HomeView: React.FC<any> = () => {
 	return (
 		<div>
 			<DocumentTitle title="" />
@@ -29,7 +29,7 @@ export const HomeView: React.FC<void> = () => {
 				{EVENTS.map((event, index) => {
 					return <EventBanner key={"eventBanner-" + index} {...event} />;
 				})}
-				<ArticleList></ArticleList>
+				<ArticleList />
 			</Container>
 		</div>
 	);

@@ -4,7 +4,7 @@ import PROJECTS from "./Projects";
 import { Orientation } from "./SLPComponent";
 import SLP from "./SLPComponent";
 
-const SLPView = (): JSX.Element => {
+const SLPView: React.FC<any> = () =>{
 	const getNextOrientation = (ori: Orientation): Orientation => {
 		return ori === "left" ? "right" : "left";
 	};

@@ -5,7 +5,7 @@ import DocumentTitle from "../../components/DocumentTitle/DocumentTitle";
 import "./NotFound.scss";
 import Logo from "../../components/Logo/Logo.jsx";
 
-export const NotFoundView: React.FC<void> = () => {
+export const NotFoundView: React.FC<any> = () => {
 	let location = useLocation().pathname;
 
 	return (

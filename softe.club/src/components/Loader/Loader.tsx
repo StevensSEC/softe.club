@@ -32,7 +32,9 @@ const LoaderLogo: React.FC<{ anim: any, initShape: any }> = ({ anim, initShape }
 	);
 };
 
-const Loader: React.FC<void> = () => {
+export interface LoaderProps {}
+
+const Loader: React.FC<LoaderProps> = () => {
 	const vertecies = 12;
 	const initShape = generateRandomShape(vertecies);
 	const loaderAnimation = {
