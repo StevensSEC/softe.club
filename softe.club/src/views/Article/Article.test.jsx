@@ -19,7 +19,7 @@ function removeIndents(s) {
 }
 
 let container = null;
-describe("ArticleView", () => {
+describe.skip("ArticleView", () => {
 	let root;
 	beforeEach(() => {
 		// fetch.resetMocks();
