@@ -5,13 +5,15 @@ import HtmlParser from "react-markdown/plugins/html-parser";
 import CodeBlock from "../../components/CodeBlock/CodeBlock";
 import * as SEC from "../SEC/lib.js";
 import "./SecMarkdown.scss";
+import remarkGfm from 'remark-gfm';
+import rehypePrism from '@mapbox/rehype-prism';
 
 // See https://github.com/aknuds1/html-to-react#with-custom-processing-instructions
 // for more info on the processing instructions
-const parseHtml = HtmlParser({
-	// @ts-expect-error temporary fix until react-markdown is updated
-	isValidNode: node => node.type !== "script",
-});
+// const parseHtml = HtmlParser({
+// 	// @ts-expect-error temporary fix until react-markdown is updated
+// 	isValidNode: node => node.type !== "script",
+// });
 
 const lazyImage: React.FC<React.ImgHTMLAttributes<any>> = props => {
 	// This is a fairly recent browser feature. It'll be ignored on older browsers.
@@ -67,14 +69,13 @@ interface SecMarkdownProps {
  */
 const SecMarkdown: React.FC<SecMarkdownProps> = ({ markdown }) => {
 	if (markdown) {
-		// return <div>{markdown}</div>
 		return (
 			<Markdown
 				className="markdown"
-				escapeHtml={false}
-				astPlugins={[parseHtml]}
-				renderers={{ code: CodeBlock, link: mdLink, image: lazyImage }}
-				transformImageUri={uri => {
+				components={{ pre: CodeBlock, a: mdLink, img: lazyImage }}
+				remarkPlugins={[remarkGfm]}
+				disallowedElements={["script"]}
+				urlTransform={(uri: string) => {
 					if (uri.startsWith("http")) {
 						return uri;
 					}

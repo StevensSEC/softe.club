@@ -47,7 +47,7 @@ export default function PimpMyTerminal() {
 			</Grid>
 			<motion.div {...articleInAnimation}>
 				<ArticleView
-					source="events/pimp-my-terminal/pimp-my-terminal.md"
+					source="events/pimp-my-terminal/pimp-my-terminal"
 					title="Pimp My Terminal"
 				/>
 			</motion.div>

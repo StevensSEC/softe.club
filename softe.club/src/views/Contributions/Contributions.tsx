@@ -11,7 +11,7 @@ const ContributionsView: React.FC<any> = () =>{
 
 	useEffect(() => {
 		(async () => {
-			const text = await fetchMarkdown("contributions.md");
+			const text = await fetchMarkdown("contributions");
 			setMarkdown(text);
 		})();
 	});

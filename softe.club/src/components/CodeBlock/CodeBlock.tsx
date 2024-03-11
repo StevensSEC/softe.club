@@ -5,7 +5,7 @@ import okaidia from "react-syntax-highlighter/dist/esm/styles/prism/okaidia";
 import "./CodeBlock.scss";
 
 interface CodeBlockProps extends CodeBlockMeta {
-	value: string;
+	children: string;
 }
 
 interface CodeBlockContainerProps {
@@ -35,13 +35,14 @@ const CodeBlockContainer: React.FC<CodeBlockContainerProps> = ({ children, meta 
 }
 
 const CodeBlock: React.FC<CodeBlockProps> = (props) => {
-	let { language, platform, value } = props;
+	let { language, platform, children } = props;
+	console.log(props)
 
 	if (language && language.includes(",")) {
 		[language, platform] = language.split(",").map(x => x.trim());
 	}
 
-	if (language !== null) {
+	if (language) {
 		return (
 			<SyntaxHighlighter
 				language={language}
@@ -49,13 +50,13 @@ const CodeBlock: React.FC<CodeBlockProps> = (props) => {
 				PreTag={CodeBlockContainer}
 				meta={{ language, platform }}
 			>
-				{value}
+				{children}
 			</SyntaxHighlighter>
 		);
 	} else {
 		return (
 			<CodeBlockContainer>
-				<code>{value}</code>
+				<code>{children}</code>
 			</CodeBlockContainer>
 		);
 	}

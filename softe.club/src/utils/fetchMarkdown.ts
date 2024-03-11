@@ -1,5 +1,7 @@
+const articles = import.meta.glob('../articles/**/*.md')
+
 const fetchMarkdown = async (source: string): Promise<string> => {
-	let url = await import(`../articles/${source}.md`);
+	let url = await articles[`../articles/${source}.md`]() as any;
 	if (url.default) {
 		url = url.default;
 	}
