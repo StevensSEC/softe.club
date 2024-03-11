@@ -8,7 +8,7 @@ import ErrorBoundaryLoader from "./components/Loader/ErrorBoundaryLoader.js";
 import ROUTES from "./Router.js";
 import { UxContext } from "./contexts.ts";
 
-import SecStyle from "./variables.scss";
+import * as SecStyle from "./variables.scss";
 
 const Header = lazy(() =>
 	import(/* webpackChunkName: "components" */ "./components/Header/Header")

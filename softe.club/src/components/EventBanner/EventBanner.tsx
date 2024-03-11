@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import "./EventBanner.scss";
 import dayjs from "dayjs";
 import * as SEC from "../SEC/lib";
@@ -10,11 +11,22 @@ interface EventBannerProps extends SECEvent {
 const EventBanner: React.FC<EventBannerProps> = (props) => {
 	let now: dayjs.Dayjs = props.now ?? dayjs();
 
-	let flyer = props.flyerSource ? require(`../../assets/flyers/${props.flyerSource}`) : null;
+	let isVisible = (!props.endDate || now.isBefore(props.endDate)) && (!props.startDate || !props.isGbm || props.startDate.subtract(7, "day").isBefore(now));
+
+	let flyer: string | null = null;
+	useEffect(() => {
+		if (!props.flyerSource || !isVisible) {
+			return;
+		}
+		(async () => {
+			flyer = (await import(`../../assets/${props.flyerSource}`)).default;
+		})()
+	})
+
 	let imageElement = flyer ? (
 		<img
 			loading="lazy"
-			src={flyer.default}
+			src={flyer}
 			alt={
 				props.altText
 					? `${props.altText}`
@@ -30,8 +42,7 @@ const EventBanner: React.FC<EventBannerProps> = (props) => {
 		props.endDate.isAfter(now);
 
 	if (
-		(!props.endDate || now.isBefore(props.endDate)) &&
-		(!props.startDate || !props.isGbm || props.startDate.subtract(7, "day").isBefore(now))
+		isVisible
 	) {
 		return (
 			<div className="club-event">
