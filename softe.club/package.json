@@ -1,0 +1,49 @@
+{
+  "name": "softe.club",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "engines": {
+    "node": "16",
+    "yarn": "4"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "lint": "eslint --config .eslintrc.js --report-unused-disable-directives --fix . && prettier --config prettier.config.js --write src/**/*.{js,jsx,json,ts,tsx,md,mdx,css,html,yml,yaml,scss}",
+    "lint-check": "eslint --config .eslintrc.js --report-unused-disable-directives . && prettier --config prettier.config.js --check src/**/*.{js,jsx,json,ts,tsx,md,mdx,css,html,yml,yaml,scss}",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@material-ui/core": "^4.12.4",
+    "@material-ui/icons": "^4.11.3",
+    "animejs": "^3.2.1",
+    "dayjs": "^1.11.7",
+    "framer-motion": "^1.11.1",
+    "js-yaml": "^3.14.1",
+    "prismjs": "^1.29.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-markdown": "^4.3.1",
+    "react-router-dom": "^5.3.4",
+    "react-scripts": "^4.0.3",
+    "react-svg": "^11.2.5",
+    "react-syntax-highlighter": "^12.2.1",
+    "sass": "1.56.1"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.56",
+    "@types/react-dom": "^18.2.19",
+    "@typescript-eslint/eslint-plugin": "^7.0.2",
+    "@typescript-eslint/parser": "^7.0.2",
+    "@vitejs/plugin-react-swc": "^3.5.0",
+    "eslint": "^8.56.0",
+    "eslint-plugin-jsx-a11y": "^6.6.1",
+    "eslint-plugin-react": "^7.31.11",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.5",
+    "typescript": "^5.2.2",
+    "vite": "^5.1.4"
+  },
+  "packageManager": "yarn@4.1.1"
+}

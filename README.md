@@ -17,6 +17,7 @@ nvm install 14
 
 Once node is installed, run:
 ```
+corepack enable
 npm install
 ```
 
