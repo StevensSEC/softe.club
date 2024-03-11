@@ -33,22 +33,25 @@ export default class QuickSlides extends React.PureComponent<QuickSlidesProps, Q
 	}
 
 	componentDidMount() {
-		slides[`../../slides/${this.props.slidePath}.yaml`]().then((src: any) => {
-			if (src.default) {
-				return src.default;
-			}
-			return src
-		}).then((src: string) => {
-			fetch(src).then((res: Response) => {
-				return res.text();
+		slides[`../../slides/${this.props.slidePath}.yaml`]()
+			.then((src: any) => {
+				if (src.default) {
+					return src.default;
+				}
+				return src;
 			})
-			.then((content: string) => {
-				let data = yaml.load(content);
-				this.setState({
-					data: data as any,
-				});
+			.then((src: string) => {
+				fetch(src)
+					.then((res: Response) => {
+						return res.text();
+					})
+					.then((content: string) => {
+						let data = yaml.load(content);
+						this.setState({
+							data: data as any,
+						});
+					});
 			});
-		});
 	}
 
 	render() {
@@ -66,7 +69,7 @@ export default class QuickSlides extends React.PureComponent<QuickSlidesProps, Q
 						if (slide.img === "logo") {
 							img = <Logo animate={false} />;
 						} else {
-							let imgurl = (images[`../../assets/${slide.img}`]as {default: string});
+							let imgurl = images[`../../assets/${slide.img}`] as { default: string };
 							img = (
 								<img
 									src={imgurl.default ?? imgurl}

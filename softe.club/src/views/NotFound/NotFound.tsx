@@ -30,6 +30,6 @@ export const NotFoundView: React.FC<any> = () => {
 			</Grid>
 		</>
 	);
-}
+};
 
 export default NotFoundView;

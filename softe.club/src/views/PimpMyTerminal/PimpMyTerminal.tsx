@@ -61,7 +61,7 @@ export default function PimpMyTerminal() {
 	);
 }
 
-const Hero: React.FC<any> = (props) => {
+const Hero: React.FC<any> = props => {
 	const drawTextAnimation = {
 		animate: {
 			pathLength: [0, 0.3],
@@ -90,4 +90,4 @@ const Hero: React.FC<any> = (props) => {
 			/>
 		</motion.svg>
 	);
-}
+};

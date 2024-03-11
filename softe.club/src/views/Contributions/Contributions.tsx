@@ -6,7 +6,7 @@ import SecMarkdown from "../../components/SecMarkdown/SecMarkdown";
 import fetchMarkdown from "../../utils/fetchMarkdown";
 import "./Contributions.scss";
 
-const ContributionsView: React.FC<any> = () =>{
+const ContributionsView: React.FC<any> = () => {
 	const [markdown, setMarkdown] = useState("");
 
 	useEffect(() => {

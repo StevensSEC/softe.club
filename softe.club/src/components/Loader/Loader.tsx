@@ -20,7 +20,7 @@ function generateRandomShape(vertecies: number, offsetX = 100, offsetY = 100) {
 
 export interface LoaderProps {}
 
-export default class Loader<P=LoaderProps, S={}> extends Component<P, S> {
+export default class Loader<P = LoaderProps, S = {}> extends Component<P, S> {
 	vertecies = 12;
 	initShape: string;
 	loaderAnimation: anime.AnimeParams;

@@ -65,6 +65,6 @@ const SlideDeckDemo: React.FC<any> = () => {
 			</SlideDeck>
 		</div>
 	);
-}
+};
 
 export default SlideDeckDemo;

@@ -8,10 +8,12 @@ interface EventBannerProps extends SECEvent {
 	now?: dayjs.Dayjs;
 }
 
-const EventBanner: React.FC<EventBannerProps> = (props) => {
+const EventBanner: React.FC<EventBannerProps> = props => {
 	let now: dayjs.Dayjs = props.now ?? dayjs();
 
-	let isVisible = (!props.endDate || now.isBefore(props.endDate)) && (!props.startDate || !props.isGbm || props.startDate.subtract(7, "day").isBefore(now));
+	let isVisible =
+		(!props.endDate || now.isBefore(props.endDate)) &&
+		(!props.startDate || !props.isGbm || props.startDate.subtract(7, "day").isBefore(now));
 
 	let flyer: string | null = null;
 	useEffect(() => {
@@ -20,8 +22,8 @@ const EventBanner: React.FC<EventBannerProps> = (props) => {
 		}
 		(async () => {
 			flyer = (await import(`../../assets/${props.flyerSource}.png`)).default;
-		})()
-	})
+		})();
+	});
 
 	let imageElement = flyer ? (
 		<img
@@ -41,9 +43,7 @@ const EventBanner: React.FC<EventBannerProps> = (props) => {
 		props.startDate.isBefore(now) &&
 		props.endDate.isAfter(now);
 
-	if (
-		isVisible
-	) {
+	if (isVisible) {
 		return (
 			<div className="club-event">
 				<div

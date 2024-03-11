@@ -33,6 +33,6 @@ export const HomeView: React.FC<any> = () => {
 			</Container>
 		</div>
 	);
-}
+};
 
 export default HomeView;

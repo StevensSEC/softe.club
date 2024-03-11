@@ -11,7 +11,7 @@ export interface ArticleViewProps {
 	title: string;
 }
 
-const ArticleView: React.FC<ArticleViewProps> = (props) => {
+const ArticleView: React.FC<ArticleViewProps> = props => {
 	const [markdown, setMarkdown] = useState<string>();
 	const [__previousSource, setPreviousSource] = useState<string>();
 

@@ -10,7 +10,7 @@ interface ContributionsProps {
 /**
  * Display Open Source Contributions made by club members.
  */
-const Contributions: React.FC<ContributionsProps> = (props) => {
+const Contributions: React.FC<ContributionsProps> = props => {
 	return (
 		<div>
 			<h4>

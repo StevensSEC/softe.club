@@ -12,7 +12,15 @@ interface ButtonProps {
 	children: any;
 }
 
-const Button: React.FC<ButtonProps> = ({ kind = "generic", to, onClick, className, activeClassName, children, ...other }) => {
+const Button: React.FC<ButtonProps> = ({
+	kind = "generic",
+	to,
+	onClick,
+	className,
+	activeClassName,
+	children,
+	...other
+}) => {
 	const history = useHistory();
 
 	const shouldUseRouter = () => {
@@ -23,7 +31,7 @@ const Button: React.FC<ButtonProps> = ({ kind = "generic", to, onClick, classNam
 		}
 	};
 
-	const handleClick: React.MouseEventHandler = (e) => {
+	const handleClick: React.MouseEventHandler = e => {
 		e.preventDefault();
 		if (onClick) {
 			onClick(e);
@@ -67,6 +75,6 @@ Button.defaultProps = {
 	kind: "generic",
 	to: undefined,
 	onClick: undefined,
-}
+};
 
 export default Button;

@@ -5,7 +5,7 @@ import HtmlParser from "react-markdown/plugins/html-parser";
 import CodeBlock from "../../components/CodeBlock/CodeBlock";
 import * as SEC from "../SEC/lib.js";
 import "./SecMarkdown.scss";
-import remarkGfm from 'remark-gfm';
+import remarkGfm from "remark-gfm";
 
 // See https://github.com/aknuds1/html-to-react#with-custom-processing-instructions
 // for more info on the processing instructions
@@ -27,7 +27,9 @@ const mdLink: React.FC<{ href: string }> = props => {
 	let command: string | undefined = undefined;
 	let args: string[] = [];
 	// @ts-expect-error temp
-	let text: string = Array.isArray(props.children) ? props.children[0].props.value : props.children;
+	let text: string = Array.isArray(props.children)
+		? props.children[0].props.value
+		: props.children;
 	if (text.startsWith(cmdPrefix)) {
 		let fullcommand;
 		[fullcommand, text] = text.split(":");

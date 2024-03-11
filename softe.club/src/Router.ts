@@ -6,7 +6,6 @@ export interface Route {
 	Component: React.FC<any>;
 	articleProps?: ArticleViewProps | null;
 	slideProps?: { slidePath: string; title?: string };
-
 }
 
 // attendance url is currently for GBM4
@@ -48,14 +47,14 @@ export const ROUTES: Route[] = [
 	},
 	{
 		path: "/recordings",
-		Component: lazy(() =>
-			import(/* webpackChunkName: "recordings" */ "./views/Recordings/Recordings")
+		Component: lazy(
+			() => import(/* webpackChunkName: "recordings" */ "./views/Recordings/Recordings")
 		),
 	},
 	{
 		path: "/contributions",
-		Component: lazy(() =>
-			import(/* webpackChunkName: "article" */ "./views/Contributions/Contributions")
+		Component: lazy(
+			() => import(/* webpackChunkName: "article" */ "./views/Contributions/Contributions")
 		),
 	},
 	// HACK: This is required to redirect to an external page. The `Redirect` component only redirects to paths on the same host.
@@ -117,28 +116,28 @@ export const ROUTES: Route[] = [
 	},
 	{
 		path: "/dev/components",
-		Component: lazy(() =>
-			import(/* webpackChunkName: "demo" */ "./views/ComponentsDemo/ComponentsDemo.js")
+		Component: lazy(
+			() => import(/* webpackChunkName: "demo" */ "./views/ComponentsDemo/ComponentsDemo.js")
 		),
 	},
 	{
 		path: "/dev/slides/slide-deck",
-		Component: lazy(() =>
-			import(/* webpackChunkName: "demo" */ "./views/SlideDeckDemo/SlideDeckDemo.js")
+		Component: lazy(
+			() => import(/* webpackChunkName: "demo" */ "./views/SlideDeckDemo/SlideDeckDemo.js")
 		),
 	},
 	{
 		path: "/dev/slides/quick-slides",
 		slideProps: { slidePath: "example-slides", title: "Example" },
-		Component: lazy(() =>
-			import(/* webpackChunkName: "quick-slides" */ "./views/Slides/QuickSlides.js")
+		Component: lazy(
+			() => import(/* webpackChunkName: "quick-slides" */ "./views/Slides/QuickSlides.js")
 		),
 	},
 	{
 		path: "/dev/slides/slide-names",
 		slideProps: { slidePath: "slide-names", title: "Slide Names" },
-		Component: lazy(() =>
-			import(/* webpackChunkName: "quick-slides" */ "./views/Slides/QuickSlides.js")
+		Component: lazy(
+			() => import(/* webpackChunkName: "quick-slides" */ "./views/Slides/QuickSlides.js")
 		),
 	},
 	{
@@ -158,14 +157,17 @@ export const ROUTES: Route[] = [
 	},
 	{
 		path: "/event/pimp-my-terminal",
-		Component: lazy(() =>
-			import(/* webpackChunkName: "pmt" */ "./views/PimpMyTerminal/PimpMyTerminal")
+		Component: lazy(
+			() => import(/* webpackChunkName: "pmt" */ "./views/PimpMyTerminal/PimpMyTerminal")
 		),
 	},
 	{
 		path: "/slides/gbm/fall-2020-welcome-back",
-		Component: lazy(() =>
-			import(/* webpackChunkName: "gbm1" */ "./views/Slides/fall-2020-gbm1/fall-2020-gbm1")
+		Component: lazy(
+			() =>
+				import(
+					/* webpackChunkName: "gbm1" */ "./views/Slides/fall-2020-gbm1/fall-2020-gbm1"
+				)
 		),
 	},
 	{
@@ -269,36 +271,36 @@ export const ROUTES: Route[] = [
 	{
 		path: "/slides/event/debugging-workshop",
 		slideProps: { slidePath: "events/debugging-workshop" },
-		Component: lazy(() =>
-			import(/* webpackChunkName: "quick-slides" */ "./views/Slides/QuickSlides.js")
+		Component: lazy(
+			() => import(/* webpackChunkName: "quick-slides" */ "./views/Slides/QuickSlides.js")
 		),
 	},
 	{
 		path: "/slides/event/rust-workshop",
 		slideProps: { slidePath: "events/rust-workshop" },
-		Component: lazy(() =>
-			import(/* webpackChunkName: "quick-slides" */ "./views/Slides/QuickSlides.js")
+		Component: lazy(
+			() => import(/* webpackChunkName: "quick-slides" */ "./views/Slides/QuickSlides.js")
 		),
 	},
 	{
 		path: "/slides/spring-2021-gbm1",
 		slideProps: { slidePath: "spring-2021-gbm1" },
-		Component: lazy(() =>
-			import(/* webpackChunkName: "quick-slides" */ "./views/Slides/QuickSlides.js")
+		Component: lazy(
+			() => import(/* webpackChunkName: "quick-slides" */ "./views/Slides/QuickSlides.js")
 		),
 	},
 	{
 		path: "/slides/fall-2022-learnhack",
 		slideProps: { slidePath: "fall-2022-learnhack" },
-		Component: lazy(() =>
-			import(/*webpackChunkName: "quick-slides" */ "./views/Slides/QuickSlides.js")
+		Component: lazy(
+			() => import(/*webpackChunkName: "quick-slides" */ "./views/Slides/QuickSlides.js")
 		),
 	},
 	{
 		path: "/slides/spring-2021-learnhack",
 		slideProps: { slidePath: "spring-2021-learnhack" },
-		Component: lazy(() =>
-			import(/* webpackChunkName: "quick-slides" */ "./views/Slides/QuickSlides.js")
+		Component: lazy(
+			() => import(/* webpackChunkName: "quick-slides" */ "./views/Slides/QuickSlides.js")
 		),
 	},
 	{
@@ -309,8 +311,8 @@ export const ROUTES: Route[] = [
 	{
 		path: "/slides/events/pair-programming-s21",
 		slideProps: { slidePath: "events/pair-programming-s21" },
-		Component: lazy(() =>
-			import(/* webpackChunkName: "quick-slides" */ "./views/Slides/QuickSlides.js")
+		Component: lazy(
+			() => import(/* webpackChunkName: "quick-slides" */ "./views/Slides/QuickSlides.js")
 		),
 	},
 	{
@@ -324,15 +326,15 @@ export const ROUTES: Route[] = [
 	{
 		path: "/slides/events/pair-programming-s22",
 		slideProps: { slidePath: "events/pair-programming-s22" },
-		Component: lazy(() =>
-			import(/* webpackChunkName: "quick-slides" */ "./views/Slides/QuickSlides.js")
+		Component: lazy(
+			() => import(/* webpackChunkName: "quick-slides" */ "./views/Slides/QuickSlides.js")
 		),
 	},
 	{
 		path: "/slides/events/react-native-expo-workshop",
 		slideProps: { slidePath: "events/react-native-expo-workshop" },
-		Component: lazy(() =>
-			import(/* webpackChunkName: "quick-slides" */ "./views/Slides/QuickSlides.js")
+		Component: lazy(
+			() => import(/* webpackChunkName: "quick-slides" */ "./views/Slides/QuickSlides.js")
 		),
 	},
 	{
@@ -355,8 +357,8 @@ export const ROUTES: Route[] = [
 	},
 	{
 		path: "*",
-		Component: lazy(() =>
-			import(/* webpackChunkName: "not-found" */ "./views/NotFound/NotFound")
+		Component: lazy(
+			() => import(/* webpackChunkName: "not-found" */ "./views/NotFound/NotFound")
 		),
 	},
 ];

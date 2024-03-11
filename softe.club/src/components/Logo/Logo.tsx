@@ -9,7 +9,7 @@ interface LogoProps {
 /**
  * Renders the SEC logo with an optional drawing animation.
  */
-const Logo: React.FC<LogoProps> = (props) => {
+const Logo: React.FC<LogoProps> = props => {
 	const transition = {
 		duration: props.animate ? 1.25 : 0,
 		ease: "circOut",
@@ -202,6 +202,6 @@ const Logo: React.FC<LogoProps> = (props) => {
 			/>
 		</motion.svg>
 	);
-}
+};
 
 export default Logo;

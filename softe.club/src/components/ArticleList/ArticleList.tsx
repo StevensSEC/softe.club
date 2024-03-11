@@ -11,12 +11,14 @@ const ArticleList: React.FC<any> = () => {
 			<List>
 				{ROUTES.filter(x => x.hasOwnProperty("articleProps") && !!x.articleProps).map(x => (
 					<ListItem key={x.path}>
-						<SEC.Link href={x.path}>{x.articleProps?.title ?? x.articleProps?.source}</SEC.Link>
+						<SEC.Link href={x.path}>
+							{x.articleProps?.title ?? x.articleProps?.source}
+						</SEC.Link>
 					</ListItem>
 				))}
 			</List>
 		</div>
 	);
-}
+};
 
 export default ArticleList;

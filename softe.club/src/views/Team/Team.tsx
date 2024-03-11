@@ -63,7 +63,7 @@ export default class TeamView extends Component {
 		const eboardList = this.eboardList.map(member => {
 			member = {
 				...member,
-				img: (images[`../../assets/profiles/${member.img}`] as {default: string}).default,
+				img: (images[`../../assets/profiles/${member.img}`] as { default: string }).default,
 			};
 			return member;
 		});

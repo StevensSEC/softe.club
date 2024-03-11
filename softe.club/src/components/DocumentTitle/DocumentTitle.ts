@@ -10,9 +10,9 @@ function updateTitle(title: string) {
 	document.title = pageTitle;
 }
 
-export const DocumentTitle: React.FC<{ title: string }> = (props) => {
+export const DocumentTitle: React.FC<{ title: string }> = props => {
 	updateTitle(props.title);
 	return null;
-}
+};
 
 export default DocumentTitle;

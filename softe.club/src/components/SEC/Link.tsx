@@ -77,10 +77,18 @@ const Link: React.FC<LinkProps> = ({ href, children, target }) => {
 				</a>
 			);
 		} else {
-			return <a href={href} target={target}>{children}</a>;
+			return (
+				<a href={href} target={target}>
+					{children}
+				</a>
+			);
 		}
 	} else {
-		return <a href={href} target={target}>{children}</a>;
+		return (
+			<a href={href} target={target}>
+				{children}
+			</a>
+		);
 	}
 };
 

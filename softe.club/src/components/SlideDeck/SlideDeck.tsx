@@ -20,18 +20,13 @@ export interface SlideProps {
 	children: any;
 }
 
-const Slide: React.FC<SlideProps> = (props) => {
-	return (
-		<Container className={`slide-content ${props.className}`}>
-			{props.children}
-		</Container>
-	);
-}
+const Slide: React.FC<SlideProps> = props => {
+	return <Container className={`slide-content ${props.className}`}>{props.children}</Container>;
+};
 
 // class InvalidChildComponentError extends TypeError {}
 
-interface SlideDeckProps {
-}
+interface SlideDeckProps {}
 
 interface SlideDeckState {
 	currentSlide: number;
@@ -236,7 +231,7 @@ class SlideDeck extends React.Component<SlideDeckProps, SlideDeckState> {
 		if (this.state.stickied.current !== null) {
 			elements.push(
 				<div className="slide sticky" key="sticky">
-				{/* @ts-expect-error temporary */}
+					{/* @ts-expect-error temporary */}
 					{this.props.children[this.state.stickied.current] as ReactNode}
 				</div>
 			);
@@ -247,7 +242,7 @@ class SlideDeck extends React.Component<SlideDeckProps, SlideDeckState> {
 					this.state.stickied.current ? "sticky-is-present" : ""
 				}`}
 				key="currentSlide"
-				>
+			>
 				{/* @ts-expect-error temporary */}
 				{this.props.children[this.state.currentSlide]}
 			</div>
@@ -256,7 +251,7 @@ class SlideDeck extends React.Component<SlideDeckProps, SlideDeckState> {
 		let slideSelect = [];
 		// @ts-expect-error temporary
 		for (let i = 0; i < this.props.children.length; i++) {
-		// @ts-expect-error temporary
+			// @ts-expect-error temporary
 			let name = this.props.children[i].props.name ?? `Slide ${i + 1}`;
 			slideSelect.push(
 				<MenuItem key={i} value={i}>

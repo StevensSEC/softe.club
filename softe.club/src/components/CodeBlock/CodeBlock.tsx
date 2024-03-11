@@ -32,11 +32,11 @@ const CodeBlockContainer: React.FC<CodeBlockContainerProps> = ({ children, meta 
 			{children}
 		</pre>
 	);
-}
+};
 
-const CodeBlock: React.FC<CodeBlockProps> = (props) => {
+const CodeBlock: React.FC<CodeBlockProps> = props => {
 	let { language, platform, children } = props;
-	console.log(props)
+	console.log(props);
 
 	if (language && language.includes(",")) {
 		[language, platform] = language.split(",").map(x => x.trim());
@@ -60,7 +60,7 @@ const CodeBlock: React.FC<CodeBlockProps> = (props) => {
 			</CodeBlockContainer>
 		);
 	}
-}
+};
 
 CodeBlock.defaultProps = {
 	language: undefined,

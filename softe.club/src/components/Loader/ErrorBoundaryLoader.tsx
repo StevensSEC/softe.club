@@ -13,7 +13,10 @@ interface ErrorBoundaryLoaderProps extends LoaderProps {
 
 // this one cannot be converted to a functional component
 
-export default class ErrorBoundaryLoader extends Loader<ErrorBoundaryLoaderProps, { hasError: boolean }> {
+export default class ErrorBoundaryLoader extends Loader<
+	ErrorBoundaryLoaderProps,
+	{ hasError: boolean }
+> {
 	constructor(props: any) {
 		super(props);
 		this.state = { hasError: false };
