@@ -1,4 +1,4 @@
-import { Component, useEffect } from "react";
+import { Component } from "react";
 import { Container, Grid } from "@material-ui/core";
 import * as SEC from "../../components/SEC/lib";
 
@@ -65,7 +65,7 @@ export default class TeamView extends Component {
 			console.log(`../../assets/profiles/${member.img}`);
 			member = {
 				...member,
-				img: images[`../../assets/profiles/${member.img}`].default,
+				img: (images[`../../assets/profiles/${member.img}`] as {default: string}).default,
 			};
 			return member;
 		});

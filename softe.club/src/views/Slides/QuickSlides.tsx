@@ -67,7 +67,7 @@ export default class QuickSlides extends React.PureComponent<QuickSlidesProps, Q
 						if (slide.img === "logo") {
 							img = <Logo animate={false} />;
 						} else {
-							let imgurl = images[`../../assets/${slide.img}`].default;
+							let imgurl = (images[`../../assets/${slide.img}`]as {default: string});
 							img = (
 								<img
 									src={imgurl.default ?? imgurl}
