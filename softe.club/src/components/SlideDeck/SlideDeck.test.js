@@ -1,5 +1,5 @@
 import React from "react";
-import { render, unmountComponentAtNode } from "react-dom";
+// import { unmountComponentAtNode } from "react-dom";
 import { mount } from "enzyme";
 import "@testing-library/jest-dom";
 
@@ -15,7 +15,7 @@ describe("SlideDeck", () => {
 		});
 
 		afterEach(() => {
-			unmountComponentAtNode(container);
+			// unmountComponentAtNode(container);
 		});
 
 		it("should render only the first slide by default", () => {

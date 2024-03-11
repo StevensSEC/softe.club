@@ -1,23 +1,25 @@
 import React from "react";
-import { render, unmountComponentAtNode } from "react-dom";
 import { mount } from "enzyme";
 import "@testing-library/jest-dom";
 import dayjs from "dayjs";
 
 import EventBanner from "./EventBanner";
+import { createRoot } from "react-dom/client";
 
 let container = null;
 describe("EventBanner appearance", () => {
+	let root;
 	beforeEach(() => {
 		container = document.createElement("div");
+		root = createRoot(container);
 	});
 
 	afterEach(() => {
-		unmountComponentAtNode(container);
+		root.unmount();
 	});
 
 	it("should render without crashing", () => {
-		render(<EventBanner />, container);
+		root.render(<EventBanner />, container);
 	});
 
 	it("should contain the text content", () => {
@@ -61,12 +63,14 @@ describe("EventBanner appearance", () => {
 });
 
 describe("Event auto expire", () => {
+	let root;
 	beforeEach(() => {
 		container = document.createElement("div");
+		root = createRoot(container);
 	});
 
 	afterEach(() => {
-		unmountComponentAtNode(container);
+		root.unmount();
 	});
 
 	it("should render if the end time has not been exceeded", () => {

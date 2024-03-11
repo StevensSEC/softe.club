@@ -1,29 +1,30 @@
 import React from "react";
-import { render, unmountComponentAtNode } from "react-dom";
-import { act } from "react-dom/test-utils";
 import { getByTestId, queryByTestId } from "@testing-library/dom";
 import { MemoryRouter } from "react-router-dom";
 import "@testing-library/jest-dom";
 import { shallow, mount } from "enzyme";
 
 import Button from "./Button.js";
+import { createRoot } from "react-dom/client.js";
 
 let container = null;
 describe("Button appearance", () => {
+	let root;
 	beforeEach(() => {
 		container = document.createElement("div");
+		root = createRoot(container);
 	});
 
 	afterEach(() => {
-		unmountComponentAtNode(container);
+		root.unmount();
 	});
 
 	it("should render without crashing", () => {
-		render(<Button>Test</Button>, container);
+		root.render(<Button>Test</Button>, container);
 	});
 
 	it("should render with valid default classes", () => {
-		render(<Button data-testid="btn">Test</Button>, container);
+		root.render(<Button data-testid="btn">Test</Button>, container);
 		let btn = getByTestId(container, "btn");
 		expect(btn).toHaveClass("sec-btn");
 		expect(btn).toHaveClass("sec-kind-generic");
@@ -31,7 +32,7 @@ describe("Button appearance", () => {
 	});
 
 	it("should render the correct kind of button", () => {
-		render(
+		root.render(
 			<Button kind="primary" data-testid="btn">
 				Test
 			</Button>,
@@ -42,7 +43,7 @@ describe("Button appearance", () => {
 	});
 
 	it("should add additional classes when given", () => {
-		render(
+		root.render(
 			<Button className="test" data-testid="btn">
 				Test
 			</Button>,
@@ -55,7 +56,7 @@ describe("Button appearance", () => {
 	});
 
 	it("should render children as it's children", () => {
-		render(
+		root.render(
 			<Button className="test" data-testid="btn">
 				Test
 			</Button>,
@@ -67,22 +68,24 @@ describe("Button appearance", () => {
 });
 
 describe("Button functionality", () => {
+	let root;
 	beforeEach(() => {
 		container = document.createElement("div");
+		root = createRoot(container);
 	});
 
 	afterEach(() => {
-		unmountComponentAtNode(container);
+		root.unmount();
 	});
 
 	it("should render without href by default", () => {
-		render(<Button data-testid="btn">Test</Button>, container);
+		root.render(<Button data-testid="btn">Test</Button>, container);
 		let btn = getByTestId(container, "btn");
 		expect(btn).not.toHaveAttribute("href");
 	});
 
 	it("should populate href attribute", () => {
-		render(
+		root.render(
 			<MemoryRouter>
 				<Button to="/" data-testid="btn">
 					Test

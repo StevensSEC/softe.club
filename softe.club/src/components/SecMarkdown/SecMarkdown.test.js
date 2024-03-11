@@ -1,5 +1,5 @@
 import React from "react";
-import { render, unmountComponentAtNode } from "react-dom";
+import { createRoot } from 'react-dom/client';
 import { act } from "react-dom/test-utils";
 import { getByTestId, queryByTestId } from "@testing-library/dom";
 import "@testing-library/jest-dom";
@@ -7,19 +7,21 @@ import SecMarkdown from "./SecMarkdown.js";
 
 let container = null;
 describe("ArticleView", () => {
+	let root;
 	beforeEach(() => {
 		container = document.createElement("div");
+		root = createRoot(container);
 	});
 
 	afterEach(() => {
-		unmountComponentAtNode(container);
+		root.unmount();
 	});
 
 	it("should render a default button instead of a link", async () => {
 		const markdown = `[!btn:LINK TEXT](https://softe.club)`;
 
 		await act(async () => {
-			render(<SecMarkdown markdown={markdown} />, container);
+			root.render(<SecMarkdown markdown={markdown} />, container);
 		});
 
 		expect(container).toHaveTextContent("LINK TEXT");
@@ -31,7 +33,7 @@ describe("ArticleView", () => {
 		const markdown = `[!btn,primary:LINK TEXT](https://softe.club)`;
 
 		await act(async () => {
-			render(<SecMarkdown markdown={markdown} />, container);
+			root.render(<SecMarkdown markdown={markdown} />, container);
 		});
 
 		expect(container).toHaveTextContent("LINK TEXT");

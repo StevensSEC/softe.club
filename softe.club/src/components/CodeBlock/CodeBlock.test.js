@@ -1,5 +1,4 @@
 import React from "react";
-import { render, unmountComponentAtNode } from "react-dom";
 import "@testing-library/jest-dom";
 import { shallow, mount } from "enzyme";
 
@@ -7,16 +6,18 @@ import CodeBlock from "./CodeBlock.js";
 
 let container = null;
 describe("CodeBlock appearance", () => {
+	let root;
 	beforeEach(() => {
 		container = document.createElement("div");
+		root = createRoot(container);
 	});
 
 	afterEach(() => {
-		unmountComponentAtNode(container);
+		root.unmount();
 	});
 
 	it("should render without crashing", () => {
-		render(<CodeBlock value="Test" />, container);
+		root.render(<CodeBlock value="Test" />, container);
 	});
 
 	it("should contain the text content", () => {

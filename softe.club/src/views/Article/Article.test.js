@@ -1,5 +1,5 @@
 import React from "react";
-import { render, unmountComponentAtNode } from "react-dom";
+import { createRoot } from 'react-dom/client';
 import { act } from "react-dom/test-utils";
 import { getByTestId, queryByTestId } from "@testing-library/dom";
 import "@testing-library/jest-dom";
@@ -20,24 +20,26 @@ function removeIndents(s) {
 
 let container = null;
 describe("ArticleView", () => {
+	let root;
 	beforeEach(() => {
 		fetch.resetMocks();
 		container = document.createElement("div");
+		root = createRoot(container);
 	});
 
 	afterEach(() => {
-		unmountComponentAtNode(container);
+		root.unmount();
 	});
 
 	it("renders without crashing", async () => {
 		await act(async () => {
-			render(<ArticleView source="docs/README.md" title="Basic" />, container);
+			root.render(<ArticleView source="docs/README.md" title="Basic" />, container);
 		});
 	});
 
 	it("should render loader when markdown is null", async () => {
 		await act(async () => {
-			render(<ArticleView source="docs/README.md" title="Basic" />, container);
+			root.render(<ArticleView source="docs/README.md" title="Basic" />, container);
 		});
 		expect(container.querySelector(".loader-container")).toBeDefined();
 		expect(container.querySelector(".loader-container")).not.toBeNull();
@@ -55,7 +57,7 @@ describe("ArticleView", () => {
 		fetch.mockResponse(() => Promise.resolve(markdown));
 
 		await act(async () => {
-			render(<ArticleView source="test/placeholder.md" title="Basic" />, container);
+			root.render(<ArticleView source="test/placeholder.md" title="Basic" />, container);
 		});
 		expect(container).toContainHTML("<h1>Basic</h1>");
 	});
@@ -70,7 +72,7 @@ describe("ArticleView", () => {
 		fetch.mockResponse(() => Promise.resolve(markdown));
 
 		await act(async () => {
-			render(<ArticleView source="test/placeholder.md" title="Basic" />, container);
+			root.render(<ArticleView source="test/placeholder.md" title="Basic" />, container);
 		});
 		expect(container).toContainHTML("<h1>Basic</h1>");
 		expect(fetch.mock.calls.length).toEqual(1);
@@ -94,7 +96,7 @@ describe("ArticleView", () => {
 		fetch.mockResponse(() => Promise.resolve(markdown));
 
 		await act(async () => {
-			render(
+			root.render(
 				<ArticleView source="test/placeholder.md" title="No scripts allowed" />,
 				container
 			);
@@ -118,7 +120,7 @@ describe("ArticleView", () => {
 		fetch.mockResponse(() => Promise.resolve(markdown));
 
 		await act(async () => {
-			render(<ArticleView source="docs/README.md" title="Iframes allowed" />, container);
+			root.render(<ArticleView source="docs/README.md" title="Iframes allowed" />, container);
 		});
 		expect(container).toContainHTML("<h1>Iframes Allowed</h1>");
 		let iframe = getByTestId(container, "test-iframe");
@@ -141,7 +143,7 @@ describe("ArticleView", () => {
 		fetch.mockResponse(() => Promise.resolve(markdown));
 
 		await act(async () => {
-			render(
+			root.render(
 				<Router>
 					<ArticleView source="docs/README.md" title="Valid Routes" />
 				</Router>,
@@ -178,7 +180,7 @@ describe("ArticleView", () => {
 			fetch.mockResponse(() => Promise.resolve(markdown));
 
 			await act(async () => {
-				render(
+				root.render(
 					<Router>
 						<ArticleView {...route.articleProps} />
 					</Router>,

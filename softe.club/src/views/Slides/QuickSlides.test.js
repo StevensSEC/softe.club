@@ -1,5 +1,4 @@
 import React from "react";
-import { render, unmountComponentAtNode } from "react-dom";
 import { mount, shallow } from "enzyme";
 import { act } from "react-dom/test-utils";
 import fs from "fs";
@@ -28,11 +27,11 @@ describe("QuickSlides", () => {
 	});
 
 	afterEach(() => {
-		unmountComponentAtNode(container);
+		wrapper?.unmount();
 	});
 
+	let wrapper;
 	it("should render a bare minimum quick slides example", async () => {
-		let wrapper;
 		await act(async () => {
 			wrapper = mount(<QuickSlides slidePath="test/minimum.yaml" />, container);
 		});
@@ -44,7 +43,6 @@ describe("QuickSlides", () => {
 	});
 
 	it("should pass sticky properties along", async () => {
-		let wrapper;
 		await act(async () => {
 			wrapper = mount(<QuickSlides slidePath="test/sticky.yaml" />, container);
 		});
@@ -61,7 +59,6 @@ describe("QuickSlides", () => {
 	});
 
 	it("should set the page title when provided", async () => {
-		let wrapper;
 		await act(async () => {
 			wrapper = mount(<QuickSlides slidePath="test/names.yaml" />, container);
 		});
@@ -73,7 +70,6 @@ describe("QuickSlides", () => {
 	});
 
 	it("should render markdown", async () => {
-		let wrapper;
 		await act(async () => {
 			wrapper = mount(<QuickSlides slidePath="test/markdown.yaml" />, container);
 		});
@@ -87,7 +83,6 @@ describe("QuickSlides", () => {
 	});
 
 	it("should assign name props to slides", async () => {
-		let wrapper;
 		await act(async () => {
 			wrapper = mount(<QuickSlides slidePath="test/names.yaml" />, container);
 		});
