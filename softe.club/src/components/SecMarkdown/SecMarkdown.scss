@@ -1,0 +1,20 @@
+@import "../../variables.scss";
+
+.markdown {
+	font-size: 1.15em;
+	line-height: 1.8;
+	padding-bottom: 8px;
+	overflow-wrap: break-word;
+
+	:not(pre) > code {
+		background: $code-background-color;
+		padding: 0.1em 0.3em;
+		border-radius: 0.3em;
+	}
+
+	pre > code {
+		background: inherit;
+		padding: none;
+		border-radius: none;
+	}
+}

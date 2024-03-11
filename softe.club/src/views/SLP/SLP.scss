@@ -1,0 +1,34 @@
+@import "../../variables.scss";
+
+img {
+	width: 90%;
+}
+
+.img-div {
+	min-width: 30em;
+	padding: 2em;
+}
+
+.desc {
+	flex-shrink: 4;
+	padding: 2em;
+	@media (max-width: $sm-max) {
+		padding: 0.5em;
+	}
+}
+
+.left {
+	background-color: $background-color;
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	align-items: center;
+}
+
+.right {
+	background-color: darken($color: $background-color, $amount: 10);
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	align-items: center;
+}

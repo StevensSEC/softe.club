@@ -1,0 +1,51 @@
+@import "../../variables.scss";
+@import url("https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap");
+
+.sec-header {
+	display: flex;
+	width: 100%;
+	z-index: 2000;
+	background-color: $background-color;
+	border-bottom: $primary-color 1px solid;
+	box-shadow: none;
+	box-sizing: border-box;
+	flex-direction: column;
+
+	> .header-content {
+		display: flex;
+		align-items: center;
+		min-height: 64px;
+		padding: 0 24px;
+	}
+
+	&.compact {
+		position: fixed;
+		border: none;
+		width: 55px;
+		height: 55px;
+		background-color: transparent;
+		z-index: 0;
+		top: 0;
+
+		* {
+			background-color: transparent;
+		}
+	}
+}
+
+.header-items {
+	letter-spacing: 2px;
+}
+
+.drawer-item {
+	width: 100%;
+	box-sizing: border-box;
+	margin: 0 !important;
+}
+
+.barLogo {
+	font-size: 40px;
+	font-weight: bold;
+	margin: 0 !important;
+	padding: 0 5px !important;
+}

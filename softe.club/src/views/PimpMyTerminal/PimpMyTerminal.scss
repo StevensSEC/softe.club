@@ -1,0 +1,35 @@
+@import "../../variables.scss";
+
+.logo {
+	max-width: 1200px;
+	min-height: 500px;
+}
+
+.pmt {
+	fill: none;
+	stroke: #3f3;
+	stroke-width: 0.5px;
+}
+
+.quick-links {
+	background: $background-color;
+	box-sizing: border-box;
+	display: flex;
+	position: absolute;
+	left: 0;
+	top: 30%;
+	width: 300px;
+	flex-direction: column;
+	text-align: center;
+	padding: 10px;
+	border: #ff3 $border-style $border-size;
+	border-left: none;
+
+	@media screen and (max-width: $lg-max - 50) {
+		display: none;
+	}
+
+	.sec-btn {
+		margin: 5px 0;
+	}
+}

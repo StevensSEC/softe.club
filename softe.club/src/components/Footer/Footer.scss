@@ -1,0 +1,39 @@
+@import "../../variables.scss";
+
+.footer {
+	display: flex;
+	width: 100%;
+	border-top: $primary-color 1px solid;
+	z-index: 2000;
+	background-color: $background-color;
+	box-shadow: none;
+	flex-direction: row;
+	justify-content: space-evenly;
+	text-align: center;
+	align-items: center;
+	padding-top: 0.8em;
+
+	img {
+		max-width: 3em;
+		max-height: 3em;
+	}
+}
+
+.github {
+	text-align: center;
+	margin: 0.7em 0;
+	font-size: 11px;
+	a {
+		text-decoration: none;
+		color: $primary-color;
+	}
+	a:hover {
+		text-decoration: underline;
+	}
+}
+
+.attr {
+	font-size: 8px;
+	color: #504c4c;
+	text-align: center;
+}
