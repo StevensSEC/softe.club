@@ -1,7 +1,7 @@
 import dayjs from "dayjs";
 import type { Dayjs } from "dayjs";
 
-interface SECEvent {
+export interface SECEvent {
 	flyerSource: string; // name of uploaded picture
 	altText?: string; // alt text for accessibility
 	title: string; // name of event
@@ -9,6 +9,7 @@ interface SECEvent {
 	meetingLink?: string; // link to an online meeting
 	startDate: Dayjs; // time event begins
 	endDate?: Dayjs; // time event ends
+	isGbm?: boolean; // whether the event is a GBM
 }
 
 /**
@@ -30,7 +31,7 @@ const generateGbms = (
 	let date = startDate.day(4); // next thursday
 	let count = countOffset;
 	limit += countOffset;
-	let gbms = [];
+	let gbms: SECEvent[] = [];
 
 	while (date.isBefore(endDate) && count < limit) {
 		gbms.push({
@@ -50,7 +51,7 @@ const generateGbms = (
 	return gbms;
 };
 
-const EVENTS = generateGbms(
+export const EVENTS = generateGbms(
 	dayjs("2021-9-9", "YYYY-MM-DD"),
 	dayjs("2021-30-09", "YYYY-MM-DD"),
 	1,

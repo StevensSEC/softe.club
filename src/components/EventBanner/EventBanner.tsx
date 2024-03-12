@@ -1,28 +1,29 @@
-import React from "react";
+// import { useEffect } from "react";
 import "./EventBanner.scss";
 import dayjs from "dayjs";
-import * as SEC from "../SEC/lib.js";
+import * as SEC from "../SEC/lib";
+import type { SECEvent } from "../../Events";
 
-interface EventBannerProps {
-	flyerSource?: string;
-	altText?: string;
-	title?: string;
-	desc: string;
-	startDate: dayjs.Dayjs;
-	endDate: dayjs.Dayjs;
-	meetingLink?: string;
-	isGbm: boolean;
+import testimg from "../../assets/profiles/carson.png";
+
+const images = import.meta.glob("../../assets/**/*.(png|jpg|svg)", { eager: true });
+interface EventBannerProps extends SECEvent {
 	now?: dayjs.Dayjs;
 }
 
-const EventBanner = (props: EventBannerProps): JSX.Element | null => {
+const EventBanner: React.FC<EventBannerProps> = props => {
 	let now: dayjs.Dayjs = props.now ?? dayjs();
 
-	let flyer = props.flyerSource ? require(`../../assets/flyers/${props.flyerSource}`) : null;
+	let isVisible =
+		(!props.endDate || now.isBefore(props.endDate)) &&
+		(!props.startDate || !props.isGbm || props.startDate.subtract(7, "day").isBefore(now));
+
+	let flyer: string | null = images[`../../assets/${props.flyerSource}`]?.default ?? null;
+
 	let imageElement = flyer ? (
 		<img
 			loading="lazy"
-			src={flyer.default}
+			src={flyer}
 			alt={
 				props.altText
 					? `${props.altText}`
@@ -37,10 +38,7 @@ const EventBanner = (props: EventBannerProps): JSX.Element | null => {
 		props.startDate.isBefore(now) &&
 		props.endDate.isAfter(now);
 
-	if (
-		(!props.endDate || now.isBefore(props.endDate)) &&
-		(!props.startDate || !props.isGbm || props.startDate.subtract(7, "day").isBefore(now))
-	) {
+	if (isVisible) {
 		return (
 			<div className="club-event">
 				<div

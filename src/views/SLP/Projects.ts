@@ -12,27 +12,27 @@ interface SLPInfo {
 const PROJECTS: SLPInfo[] = [
 	{
 		name: "Monocle",
-		markdown: "slp/monocle.md",
+		markdown: "slp/monocle",
 	},
 	{
 		img: pblScreenshot,
 		name: "pokemonbattlelib",
-		markdown: "slp/pokemonbattlelib.md",
+		markdown: "slp/pokemonbattlelib",
 	},
 	{
 		img: sweScreenshot,
 		name: "Stevens Web Extension",
-		markdown: "slp/stevens-web-extension.md",
+		markdown: "slp/stevens-web-extension",
 	},
 	{
 		img: ottScreenshot,
 		name: "Open Together Tube",
-		markdown: "slp/open-together-tube.md",
+		markdown: "slp/open-together-tube",
 	},
 	{
 		img: qqScreenshot,
 		name: "Quick Quack",
-		markdown: "slp/quick-quack.md",
+		markdown: "slp/quick-quack",
 	},
 ];
 export default PROJECTS;
