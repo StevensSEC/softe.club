@@ -1,30 +1,48 @@
-# React + TypeScript + Vite
+# softe.club
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Build and Deploy](https://github.com/StevensSEC/sec.club/workflows/Build%20and%20Deploy/badge.svg)
 
-Currently, two official plugins are available:
+This is the repo for the Software Engineering Club's website.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Documentation can be found in `src/articles/docs`, or at https://softe.club/dev/docs.
 
-## Expanding the ESLint configuration
+## Setup
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+Download and install node.js version 20. You should do this with [nvm](https://github.com/nvm-sh/nvm#installing-and-updating), in which case you run:
+```
+nvm install 20
+nvm use 20
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Once node is installed, run:
+```
+corepack enable
+yarn install
+```
+
+to install all dependencies.
+
+## Run
+
+To run the project, run:
+
+```
+yarn run dev
+```
+
+Open the link it shows in your console to view it in the browser.
+
+The page will reload if you make edits.<br />
+You will also see any lint errors in the console.
+
+To test that changes do not break existing components, run:
+
+```
+yarn test
+```
+
+To build the production app to be served, run:
+
+```
+yarn build
+```
