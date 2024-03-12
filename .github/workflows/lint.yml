@@ -9,17 +9,16 @@ jobs:
       CI: true
     strategy:
       matrix:
-        node-version: [16.x]
+        node-version: [20.x]
     steps:
       - uses: actions/checkout@v4
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
-      - run: npm install
-      - name: Check for conflicting rules
-        run: ./scripts/check_lint_rule_conflicts.sh
+      - run: corepack enable
+      - run: yarn install --immutable
+      # - name: Check for conflicting rules
+      #   run: ./scripts/check_lint_rule_conflicts.sh
       - name: Check linting
-        run: npx eslint --config .eslintrc.js .
-      - name: Check format
-        run: npx prettier --config prettier.config.js --check "src/**/*.{js,jsx,json,ts,tsx,md,mdx,css,html,yml,yaml,scss}"
+        run: yarn lint-check
