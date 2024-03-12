@@ -20,7 +20,6 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
-          cache: 'yarn'
       - run: corepack enable
       - working-directory: ${{ env.working-directory }}
         run: yarn install --immutable
