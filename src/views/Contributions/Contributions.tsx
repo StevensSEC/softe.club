@@ -6,12 +6,12 @@ import SecMarkdown from "../../components/SecMarkdown/SecMarkdown";
 import fetchMarkdown from "../../utils/fetchMarkdown";
 import "./Contributions.scss";
 
-const ContributionsView = (): JSX.Element => {
+const ContributionsView: React.FC<any> = () => {
 	const [markdown, setMarkdown] = useState("");
 
 	useEffect(() => {
 		(async () => {
-			const text = await fetchMarkdown("contributions.md");
+			const text = await fetchMarkdown("contributions");
 			setMarkdown(text);
 		})();
 	});

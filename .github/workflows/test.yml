@@ -10,19 +10,19 @@ jobs:
       working-directory: .
     strategy:
       matrix:
-        node-version: [16.x]
+        node-version: [20.x]
     steps:
       - uses: actions/checkout@v4
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
-      - name: npm install
-        working-directory: ${{ env.working-directory }}
-        run: npm ci
+      - run: corepack enable
+      - working-directory: ${{ env.working-directory }}
+        run:  yarn install --immutable
       - name: Test
         working-directory: ${{ env.working-directory }}
-        run: npm test
+        run: yarn test
       - name: Build
         working-directory: ${{ env.working-directory }}
-        run: npm run build
+        run: yarn run build

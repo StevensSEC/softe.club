@@ -17,8 +17,8 @@ _Tip: Have the source code for this article open for reference._
 ```javascript
 {
 	path: "/mypath",
-	articleProps: {source: "my-markdown.md", title: "My New Article"},
-	Component: lazy(() => import(/* webpackChunkName: "article" */ "./views/Article/Article")),
+	articleProps: {source: "my-markdown", title: "My New Article"},
+	Component: lazy(() => import("./views/Article/Article")),
 }
 ```
 

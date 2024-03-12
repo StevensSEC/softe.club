@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import SECMarkdown from "../../components/SecMarkdown/SecMarkdown";
 import "./SLP.scss";
 import fetchMarkdown from "../../utils/fetchMarkdown";

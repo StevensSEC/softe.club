@@ -6,12 +6,12 @@ import Loader from "../../components/Loader/Loader.js";
 import DocumentTitle from "../../components/DocumentTitle/DocumentTitle.js";
 import fetchMarkdown from "../../utils/fetchMarkdown";
 
-interface ArticleViewProps {
+export interface ArticleViewProps {
 	source: string;
 	title: string;
 }
 
-const ArticleView = (props: ArticleViewProps): JSX.Element => {
+const ArticleView: React.FC<ArticleViewProps> = props => {
 	const [markdown, setMarkdown] = useState<string>();
 	const [__previousSource, setPreviousSource] = useState<string>();
 
