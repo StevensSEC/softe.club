@@ -11,7 +11,7 @@ Learning about programming is hard. Hopefully, these resources will make it a li
 -   [marksheet.io](https://marksheet.io) - A written tutorial for HTML and CSS
 -   [w3schools](https://www.w3schools.com/js/) - A written tutorial for JavaScript
 -   [A Complete Guide to Flexbox - CSS Tricks](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) - A guide to flexbox layout with graphic examples and explanations.
--	[Theo - Youtube](https://www.youtube.com/@t3dotgg) - A great channel for staying up to date with modern web development.
+-   [Theo - Youtube](https://www.youtube.com/@t3dotgg) - A great channel for staying up to date with modern web development.
 
 ### Vue.js
 
