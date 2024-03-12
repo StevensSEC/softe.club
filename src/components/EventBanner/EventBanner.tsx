@@ -4,8 +4,6 @@ import dayjs from "dayjs";
 import * as SEC from "../SEC/lib";
 import type { SECEvent } from "../../Events";
 
-import testimg from "../../assets/profiles/carson.png";
-
 const images = import.meta.glob("../../assets/**/*.(png|jpg|svg)", { eager: true });
 interface EventBannerProps extends SECEvent {
 	now?: dayjs.Dayjs;
@@ -18,7 +16,9 @@ const EventBanner: React.FC<EventBannerProps> = props => {
 		(!props.endDate || now.isBefore(props.endDate)) &&
 		(!props.startDate || !props.isGbm || props.startDate.subtract(7, "day").isBefore(now));
 
-	let flyer: string | null = images[`../../assets/${props.flyerSource}`]?.default ?? null;
+	let flyer: string | null =
+		(images[`../../assets/${props.flyerSource}`] as { default: string } | undefined)?.default ??
+		null;
 
 	let imageElement = flyer ? (
 		<img

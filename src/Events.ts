@@ -2,10 +2,10 @@ import dayjs from "dayjs";
 import type { Dayjs } from "dayjs";
 
 export interface SECEvent {
-	flyerSource: string; // name of uploaded picture
+	flyerSource?: string; // name of uploaded picture
 	altText?: string; // alt text for accessibility
 	title: string; // name of event
-	desc: string; // brief description of event
+	desc?: string; // brief description of event
 	meetingLink?: string; // link to an online meeting
 	startDate: Dayjs; // time event begins
 	endDate?: Dayjs; // time event ends

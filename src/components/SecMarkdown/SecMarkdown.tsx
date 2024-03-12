@@ -22,11 +22,10 @@ const lazyImage: React.FC<React.ImgHTMLAttributes<any>> = props => {
 	return <img loading="lazy" {...props} />;
 };
 
-const mdLink: React.FC<{ href: string }> = props => {
+const mdLink: React.FC<{ href: string; children: any }> = props => {
 	const cmdPrefix = "!";
 	let command: string | undefined = undefined;
 	let args: string[] = [];
-	// @ts-expect-error temp
 	let text: string = Array.isArray(props.children)
 		? props.children[0].props.value
 		: props.children;
@@ -52,7 +51,6 @@ const mdLink: React.FC<{ href: string }> = props => {
 			);
 		} else {
 			throw new Error(
-				// @ts-expect-error temp
 				`Invalid mdLink command: ${command}, original link text: ${props.children[0].props.value}`
 			);
 		}
