@@ -83,6 +83,8 @@ something that works for you.
 
 [How to set your theme in VS Code](/tutorial/vscode-theme)
 
+[VSCode theme browser](https://www.vscolors.com)
+
 #### Extensions
 
 _Tip: You can install these quickly by pressing `Ctrl + P` and typing the command `ext install PACKAGE`_
@@ -94,6 +96,7 @@ _Tip: You can install these quickly by pressing `Ctrl + P` and typing the comman
 -   Debug Visualizer `hediet.debug-visualizer` - Fancy graphics for visualizing data structures while stepping through code.
 -   Vim for VS Code `vscodevim.vim` - Vim keybinds for VS Code.
 -   Glassit `s-nlf-fh.glassit` - Allows for VS Code to be set to transparent on Windows and Linux systems.
+-   vscode-pets `tonybaloney.vscode-pets` - Pets for your VS Code
 
 ### Atom
 

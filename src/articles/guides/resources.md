@@ -10,7 +10,8 @@ Learning about programming is hard. Hopefully, these resources will make it a li
 
 -   [marksheet.io](https://marksheet.io) - A written tutorial for HTML and CSS
 -   [w3schools](https://www.w3schools.com/js/) - A written tutorial for JavaScript
--   [A Complete Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) - A guide to flexbox layout with graphic examples and explanations
+-   [A Complete Guide to Flexbox - CSS Tricks](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) - A guide to flexbox layout with graphic examples and explanations.
+-   [Theo - Youtube](https://www.youtube.com/@t3dotgg) - A great channel for staying up to date with modern web development.
 
 ### Vue.js
 
@@ -43,6 +44,7 @@ Git is the most commonly used version control system. Using git is required for 
 -   [Official SEC Cheatsheet](/git-cheatsheet) - An overview of basic usage of git's commands
 -   [git it](https://github.com/jlord/git-it-electron) - Interactive git tutorial
 -   [GitFixUm](https://sethrobertson.github.io/GitFixUm/fixup.html) - Did you make a mistake with git? This guide will help you get out of it
+-   [Graphite](https://graphite.dev/) - Improves the experience of using Github, adding stacked PRs, and more
 
 ## Powershell
 
@@ -62,6 +64,7 @@ Even if you don’t develop on Linux, you will encounter it eventually. It’s d
 
 -   [PacktPub](https://packtpub.com/) - Provides a free daily ebook, hosts other ebook resources
 -   [free-programming-books](https://github.com/EbookFoundation/free-programming-books) - A huge list of free programming books to check out (some links are old but there's a ton there!)
+-   [Beej's Guide to Network Programming](https://beej.us/guide/bgnet/html/) - A very extensive guide to network programming with examples in C
 
 # Free Courses
 
